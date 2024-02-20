@@ -745,47 +745,45 @@ function SingleProductPage() {
       if (!stripe || !elements) {
         return;
       }
+      var addressElement = elements.getElement("address");
 
-      // This should be replaced with your fetch call to get the PaymentIntent's client secret
-      const clientSecret = await fetchBackend(); // Ensure this fetches the PaymentIntent client secret
-      console.log(clientSecret);
-      const result = await stripe.confirmCardPayment(clientSecret, {
-        payment_method: {
-          card: elements.getElement(CardElement),
-          billing_details: {
-            // Include billing details here
-          },
-        },
-      });
+      addressElement.getValue().then(async function (address) {
+        if (address.complete) {
+          const clientSecret = await fetchBackend(); // Ensure this fetches the PaymentIntent client secret
 
-      if (result.error) {
-        console.log(result.error.message);
-      } else {
-        if (
-          result.paymentIntent &&
-          result.paymentIntent.status === "succeeded"
-        ) {
-          console.log("Payment successful");
-          // Redirect or update UI upon successful payment
-          setSuccess(true);
+          const result = await stripe.confirmCardPayment(clientSecret, {
+            payment_method: {
+              card: elements.getElement(CardElement),
+              billing_details: {
+                name: address.value.name, // You can replace 'Customer Name' with the actual name of the customer
+                email: "customer@example.com", // You can replace 'customer@example.com' with the actual email of the customer
+                address: {
+                  city: address.value.address.city,
+                  country: address.value.address.country,
+                  line1: address.value.address.line1,
+                  line2: address.value.address.line2,
+                  postal_code: address.value.address.postal_code,
+                  state: address.value.address.state,
+                },
+              },
+            },
+          });
+
+          if (result.error) {
+            console.log(result.error.message);
+          } else {
+            if (
+              result.paymentIntent &&
+              result.paymentIntent.status === "succeeded"
+            ) {
+              console.log("Payment successful");
+              // Redirect or update UI upon successful payment
+              setSuccess(true);
+            }
+          }
         }
-      }
+      });
     };
-
-    return (
-      <form onSubmit={handleSubmit}>
-        <CardElement />
-        <AddressElement options={{ mode: "billing" }} />
-        <button
-          disabled={!stripe}
-          style={{ backgroundColor: sucess ? "green" : "" }}
-          className="btn-colored"
-        >
-          {sucess ? "Successfully ordered" : "Order this frame"}
-        </button>
-      </form>
-    );
-  };
 
   return (
     <div className="single-product-page">
