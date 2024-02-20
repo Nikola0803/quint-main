@@ -1,0 +1,102 @@
+@import "~react-image-gallery/styles/css/image-gallery.css";
+body {
+  margin: 0;
+  font-family: Almarai;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: black;
+  overflow-x: hidden;
+}
+input[type="number"] {
+  /* Disable number arrows in Firefox */
+  -moz-appearance: textfield;
+  
+  /* Disable number arrows in other browsers */
+  appearance: textfield;
+}
+
+/* Additional styling to remove the increment and decrement buttons in Chrome/Safari/Edge */
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+h1,h2,h3,h4,h5,p,span {
+color: black;
+margin: 0;
+padding: 0;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.btn-white {
+  background-color: transparent;
+  border: 1px solid #A31332;
+  font-weight: bolder;
+ 
+        padding: 12px 24px;
+  color: #A31332;
+}
+
+.btn-colored {
+  background-color: #A31332;
+  color: white;
+  font-weight: bolder;
+  border: 1px solid #A31332;
+
+        padding: 12px 24px;
+}
+
+@media (min-width: 1650px) {
+  .container {
+    max-width: 1750px;
+}
+}
+
+ul,li,a {
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: black;
+  font-weight: 450;
+
+}
+/* index.css */
+
+/* Apply styles to the scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #A31332;
+  border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle when dragging */
+::-webkit-scrollbar-thumb:active {
+  background: #555;
+}

@@ -1,0 +1,28 @@
+.card__card {
+  width: 304px;
+  padding: 15px;
+  padding-bottom: 50px;
+  background-color: #e0e0e0;
+  height: 528px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card__card img {
+  width: 100%;
+}
+.card__card__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card__card__title h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 3px;
+  margin-top: 10px;
+}
+.card__card .btn-colored {
+  width: 100%;
+  margin-top: 10px;
+}/*# sourceMappingURL=Card.css.map */

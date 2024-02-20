@@ -1,0 +1,661 @@
+.StripeElement {
+  padding: 10px 20px;
+  border: 1px solid lightgray;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.single-product-page {
+  border-top: 1px solid black;
+  padding-top: 70px;
+
+  .col-6 {
+    max-width: 45%;
+  }
+
+  //   .image-gallery-image {
+  //     // height: 100%;
+  //     width: 100%;
+  //     height: 100%;
+  //   }
+  //   .image-gallery-slide {
+  //     height: 332px;
+  //     width: 520px;
+  //   }
+  //   .image-gallery-slides {
+  //     height: 332px;
+  //     width: 520px;
+  //   }
+  .image-gallery-thumbnails-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 332px;
+
+    button {
+      height: 33%;
+
+      span {
+        height: 100%;
+      }
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+
+  &__header {
+    &__top {
+      padding-bottom: 36px;
+      display: flex;
+
+      span,
+      h5 {
+        display: inline-block;
+        font-size: 14px;
+      }
+
+      h5 {
+        font-weight: 600;
+      }
+
+      svg {
+        margin: 0 5px;
+      }
+    }
+
+    &__body {
+      &__card {
+        padding: 39px;
+        background-color: #f1f1f1;
+        border-radius: 30px;
+
+        h3 {
+          font-size: 32px;
+          font-family: Kanit;
+          font-weight: 500;
+          max-width: 570px;
+          padding-bottom: 24px;
+        }
+
+        p {
+          font-size: 16px;
+          padding-bottom: 24px;
+          max-width: 540px;
+        }
+
+        &__price {
+          span {
+            font-size: 18px;
+            color: rgba(0, 0, 0, 0.5);
+          }
+
+          p {
+            font-weight: 700;
+            font-family: Kanit;
+            font-size: 20px;
+
+            span {
+              font-family: Roboto;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__customize {
+    padding-top: 80px;
+
+    &__left {
+      h3 {
+        font-family: Almarai;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        margin-bottom: 24px;
+      }
+
+      &__option-holder {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+
+        &__option {
+          width: 100%;
+
+
+          &__body {
+            &__color-option {
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: 20px;
+              padding: 10px;
+              cursor: pointer;
+              transition: 0.2s ease-in-out;
+
+              &:hover {
+                background-color: rgba(235, 235, 235, 0.575);
+              }
+            }
+          }
+
+
+          .selected {
+            img {
+              border: 2px solid red;
+
+            }
+          }
+
+
+
+
+
+          &__top {
+            display: flex;
+            padding: 20px 0;
+            align-items: center;
+            background-color: transparent;
+            justify-content: space-between;
+            cursor: pointer;
+            // Border for all inactive options
+            border-top: 2px solid lightgray;
+            border-bottom: 2px solid lightgray;
+            margin-bottom: 40px;
+
+            svg {
+              color: #00000080;
+            }
+
+            h3 {
+              color: rgba(0, 0, 0, 0.5);
+
+              /* Heading/H6 */
+              font-family: Roboto;
+              font-size: 20px;
+              font-style: normal;
+              font-weight: 700;
+              margin: 0;
+            }
+
+            // Remove border for all inactive options except the last one
+          }
+
+          &__top-active {
+            display: flex;
+            padding: 20px 16px;
+            align-items: center;
+            background-color: #020a1c;
+            justify-content: space-between;
+            margin-bottom: 32px;
+
+
+            h3 {
+              font-family: Roboto;
+              font-size: 20px;
+              font-style: normal;
+              font-weight: 700;
+              margin: 0;
+              color: white;
+            }
+          }
+
+          &__input-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 20px 24px;
+
+            &__title {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+
+              h3 {
+                font-family: Roboto;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 700;
+                margin: 0;
+              }
+
+              p {
+                font-family: Roboto;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                margin: 0;
+              }
+            }
+
+            &__input {
+              position: relative;
+              width: 60%;
+
+              input {
+                width: 100%;
+                padding: 12px;
+                border-radius: 6px;
+                outline: none;
+                border: 1px solid #b3b3b3;
+                font-weight: bold;
+              }
+
+              span {
+                position: absolute;
+                top: 15px;
+                right: 85px;
+                font-family: Almarai;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                color: rgba(0, 0, 0, 0.5);
+
+                svg {
+                  margin-left: 10px;
+                }
+              }
+            }
+          }
+
+          &__btn-wrapper {
+            width: 100%;
+            display: flex;
+
+            button {
+              margin-left: auto;
+              display: block;
+              margin-top: 24px;
+              margin-bottom: 44px;
+            }
+          }
+        }
+
+        &__configurator {
+          width: 500px;
+          margin: 50px auto;
+          background-color: #097ad5;
+          padding: 10px 14px;
+          color: white;
+          font-family: Kanit;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 600;
+        }
+      }
+    }
+
+    &__right {
+      h3 {
+        font-family: Almarai;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        margin-bottom: 24px;
+      }
+
+      &__product {
+        border-radius: 30px;
+        box-shadow: 0px 6px 6px 2px rgba(0, 0, 0, 0.03),
+          0px 12px 16px 4px rgba(0, 0, 0, 0.08);
+        padding: 24px;
+
+        &__top {
+          img {
+            width: 100%;
+          }
+        }
+
+        &__body {
+          padding: 24px 0;
+
+
+
+
+          &__option {
+            border-bottom: 1px solid black;
+            padding: 10px 0;
+
+            &__top {
+              display: flex;
+              align-items: center;
+
+              span {
+                color: #000;
+
+                font-family: Almarai;
+                font-size: 18px;
+                font-style: normal;
+                margin-right: 10px;
+                font-weight: 700;
+              }
+
+              p {
+                color: rgba(0, 0, 0, 0.5);
+
+                font-family: Almarai;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 700;
+              }
+            }
+
+            &__mid {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+
+              p {
+                color: var(--Black, #020a1c);
+                font-family: Almarai;
+                font-size: 18px;
+                font-style: normal;
+
+                font-weight: 700;
+              }
+            }
+          }
+
+          &__delivery {
+            display: flex;
+            padding: 32px;
+            margin: 12px 0;
+            align-items: center;
+            background-color: #f1f1f1;
+            justify-content: space-between;
+            border-radius: 30px;
+
+            h3 {
+              margin: 0;
+              font-family: Almarai;
+              font-size: 18px;
+              font-style: normal;
+              font-weight: 700;
+            }
+          }
+
+          &__price {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &__top {
+              width: 100%;
+              display: flex;
+              padding: 12px 16px;
+              border-bottom: 1px solid black;
+              justify-content: space-between;
+
+              h3 {
+                font-family: Almarai;
+                font-size: 18px;
+                font-style: normal;
+                margin: 0;
+                font-weight: 800;
+              }
+            }
+
+            &__mid {
+              width: 100%;
+              display: flex;
+              padding: 12px 16px;
+              border-bottom: 1px solid black;
+              justify-content: space-between;
+
+              h3 {
+                font-family: Almarai;
+                font-size: 18px;
+                font-style: normal;
+                margin: 0;
+                font-weight: 800;
+              }
+            }
+
+            &__bottom {
+              width: 100%;
+              display: flex;
+              padding: 12px 16px;
+
+              justify-content: space-between;
+
+              h3 {
+                font-family: Kanit;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 700;
+                margin: 0;
+              }
+            }
+
+            &__btn {
+              width: 100%;
+              margin-top: 20px;
+
+              button {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__upsell {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 80px 0;
+
+    &__left {
+      width: 100%;
+    }
+
+    &__right {
+      display: flex;
+      background-color: #f1f1f1;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      padding-top: 60px;
+      border-radius: 10px;
+
+      &__card {
+        padding: 16px;
+        width: 22%;
+
+        img {
+          width: 100%;
+        }
+
+        h5 {
+          /* Text/Small/Normal */
+          font-family: Roboto;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          margin: 20px 0;
+        }
+
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__products {
+    padding-bottom: 30px;
+
+    h3 {
+      margin-left: auto;
+      font-family: Almarai;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      display: inline-block;
+      /* margin: 0 auto; */
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 24px;
+    }
+
+    &__holder {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      &__product {
+
+        // padding: 16px;
+        h3 {
+          font-family: Roboto;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 600;
+          margin: 0;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  &__description {
+    padding: 50px 0;
+    padding-bottom: 30px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+
+    h3 {
+      font-family: Almarai;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      margin-bottom: 44px;
+    }
+
+    &__headers {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+
+      &__active {
+        font-weight: bold !important;
+        text-decoration-line: none !important;
+      }
+
+      p {
+        font-family: Roboto;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        /* 27px */
+        text-decoration-line: underline;
+        margin-right: 25px;
+      }
+    }
+
+    p {
+      /* Text/Regular/Normal */
+      font-family: Almarai;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      /* 24px */
+    }
+  }
+
+  &__bought {
+    h3 {
+      font-family: Almarai;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      display: inline-block;
+      padding-top: 30px;
+      margin-bottom: 24px;
+    }
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      &__product {
+
+        // padding: 16px;
+        h3 {
+          font-family: Roboto;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 600;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  &__upgrade {
+    padding: 112px 0;
+
+    border-bottom: 1px solid black;
+
+    &__wrapper {
+      padding: 64px;
+      position: relative;
+
+      &::before {
+        content: ""; // Create a pseudo-element for the background
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: url("../../assets/upgrade.jfif");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-clip: border-box;
+        background-position: center;
+        filter: brightness(55%); // Adjust brightness here
+        z-index: -1; // Ensure the pseudo-element is behind the content
+      }
+
+      h3 {
+        color: var(--White, #fff);
+        /* Heading/H2 */
+        font-family: Kanit;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        margin-bottom: 24px;
+      }
+
+      p {
+        color: var(--White, #fff);
+        /* Text/Medium/Normal */
+        font-family: Almarai;
+        font-size: 18px;
+        font-style: normal;
+        margin-bottom: 30px;
+        font-weight: 400;
+      }
+    }
+  }
+}

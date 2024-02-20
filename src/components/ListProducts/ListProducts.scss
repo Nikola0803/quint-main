@@ -1,0 +1,23 @@
+.list-products {
+  border-bottom: 1px solid #000000;
+  border-top: 1px solid #000000;
+  padding-bottom: 30px;
+  &__header {
+    margin-bottom: 45px;
+    display: flex;
+    margin-top: 90px;
+    justify-content: center;
+    align-items: center;
+    .btn-colored {
+      margin-right: 20px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  &__body {
+    &__card {
+      margin: 32px 28px;
+    }
+  }
+}

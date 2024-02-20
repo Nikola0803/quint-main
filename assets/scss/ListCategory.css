@@ -1,0 +1,15 @@
+.list-category {
+  border-bottom: 1px solid #000000;
+  border-top: 1px solid #000000;
+  padding-bottom: 30px;
+}
+.list-category__body {
+  padding-bottom: 20px;
+  padding-top: 70px;
+}
+.list-category__body .col-3 {
+  max-width: 23%;
+}
+.list-category__body__card {
+  margin: 28px 17px;
+}/*# sourceMappingURL=ListCategory.css.map */

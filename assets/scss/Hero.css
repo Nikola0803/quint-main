@@ -1,0 +1,42 @@
+.hero {
+  background-color: #f1f1f1;
+  padding: 64px 0;
+  border-bottom-right-radius: 300px;
+}
+.hero h3 {
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  margin-top: 140px;
+}
+.hero p {
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.hero span {
+  font-size: 16px;
+}
+.hero__desc {
+  margin-bottom: 50px;
+  margin-top: 35px;
+}
+.hero__desc span {
+  display: inline-block;
+  margin: 8px;
+  margin-left: 0;
+}
+.hero__desc span img {
+  margin-right: 10px;
+}
+.hero__btns button {
+  width: 220px;
+  font-size: 16px;
+  padding: 10px 0;
+}
+.hero__btns .btn-colored {
+  margin-right: 15px;
+}
+.hero__img {
+  width: 100%;
+}/*# sourceMappingURL=Hero.css.map */

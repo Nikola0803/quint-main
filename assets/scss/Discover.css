@@ -1,0 +1,42 @@
+.discover {
+  margin: 112px 0;
+}
+.discover__body__left {
+  padding: 0;
+}
+.discover__body__left img {
+  width: 100%;
+}
+.discover__body__right {
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f1f1;
+  justify-content: center;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 80px;
+}
+.discover__body__right span {
+  font-weight: bold;
+  font-size: 16px;
+}
+.discover__body__right h3 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+.discover__body__right p {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+.discover__body__right .btn-colored {
+  margin-right: 30px;
+}
+.discover__body__right .btn-colored img {
+  margin-left: 7px;
+}
+.discover__body__right .btn-colored,
+.discover__body__right .btn-white {
+  padding: 12px 24px;
+}/*# sourceMappingURL=Discover.css.map */

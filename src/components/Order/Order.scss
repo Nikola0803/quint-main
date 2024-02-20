@@ -1,0 +1,40 @@
+.order {
+  position: relative; // Ensure positioning context for the pseudo-element
+  padding: 132px 0;
+  text-align: center;
+
+  &::before {
+    content: ""; // Create a pseudo-element for the background
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("../../assets/order-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    background-position: center;
+    filter: brightness(55%); // Adjust brightness here
+    z-index: -1; // Ensure the pseudo-element is behind the content
+  }
+  h3 {
+    font-family: Kanit;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 24px;
+  }
+  p {
+    font-family: Almarai;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 40px;
+  }
+  .btn-colored {
+    padding: 12px 24px;
+  }
+}

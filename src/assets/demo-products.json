@@ -1,0 +1,3776 @@
+[
+    {
+        "id": 68,
+        "name": "Outward Opening Wooden Stacking Sill Door",
+        "slug": "outward-opening-wooden-stacking-sill-door",
+        "permalink": "https://18.156.79.18/product/outward-opening-wooden-stacking-sill-door/",
+        "date_created": "2023-12-26T19:08:21",
+        "date_created_gmt": "2023-12-26T19:08:21",
+        "date_modified": "2023-12-26T19:08:22",
+        "date_modified_gmt": "2023-12-26T19:08:22",
+        "type": "simple",
+        "status": "publish",
+        "featured": false,
+        "catalog_visibility": "visible",
+        "description": "<p class=\"p1\">Discover our standard outward opening, stacking wooden sill door, complete with a wooden frame. All our wooden doors come complete with hinges and locks. Rest assured that all our fittings meet the SKG quality standard and are constructed to be burglar resistant.</p>\n<p class=\"p1\">Input your requirements and generate a custom quote today! For more information on other high-quality doors and windows, explore our various window and door offerings.</p>\n",
+        "short_description": "",
+        "sku": "",
+        "price": "",
+        "regular_price": "",
+        "sale_price": "",
+        "date_on_sale_from": null,
+        "date_on_sale_from_gmt": null,
+        "date_on_sale_to": null,
+        "date_on_sale_to_gmt": null,
+        "on_sale": false,
+        "purchasable": false,
+        "total_sales": 0,
+        "virtual": false,
+        "downloadable": false,
+        "downloads": [],
+        "download_limit": -1,
+        "download_expiry": -1,
+        "external_url": "",
+        "button_text": "",
+        "tax_status": "taxable",
+        "tax_class": "",
+        "manage_stock": false,
+        "stock_quantity": null,
+        "backorders": "no",
+        "backorders_allowed": false,
+        "backordered": false,
+        "low_stock_amount": null,
+        "sold_individually": false,
+        "weight": "",
+        "dimensions": {
+            "length": "",
+            "width": "",
+            "height": ""
+        },
+        "shipping_required": true,
+        "shipping_taxable": true,
+        "shipping_class": "",
+        "shipping_class_id": 0,
+        "reviews_allowed": true,
+        "average_rating": "0.00",
+        "rating_count": 0,
+        "upsell_ids": [],
+        "cross_sell_ids": [],
+        "parent_id": 0,
+        "purchase_note": "",
+        "categories": [
+            {
+                "id": 19,
+                "name": "Windows",
+                "slug": "windows"
+            },
+            {
+                "id": 18,
+                "name": "Wood",
+                "slug": "wood"
+            }
+        ],
+        "tags": [],
+        "images": [],
+        "attributes": [],
+        "default_attributes": [],
+        "variations": [],
+        "grouped_products": [],
+        "menu_order": 0,
+        "price_html": "",
+        "related_ids": [
+            64,
+            60,
+            62,
+            56,
+            66
+        ],
+        "meta_data": [
+            {
+                "id": 518,
+                "key": "type_of_product",
+                "value": "Window"
+            },
+            {
+                "id": 519,
+                "key": "_type_of_product",
+                "value": "field_658a9857e559c"
+            },
+            {
+                "id": 520,
+                "key": "window_size_frame_width_size__in_mm_minimumwidth",
+                "value": ""
+            },
+            {
+                "id": 521,
+                "key": "_window_size_frame_width_size__in_mm_minimumwidth",
+                "value": "field_658afe9659902"
+            },
+            {
+                "id": 522,
+                "key": "window_size_frame_width_size__in_mm_maximum_width",
+                "value": ""
+            },
+            {
+                "id": 523,
+                "key": "_window_size_frame_width_size__in_mm_maximum_width",
+                "value": "field_658afe9d59903"
+            },
+            {
+                "id": 524,
+                "key": "window_size_frame_width_size__in_mm",
+                "value": ""
+            },
+            {
+                "id": 525,
+                "key": "_window_size_frame_width_size__in_mm",
+                "value": "field_658afe8259901"
+            },
+            {
+                "id": 526,
+                "key": "window_size_frame_height_size_in_mm_min_height",
+                "value": ""
+            },
+            {
+                "id": 527,
+                "key": "_window_size_frame_height_size_in_mm_min_height",
+                "value": "field_658afec659906"
+            },
+            {
+                "id": 528,
+                "key": "window_size_frame_height_size_in_mm_max_height",
+                "value": ""
+            },
+            {
+                "id": 529,
+                "key": "_window_size_frame_height_size_in_mm_max_height",
+                "value": "field_658afed259907"
+            },
+            {
+                "id": 530,
+                "key": "window_size_frame_height_size_in_mm",
+                "value": ""
+            },
+            {
+                "id": 531,
+                "key": "_window_size_frame_height_size_in_mm",
+                "value": "field_658afec059905"
+            },
+            {
+                "id": 532,
+                "key": "window_size",
+                "value": ""
+            },
+            {
+                "id": 533,
+                "key": "_window_size",
+                "value": "field_658a964f6323b"
+            },
+            {
+                "id": 534,
+                "key": "materials_choose_material_type",
+                "value": "Wood"
+            },
+            {
+                "id": 535,
+                "key": "_materials_choose_material_type",
+                "value": "field_658a96ed8bd33"
+            },
+            {
+                "id": 536,
+                "key": "materials",
+                "value": ""
+            },
+            {
+                "id": 537,
+                "key": "_materials",
+                "value": "field_658a96df8bd32"
+            },
+            {
+                "id": 538,
+                "key": "colors",
+                "value": ""
+            },
+            {
+                "id": 539,
+                "key": "_colors",
+                "value": "field_658a981ba4822"
+            },
+            {
+                "id": 540,
+                "key": "profile",
+                "value": ""
+            },
+            {
+                "id": 541,
+                "key": "_profile",
+                "value": "field_658a9752b3d5f"
+            },
+            {
+                "id": 542,
+                "key": "glazing",
+                "value": "No Glazing"
+            },
+            {
+                "id": 543,
+                "key": "_glazing",
+                "value": "field_658a98de7f924"
+            },
+            {
+                "id": 544,
+                "key": "ventilation_grid",
+                "value": "Yes"
+            },
+            {
+                "id": 545,
+                "key": "_ventilation_grid",
+                "value": "field_658a990748927"
+            },
+            {
+                "id": 546,
+                "key": "_yoast_wpseo_primary_product_cat",
+                "value": "19"
+            },
+            {
+                "id": 547,
+                "key": "_yoast_wpseo_content_score",
+                "value": "90"
+            },
+            {
+                "id": 548,
+                "key": "_yoast_wpseo_estimated-reading-time-minutes",
+                "value": "1"
+            },
+            {
+                "id": 549,
+                "key": "_yoast_wpseo_wordproof_timestamp",
+                "value": ""
+            }
+        ],
+        "stock_status": "instock",
+        "has_options": false,
+        "post_password": "",
+        "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v21.7 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>Outward Opening Wooden Stacking Sill Door - User&#039;s blog</title>\n<!-- Admin only notice: this page does not show a meta description because it does not have one, either write it for this page specifically or go into the [Yoast SEO - Settings] menu and set up a template. -->\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"http://thedarkstarsoft.com/quint/product/outward-opening-wooden-stacking-sill-door/\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:locale\" content=\"en_US\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:type\" content=\"article\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:title\" content=\"Outward Opening Wooden Stacking Sill Door - User&#039;s blog\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:description\" content=\"Discover our standard outward opening, stacking wooden sill door, complete with a wooden frame. All our wooden doors come complete with hinges and locks. Rest assured that all our fittings meet the SKG quality standard and are constructed to be burglar resistant. Input your requirements and generate a custom quote today! For more information on [&hellip;]\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:url\" content=\"http://thedarkstarsoft.com/quint/product/outward-opening-wooden-stacking-sill-door/\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:site_name\" content=\"User&#039;s blog\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"article:modified_time\" content=\"2023-12-26T19:08:22+00:00\" class=\"yoast-seo-meta-tag\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" class=\"yoast-seo-meta-tag\" />\n<meta name=\"twitter:label1\" content=\"Est. reading time\" class=\"yoast-seo-meta-tag\" />\n\t<meta name=\"twitter:data1\" content=\"1 minute\" class=\"yoast-seo-meta-tag\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"http://thedarkstarsoft.com/quint/product/outward-opening-wooden-stacking-sill-door/\",\"url\":\"http://thedarkstarsoft.com/quint/product/outward-opening-wooden-stacking-sill-door/\",\"name\":\"Outward Opening Wooden Stacking Sill Door - User&#039;s blog\",\"isPartOf\":{\"@id\":\"http://18.156.79.18/#website\"},\"datePublished\":\"2023-12-26T19:08:21+00:00\",\"dateModified\":\"2023-12-26T19:08:22+00:00\",\"breadcrumb\":{\"@id\":\"http://thedarkstarsoft.com/quint/product/outward-opening-wooden-stacking-sill-door/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"http://thedarkstarsoft.com/quint/product/outward-opening-wooden-stacking-sill-door/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http://thedarkstarsoft.com/quint/product/outward-opening-wooden-stacking-sill-door/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http://18.156.79.18/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Shop\",\"item\":\"https://18.156.79.18/shop/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Outward Opening Wooden Stacking Sill Door\"}]},{\"@type\":\"WebSite\",\"@id\":\"http://18.156.79.18/#website\",\"url\":\"http://18.156.79.18/\",\"name\":\"User&#039;s blog\",\"description\":\"\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"http://18.156.79.18/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"en-US\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+        "yoast_head_json": {
+            "title": "Outward Opening Wooden Stacking Sill Door - User&#039;s blog",
+            "robots": {
+                "index": "index",
+                "follow": "follow",
+                "max-snippet": "max-snippet:-1",
+                "max-image-preview": "max-image-preview:large",
+                "max-video-preview": "max-video-preview:-1"
+            },
+            "canonical": "http://thedarkstarsoft.com/quint/product/outward-opening-wooden-stacking-sill-door/",
+            "og_locale": "en_US",
+            "og_type": "article",
+            "og_title": "Outward Opening Wooden Stacking Sill Door - User&#039;s blog",
+            "og_description": "Discover our standard outward opening, stacking wooden sill door, complete with a wooden frame. All our wooden doors come complete with hinges and locks. Rest assured that all our fittings meet the SKG quality standard and are constructed to be burglar resistant. Input your requirements and generate a custom quote today! For more information on [&hellip;]",
+            "og_url": "http://thedarkstarsoft.com/quint/product/outward-opening-wooden-stacking-sill-door/",
+            "og_site_name": "User&#039;s blog",
+            "article_modified_time": "2023-12-26T19:08:22+00:00",
+            "twitter_card": "summary_large_image",
+            "twitter_misc": {
+                "Est. reading time": "1 minute"
+            },
+            "schema": {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "WebPage",
+                        "@id": "http://thedarkstarsoft.com/quint/product/outward-opening-wooden-stacking-sill-door/",
+                        "url": "http://thedarkstarsoft.com/quint/product/outward-opening-wooden-stacking-sill-door/",
+                        "name": "Outward Opening Wooden Stacking Sill Door - User&#039;s blog",
+                        "isPartOf": {
+                            "@id": "http://18.156.79.18/#website"
+                        },
+                        "datePublished": "2023-12-26T19:08:21+00:00",
+                        "dateModified": "2023-12-26T19:08:22+00:00",
+                        "breadcrumb": {
+                            "@id": "http://thedarkstarsoft.com/quint/product/outward-opening-wooden-stacking-sill-door/#breadcrumb"
+                        },
+                        "inLanguage": "en-US",
+                        "potentialAction": [
+                            {
+                                "@type": "ReadAction",
+                                "target": [
+                                    "http://thedarkstarsoft.com/quint/product/outward-opening-wooden-stacking-sill-door/"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "BreadcrumbList",
+                        "@id": "http://thedarkstarsoft.com/quint/product/outward-opening-wooden-stacking-sill-door/#breadcrumb",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Home",
+                                "item": "http://18.156.79.18/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Shop",
+                                "item": "https://18.156.79.18/shop/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "Outward Opening Wooden Stacking Sill Door"
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "WebSite",
+                        "@id": "http://18.156.79.18/#website",
+                        "url": "http://18.156.79.18/",
+                        "name": "User&#039;s blog",
+                        "description": "",
+                        "potentialAction": [
+                            {
+                                "@type": "SearchAction",
+                                "target": {
+                                    "@type": "EntryPoint",
+                                    "urlTemplate": "http://18.156.79.18/?s={search_term_string}"
+                                },
+                                "query-input": "required name=search_term_string"
+                            }
+                        ],
+                        "inLanguage": "en-US"
+                    }
+                ]
+            }
+        },
+        "acf": {
+            "type_of_product": "Window",
+            "window_size": {
+                "frame_width_size__in_mm": {
+                    "minimumwidth": "",
+                    "maximum_width": ""
+                },
+                "frame_height_size_in_mm": {
+                    "min_height": "",
+                    "max_height": ""
+                }
+            },
+            "materials": {
+                "choose_material_type": "Wood"
+            },
+            "colors": [],
+            "profile": [],
+            "glazing": "No Glazing",
+            "ventilation_grid": "Yes"
+        },
+        "_links": {
+            "self": [
+                {
+                    "href": "https://18.156.79.18/wp-json/wc/v3/products/68"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://18.156.79.18/wp-json/wc/v3/products"
+                }
+            ]
+        }
+    },
+    {
+        "id": 67,
+        "name": "2-Box Pivot Window",
+        "slug": "2-box-pivot-window",
+        "permalink": "https://18.156.79.18/product/2-box-pivot-window/",
+        "date_created": "2023-12-26T19:08:07",
+        "date_created_gmt": "2023-12-26T19:08:07",
+        "date_modified": "2023-12-26T19:08:07",
+        "date_modified_gmt": "2023-12-26T19:08:07",
+        "type": "simple",
+        "status": "publish",
+        "featured": false,
+        "catalog_visibility": "visible",
+        "description": "<p class=\"p1\">Explore our wooden frame, consisting of two compartments. On the right is a suspended wooden pivot window. Whereas the left includes a fixed glass compartment. Despite the different uses, both windows are made with the same wood for a seamless look. All pivot windows open outwards and are perfect for upper floors. You can also explore our tilt-and-turn windows if you’re looking for an inward turning window.</p>\n<p class=\"p1\">Customize your profile</p>\n<p class=\"p1\">You can choose your own profile of the wooden frames. Browse our website to explore the possibilities, including pre-painted or top coated frames.</p>\n<p class=\"p1\">All our frames are made to measure. Simply include your dimensions and order the frame. Customize your fit and coating with some of our many choices. We include glass ratings from HR++ glass to triple glass. Regardless of your choice, all our frames are glazed from the inside, which leads to a more modern and sleek appearance all while being more effective in burglar resistance.</p>\n<p class=\"p1\">Explore our offerings to customize your own window set up today.</p>\n",
+        "short_description": "",
+        "sku": "",
+        "price": "",
+        "regular_price": "",
+        "sale_price": "",
+        "date_on_sale_from": null,
+        "date_on_sale_from_gmt": null,
+        "date_on_sale_to": null,
+        "date_on_sale_to_gmt": null,
+        "on_sale": false,
+        "purchasable": false,
+        "total_sales": 0,
+        "virtual": false,
+        "downloadable": false,
+        "downloads": [],
+        "download_limit": -1,
+        "download_expiry": -1,
+        "external_url": "",
+        "button_text": "",
+        "tax_status": "taxable",
+        "tax_class": "",
+        "manage_stock": false,
+        "stock_quantity": null,
+        "backorders": "no",
+        "backorders_allowed": false,
+        "backordered": false,
+        "low_stock_amount": null,
+        "sold_individually": false,
+        "weight": "",
+        "dimensions": {
+            "length": "",
+            "width": "",
+            "height": ""
+        },
+        "shipping_required": true,
+        "shipping_taxable": true,
+        "shipping_class": "",
+        "shipping_class_id": 0,
+        "reviews_allowed": true,
+        "average_rating": "0.00",
+        "rating_count": 0,
+        "upsell_ids": [],
+        "cross_sell_ids": [],
+        "parent_id": 0,
+        "purchase_note": "",
+        "categories": [
+            {
+                "id": 19,
+                "name": "Windows",
+                "slug": "windows"
+            },
+            {
+                "id": 18,
+                "name": "Wood",
+                "slug": "wood"
+            }
+        ],
+        "tags": [],
+        "images": [],
+        "attributes": [],
+        "default_attributes": [],
+        "variations": [],
+        "grouped_products": [],
+        "menu_order": 0,
+        "price_html": "",
+        "related_ids": [
+            56,
+            68,
+            60,
+            58,
+            55
+        ],
+        "meta_data": [
+            {
+                "id": 469,
+                "key": "type_of_product",
+                "value": "Window"
+            },
+            {
+                "id": 470,
+                "key": "_type_of_product",
+                "value": "field_658a9857e559c"
+            },
+            {
+                "id": 471,
+                "key": "window_size_frame_width_size__in_mm_minimumwidth",
+                "value": ""
+            },
+            {
+                "id": 472,
+                "key": "_window_size_frame_width_size__in_mm_minimumwidth",
+                "value": "field_658afe9659902"
+            },
+            {
+                "id": 473,
+                "key": "window_size_frame_width_size__in_mm_maximum_width",
+                "value": ""
+            },
+            {
+                "id": 474,
+                "key": "_window_size_frame_width_size__in_mm_maximum_width",
+                "value": "field_658afe9d59903"
+            },
+            {
+                "id": 475,
+                "key": "window_size_frame_width_size__in_mm",
+                "value": ""
+            },
+            {
+                "id": 476,
+                "key": "_window_size_frame_width_size__in_mm",
+                "value": "field_658afe8259901"
+            },
+            {
+                "id": 477,
+                "key": "window_size_frame_height_size_in_mm_min_height",
+                "value": ""
+            },
+            {
+                "id": 478,
+                "key": "_window_size_frame_height_size_in_mm_min_height",
+                "value": "field_658afec659906"
+            },
+            {
+                "id": 479,
+                "key": "window_size_frame_height_size_in_mm_max_height",
+                "value": ""
+            },
+            {
+                "id": 480,
+                "key": "_window_size_frame_height_size_in_mm_max_height",
+                "value": "field_658afed259907"
+            },
+            {
+                "id": 481,
+                "key": "window_size_frame_height_size_in_mm",
+                "value": ""
+            },
+            {
+                "id": 482,
+                "key": "_window_size_frame_height_size_in_mm",
+                "value": "field_658afec059905"
+            },
+            {
+                "id": 483,
+                "key": "window_size",
+                "value": ""
+            },
+            {
+                "id": 484,
+                "key": "_window_size",
+                "value": "field_658a964f6323b"
+            },
+            {
+                "id": 485,
+                "key": "materials_choose_material_type",
+                "value": "Wood"
+            },
+            {
+                "id": 486,
+                "key": "_materials_choose_material_type",
+                "value": "field_658a96ed8bd33"
+            },
+            {
+                "id": 487,
+                "key": "materials",
+                "value": ""
+            },
+            {
+                "id": 488,
+                "key": "_materials",
+                "value": "field_658a96df8bd32"
+            },
+            {
+                "id": 489,
+                "key": "colors",
+                "value": ""
+            },
+            {
+                "id": 490,
+                "key": "_colors",
+                "value": "field_658a981ba4822"
+            },
+            {
+                "id": 491,
+                "key": "profile",
+                "value": ""
+            },
+            {
+                "id": 492,
+                "key": "_profile",
+                "value": "field_658a9752b3d5f"
+            },
+            {
+                "id": 493,
+                "key": "glazing",
+                "value": "No Glazing"
+            },
+            {
+                "id": 494,
+                "key": "_glazing",
+                "value": "field_658a98de7f924"
+            },
+            {
+                "id": 495,
+                "key": "ventilation_grid",
+                "value": "Yes"
+            },
+            {
+                "id": 496,
+                "key": "_ventilation_grid",
+                "value": "field_658a990748927"
+            },
+            {
+                "id": 497,
+                "key": "_yoast_wpseo_primary_product_cat",
+                "value": "18"
+            },
+            {
+                "id": 498,
+                "key": "_yoast_wpseo_content_score",
+                "value": "90"
+            },
+            {
+                "id": 499,
+                "key": "_yoast_wpseo_estimated-reading-time-minutes",
+                "value": "1"
+            },
+            {
+                "id": 500,
+                "key": "_yoast_wpseo_wordproof_timestamp",
+                "value": ""
+            }
+        ],
+        "stock_status": "instock",
+        "has_options": false,
+        "post_password": "",
+        "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v21.7 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>2-Box Pivot Window - User&#039;s blog</title>\n<!-- Admin only notice: this page does not show a meta description because it does not have one, either write it for this page specifically or go into the [Yoast SEO - Settings] menu and set up a template. -->\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"http://thedarkstarsoft.com/quint/product/2-box-pivot-window/\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:locale\" content=\"en_US\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:type\" content=\"article\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:title\" content=\"2-Box Pivot Window - User&#039;s blog\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:description\" content=\"Explore our wooden frame, consisting of two compartments. On the right is a suspended wooden pivot window. Whereas the left includes a fixed glass compartment. Despite the different uses, both windows are made with the same wood for a seamless look. All pivot windows open outwards and are perfect for upper floors. You can also [&hellip;]\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:url\" content=\"http://thedarkstarsoft.com/quint/product/2-box-pivot-window/\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:site_name\" content=\"User&#039;s blog\" class=\"yoast-seo-meta-tag\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" class=\"yoast-seo-meta-tag\" />\n<meta name=\"twitter:label1\" content=\"Est. reading time\" class=\"yoast-seo-meta-tag\" />\n\t<meta name=\"twitter:data1\" content=\"1 minute\" class=\"yoast-seo-meta-tag\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"http://thedarkstarsoft.com/quint/product/2-box-pivot-window/\",\"url\":\"http://thedarkstarsoft.com/quint/product/2-box-pivot-window/\",\"name\":\"2-Box Pivot Window - User&#039;s blog\",\"isPartOf\":{\"@id\":\"http://18.156.79.18/#website\"},\"datePublished\":\"2023-12-26T19:08:07+00:00\",\"dateModified\":\"2023-12-26T19:08:07+00:00\",\"breadcrumb\":{\"@id\":\"http://thedarkstarsoft.com/quint/product/2-box-pivot-window/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"http://thedarkstarsoft.com/quint/product/2-box-pivot-window/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http://thedarkstarsoft.com/quint/product/2-box-pivot-window/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http://18.156.79.18/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Shop\",\"item\":\"https://18.156.79.18/shop/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"2-Box Pivot Window\"}]},{\"@type\":\"WebSite\",\"@id\":\"http://18.156.79.18/#website\",\"url\":\"http://18.156.79.18/\",\"name\":\"User&#039;s blog\",\"description\":\"\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"http://18.156.79.18/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"en-US\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+        "yoast_head_json": {
+            "title": "2-Box Pivot Window - User&#039;s blog",
+            "robots": {
+                "index": "index",
+                "follow": "follow",
+                "max-snippet": "max-snippet:-1",
+                "max-image-preview": "max-image-preview:large",
+                "max-video-preview": "max-video-preview:-1"
+            },
+            "canonical": "http://thedarkstarsoft.com/quint/product/2-box-pivot-window/",
+            "og_locale": "en_US",
+            "og_type": "article",
+            "og_title": "2-Box Pivot Window - User&#039;s blog",
+            "og_description": "Explore our wooden frame, consisting of two compartments. On the right is a suspended wooden pivot window. Whereas the left includes a fixed glass compartment. Despite the different uses, both windows are made with the same wood for a seamless look. All pivot windows open outwards and are perfect for upper floors. You can also [&hellip;]",
+            "og_url": "http://thedarkstarsoft.com/quint/product/2-box-pivot-window/",
+            "og_site_name": "User&#039;s blog",
+            "twitter_card": "summary_large_image",
+            "twitter_misc": {
+                "Est. reading time": "1 minute"
+            },
+            "schema": {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "WebPage",
+                        "@id": "http://thedarkstarsoft.com/quint/product/2-box-pivot-window/",
+                        "url": "http://thedarkstarsoft.com/quint/product/2-box-pivot-window/",
+                        "name": "2-Box Pivot Window - User&#039;s blog",
+                        "isPartOf": {
+                            "@id": "http://18.156.79.18/#website"
+                        },
+                        "datePublished": "2023-12-26T19:08:07+00:00",
+                        "dateModified": "2023-12-26T19:08:07+00:00",
+                        "breadcrumb": {
+                            "@id": "http://thedarkstarsoft.com/quint/product/2-box-pivot-window/#breadcrumb"
+                        },
+                        "inLanguage": "en-US",
+                        "potentialAction": [
+                            {
+                                "@type": "ReadAction",
+                                "target": [
+                                    "http://thedarkstarsoft.com/quint/product/2-box-pivot-window/"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "BreadcrumbList",
+                        "@id": "http://thedarkstarsoft.com/quint/product/2-box-pivot-window/#breadcrumb",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Home",
+                                "item": "http://18.156.79.18/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Shop",
+                                "item": "https://18.156.79.18/shop/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "2-Box Pivot Window"
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "WebSite",
+                        "@id": "http://18.156.79.18/#website",
+                        "url": "http://18.156.79.18/",
+                        "name": "User&#039;s blog",
+                        "description": "",
+                        "potentialAction": [
+                            {
+                                "@type": "SearchAction",
+                                "target": {
+                                    "@type": "EntryPoint",
+                                    "urlTemplate": "http://18.156.79.18/?s={search_term_string}"
+                                },
+                                "query-input": "required name=search_term_string"
+                            }
+                        ],
+                        "inLanguage": "en-US"
+                    }
+                ]
+            }
+        },
+        "acf": {
+            "type_of_product": "Window",
+            "window_size": {
+                "frame_width_size__in_mm": {
+                    "minimumwidth": "",
+                    "maximum_width": ""
+                },
+                "frame_height_size_in_mm": {
+                    "min_height": "",
+                    "max_height": ""
+                }
+            },
+            "materials": {
+                "choose_material_type": "Wood"
+            },
+            "colors": [],
+            "profile": [],
+            "glazing": "No Glazing",
+            "ventilation_grid": "Yes"
+        },
+        "_links": {
+            "self": [
+                {
+                    "href": "https://18.156.79.18/wp-json/wc/v3/products/67"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://18.156.79.18/wp-json/wc/v3/products"
+                }
+            ]
+        }
+    },
+    {
+        "id": 66,
+        "name": "1-Box Pivot Window",
+        "slug": "1-box-pivot-window",
+        "permalink": "https://18.156.79.18/product/1-box-pivot-window/",
+        "date_created": "2023-12-26T19:07:50",
+        "date_created_gmt": "2023-12-26T19:07:50",
+        "date_modified": "2023-12-26T19:07:50",
+        "date_modified_gmt": "2023-12-26T19:07:50",
+        "type": "simple",
+        "status": "publish",
+        "featured": false,
+        "catalog_visibility": "visible",
+        "description": "<p class=\"p1\">Explore the 1-box pivot window, which includes one compartment complete with a suspended, mounted wooden pivot window. Our pivot windows always open outwards, which makes it perfect for use on upper floors.</p>\n<p class=\"p1\">Customize your profile</p>\n<p class=\"p1\">You can choose your own profile of the wooden frames. Browse our website to explore the possibilities, including pre-painted or top coated frames.</p>\n<p class=\"p1\">All our frames are made to measure. Simply include your dimensions and order the frame. Customize your fit and coating with some of our many choices. We include glass ratings from HR++ glass to triple glass. Regardless of your choice, all our frames are glazed from the inside, which leads to a more modern and sleek appearance all while being more effective in burglar resistance.</p>\n<p class=\"p1\">Explore our offerings to customize your own window set up today.</p>\n",
+        "short_description": "",
+        "sku": "",
+        "price": "",
+        "regular_price": "",
+        "sale_price": "",
+        "date_on_sale_from": null,
+        "date_on_sale_from_gmt": null,
+        "date_on_sale_to": null,
+        "date_on_sale_to_gmt": null,
+        "on_sale": false,
+        "purchasable": false,
+        "total_sales": 0,
+        "virtual": false,
+        "downloadable": false,
+        "downloads": [],
+        "download_limit": -1,
+        "download_expiry": -1,
+        "external_url": "",
+        "button_text": "",
+        "tax_status": "taxable",
+        "tax_class": "",
+        "manage_stock": false,
+        "stock_quantity": null,
+        "backorders": "no",
+        "backorders_allowed": false,
+        "backordered": false,
+        "low_stock_amount": null,
+        "sold_individually": false,
+        "weight": "",
+        "dimensions": {
+            "length": "",
+            "width": "",
+            "height": ""
+        },
+        "shipping_required": true,
+        "shipping_taxable": true,
+        "shipping_class": "",
+        "shipping_class_id": 0,
+        "reviews_allowed": true,
+        "average_rating": "0.00",
+        "rating_count": 0,
+        "upsell_ids": [],
+        "cross_sell_ids": [],
+        "parent_id": 0,
+        "purchase_note": "",
+        "categories": [
+            {
+                "id": 19,
+                "name": "Windows",
+                "slug": "windows"
+            },
+            {
+                "id": 18,
+                "name": "Wood",
+                "slug": "wood"
+            }
+        ],
+        "tags": [],
+        "images": [],
+        "attributes": [],
+        "default_attributes": [],
+        "variations": [],
+        "grouped_products": [],
+        "menu_order": 0,
+        "price_html": "",
+        "related_ids": [
+            68,
+            55,
+            57,
+            62,
+            64
+        ],
+        "meta_data": [
+            {
+                "id": 419,
+                "key": "type_of_product",
+                "value": "Window"
+            },
+            {
+                "id": 420,
+                "key": "_type_of_product",
+                "value": "field_658a9857e559c"
+            },
+            {
+                "id": 421,
+                "key": "window_size_frame_width_size__in_mm_minimumwidth",
+                "value": ""
+            },
+            {
+                "id": 422,
+                "key": "_window_size_frame_width_size__in_mm_minimumwidth",
+                "value": "field_658afe9659902"
+            },
+            {
+                "id": 423,
+                "key": "window_size_frame_width_size__in_mm_maximum_width",
+                "value": ""
+            },
+            {
+                "id": 424,
+                "key": "_window_size_frame_width_size__in_mm_maximum_width",
+                "value": "field_658afe9d59903"
+            },
+            {
+                "id": 425,
+                "key": "window_size_frame_width_size__in_mm",
+                "value": ""
+            },
+            {
+                "id": 426,
+                "key": "_window_size_frame_width_size__in_mm",
+                "value": "field_658afe8259901"
+            },
+            {
+                "id": 427,
+                "key": "window_size_frame_height_size_in_mm_min_height",
+                "value": ""
+            },
+            {
+                "id": 428,
+                "key": "_window_size_frame_height_size_in_mm_min_height",
+                "value": "field_658afec659906"
+            },
+            {
+                "id": 429,
+                "key": "window_size_frame_height_size_in_mm_max_height",
+                "value": ""
+            },
+            {
+                "id": 430,
+                "key": "_window_size_frame_height_size_in_mm_max_height",
+                "value": "field_658afed259907"
+            },
+            {
+                "id": 431,
+                "key": "window_size_frame_height_size_in_mm",
+                "value": ""
+            },
+            {
+                "id": 432,
+                "key": "_window_size_frame_height_size_in_mm",
+                "value": "field_658afec059905"
+            },
+            {
+                "id": 433,
+                "key": "window_size",
+                "value": ""
+            },
+            {
+                "id": 434,
+                "key": "_window_size",
+                "value": "field_658a964f6323b"
+            },
+            {
+                "id": 435,
+                "key": "materials_choose_material_type",
+                "value": "Wood"
+            },
+            {
+                "id": 436,
+                "key": "_materials_choose_material_type",
+                "value": "field_658a96ed8bd33"
+            },
+            {
+                "id": 437,
+                "key": "materials",
+                "value": ""
+            },
+            {
+                "id": 438,
+                "key": "_materials",
+                "value": "field_658a96df8bd32"
+            },
+            {
+                "id": 439,
+                "key": "colors",
+                "value": ""
+            },
+            {
+                "id": 440,
+                "key": "_colors",
+                "value": "field_658a981ba4822"
+            },
+            {
+                "id": 441,
+                "key": "profile",
+                "value": ""
+            },
+            {
+                "id": 442,
+                "key": "_profile",
+                "value": "field_658a9752b3d5f"
+            },
+            {
+                "id": 443,
+                "key": "glazing",
+                "value": "No Glazing"
+            },
+            {
+                "id": 444,
+                "key": "_glazing",
+                "value": "field_658a98de7f924"
+            },
+            {
+                "id": 445,
+                "key": "ventilation_grid",
+                "value": "Yes"
+            },
+            {
+                "id": 446,
+                "key": "_ventilation_grid",
+                "value": "field_658a990748927"
+            },
+            {
+                "id": 447,
+                "key": "_yoast_wpseo_primary_product_cat",
+                "value": "19"
+            },
+            {
+                "id": 448,
+                "key": "_yoast_wpseo_content_score",
+                "value": "90"
+            },
+            {
+                "id": 449,
+                "key": "_yoast_wpseo_estimated-reading-time-minutes",
+                "value": "1"
+            },
+            {
+                "id": 450,
+                "key": "_yoast_wpseo_wordproof_timestamp",
+                "value": ""
+            }
+        ],
+        "stock_status": "instock",
+        "has_options": false,
+        "post_password": "",
+        "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v21.7 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>1-Box Pivot Window - User&#039;s blog</title>\n<!-- Admin only notice: this page does not show a meta description because it does not have one, either write it for this page specifically or go into the [Yoast SEO - Settings] menu and set up a template. -->\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"http://thedarkstarsoft.com/quint/product/1-box-pivot-window/\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:locale\" content=\"en_US\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:type\" content=\"article\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:title\" content=\"1-Box Pivot Window - User&#039;s blog\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:description\" content=\"Explore the 1-box pivot window, which includes one compartment complete with a suspended, mounted wooden pivot window. Our pivot windows always open outwards, which makes it perfect for use on upper floors. Customize your profile You can choose your own profile of the wooden frames. Browse our website to explore the possibilities, including pre-painted or [&hellip;]\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:url\" content=\"http://thedarkstarsoft.com/quint/product/1-box-pivot-window/\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:site_name\" content=\"User&#039;s blog\" class=\"yoast-seo-meta-tag\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" class=\"yoast-seo-meta-tag\" />\n<meta name=\"twitter:label1\" content=\"Est. reading time\" class=\"yoast-seo-meta-tag\" />\n\t<meta name=\"twitter:data1\" content=\"1 minute\" class=\"yoast-seo-meta-tag\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"http://thedarkstarsoft.com/quint/product/1-box-pivot-window/\",\"url\":\"http://thedarkstarsoft.com/quint/product/1-box-pivot-window/\",\"name\":\"1-Box Pivot Window - User&#039;s blog\",\"isPartOf\":{\"@id\":\"http://18.156.79.18/#website\"},\"datePublished\":\"2023-12-26T19:07:50+00:00\",\"dateModified\":\"2023-12-26T19:07:50+00:00\",\"breadcrumb\":{\"@id\":\"http://thedarkstarsoft.com/quint/product/1-box-pivot-window/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"http://thedarkstarsoft.com/quint/product/1-box-pivot-window/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http://thedarkstarsoft.com/quint/product/1-box-pivot-window/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http://18.156.79.18/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Shop\",\"item\":\"https://18.156.79.18/shop/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"1-Box Pivot Window\"}]},{\"@type\":\"WebSite\",\"@id\":\"http://18.156.79.18/#website\",\"url\":\"http://18.156.79.18/\",\"name\":\"User&#039;s blog\",\"description\":\"\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"http://18.156.79.18/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"en-US\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+        "yoast_head_json": {
+            "title": "1-Box Pivot Window - User&#039;s blog",
+            "robots": {
+                "index": "index",
+                "follow": "follow",
+                "max-snippet": "max-snippet:-1",
+                "max-image-preview": "max-image-preview:large",
+                "max-video-preview": "max-video-preview:-1"
+            },
+            "canonical": "http://thedarkstarsoft.com/quint/product/1-box-pivot-window/",
+            "og_locale": "en_US",
+            "og_type": "article",
+            "og_title": "1-Box Pivot Window - User&#039;s blog",
+            "og_description": "Explore the 1-box pivot window, which includes one compartment complete with a suspended, mounted wooden pivot window. Our pivot windows always open outwards, which makes it perfect for use on upper floors. Customize your profile You can choose your own profile of the wooden frames. Browse our website to explore the possibilities, including pre-painted or [&hellip;]",
+            "og_url": "http://thedarkstarsoft.com/quint/product/1-box-pivot-window/",
+            "og_site_name": "User&#039;s blog",
+            "twitter_card": "summary_large_image",
+            "twitter_misc": {
+                "Est. reading time": "1 minute"
+            },
+            "schema": {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "WebPage",
+                        "@id": "http://thedarkstarsoft.com/quint/product/1-box-pivot-window/",
+                        "url": "http://thedarkstarsoft.com/quint/product/1-box-pivot-window/",
+                        "name": "1-Box Pivot Window - User&#039;s blog",
+                        "isPartOf": {
+                            "@id": "http://18.156.79.18/#website"
+                        },
+                        "datePublished": "2023-12-26T19:07:50+00:00",
+                        "dateModified": "2023-12-26T19:07:50+00:00",
+                        "breadcrumb": {
+                            "@id": "http://thedarkstarsoft.com/quint/product/1-box-pivot-window/#breadcrumb"
+                        },
+                        "inLanguage": "en-US",
+                        "potentialAction": [
+                            {
+                                "@type": "ReadAction",
+                                "target": [
+                                    "http://thedarkstarsoft.com/quint/product/1-box-pivot-window/"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "BreadcrumbList",
+                        "@id": "http://thedarkstarsoft.com/quint/product/1-box-pivot-window/#breadcrumb",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Home",
+                                "item": "http://18.156.79.18/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Shop",
+                                "item": "https://18.156.79.18/shop/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "1-Box Pivot Window"
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "WebSite",
+                        "@id": "http://18.156.79.18/#website",
+                        "url": "http://18.156.79.18/",
+                        "name": "User&#039;s blog",
+                        "description": "",
+                        "potentialAction": [
+                            {
+                                "@type": "SearchAction",
+                                "target": {
+                                    "@type": "EntryPoint",
+                                    "urlTemplate": "http://18.156.79.18/?s={search_term_string}"
+                                },
+                                "query-input": "required name=search_term_string"
+                            }
+                        ],
+                        "inLanguage": "en-US"
+                    }
+                ]
+            }
+        },
+        "acf": {
+            "type_of_product": "Window",
+            "window_size": {
+                "frame_width_size__in_mm": {
+                    "minimumwidth": "",
+                    "maximum_width": ""
+                },
+                "frame_height_size_in_mm": {
+                    "min_height": "",
+                    "max_height": ""
+                }
+            },
+            "materials": {
+                "choose_material_type": "Wood"
+            },
+            "colors": [],
+            "profile": [],
+            "glazing": "No Glazing",
+            "ventilation_grid": "Yes"
+        },
+        "_links": {
+            "self": [
+                {
+                    "href": "https://18.156.79.18/wp-json/wc/v3/products/66"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://18.156.79.18/wp-json/wc/v3/products"
+                }
+            ]
+        }
+    },
+    {
+        "id": 64,
+        "name": "Outward Open Turning Wood Window",
+        "slug": "outward-open-turning-wood-window",
+        "permalink": "https://18.156.79.18/product/outward-open-turning-wood-window/",
+        "date_created": "2023-12-26T19:07:34",
+        "date_created_gmt": "2023-12-26T19:07:34",
+        "date_modified": "2023-12-26T19:07:35",
+        "date_modified_gmt": "2023-12-26T19:07:35",
+        "type": "simple",
+        "status": "publish",
+        "featured": false,
+        "catalog_visibility": "visible",
+        "description": "<p class=\"p1\">This dynamic wooden frame includes one compartment complete with two pivot windows that are suspended and mounted. These pivot windows always open outwards, often used for upper floors.</p>\n<p class=\"p1\">Customize your profile</p>\n<p class=\"p1\">You can choose your own profile of the wooden frames. Browse our website to explore the possibilities, including pre-painted or top coated frames.</p>\n<p class=\"p1\">All our frames are made to measure. Simply include your dimensions and order the frame. Customize your fit and coating with some of our many choices. We include glass ratings from HR++ glass to triple glass. Regardless of your choice, all our frames are glazed from the inside, which leads to a more modern and sleek appearance all while being more effective in burglar resistance.</p>\n<p class=\"p1\">Explore our offerings to customize your own window set up today.</p>\n",
+        "short_description": "",
+        "sku": "",
+        "price": "",
+        "regular_price": "",
+        "sale_price": "",
+        "date_on_sale_from": null,
+        "date_on_sale_from_gmt": null,
+        "date_on_sale_to": null,
+        "date_on_sale_to_gmt": null,
+        "on_sale": false,
+        "purchasable": false,
+        "total_sales": 0,
+        "virtual": false,
+        "downloadable": false,
+        "downloads": [],
+        "download_limit": -1,
+        "download_expiry": -1,
+        "external_url": "",
+        "button_text": "",
+        "tax_status": "taxable",
+        "tax_class": "",
+        "manage_stock": false,
+        "stock_quantity": null,
+        "backorders": "no",
+        "backorders_allowed": false,
+        "backordered": false,
+        "low_stock_amount": null,
+        "sold_individually": false,
+        "weight": "",
+        "dimensions": {
+            "length": "",
+            "width": "",
+            "height": ""
+        },
+        "shipping_required": true,
+        "shipping_taxable": true,
+        "shipping_class": "",
+        "shipping_class_id": 0,
+        "reviews_allowed": true,
+        "average_rating": "0.00",
+        "rating_count": 0,
+        "upsell_ids": [],
+        "cross_sell_ids": [],
+        "parent_id": 0,
+        "purchase_note": "",
+        "categories": [
+            {
+                "id": 21,
+                "name": "Turning",
+                "slug": "turning"
+            },
+            {
+                "id": 19,
+                "name": "Windows",
+                "slug": "windows"
+            },
+            {
+                "id": 18,
+                "name": "Wood",
+                "slug": "wood"
+            }
+        ],
+        "tags": [],
+        "images": [],
+        "attributes": [],
+        "default_attributes": [],
+        "variations": [],
+        "grouped_products": [],
+        "menu_order": 0,
+        "price_html": "",
+        "related_ids": [
+            55,
+            56,
+            58,
+            67,
+            62
+        ],
+        "meta_data": [
+            {
+                "id": 370,
+                "key": "type_of_product",
+                "value": "Window"
+            },
+            {
+                "id": 371,
+                "key": "_type_of_product",
+                "value": "field_658a9857e559c"
+            },
+            {
+                "id": 372,
+                "key": "window_size_frame_width_size__in_mm_minimumwidth",
+                "value": ""
+            },
+            {
+                "id": 373,
+                "key": "_window_size_frame_width_size__in_mm_minimumwidth",
+                "value": "field_658afe9659902"
+            },
+            {
+                "id": 374,
+                "key": "window_size_frame_width_size__in_mm_maximum_width",
+                "value": ""
+            },
+            {
+                "id": 375,
+                "key": "_window_size_frame_width_size__in_mm_maximum_width",
+                "value": "field_658afe9d59903"
+            },
+            {
+                "id": 376,
+                "key": "window_size_frame_width_size__in_mm",
+                "value": ""
+            },
+            {
+                "id": 377,
+                "key": "_window_size_frame_width_size__in_mm",
+                "value": "field_658afe8259901"
+            },
+            {
+                "id": 378,
+                "key": "window_size_frame_height_size_in_mm_min_height",
+                "value": ""
+            },
+            {
+                "id": 379,
+                "key": "_window_size_frame_height_size_in_mm_min_height",
+                "value": "field_658afec659906"
+            },
+            {
+                "id": 380,
+                "key": "window_size_frame_height_size_in_mm_max_height",
+                "value": ""
+            },
+            {
+                "id": 381,
+                "key": "_window_size_frame_height_size_in_mm_max_height",
+                "value": "field_658afed259907"
+            },
+            {
+                "id": 382,
+                "key": "window_size_frame_height_size_in_mm",
+                "value": ""
+            },
+            {
+                "id": 383,
+                "key": "_window_size_frame_height_size_in_mm",
+                "value": "field_658afec059905"
+            },
+            {
+                "id": 384,
+                "key": "window_size",
+                "value": ""
+            },
+            {
+                "id": 385,
+                "key": "_window_size",
+                "value": "field_658a964f6323b"
+            },
+            {
+                "id": 386,
+                "key": "materials_choose_material_type",
+                "value": "Wood"
+            },
+            {
+                "id": 387,
+                "key": "_materials_choose_material_type",
+                "value": "field_658a96ed8bd33"
+            },
+            {
+                "id": 388,
+                "key": "materials",
+                "value": ""
+            },
+            {
+                "id": 389,
+                "key": "_materials",
+                "value": "field_658a96df8bd32"
+            },
+            {
+                "id": 390,
+                "key": "colors",
+                "value": ""
+            },
+            {
+                "id": 391,
+                "key": "_colors",
+                "value": "field_658a981ba4822"
+            },
+            {
+                "id": 392,
+                "key": "profile",
+                "value": ""
+            },
+            {
+                "id": 393,
+                "key": "_profile",
+                "value": "field_658a9752b3d5f"
+            },
+            {
+                "id": 394,
+                "key": "glazing",
+                "value": "No Glazing"
+            },
+            {
+                "id": 395,
+                "key": "_glazing",
+                "value": "field_658a98de7f924"
+            },
+            {
+                "id": 396,
+                "key": "ventilation_grid",
+                "value": "Yes"
+            },
+            {
+                "id": 397,
+                "key": "_ventilation_grid",
+                "value": "field_658a990748927"
+            },
+            {
+                "id": 398,
+                "key": "_yoast_wpseo_primary_product_cat",
+                "value": "19"
+            },
+            {
+                "id": 399,
+                "key": "_yoast_wpseo_content_score",
+                "value": "90"
+            },
+            {
+                "id": 400,
+                "key": "_yoast_wpseo_estimated-reading-time-minutes",
+                "value": "1"
+            },
+            {
+                "id": 401,
+                "key": "_yoast_wpseo_wordproof_timestamp",
+                "value": ""
+            }
+        ],
+        "stock_status": "instock",
+        "has_options": false,
+        "post_password": "",
+        "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v21.7 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>Outward Open Turning Wood Window - User&#039;s blog</title>\n<!-- Admin only notice: this page does not show a meta description because it does not have one, either write it for this page specifically or go into the [Yoast SEO - Settings] menu and set up a template. -->\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"http://thedarkstarsoft.com/quint/product/outward-open-turning-wood-window/\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:locale\" content=\"en_US\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:type\" content=\"article\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:title\" content=\"Outward Open Turning Wood Window - User&#039;s blog\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:description\" content=\"This dynamic wooden frame includes one compartment complete with two pivot windows that are suspended and mounted. These pivot windows always open outwards, often used for upper floors. Customize your profile You can choose your own profile of the wooden frames. Browse our website to explore the possibilities, including pre-painted or top coated frames. All [&hellip;]\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:url\" content=\"http://thedarkstarsoft.com/quint/product/outward-open-turning-wood-window/\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:site_name\" content=\"User&#039;s blog\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"article:modified_time\" content=\"2023-12-26T19:07:35+00:00\" class=\"yoast-seo-meta-tag\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" class=\"yoast-seo-meta-tag\" />\n<meta name=\"twitter:label1\" content=\"Est. reading time\" class=\"yoast-seo-meta-tag\" />\n\t<meta name=\"twitter:data1\" content=\"1 minute\" class=\"yoast-seo-meta-tag\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"http://thedarkstarsoft.com/quint/product/outward-open-turning-wood-window/\",\"url\":\"http://thedarkstarsoft.com/quint/product/outward-open-turning-wood-window/\",\"name\":\"Outward Open Turning Wood Window - User&#039;s blog\",\"isPartOf\":{\"@id\":\"http://18.156.79.18/#website\"},\"datePublished\":\"2023-12-26T19:07:34+00:00\",\"dateModified\":\"2023-12-26T19:07:35+00:00\",\"breadcrumb\":{\"@id\":\"http://thedarkstarsoft.com/quint/product/outward-open-turning-wood-window/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"http://thedarkstarsoft.com/quint/product/outward-open-turning-wood-window/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http://thedarkstarsoft.com/quint/product/outward-open-turning-wood-window/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http://18.156.79.18/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Shop\",\"item\":\"https://18.156.79.18/shop/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Outward Open Turning Wood Window\"}]},{\"@type\":\"WebSite\",\"@id\":\"http://18.156.79.18/#website\",\"url\":\"http://18.156.79.18/\",\"name\":\"User&#039;s blog\",\"description\":\"\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"http://18.156.79.18/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"en-US\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+        "yoast_head_json": {
+            "title": "Outward Open Turning Wood Window - User&#039;s blog",
+            "robots": {
+                "index": "index",
+                "follow": "follow",
+                "max-snippet": "max-snippet:-1",
+                "max-image-preview": "max-image-preview:large",
+                "max-video-preview": "max-video-preview:-1"
+            },
+            "canonical": "http://thedarkstarsoft.com/quint/product/outward-open-turning-wood-window/",
+            "og_locale": "en_US",
+            "og_type": "article",
+            "og_title": "Outward Open Turning Wood Window - User&#039;s blog",
+            "og_description": "This dynamic wooden frame includes one compartment complete with two pivot windows that are suspended and mounted. These pivot windows always open outwards, often used for upper floors. Customize your profile You can choose your own profile of the wooden frames. Browse our website to explore the possibilities, including pre-painted or top coated frames. All [&hellip;]",
+            "og_url": "http://thedarkstarsoft.com/quint/product/outward-open-turning-wood-window/",
+            "og_site_name": "User&#039;s blog",
+            "article_modified_time": "2023-12-26T19:07:35+00:00",
+            "twitter_card": "summary_large_image",
+            "twitter_misc": {
+                "Est. reading time": "1 minute"
+            },
+            "schema": {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "WebPage",
+                        "@id": "http://thedarkstarsoft.com/quint/product/outward-open-turning-wood-window/",
+                        "url": "http://thedarkstarsoft.com/quint/product/outward-open-turning-wood-window/",
+                        "name": "Outward Open Turning Wood Window - User&#039;s blog",
+                        "isPartOf": {
+                            "@id": "http://18.156.79.18/#website"
+                        },
+                        "datePublished": "2023-12-26T19:07:34+00:00",
+                        "dateModified": "2023-12-26T19:07:35+00:00",
+                        "breadcrumb": {
+                            "@id": "http://thedarkstarsoft.com/quint/product/outward-open-turning-wood-window/#breadcrumb"
+                        },
+                        "inLanguage": "en-US",
+                        "potentialAction": [
+                            {
+                                "@type": "ReadAction",
+                                "target": [
+                                    "http://thedarkstarsoft.com/quint/product/outward-open-turning-wood-window/"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "BreadcrumbList",
+                        "@id": "http://thedarkstarsoft.com/quint/product/outward-open-turning-wood-window/#breadcrumb",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Home",
+                                "item": "http://18.156.79.18/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Shop",
+                                "item": "https://18.156.79.18/shop/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "Outward Open Turning Wood Window"
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "WebSite",
+                        "@id": "http://18.156.79.18/#website",
+                        "url": "http://18.156.79.18/",
+                        "name": "User&#039;s blog",
+                        "description": "",
+                        "potentialAction": [
+                            {
+                                "@type": "SearchAction",
+                                "target": {
+                                    "@type": "EntryPoint",
+                                    "urlTemplate": "http://18.156.79.18/?s={search_term_string}"
+                                },
+                                "query-input": "required name=search_term_string"
+                            }
+                        ],
+                        "inLanguage": "en-US"
+                    }
+                ]
+            }
+        },
+        "acf": {
+            "type_of_product": "Window",
+            "window_size": {
+                "frame_width_size__in_mm": {
+                    "minimumwidth": "",
+                    "maximum_width": ""
+                },
+                "frame_height_size_in_mm": {
+                    "min_height": "",
+                    "max_height": ""
+                }
+            },
+            "materials": {
+                "choose_material_type": "Wood"
+            },
+            "colors": [],
+            "profile": [],
+            "glazing": "No Glazing",
+            "ventilation_grid": "Yes"
+        },
+        "_links": {
+            "self": [
+                {
+                    "href": "https://18.156.79.18/wp-json/wc/v3/products/64"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://18.156.79.18/wp-json/wc/v3/products"
+                }
+            ]
+        }
+    },
+    {
+        "id": 62,
+        "name": "2-Compartment TIlt and Turn Window (left) with Fixed Glass",
+        "slug": "2-compartment-tilt-and-turn-window-left-with-fixed-glass",
+        "permalink": "https://18.156.79.18/product/2-compartment-tilt-and-turn-window-left-with-fixed-glass/",
+        "date_created": "2023-12-26T19:07:08",
+        "date_created_gmt": "2023-12-26T19:07:08",
+        "date_modified": "2023-12-26T19:07:08",
+        "date_modified_gmt": "2023-12-26T19:07:08",
+        "type": "simple",
+        "status": "publish",
+        "featured": false,
+        "catalog_visibility": "visible",
+        "description": "<p class=\"p1\">Discover this sturdy and meticulously-crafted wooden frame, featuring two equal compartments. The left includes a tilt-and-turn window with a right compartment with fixed glass, which always opens inwards.</p>\n<p class=\"p1\">This high-quality wooden frame includes a completely assembled hung tilt-and-turn window, including fittings. All fitting complies with the SKG quality mark and the Policy Quality Mark for Safe Living.</p>\n<p class=\"p1\">Customize your setup! The wooden tilt-and-turn windows can be assembled in various arrangements.</p>\n<p class=\"p1\">Options for glazing</p>\n<p class=\"p1\">We offer several options for glazing to your preferences. Choose from standard HR++ glass, 2-sided laminated HR++ glass to triple glass. Explore our options and choose the glazing that suits your preferences. Feel peace of mind and safety with interior side glazing, enhancing burglary resistance and superior optical appearance for the frame.</p>\n",
+        "short_description": "",
+        "sku": "",
+        "price": "",
+        "regular_price": "",
+        "sale_price": "",
+        "date_on_sale_from": null,
+        "date_on_sale_from_gmt": null,
+        "date_on_sale_to": null,
+        "date_on_sale_to_gmt": null,
+        "on_sale": false,
+        "purchasable": false,
+        "total_sales": 0,
+        "virtual": false,
+        "downloadable": false,
+        "downloads": [],
+        "download_limit": -1,
+        "download_expiry": -1,
+        "external_url": "",
+        "button_text": "",
+        "tax_status": "taxable",
+        "tax_class": "",
+        "manage_stock": false,
+        "stock_quantity": null,
+        "backorders": "no",
+        "backorders_allowed": false,
+        "backordered": false,
+        "low_stock_amount": null,
+        "sold_individually": false,
+        "weight": "",
+        "dimensions": {
+            "length": "",
+            "width": "",
+            "height": ""
+        },
+        "shipping_required": true,
+        "shipping_taxable": true,
+        "shipping_class": "",
+        "shipping_class_id": 0,
+        "reviews_allowed": true,
+        "average_rating": "0.00",
+        "rating_count": 0,
+        "upsell_ids": [],
+        "cross_sell_ids": [],
+        "parent_id": 0,
+        "purchase_note": "",
+        "categories": [
+            {
+                "id": 20,
+                "name": "Tilt",
+                "slug": "tilt"
+            },
+            {
+                "id": 19,
+                "name": "Windows",
+                "slug": "windows"
+            },
+            {
+                "id": 18,
+                "name": "Wood",
+                "slug": "wood"
+            }
+        ],
+        "tags": [],
+        "images": [],
+        "attributes": [],
+        "default_attributes": [],
+        "variations": [],
+        "grouped_products": [],
+        "menu_order": 0,
+        "price_html": "",
+        "related_ids": [
+            67,
+            55,
+            57,
+            68,
+            58
+        ],
+        "meta_data": [
+            {
+                "id": 321,
+                "key": "type_of_product",
+                "value": "Window"
+            },
+            {
+                "id": 322,
+                "key": "_type_of_product",
+                "value": "field_658a9857e559c"
+            },
+            {
+                "id": 323,
+                "key": "window_size_frame_width_size__in_mm_minimumwidth",
+                "value": ""
+            },
+            {
+                "id": 324,
+                "key": "_window_size_frame_width_size__in_mm_minimumwidth",
+                "value": "field_658afe9659902"
+            },
+            {
+                "id": 325,
+                "key": "window_size_frame_width_size__in_mm_maximum_width",
+                "value": ""
+            },
+            {
+                "id": 326,
+                "key": "_window_size_frame_width_size__in_mm_maximum_width",
+                "value": "field_658afe9d59903"
+            },
+            {
+                "id": 327,
+                "key": "window_size_frame_width_size__in_mm",
+                "value": ""
+            },
+            {
+                "id": 328,
+                "key": "_window_size_frame_width_size__in_mm",
+                "value": "field_658afe8259901"
+            },
+            {
+                "id": 329,
+                "key": "window_size_frame_height_size_in_mm_min_height",
+                "value": ""
+            },
+            {
+                "id": 330,
+                "key": "_window_size_frame_height_size_in_mm_min_height",
+                "value": "field_658afec659906"
+            },
+            {
+                "id": 331,
+                "key": "window_size_frame_height_size_in_mm_max_height",
+                "value": ""
+            },
+            {
+                "id": 332,
+                "key": "_window_size_frame_height_size_in_mm_max_height",
+                "value": "field_658afed259907"
+            },
+            {
+                "id": 333,
+                "key": "window_size_frame_height_size_in_mm",
+                "value": ""
+            },
+            {
+                "id": 334,
+                "key": "_window_size_frame_height_size_in_mm",
+                "value": "field_658afec059905"
+            },
+            {
+                "id": 335,
+                "key": "window_size",
+                "value": ""
+            },
+            {
+                "id": 336,
+                "key": "_window_size",
+                "value": "field_658a964f6323b"
+            },
+            {
+                "id": 337,
+                "key": "materials_choose_material_type",
+                "value": "Wood"
+            },
+            {
+                "id": 338,
+                "key": "_materials_choose_material_type",
+                "value": "field_658a96ed8bd33"
+            },
+            {
+                "id": 339,
+                "key": "materials",
+                "value": ""
+            },
+            {
+                "id": 340,
+                "key": "_materials",
+                "value": "field_658a96df8bd32"
+            },
+            {
+                "id": 341,
+                "key": "colors",
+                "value": ""
+            },
+            {
+                "id": 342,
+                "key": "_colors",
+                "value": "field_658a981ba4822"
+            },
+            {
+                "id": 343,
+                "key": "profile",
+                "value": ""
+            },
+            {
+                "id": 344,
+                "key": "_profile",
+                "value": "field_658a9752b3d5f"
+            },
+            {
+                "id": 345,
+                "key": "glazing",
+                "value": "No Glazing"
+            },
+            {
+                "id": 346,
+                "key": "_glazing",
+                "value": "field_658a98de7f924"
+            },
+            {
+                "id": 347,
+                "key": "ventilation_grid",
+                "value": "Yes"
+            },
+            {
+                "id": 348,
+                "key": "_ventilation_grid",
+                "value": "field_658a990748927"
+            },
+            {
+                "id": 349,
+                "key": "_yoast_wpseo_primary_product_cat",
+                "value": "19"
+            },
+            {
+                "id": 350,
+                "key": "_yoast_wpseo_content_score",
+                "value": "90"
+            },
+            {
+                "id": 351,
+                "key": "_yoast_wpseo_estimated-reading-time-minutes",
+                "value": "1"
+            },
+            {
+                "id": 352,
+                "key": "_yoast_wpseo_wordproof_timestamp",
+                "value": ""
+            }
+        ],
+        "stock_status": "instock",
+        "has_options": false,
+        "post_password": "",
+        "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v21.7 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>2-Compartment TIlt and Turn Window (left) with Fixed Glass - User&#039;s blog</title>\n<!-- Admin only notice: this page does not show a meta description because it does not have one, either write it for this page specifically or go into the [Yoast SEO - Settings] menu and set up a template. -->\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"http://thedarkstarsoft.com/quint/product/2-compartment-tilt-and-turn-window-left-with-fixed-glass/\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:locale\" content=\"en_US\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:type\" content=\"article\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:title\" content=\"2-Compartment TIlt and Turn Window (left) with Fixed Glass - User&#039;s blog\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:description\" content=\"Discover this sturdy and meticulously-crafted wooden frame, featuring two equal compartments. The left includes a tilt-and-turn window with a right compartment with fixed glass, which always opens inwards. This high-quality wooden frame includes a completely assembled hung tilt-and-turn window, including fittings. All fitting complies with the SKG quality mark and the Policy Quality Mark for [&hellip;]\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:url\" content=\"http://thedarkstarsoft.com/quint/product/2-compartment-tilt-and-turn-window-left-with-fixed-glass/\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:site_name\" content=\"User&#039;s blog\" class=\"yoast-seo-meta-tag\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" class=\"yoast-seo-meta-tag\" />\n<meta name=\"twitter:label1\" content=\"Est. reading time\" class=\"yoast-seo-meta-tag\" />\n\t<meta name=\"twitter:data1\" content=\"1 minute\" class=\"yoast-seo-meta-tag\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"http://thedarkstarsoft.com/quint/product/2-compartment-tilt-and-turn-window-left-with-fixed-glass/\",\"url\":\"http://thedarkstarsoft.com/quint/product/2-compartment-tilt-and-turn-window-left-with-fixed-glass/\",\"name\":\"2-Compartment TIlt and Turn Window (left) with Fixed Glass - User&#039;s blog\",\"isPartOf\":{\"@id\":\"http://18.156.79.18/#website\"},\"datePublished\":\"2023-12-26T19:07:08+00:00\",\"dateModified\":\"2023-12-26T19:07:08+00:00\",\"breadcrumb\":{\"@id\":\"http://thedarkstarsoft.com/quint/product/2-compartment-tilt-and-turn-window-left-with-fixed-glass/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"http://thedarkstarsoft.com/quint/product/2-compartment-tilt-and-turn-window-left-with-fixed-glass/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http://thedarkstarsoft.com/quint/product/2-compartment-tilt-and-turn-window-left-with-fixed-glass/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http://18.156.79.18/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Shop\",\"item\":\"https://18.156.79.18/shop/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"2-Compartment TIlt and Turn Window (left) with Fixed Glass\"}]},{\"@type\":\"WebSite\",\"@id\":\"http://18.156.79.18/#website\",\"url\":\"http://18.156.79.18/\",\"name\":\"User&#039;s blog\",\"description\":\"\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"http://18.156.79.18/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"en-US\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+        "yoast_head_json": {
+            "title": "2-Compartment TIlt and Turn Window (left) with Fixed Glass - User&#039;s blog",
+            "robots": {
+                "index": "index",
+                "follow": "follow",
+                "max-snippet": "max-snippet:-1",
+                "max-image-preview": "max-image-preview:large",
+                "max-video-preview": "max-video-preview:-1"
+            },
+            "canonical": "http://thedarkstarsoft.com/quint/product/2-compartment-tilt-and-turn-window-left-with-fixed-glass/",
+            "og_locale": "en_US",
+            "og_type": "article",
+            "og_title": "2-Compartment TIlt and Turn Window (left) with Fixed Glass - User&#039;s blog",
+            "og_description": "Discover this sturdy and meticulously-crafted wooden frame, featuring two equal compartments. The left includes a tilt-and-turn window with a right compartment with fixed glass, which always opens inwards. This high-quality wooden frame includes a completely assembled hung tilt-and-turn window, including fittings. All fitting complies with the SKG quality mark and the Policy Quality Mark for [&hellip;]",
+            "og_url": "http://thedarkstarsoft.com/quint/product/2-compartment-tilt-and-turn-window-left-with-fixed-glass/",
+            "og_site_name": "User&#039;s blog",
+            "twitter_card": "summary_large_image",
+            "twitter_misc": {
+                "Est. reading time": "1 minute"
+            },
+            "schema": {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "WebPage",
+                        "@id": "http://thedarkstarsoft.com/quint/product/2-compartment-tilt-and-turn-window-left-with-fixed-glass/",
+                        "url": "http://thedarkstarsoft.com/quint/product/2-compartment-tilt-and-turn-window-left-with-fixed-glass/",
+                        "name": "2-Compartment TIlt and Turn Window (left) with Fixed Glass - User&#039;s blog",
+                        "isPartOf": {
+                            "@id": "http://18.156.79.18/#website"
+                        },
+                        "datePublished": "2023-12-26T19:07:08+00:00",
+                        "dateModified": "2023-12-26T19:07:08+00:00",
+                        "breadcrumb": {
+                            "@id": "http://thedarkstarsoft.com/quint/product/2-compartment-tilt-and-turn-window-left-with-fixed-glass/#breadcrumb"
+                        },
+                        "inLanguage": "en-US",
+                        "potentialAction": [
+                            {
+                                "@type": "ReadAction",
+                                "target": [
+                                    "http://thedarkstarsoft.com/quint/product/2-compartment-tilt-and-turn-window-left-with-fixed-glass/"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "BreadcrumbList",
+                        "@id": "http://thedarkstarsoft.com/quint/product/2-compartment-tilt-and-turn-window-left-with-fixed-glass/#breadcrumb",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Home",
+                                "item": "http://18.156.79.18/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Shop",
+                                "item": "https://18.156.79.18/shop/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "2-Compartment TIlt and Turn Window (left) with Fixed Glass"
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "WebSite",
+                        "@id": "http://18.156.79.18/#website",
+                        "url": "http://18.156.79.18/",
+                        "name": "User&#039;s blog",
+                        "description": "",
+                        "potentialAction": [
+                            {
+                                "@type": "SearchAction",
+                                "target": {
+                                    "@type": "EntryPoint",
+                                    "urlTemplate": "http://18.156.79.18/?s={search_term_string}"
+                                },
+                                "query-input": "required name=search_term_string"
+                            }
+                        ],
+                        "inLanguage": "en-US"
+                    }
+                ]
+            }
+        },
+        "acf": {
+            "type_of_product": "Window",
+            "window_size": {
+                "frame_width_size__in_mm": {
+                    "minimumwidth": "",
+                    "maximum_width": ""
+                },
+                "frame_height_size_in_mm": {
+                    "min_height": "",
+                    "max_height": ""
+                }
+            },
+            "materials": {
+                "choose_material_type": "Wood"
+            },
+            "colors": [],
+            "profile": [],
+            "glazing": "No Glazing",
+            "ventilation_grid": "Yes"
+        },
+        "_links": {
+            "self": [
+                {
+                    "href": "https://18.156.79.18/wp-json/wc/v3/products/62"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://18.156.79.18/wp-json/wc/v3/products"
+                }
+            ]
+        }
+    },
+    {
+        "id": 60,
+        "name": "2-Box Turn-tilt Wood Window",
+        "slug": "2-box-turn-tilt-wood-window",
+        "permalink": "https://18.156.79.18/product/2-box-turn-tilt-wood-window/",
+        "date_created": "2023-12-26T19:06:47",
+        "date_created_gmt": "2023-12-26T19:06:47",
+        "date_modified": "2023-12-26T19:06:47",
+        "date_modified_gmt": "2023-12-26T19:06:47",
+        "type": "simple",
+        "status": "publish",
+        "featured": false,
+        "catalog_visibility": "visible",
+        "description": "<p class=\"p1\">Discover our multi-box tilt and turn window. This setup includes two compartments complete with a wooden tilt-and-turn window that opens inwards and tilts.</p>\n<p class=\"p1\">This high-quality wooden frame includes a completely assembled hung tilt-and-turn window, including fittings. All fitting complies with the SKG quality mark and the Policy Quality Mark for Safe Living.</p>\n<p class=\"p1\">Customize your setup! The wooden tilt-and-turn windows can be assembled in various arrangements.</p>\n<p class=\"p1\">Options for glazing</p>\n<p class=\"p1\">We offer several options for glazing to your preferences. Choose from standard HR++ glass, 2-sided laminated HR++ glass to triple glass. Explore our options and choose the glazing that suits your preferences. Feel peace of mind and safety with interior side glazing, enhancing burglary resistance and superior optical appearance for the frame.</p>\n",
+        "short_description": "",
+        "sku": "",
+        "price": "",
+        "regular_price": "",
+        "sale_price": "",
+        "date_on_sale_from": null,
+        "date_on_sale_from_gmt": null,
+        "date_on_sale_to": null,
+        "date_on_sale_to_gmt": null,
+        "on_sale": false,
+        "purchasable": false,
+        "total_sales": 0,
+        "virtual": false,
+        "downloadable": false,
+        "downloads": [],
+        "download_limit": -1,
+        "download_expiry": -1,
+        "external_url": "",
+        "button_text": "",
+        "tax_status": "taxable",
+        "tax_class": "",
+        "manage_stock": false,
+        "stock_quantity": null,
+        "backorders": "no",
+        "backorders_allowed": false,
+        "backordered": false,
+        "low_stock_amount": null,
+        "sold_individually": false,
+        "weight": "",
+        "dimensions": {
+            "length": "",
+            "width": "",
+            "height": ""
+        },
+        "shipping_required": true,
+        "shipping_taxable": true,
+        "shipping_class": "",
+        "shipping_class_id": 0,
+        "reviews_allowed": true,
+        "average_rating": "0.00",
+        "rating_count": 0,
+        "upsell_ids": [],
+        "cross_sell_ids": [],
+        "parent_id": 0,
+        "purchase_note": "",
+        "categories": [
+            {
+                "id": 20,
+                "name": "Tilt",
+                "slug": "tilt"
+            },
+            {
+                "id": 19,
+                "name": "Windows",
+                "slug": "windows"
+            },
+            {
+                "id": 18,
+                "name": "Wood",
+                "slug": "wood"
+            }
+        ],
+        "tags": [],
+        "images": [],
+        "attributes": [],
+        "default_attributes": [],
+        "variations": [],
+        "grouped_products": [],
+        "menu_order": 0,
+        "price_html": "",
+        "related_ids": [
+            55,
+            67,
+            56,
+            58,
+            62
+        ],
+        "meta_data": [
+            {
+                "id": 273,
+                "key": "type_of_product",
+                "value": "Window"
+            },
+            {
+                "id": 274,
+                "key": "_type_of_product",
+                "value": "field_658a9857e559c"
+            },
+            {
+                "id": 275,
+                "key": "window_size_frame_width_size__in_mm_minimumwidth",
+                "value": ""
+            },
+            {
+                "id": 276,
+                "key": "_window_size_frame_width_size__in_mm_minimumwidth",
+                "value": "field_658afe9659902"
+            },
+            {
+                "id": 277,
+                "key": "window_size_frame_width_size__in_mm_maximum_width",
+                "value": ""
+            },
+            {
+                "id": 278,
+                "key": "_window_size_frame_width_size__in_mm_maximum_width",
+                "value": "field_658afe9d59903"
+            },
+            {
+                "id": 279,
+                "key": "window_size_frame_width_size__in_mm",
+                "value": ""
+            },
+            {
+                "id": 280,
+                "key": "_window_size_frame_width_size__in_mm",
+                "value": "field_658afe8259901"
+            },
+            {
+                "id": 281,
+                "key": "window_size_frame_height_size_in_mm_min_height",
+                "value": ""
+            },
+            {
+                "id": 282,
+                "key": "_window_size_frame_height_size_in_mm_min_height",
+                "value": "field_658afec659906"
+            },
+            {
+                "id": 283,
+                "key": "window_size_frame_height_size_in_mm_max_height",
+                "value": ""
+            },
+            {
+                "id": 284,
+                "key": "_window_size_frame_height_size_in_mm_max_height",
+                "value": "field_658afed259907"
+            },
+            {
+                "id": 285,
+                "key": "window_size_frame_height_size_in_mm",
+                "value": ""
+            },
+            {
+                "id": 286,
+                "key": "_window_size_frame_height_size_in_mm",
+                "value": "field_658afec059905"
+            },
+            {
+                "id": 287,
+                "key": "window_size",
+                "value": ""
+            },
+            {
+                "id": 288,
+                "key": "_window_size",
+                "value": "field_658a964f6323b"
+            },
+            {
+                "id": 289,
+                "key": "materials_choose_material_type",
+                "value": "Wood"
+            },
+            {
+                "id": 290,
+                "key": "_materials_choose_material_type",
+                "value": "field_658a96ed8bd33"
+            },
+            {
+                "id": 291,
+                "key": "materials",
+                "value": ""
+            },
+            {
+                "id": 292,
+                "key": "_materials",
+                "value": "field_658a96df8bd32"
+            },
+            {
+                "id": 293,
+                "key": "colors",
+                "value": ""
+            },
+            {
+                "id": 294,
+                "key": "_colors",
+                "value": "field_658a981ba4822"
+            },
+            {
+                "id": 295,
+                "key": "profile",
+                "value": ""
+            },
+            {
+                "id": 296,
+                "key": "_profile",
+                "value": "field_658a9752b3d5f"
+            },
+            {
+                "id": 297,
+                "key": "glazing",
+                "value": "No Glazing"
+            },
+            {
+                "id": 298,
+                "key": "_glazing",
+                "value": "field_658a98de7f924"
+            },
+            {
+                "id": 299,
+                "key": "ventilation_grid",
+                "value": "Yes"
+            },
+            {
+                "id": 300,
+                "key": "_ventilation_grid",
+                "value": "field_658a990748927"
+            },
+            {
+                "id": 301,
+                "key": "_yoast_wpseo_primary_product_cat",
+                "value": "19"
+            },
+            {
+                "id": 302,
+                "key": "_yoast_wpseo_content_score",
+                "value": "90"
+            },
+            {
+                "id": 303,
+                "key": "_yoast_wpseo_estimated-reading-time-minutes",
+                "value": "1"
+            },
+            {
+                "id": 304,
+                "key": "_yoast_wpseo_wordproof_timestamp",
+                "value": ""
+            }
+        ],
+        "stock_status": "instock",
+        "has_options": false,
+        "post_password": "",
+        "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v21.7 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>2-Box Turn-tilt Wood Window - User&#039;s blog</title>\n<!-- Admin only notice: this page does not show a meta description because it does not have one, either write it for this page specifically or go into the [Yoast SEO - Settings] menu and set up a template. -->\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"http://thedarkstarsoft.com/quint/product/2-box-turn-tilt-wood-window/\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:locale\" content=\"en_US\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:type\" content=\"article\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:title\" content=\"2-Box Turn-tilt Wood Window - User&#039;s blog\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:description\" content=\"Discover our multi-box tilt and turn window. This setup includes two compartments complete with a wooden tilt-and-turn window that opens inwards and tilts. This high-quality wooden frame includes a completely assembled hung tilt-and-turn window, including fittings. All fitting complies with the SKG quality mark and the Policy Quality Mark for Safe Living. Customize your setup! [&hellip;]\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:url\" content=\"http://thedarkstarsoft.com/quint/product/2-box-turn-tilt-wood-window/\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:site_name\" content=\"User&#039;s blog\" class=\"yoast-seo-meta-tag\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" class=\"yoast-seo-meta-tag\" />\n<meta name=\"twitter:label1\" content=\"Est. reading time\" class=\"yoast-seo-meta-tag\" />\n\t<meta name=\"twitter:data1\" content=\"1 minute\" class=\"yoast-seo-meta-tag\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"http://thedarkstarsoft.com/quint/product/2-box-turn-tilt-wood-window/\",\"url\":\"http://thedarkstarsoft.com/quint/product/2-box-turn-tilt-wood-window/\",\"name\":\"2-Box Turn-tilt Wood Window - User&#039;s blog\",\"isPartOf\":{\"@id\":\"http://18.156.79.18/#website\"},\"datePublished\":\"2023-12-26T19:06:47+00:00\",\"dateModified\":\"2023-12-26T19:06:47+00:00\",\"breadcrumb\":{\"@id\":\"http://thedarkstarsoft.com/quint/product/2-box-turn-tilt-wood-window/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"http://thedarkstarsoft.com/quint/product/2-box-turn-tilt-wood-window/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http://thedarkstarsoft.com/quint/product/2-box-turn-tilt-wood-window/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http://18.156.79.18/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Shop\",\"item\":\"https://18.156.79.18/shop/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"2-Box Turn-tilt Wood Window\"}]},{\"@type\":\"WebSite\",\"@id\":\"http://18.156.79.18/#website\",\"url\":\"http://18.156.79.18/\",\"name\":\"User&#039;s blog\",\"description\":\"\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"http://18.156.79.18/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"en-US\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+        "yoast_head_json": {
+            "title": "2-Box Turn-tilt Wood Window - User&#039;s blog",
+            "robots": {
+                "index": "index",
+                "follow": "follow",
+                "max-snippet": "max-snippet:-1",
+                "max-image-preview": "max-image-preview:large",
+                "max-video-preview": "max-video-preview:-1"
+            },
+            "canonical": "http://thedarkstarsoft.com/quint/product/2-box-turn-tilt-wood-window/",
+            "og_locale": "en_US",
+            "og_type": "article",
+            "og_title": "2-Box Turn-tilt Wood Window - User&#039;s blog",
+            "og_description": "Discover our multi-box tilt and turn window. This setup includes two compartments complete with a wooden tilt-and-turn window that opens inwards and tilts. This high-quality wooden frame includes a completely assembled hung tilt-and-turn window, including fittings. All fitting complies with the SKG quality mark and the Policy Quality Mark for Safe Living. Customize your setup! [&hellip;]",
+            "og_url": "http://thedarkstarsoft.com/quint/product/2-box-turn-tilt-wood-window/",
+            "og_site_name": "User&#039;s blog",
+            "twitter_card": "summary_large_image",
+            "twitter_misc": {
+                "Est. reading time": "1 minute"
+            },
+            "schema": {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "WebPage",
+                        "@id": "http://thedarkstarsoft.com/quint/product/2-box-turn-tilt-wood-window/",
+                        "url": "http://thedarkstarsoft.com/quint/product/2-box-turn-tilt-wood-window/",
+                        "name": "2-Box Turn-tilt Wood Window - User&#039;s blog",
+                        "isPartOf": {
+                            "@id": "http://18.156.79.18/#website"
+                        },
+                        "datePublished": "2023-12-26T19:06:47+00:00",
+                        "dateModified": "2023-12-26T19:06:47+00:00",
+                        "breadcrumb": {
+                            "@id": "http://thedarkstarsoft.com/quint/product/2-box-turn-tilt-wood-window/#breadcrumb"
+                        },
+                        "inLanguage": "en-US",
+                        "potentialAction": [
+                            {
+                                "@type": "ReadAction",
+                                "target": [
+                                    "http://thedarkstarsoft.com/quint/product/2-box-turn-tilt-wood-window/"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "BreadcrumbList",
+                        "@id": "http://thedarkstarsoft.com/quint/product/2-box-turn-tilt-wood-window/#breadcrumb",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Home",
+                                "item": "http://18.156.79.18/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Shop",
+                                "item": "https://18.156.79.18/shop/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "2-Box Turn-tilt Wood Window"
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "WebSite",
+                        "@id": "http://18.156.79.18/#website",
+                        "url": "http://18.156.79.18/",
+                        "name": "User&#039;s blog",
+                        "description": "",
+                        "potentialAction": [
+                            {
+                                "@type": "SearchAction",
+                                "target": {
+                                    "@type": "EntryPoint",
+                                    "urlTemplate": "http://18.156.79.18/?s={search_term_string}"
+                                },
+                                "query-input": "required name=search_term_string"
+                            }
+                        ],
+                        "inLanguage": "en-US"
+                    }
+                ]
+            }
+        },
+        "acf": {
+            "type_of_product": "Window",
+            "window_size": {
+                "frame_width_size__in_mm": {
+                    "minimumwidth": "",
+                    "maximum_width": ""
+                },
+                "frame_height_size_in_mm": {
+                    "min_height": "",
+                    "max_height": ""
+                }
+            },
+            "materials": {
+                "choose_material_type": "Wood"
+            },
+            "colors": [],
+            "profile": [],
+            "glazing": "No Glazing",
+            "ventilation_grid": "Yes"
+        },
+        "_links": {
+            "self": [
+                {
+                    "href": "https://18.156.79.18/wp-json/wc/v3/products/60"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://18.156.79.18/wp-json/wc/v3/products"
+                }
+            ]
+        }
+    },
+    {
+        "id": 58,
+        "name": "1-Box Turn-tilt Wood Window",
+        "slug": "1-box-turn-tilt-wood-window",
+        "permalink": "https://18.156.79.18/product/1-box-turn-tilt-wood-window/",
+        "date_created": "2023-12-26T19:06:01",
+        "date_created_gmt": "2023-12-26T19:06:01",
+        "date_modified": "2023-12-26T19:06:26",
+        "date_modified_gmt": "2023-12-26T19:06:26",
+        "type": "simple",
+        "status": "publish",
+        "featured": false,
+        "catalog_visibility": "visible",
+        "description": "<p class=\"p1\">Discover our tilt and turn window. This setup includes one compartment complete with a wooden tilt-and-turn window that opens inwards and tilts, perfect for wafting in some fresh air.</p>\n<p class=\"p1\">This high-quality wooden frame includes a completely assembled hung tilt-and-turn window, including fittings. All fitting complies with the SKG quality mark and the Policy Quality Mark for Safe Living.</p>\n<p class=\"p1\">Customize your set up! The wooden tilt-and-turn windows can be assembled in various arrangements.</p>\n<p class=\"p1\">Options for glazing</p>\n<p class=\"p1\">We offer several options for glazing to your preferences. Choose from standard HR++ glass, 2-sided laminated HR++ glass to triple glass. Explore our options and choose the glazing that suits your preferences. Feel peace of mind and safety with interior side glazing, enhancing burglary resistance and superior optical appearance for the frame.</p>\n",
+        "short_description": "",
+        "sku": "",
+        "price": "",
+        "regular_price": "",
+        "sale_price": "",
+        "date_on_sale_from": null,
+        "date_on_sale_from_gmt": null,
+        "date_on_sale_to": null,
+        "date_on_sale_to_gmt": null,
+        "on_sale": false,
+        "purchasable": false,
+        "total_sales": 0,
+        "virtual": false,
+        "downloadable": false,
+        "downloads": [],
+        "download_limit": -1,
+        "download_expiry": -1,
+        "external_url": "",
+        "button_text": "",
+        "tax_status": "taxable",
+        "tax_class": "",
+        "manage_stock": false,
+        "stock_quantity": null,
+        "backorders": "no",
+        "backorders_allowed": false,
+        "backordered": false,
+        "low_stock_amount": null,
+        "sold_individually": false,
+        "weight": "",
+        "dimensions": {
+            "length": "",
+            "width": "",
+            "height": ""
+        },
+        "shipping_required": true,
+        "shipping_taxable": true,
+        "shipping_class": "",
+        "shipping_class_id": 0,
+        "reviews_allowed": true,
+        "average_rating": "0.00",
+        "rating_count": 0,
+        "upsell_ids": [],
+        "cross_sell_ids": [],
+        "parent_id": 0,
+        "purchase_note": "",
+        "categories": [
+            {
+                "id": 20,
+                "name": "Tilt",
+                "slug": "tilt"
+            },
+            {
+                "id": 19,
+                "name": "Windows",
+                "slug": "windows"
+            },
+            {
+                "id": 18,
+                "name": "Wood",
+                "slug": "wood"
+            }
+        ],
+        "tags": [],
+        "images": [],
+        "attributes": [],
+        "default_attributes": [],
+        "variations": [],
+        "grouped_products": [],
+        "menu_order": 0,
+        "price_html": "",
+        "related_ids": [
+            64,
+            56,
+            55,
+            62,
+            60
+        ],
+        "meta_data": [
+            {
+                "id": 223,
+                "key": "type_of_product",
+                "value": "Window"
+            },
+            {
+                "id": 224,
+                "key": "_type_of_product",
+                "value": "field_658a9857e559c"
+            },
+            {
+                "id": 225,
+                "key": "window_size_frame_width_size__in_mm_minimumwidth",
+                "value": ""
+            },
+            {
+                "id": 226,
+                "key": "_window_size_frame_width_size__in_mm_minimumwidth",
+                "value": "field_658afe9659902"
+            },
+            {
+                "id": 227,
+                "key": "window_size_frame_width_size__in_mm_maximum_width",
+                "value": ""
+            },
+            {
+                "id": 228,
+                "key": "_window_size_frame_width_size__in_mm_maximum_width",
+                "value": "field_658afe9d59903"
+            },
+            {
+                "id": 229,
+                "key": "window_size_frame_width_size__in_mm",
+                "value": ""
+            },
+            {
+                "id": 230,
+                "key": "_window_size_frame_width_size__in_mm",
+                "value": "field_658afe8259901"
+            },
+            {
+                "id": 231,
+                "key": "window_size_frame_height_size_in_mm_min_height",
+                "value": ""
+            },
+            {
+                "id": 232,
+                "key": "_window_size_frame_height_size_in_mm_min_height",
+                "value": "field_658afec659906"
+            },
+            {
+                "id": 233,
+                "key": "window_size_frame_height_size_in_mm_max_height",
+                "value": ""
+            },
+            {
+                "id": 234,
+                "key": "_window_size_frame_height_size_in_mm_max_height",
+                "value": "field_658afed259907"
+            },
+            {
+                "id": 235,
+                "key": "window_size_frame_height_size_in_mm",
+                "value": ""
+            },
+            {
+                "id": 236,
+                "key": "_window_size_frame_height_size_in_mm",
+                "value": "field_658afec059905"
+            },
+            {
+                "id": 237,
+                "key": "window_size",
+                "value": ""
+            },
+            {
+                "id": 238,
+                "key": "_window_size",
+                "value": "field_658a964f6323b"
+            },
+            {
+                "id": 239,
+                "key": "materials_choose_material_type",
+                "value": "Wood"
+            },
+            {
+                "id": 240,
+                "key": "_materials_choose_material_type",
+                "value": "field_658a96ed8bd33"
+            },
+            {
+                "id": 241,
+                "key": "materials",
+                "value": ""
+            },
+            {
+                "id": 242,
+                "key": "_materials",
+                "value": "field_658a96df8bd32"
+            },
+            {
+                "id": 243,
+                "key": "colors",
+                "value": ""
+            },
+            {
+                "id": 244,
+                "key": "_colors",
+                "value": "field_658a981ba4822"
+            },
+            {
+                "id": 245,
+                "key": "profile",
+                "value": ""
+            },
+            {
+                "id": 246,
+                "key": "_profile",
+                "value": "field_658a9752b3d5f"
+            },
+            {
+                "id": 247,
+                "key": "glazing",
+                "value": "No Glazing"
+            },
+            {
+                "id": 248,
+                "key": "_glazing",
+                "value": "field_658a98de7f924"
+            },
+            {
+                "id": 249,
+                "key": "ventilation_grid",
+                "value": "Yes"
+            },
+            {
+                "id": 250,
+                "key": "_ventilation_grid",
+                "value": "field_658a990748927"
+            },
+            {
+                "id": 251,
+                "key": "_yoast_wpseo_primary_product_cat",
+                "value": "18"
+            },
+            {
+                "id": 252,
+                "key": "_yoast_wpseo_content_score",
+                "value": "90"
+            },
+            {
+                "id": 253,
+                "key": "_yoast_wpseo_estimated-reading-time-minutes",
+                "value": "1"
+            },
+            {
+                "id": 254,
+                "key": "_yoast_wpseo_wordproof_timestamp",
+                "value": ""
+            }
+        ],
+        "stock_status": "instock",
+        "has_options": false,
+        "post_password": "",
+        "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v21.7 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>1-Box Turn-tilt Wood Window - User&#039;s blog</title>\n<!-- Admin only notice: this page does not show a meta description because it does not have one, either write it for this page specifically or go into the [Yoast SEO - Settings] menu and set up a template. -->\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"http://thedarkstarsoft.com/quint/product/1-box-turn-tilt-wood-window/\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:locale\" content=\"en_US\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:type\" content=\"article\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:title\" content=\"1-Box Turn-tilt Wood Window - User&#039;s blog\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:description\" content=\"Discover our tilt and turn window. This setup includes one compartment complete with a wooden tilt-and-turn window that opens inwards and tilts, perfect for wafting in some fresh air. This high-quality wooden frame includes a completely assembled hung tilt-and-turn window, including fittings. All fitting complies with the SKG quality mark and the Policy Quality Mark [&hellip;]\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:url\" content=\"http://thedarkstarsoft.com/quint/product/1-box-turn-tilt-wood-window/\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:site_name\" content=\"User&#039;s blog\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"article:modified_time\" content=\"2023-12-26T19:06:26+00:00\" class=\"yoast-seo-meta-tag\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" class=\"yoast-seo-meta-tag\" />\n<meta name=\"twitter:label1\" content=\"Est. reading time\" class=\"yoast-seo-meta-tag\" />\n\t<meta name=\"twitter:data1\" content=\"1 minute\" class=\"yoast-seo-meta-tag\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"http://thedarkstarsoft.com/quint/product/1-box-turn-tilt-wood-window/\",\"url\":\"http://thedarkstarsoft.com/quint/product/1-box-turn-tilt-wood-window/\",\"name\":\"1-Box Turn-tilt Wood Window - User&#039;s blog\",\"isPartOf\":{\"@id\":\"http://18.156.79.18/#website\"},\"datePublished\":\"2023-12-26T19:06:01+00:00\",\"dateModified\":\"2023-12-26T19:06:26+00:00\",\"breadcrumb\":{\"@id\":\"http://thedarkstarsoft.com/quint/product/1-box-turn-tilt-wood-window/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"http://thedarkstarsoft.com/quint/product/1-box-turn-tilt-wood-window/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http://thedarkstarsoft.com/quint/product/1-box-turn-tilt-wood-window/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http://18.156.79.18/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Shop\",\"item\":\"https://18.156.79.18/shop/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"1-Box Turn-tilt Wood Window\"}]},{\"@type\":\"WebSite\",\"@id\":\"http://18.156.79.18/#website\",\"url\":\"http://18.156.79.18/\",\"name\":\"User&#039;s blog\",\"description\":\"\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"http://18.156.79.18/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"en-US\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+        "yoast_head_json": {
+            "title": "1-Box Turn-tilt Wood Window - User&#039;s blog",
+            "robots": {
+                "index": "index",
+                "follow": "follow",
+                "max-snippet": "max-snippet:-1",
+                "max-image-preview": "max-image-preview:large",
+                "max-video-preview": "max-video-preview:-1"
+            },
+            "canonical": "http://thedarkstarsoft.com/quint/product/1-box-turn-tilt-wood-window/",
+            "og_locale": "en_US",
+            "og_type": "article",
+            "og_title": "1-Box Turn-tilt Wood Window - User&#039;s blog",
+            "og_description": "Discover our tilt and turn window. This setup includes one compartment complete with a wooden tilt-and-turn window that opens inwards and tilts, perfect for wafting in some fresh air. This high-quality wooden frame includes a completely assembled hung tilt-and-turn window, including fittings. All fitting complies with the SKG quality mark and the Policy Quality Mark [&hellip;]",
+            "og_url": "http://thedarkstarsoft.com/quint/product/1-box-turn-tilt-wood-window/",
+            "og_site_name": "User&#039;s blog",
+            "article_modified_time": "2023-12-26T19:06:26+00:00",
+            "twitter_card": "summary_large_image",
+            "twitter_misc": {
+                "Est. reading time": "1 minute"
+            },
+            "schema": {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "WebPage",
+                        "@id": "http://thedarkstarsoft.com/quint/product/1-box-turn-tilt-wood-window/",
+                        "url": "http://thedarkstarsoft.com/quint/product/1-box-turn-tilt-wood-window/",
+                        "name": "1-Box Turn-tilt Wood Window - User&#039;s blog",
+                        "isPartOf": {
+                            "@id": "http://18.156.79.18/#website"
+                        },
+                        "datePublished": "2023-12-26T19:06:01+00:00",
+                        "dateModified": "2023-12-26T19:06:26+00:00",
+                        "breadcrumb": {
+                            "@id": "http://thedarkstarsoft.com/quint/product/1-box-turn-tilt-wood-window/#breadcrumb"
+                        },
+                        "inLanguage": "en-US",
+                        "potentialAction": [
+                            {
+                                "@type": "ReadAction",
+                                "target": [
+                                    "http://thedarkstarsoft.com/quint/product/1-box-turn-tilt-wood-window/"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "BreadcrumbList",
+                        "@id": "http://thedarkstarsoft.com/quint/product/1-box-turn-tilt-wood-window/#breadcrumb",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Home",
+                                "item": "http://18.156.79.18/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Shop",
+                                "item": "https://18.156.79.18/shop/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "1-Box Turn-tilt Wood Window"
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "WebSite",
+                        "@id": "http://18.156.79.18/#website",
+                        "url": "http://18.156.79.18/",
+                        "name": "User&#039;s blog",
+                        "description": "",
+                        "potentialAction": [
+                            {
+                                "@type": "SearchAction",
+                                "target": {
+                                    "@type": "EntryPoint",
+                                    "urlTemplate": "http://18.156.79.18/?s={search_term_string}"
+                                },
+                                "query-input": "required name=search_term_string"
+                            }
+                        ],
+                        "inLanguage": "en-US"
+                    }
+                ]
+            }
+        },
+        "acf": {
+            "type_of_product": "Window",
+            "window_size": {
+                "frame_width_size__in_mm": {
+                    "minimumwidth": "",
+                    "maximum_width": ""
+                },
+                "frame_height_size_in_mm": {
+                    "min_height": "",
+                    "max_height": ""
+                }
+            },
+            "materials": {
+                "choose_material_type": "Wood"
+            },
+            "colors": [],
+            "profile": [],
+            "glazing": "No Glazing",
+            "ventilation_grid": "Yes"
+        },
+        "_links": {
+            "self": [
+                {
+                    "href": "https://18.156.79.18/wp-json/wc/v3/products/58"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://18.156.79.18/wp-json/wc/v3/products"
+                }
+            ]
+        }
+    },
+    {
+        "id": 57,
+        "name": "Wooden Fixed Glass Frame | 3 Horizontal Compartments",
+        "slug": "wooden-fixed-glass-frame-3-horizontal-compartments",
+        "permalink": "https://18.156.79.18/product/wooden-fixed-glass-frame-3-horizontal-compartments/",
+        "date_created": "2023-12-26T19:05:42",
+        "date_created_gmt": "2023-12-26T19:05:42",
+        "date_modified": "2023-12-26T19:05:42",
+        "date_modified_gmt": "2023-12-26T19:05:42",
+        "type": "simple",
+        "status": "publish",
+        "featured": false,
+        "catalog_visibility": "visible",
+        "description": "<p class=\"p1\">This 3-compartment wooden fixed glass frame is divided into three horizontally-configured compartments, customized to your preferences. We make all frames to order, giving you the freedom to enter the dimensions and customize the division yourself.</p>\n<p class=\"p1\">All [insert company name] frames are designed to adhere to the SKG quality mark and the Policy Quality Mark for Safe Living. Customize your frame by choosing a delivery option that includes either a topcoat or prepaint layer.</p>\n<p class=\"p1\">Options for glazing</p>\n<p class=\"p1\">Feel peace of mind and safety with interior side glazing, enhancing burglary resistance and superior optical appearance for the frame. We affix an aluminum glazing profile to the sill. Choose from a range of glass choices, including triple glass (HR+++), double glass (HR++), frosted glass, or glass with bars. Or, choose to order the frame without glazing.</p>\n<p class=\"p1\">Regardless of your customization preferences, the frame is delivered fully assembled. Simply input the dimensions of the wooden frame, the desired properties, and you’re ready to place your order.</p>\n",
+        "short_description": "",
+        "sku": "",
+        "price": "",
+        "regular_price": "",
+        "sale_price": "",
+        "date_on_sale_from": null,
+        "date_on_sale_from_gmt": null,
+        "date_on_sale_to": null,
+        "date_on_sale_to_gmt": null,
+        "on_sale": false,
+        "purchasable": false,
+        "total_sales": 0,
+        "virtual": false,
+        "downloadable": false,
+        "downloads": [],
+        "download_limit": -1,
+        "download_expiry": -1,
+        "external_url": "",
+        "button_text": "",
+        "tax_status": "taxable",
+        "tax_class": "",
+        "manage_stock": false,
+        "stock_quantity": null,
+        "backorders": "no",
+        "backorders_allowed": false,
+        "backordered": false,
+        "low_stock_amount": null,
+        "sold_individually": false,
+        "weight": "",
+        "dimensions": {
+            "length": "",
+            "width": "",
+            "height": ""
+        },
+        "shipping_required": true,
+        "shipping_taxable": true,
+        "shipping_class": "",
+        "shipping_class_id": 0,
+        "reviews_allowed": true,
+        "average_rating": "0.00",
+        "rating_count": 0,
+        "upsell_ids": [],
+        "cross_sell_ids": [],
+        "parent_id": 0,
+        "purchase_note": "",
+        "categories": [
+            {
+                "id": 19,
+                "name": "Windows",
+                "slug": "windows"
+            },
+            {
+                "id": 18,
+                "name": "Wood",
+                "slug": "wood"
+            }
+        ],
+        "tags": [],
+        "images": [],
+        "attributes": [],
+        "default_attributes": [],
+        "variations": [],
+        "grouped_products": [],
+        "menu_order": 0,
+        "price_html": "",
+        "related_ids": [
+            68,
+            60,
+            66,
+            55,
+            64
+        ],
+        "meta_data": [
+            {
+                "id": 175,
+                "key": "type_of_product",
+                "value": "Window"
+            },
+            {
+                "id": 176,
+                "key": "_type_of_product",
+                "value": "field_658a9857e559c"
+            },
+            {
+                "id": 177,
+                "key": "window_size_frame_width_size__in_mm_minimumwidth",
+                "value": ""
+            },
+            {
+                "id": 178,
+                "key": "_window_size_frame_width_size__in_mm_minimumwidth",
+                "value": "field_658afe9659902"
+            },
+            {
+                "id": 179,
+                "key": "window_size_frame_width_size__in_mm_maximum_width",
+                "value": ""
+            },
+            {
+                "id": 180,
+                "key": "_window_size_frame_width_size__in_mm_maximum_width",
+                "value": "field_658afe9d59903"
+            },
+            {
+                "id": 181,
+                "key": "window_size_frame_width_size__in_mm",
+                "value": ""
+            },
+            {
+                "id": 182,
+                "key": "_window_size_frame_width_size__in_mm",
+                "value": "field_658afe8259901"
+            },
+            {
+                "id": 183,
+                "key": "window_size_frame_height_size_in_mm_min_height",
+                "value": ""
+            },
+            {
+                "id": 184,
+                "key": "_window_size_frame_height_size_in_mm_min_height",
+                "value": "field_658afec659906"
+            },
+            {
+                "id": 185,
+                "key": "window_size_frame_height_size_in_mm_max_height",
+                "value": ""
+            },
+            {
+                "id": 186,
+                "key": "_window_size_frame_height_size_in_mm_max_height",
+                "value": "field_658afed259907"
+            },
+            {
+                "id": 187,
+                "key": "window_size_frame_height_size_in_mm",
+                "value": ""
+            },
+            {
+                "id": 188,
+                "key": "_window_size_frame_height_size_in_mm",
+                "value": "field_658afec059905"
+            },
+            {
+                "id": 189,
+                "key": "window_size",
+                "value": ""
+            },
+            {
+                "id": 190,
+                "key": "_window_size",
+                "value": "field_658a964f6323b"
+            },
+            {
+                "id": 191,
+                "key": "materials_choose_material_type",
+                "value": "Wood"
+            },
+            {
+                "id": 192,
+                "key": "_materials_choose_material_type",
+                "value": "field_658a96ed8bd33"
+            },
+            {
+                "id": 193,
+                "key": "materials",
+                "value": ""
+            },
+            {
+                "id": 194,
+                "key": "_materials",
+                "value": "field_658a96df8bd32"
+            },
+            {
+                "id": 195,
+                "key": "colors",
+                "value": ""
+            },
+            {
+                "id": 196,
+                "key": "_colors",
+                "value": "field_658a981ba4822"
+            },
+            {
+                "id": 197,
+                "key": "profile",
+                "value": ""
+            },
+            {
+                "id": 198,
+                "key": "_profile",
+                "value": "field_658a9752b3d5f"
+            },
+            {
+                "id": 199,
+                "key": "glazing",
+                "value": "No Glazing"
+            },
+            {
+                "id": 200,
+                "key": "_glazing",
+                "value": "field_658a98de7f924"
+            },
+            {
+                "id": 201,
+                "key": "ventilation_grid",
+                "value": "Yes"
+            },
+            {
+                "id": 202,
+                "key": "_ventilation_grid",
+                "value": "field_658a990748927"
+            },
+            {
+                "id": 203,
+                "key": "_yoast_wpseo_primary_product_cat",
+                "value": "18"
+            },
+            {
+                "id": 204,
+                "key": "_yoast_wpseo_content_score",
+                "value": "90"
+            },
+            {
+                "id": 205,
+                "key": "_yoast_wpseo_estimated-reading-time-minutes",
+                "value": "1"
+            },
+            {
+                "id": 206,
+                "key": "_yoast_wpseo_wordproof_timestamp",
+                "value": ""
+            }
+        ],
+        "stock_status": "instock",
+        "has_options": false,
+        "post_password": "",
+        "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v21.7 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>Wooden Fixed Glass Frame | 3 Horizontal Compartments - User&#039;s blog</title>\n<!-- Admin only notice: this page does not show a meta description because it does not have one, either write it for this page specifically or go into the [Yoast SEO - Settings] menu and set up a template. -->\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-3-horizontal-compartments/\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:locale\" content=\"en_US\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:type\" content=\"article\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:title\" content=\"Wooden Fixed Glass Frame | 3 Horizontal Compartments - User&#039;s blog\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:description\" content=\"This 3-compartment wooden fixed glass frame is divided into three horizontally-configured compartments, customized to your preferences. We make all frames to order, giving you the freedom to enter the dimensions and customize the division yourself. All [insert company name] frames are designed to adhere to the SKG quality mark and the Policy Quality Mark for [&hellip;]\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:url\" content=\"http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-3-horizontal-compartments/\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:site_name\" content=\"User&#039;s blog\" class=\"yoast-seo-meta-tag\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" class=\"yoast-seo-meta-tag\" />\n<meta name=\"twitter:label1\" content=\"Est. reading time\" class=\"yoast-seo-meta-tag\" />\n\t<meta name=\"twitter:data1\" content=\"1 minute\" class=\"yoast-seo-meta-tag\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-3-horizontal-compartments/\",\"url\":\"http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-3-horizontal-compartments/\",\"name\":\"Wooden Fixed Glass Frame | 3 Horizontal Compartments - User&#039;s blog\",\"isPartOf\":{\"@id\":\"http://18.156.79.18/#website\"},\"datePublished\":\"2023-12-26T19:05:42+00:00\",\"dateModified\":\"2023-12-26T19:05:42+00:00\",\"breadcrumb\":{\"@id\":\"http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-3-horizontal-compartments/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-3-horizontal-compartments/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-3-horizontal-compartments/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http://18.156.79.18/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Shop\",\"item\":\"https://18.156.79.18/shop/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Wooden Fixed Glass Frame | 3 Horizontal Compartments\"}]},{\"@type\":\"WebSite\",\"@id\":\"http://18.156.79.18/#website\",\"url\":\"http://18.156.79.18/\",\"name\":\"User&#039;s blog\",\"description\":\"\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"http://18.156.79.18/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"en-US\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+        "yoast_head_json": {
+            "title": "Wooden Fixed Glass Frame | 3 Horizontal Compartments - User&#039;s blog",
+            "robots": {
+                "index": "index",
+                "follow": "follow",
+                "max-snippet": "max-snippet:-1",
+                "max-image-preview": "max-image-preview:large",
+                "max-video-preview": "max-video-preview:-1"
+            },
+            "canonical": "http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-3-horizontal-compartments/",
+            "og_locale": "en_US",
+            "og_type": "article",
+            "og_title": "Wooden Fixed Glass Frame | 3 Horizontal Compartments - User&#039;s blog",
+            "og_description": "This 3-compartment wooden fixed glass frame is divided into three horizontally-configured compartments, customized to your preferences. We make all frames to order, giving you the freedom to enter the dimensions and customize the division yourself. All [insert company name] frames are designed to adhere to the SKG quality mark and the Policy Quality Mark for [&hellip;]",
+            "og_url": "http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-3-horizontal-compartments/",
+            "og_site_name": "User&#039;s blog",
+            "twitter_card": "summary_large_image",
+            "twitter_misc": {
+                "Est. reading time": "1 minute"
+            },
+            "schema": {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "WebPage",
+                        "@id": "http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-3-horizontal-compartments/",
+                        "url": "http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-3-horizontal-compartments/",
+                        "name": "Wooden Fixed Glass Frame | 3 Horizontal Compartments - User&#039;s blog",
+                        "isPartOf": {
+                            "@id": "http://18.156.79.18/#website"
+                        },
+                        "datePublished": "2023-12-26T19:05:42+00:00",
+                        "dateModified": "2023-12-26T19:05:42+00:00",
+                        "breadcrumb": {
+                            "@id": "http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-3-horizontal-compartments/#breadcrumb"
+                        },
+                        "inLanguage": "en-US",
+                        "potentialAction": [
+                            {
+                                "@type": "ReadAction",
+                                "target": [
+                                    "http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-3-horizontal-compartments/"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "BreadcrumbList",
+                        "@id": "http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-3-horizontal-compartments/#breadcrumb",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Home",
+                                "item": "http://18.156.79.18/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Shop",
+                                "item": "https://18.156.79.18/shop/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "Wooden Fixed Glass Frame | 3 Horizontal Compartments"
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "WebSite",
+                        "@id": "http://18.156.79.18/#website",
+                        "url": "http://18.156.79.18/",
+                        "name": "User&#039;s blog",
+                        "description": "",
+                        "potentialAction": [
+                            {
+                                "@type": "SearchAction",
+                                "target": {
+                                    "@type": "EntryPoint",
+                                    "urlTemplate": "http://18.156.79.18/?s={search_term_string}"
+                                },
+                                "query-input": "required name=search_term_string"
+                            }
+                        ],
+                        "inLanguage": "en-US"
+                    }
+                ]
+            }
+        },
+        "acf": {
+            "type_of_product": "Window",
+            "window_size": {
+                "frame_width_size__in_mm": {
+                    "minimumwidth": "",
+                    "maximum_width": ""
+                },
+                "frame_height_size_in_mm": {
+                    "min_height": "",
+                    "max_height": ""
+                }
+            },
+            "materials": {
+                "choose_material_type": "Wood"
+            },
+            "colors": [],
+            "profile": [],
+            "glazing": "No Glazing",
+            "ventilation_grid": "Yes"
+        },
+        "_links": {
+            "self": [
+                {
+                    "href": "https://18.156.79.18/wp-json/wc/v3/products/57"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://18.156.79.18/wp-json/wc/v3/products"
+                }
+            ]
+        }
+    },
+    {
+        "id": 56,
+        "name": "Wooden Fixed Glass Frame | 2 Horizontal Compartments",
+        "slug": "wooden-fixed-glass-frame-2-horizontal-compartments",
+        "permalink": "https://18.156.79.18/product/wooden-fixed-glass-frame-2-horizontal-compartments/",
+        "date_created": "2023-12-26T19:04:53",
+        "date_created_gmt": "2023-12-26T19:04:53",
+        "date_modified": "2023-12-26T19:04:54",
+        "date_modified_gmt": "2023-12-26T19:04:54",
+        "type": "simple",
+        "status": "publish",
+        "featured": false,
+        "catalog_visibility": "visible",
+        "description": "<p class=\"p1\">This 2-compartment wooden fixed glass frame is divided into two horizontally-configured compartments, all configured to your preferences. We make all frames to order, giving you the freedom to enter the dimensions and customize the division yourself.</p>\n<p class=\"p1\">All [insert company name] frames are designed to adhere to the SKG quality mark and the Policy Quality Mark for Safe Living. Customize your frame by choosing a delivery option that includes either a topcoat or prepaint layer.</p>\n<p class=\"p1\"><strong>Options for glazing</strong></p>\n<p class=\"p1\">Feel peace of mind and safety with interior side glazing, enhancing burglary resistance and superior optical appearance for the frame. We affix an aluminum glazing profile to the sill. Choose from a range of glass choices, including triple glass (HR+++), double glass (HR++), frosted glass, or glass with bars. Or, choose to order the frame without glazing.</p>\n<p class=\"p1\">Regardless of your customization preferences, the frame is delivered fully assembled. Simply input the dimensions of the wooden frame, the desired properties, and you’re ready to place your order.</p>\n",
+        "short_description": "",
+        "sku": "",
+        "price": "",
+        "regular_price": "",
+        "sale_price": "",
+        "date_on_sale_from": null,
+        "date_on_sale_from_gmt": null,
+        "date_on_sale_to": null,
+        "date_on_sale_to_gmt": null,
+        "on_sale": false,
+        "purchasable": false,
+        "total_sales": 0,
+        "virtual": false,
+        "downloadable": false,
+        "downloads": [],
+        "download_limit": -1,
+        "download_expiry": -1,
+        "external_url": "",
+        "button_text": "",
+        "tax_status": "taxable",
+        "tax_class": "",
+        "manage_stock": false,
+        "stock_quantity": null,
+        "backorders": "no",
+        "backorders_allowed": false,
+        "backordered": false,
+        "low_stock_amount": null,
+        "sold_individually": false,
+        "weight": "",
+        "dimensions": {
+            "length": "",
+            "width": "",
+            "height": ""
+        },
+        "shipping_required": true,
+        "shipping_taxable": true,
+        "shipping_class": "",
+        "shipping_class_id": 0,
+        "reviews_allowed": true,
+        "average_rating": "0.00",
+        "rating_count": 0,
+        "upsell_ids": [],
+        "cross_sell_ids": [],
+        "parent_id": 0,
+        "purchase_note": "",
+        "categories": [
+            {
+                "id": 19,
+                "name": "Windows",
+                "slug": "windows"
+            },
+            {
+                "id": 18,
+                "name": "Wood",
+                "slug": "wood"
+            }
+        ],
+        "tags": [],
+        "images": [],
+        "attributes": [],
+        "default_attributes": [],
+        "variations": [],
+        "grouped_products": [],
+        "menu_order": 0,
+        "price_html": "",
+        "related_ids": [
+            64,
+            55,
+            60,
+            67,
+            66
+        ],
+        "meta_data": [
+            {
+                "id": 125,
+                "key": "type_of_product",
+                "value": "Window"
+            },
+            {
+                "id": 126,
+                "key": "_type_of_product",
+                "value": "field_658a9857e559c"
+            },
+            {
+                "id": 127,
+                "key": "window_size_frame_width_size__in_mm_minimumwidth",
+                "value": ""
+            },
+            {
+                "id": 128,
+                "key": "_window_size_frame_width_size__in_mm_minimumwidth",
+                "value": "field_658afe9659902"
+            },
+            {
+                "id": 129,
+                "key": "window_size_frame_width_size__in_mm_maximum_width",
+                "value": ""
+            },
+            {
+                "id": 130,
+                "key": "_window_size_frame_width_size__in_mm_maximum_width",
+                "value": "field_658afe9d59903"
+            },
+            {
+                "id": 131,
+                "key": "window_size_frame_width_size__in_mm",
+                "value": ""
+            },
+            {
+                "id": 132,
+                "key": "_window_size_frame_width_size__in_mm",
+                "value": "field_658afe8259901"
+            },
+            {
+                "id": 133,
+                "key": "window_size_frame_height_size_in_mm_min_height",
+                "value": ""
+            },
+            {
+                "id": 134,
+                "key": "_window_size_frame_height_size_in_mm_min_height",
+                "value": "field_658afec659906"
+            },
+            {
+                "id": 135,
+                "key": "window_size_frame_height_size_in_mm_max_height",
+                "value": ""
+            },
+            {
+                "id": 136,
+                "key": "_window_size_frame_height_size_in_mm_max_height",
+                "value": "field_658afed259907"
+            },
+            {
+                "id": 137,
+                "key": "window_size_frame_height_size_in_mm",
+                "value": ""
+            },
+            {
+                "id": 138,
+                "key": "_window_size_frame_height_size_in_mm",
+                "value": "field_658afec059905"
+            },
+            {
+                "id": 139,
+                "key": "window_size",
+                "value": ""
+            },
+            {
+                "id": 140,
+                "key": "_window_size",
+                "value": "field_658a964f6323b"
+            },
+            {
+                "id": 141,
+                "key": "materials_choose_material_type",
+                "value": "Wood"
+            },
+            {
+                "id": 142,
+                "key": "_materials_choose_material_type",
+                "value": "field_658a96ed8bd33"
+            },
+            {
+                "id": 143,
+                "key": "materials",
+                "value": ""
+            },
+            {
+                "id": 144,
+                "key": "_materials",
+                "value": "field_658a96df8bd32"
+            },
+            {
+                "id": 145,
+                "key": "colors",
+                "value": ""
+            },
+            {
+                "id": 146,
+                "key": "_colors",
+                "value": "field_658a981ba4822"
+            },
+            {
+                "id": 147,
+                "key": "profile",
+                "value": ""
+            },
+            {
+                "id": 148,
+                "key": "_profile",
+                "value": "field_658a9752b3d5f"
+            },
+            {
+                "id": 149,
+                "key": "glazing",
+                "value": "No Glazing"
+            },
+            {
+                "id": 150,
+                "key": "_glazing",
+                "value": "field_658a98de7f924"
+            },
+            {
+                "id": 151,
+                "key": "ventilation_grid",
+                "value": "Yes"
+            },
+            {
+                "id": 152,
+                "key": "_ventilation_grid",
+                "value": "field_658a990748927"
+            },
+            {
+                "id": 153,
+                "key": "_yoast_wpseo_primary_product_cat",
+                "value": "19"
+            },
+            {
+                "id": 154,
+                "key": "_yoast_wpseo_content_score",
+                "value": "90"
+            },
+            {
+                "id": 155,
+                "key": "_yoast_wpseo_estimated-reading-time-minutes",
+                "value": "1"
+            },
+            {
+                "id": 156,
+                "key": "_yoast_wpseo_wordproof_timestamp",
+                "value": ""
+            }
+        ],
+        "stock_status": "instock",
+        "has_options": false,
+        "post_password": "",
+        "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v21.7 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>Wooden Fixed Glass Frame | 2 Horizontal Compartments - User&#039;s blog</title>\n<!-- Admin only notice: this page does not show a meta description because it does not have one, either write it for this page specifically or go into the [Yoast SEO - Settings] menu and set up a template. -->\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-2-horizontal-compartments/\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:locale\" content=\"en_US\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:type\" content=\"article\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:title\" content=\"Wooden Fixed Glass Frame | 2 Horizontal Compartments - User&#039;s blog\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:description\" content=\"This 2-compartment wooden fixed glass frame is divided into two horizontally-configured compartments, all configured to your preferences. We make all frames to order, giving you the freedom to enter the dimensions and customize the division yourself. All [insert company name] frames are designed to adhere to the SKG quality mark and the Policy Quality Mark [&hellip;]\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:url\" content=\"http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-2-horizontal-compartments/\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:site_name\" content=\"User&#039;s blog\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"article:modified_time\" content=\"2023-12-26T19:04:54+00:00\" class=\"yoast-seo-meta-tag\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" class=\"yoast-seo-meta-tag\" />\n<meta name=\"twitter:label1\" content=\"Est. reading time\" class=\"yoast-seo-meta-tag\" />\n\t<meta name=\"twitter:data1\" content=\"1 minute\" class=\"yoast-seo-meta-tag\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-2-horizontal-compartments/\",\"url\":\"http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-2-horizontal-compartments/\",\"name\":\"Wooden Fixed Glass Frame | 2 Horizontal Compartments - User&#039;s blog\",\"isPartOf\":{\"@id\":\"http://18.156.79.18/#website\"},\"datePublished\":\"2023-12-26T19:04:53+00:00\",\"dateModified\":\"2023-12-26T19:04:54+00:00\",\"breadcrumb\":{\"@id\":\"http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-2-horizontal-compartments/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-2-horizontal-compartments/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-2-horizontal-compartments/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http://18.156.79.18/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Shop\",\"item\":\"https://18.156.79.18/shop/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Wooden Fixed Glass Frame | 2 Horizontal Compartments\"}]},{\"@type\":\"WebSite\",\"@id\":\"http://18.156.79.18/#website\",\"url\":\"http://18.156.79.18/\",\"name\":\"User&#039;s blog\",\"description\":\"\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"http://18.156.79.18/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"en-US\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+        "yoast_head_json": {
+            "title": "Wooden Fixed Glass Frame | 2 Horizontal Compartments - User&#039;s blog",
+            "robots": {
+                "index": "index",
+                "follow": "follow",
+                "max-snippet": "max-snippet:-1",
+                "max-image-preview": "max-image-preview:large",
+                "max-video-preview": "max-video-preview:-1"
+            },
+            "canonical": "http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-2-horizontal-compartments/",
+            "og_locale": "en_US",
+            "og_type": "article",
+            "og_title": "Wooden Fixed Glass Frame | 2 Horizontal Compartments - User&#039;s blog",
+            "og_description": "This 2-compartment wooden fixed glass frame is divided into two horizontally-configured compartments, all configured to your preferences. We make all frames to order, giving you the freedom to enter the dimensions and customize the division yourself. All [insert company name] frames are designed to adhere to the SKG quality mark and the Policy Quality Mark [&hellip;]",
+            "og_url": "http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-2-horizontal-compartments/",
+            "og_site_name": "User&#039;s blog",
+            "article_modified_time": "2023-12-26T19:04:54+00:00",
+            "twitter_card": "summary_large_image",
+            "twitter_misc": {
+                "Est. reading time": "1 minute"
+            },
+            "schema": {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "WebPage",
+                        "@id": "http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-2-horizontal-compartments/",
+                        "url": "http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-2-horizontal-compartments/",
+                        "name": "Wooden Fixed Glass Frame | 2 Horizontal Compartments - User&#039;s blog",
+                        "isPartOf": {
+                            "@id": "http://18.156.79.18/#website"
+                        },
+                        "datePublished": "2023-12-26T19:04:53+00:00",
+                        "dateModified": "2023-12-26T19:04:54+00:00",
+                        "breadcrumb": {
+                            "@id": "http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-2-horizontal-compartments/#breadcrumb"
+                        },
+                        "inLanguage": "en-US",
+                        "potentialAction": [
+                            {
+                                "@type": "ReadAction",
+                                "target": [
+                                    "http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-2-horizontal-compartments/"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "BreadcrumbList",
+                        "@id": "http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-2-horizontal-compartments/#breadcrumb",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Home",
+                                "item": "http://18.156.79.18/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Shop",
+                                "item": "https://18.156.79.18/shop/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "Wooden Fixed Glass Frame | 2 Horizontal Compartments"
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "WebSite",
+                        "@id": "http://18.156.79.18/#website",
+                        "url": "http://18.156.79.18/",
+                        "name": "User&#039;s blog",
+                        "description": "",
+                        "potentialAction": [
+                            {
+                                "@type": "SearchAction",
+                                "target": {
+                                    "@type": "EntryPoint",
+                                    "urlTemplate": "http://18.156.79.18/?s={search_term_string}"
+                                },
+                                "query-input": "required name=search_term_string"
+                            }
+                        ],
+                        "inLanguage": "en-US"
+                    }
+                ]
+            }
+        },
+        "acf": {
+            "type_of_product": "Window",
+            "window_size": {
+                "frame_width_size__in_mm": {
+                    "minimumwidth": "",
+                    "maximum_width": ""
+                },
+                "frame_height_size_in_mm": {
+                    "min_height": "",
+                    "max_height": ""
+                }
+            },
+            "materials": {
+                "choose_material_type": "Wood"
+            },
+            "colors": [],
+            "profile": [],
+            "glazing": "No Glazing",
+            "ventilation_grid": "Yes"
+        },
+        "_links": {
+            "self": [
+                {
+                    "href": "https://18.156.79.18/wp-json/wc/v3/products/56"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://18.156.79.18/wp-json/wc/v3/products"
+                }
+            ]
+        }
+    },
+    {
+        "id": 55,
+        "name": "Wooden Fixed Glass Frame | 1 Box",
+        "slug": "wooden-fixed-glass-frame-1-box",
+        "permalink": "https://18.156.79.18/product/wooden-fixed-glass-frame-1-box/",
+        "date_created": "2023-12-26T19:04:33",
+        "date_created_gmt": "2023-12-26T19:04:33",
+        "date_modified": "2023-12-26T19:04:33",
+        "date_modified_gmt": "2023-12-26T19:04:33",
+        "type": "simple",
+        "status": "publish",
+        "featured": false,
+        "catalog_visibility": "visible",
+        "description": "<p class=\"p1\">This 1-box wooden frame includes a single compartment with fixed glass. All Quint Kozijnen frames are designed to adhere to the SKG quality mark and the Policy Quality Mark for Safe Living. Customize your frame by choosing a delivery option that includes either a topcoat or prepaint layer.</p>\n<p class=\"p1\"><strong>Options for glazing</strong></p>\n<p class=\"p1\">Feel peace of mind and safety with interior side glazing, enhancing burglary resistance and a sleek appearance for the frame. We affix an aluminum glazing profile to the sill. Choose from a range of glass choices, including triple glass (HR+++), double glass (HR++), frosted glass, or glass with bars. Or, choose to order the frame without glazing.</p>\n<p class=\"p1\">Regardless of your customization preferences, the frame is delivered fully assembled. Simply input the dimensions of the wooden frame, the desired properties, and you’re ready to place your order .</p>\n",
+        "short_description": "",
+        "sku": "",
+        "price": "",
+        "regular_price": "",
+        "sale_price": "",
+        "date_on_sale_from": null,
+        "date_on_sale_from_gmt": null,
+        "date_on_sale_to": null,
+        "date_on_sale_to_gmt": null,
+        "on_sale": false,
+        "purchasable": false,
+        "total_sales": 0,
+        "virtual": false,
+        "downloadable": false,
+        "downloads": [],
+        "download_limit": -1,
+        "download_expiry": -1,
+        "external_url": "",
+        "button_text": "",
+        "tax_status": "taxable",
+        "tax_class": "",
+        "manage_stock": false,
+        "stock_quantity": null,
+        "backorders": "no",
+        "backorders_allowed": false,
+        "backordered": false,
+        "low_stock_amount": null,
+        "sold_individually": false,
+        "weight": "",
+        "dimensions": {
+            "length": "",
+            "width": "",
+            "height": ""
+        },
+        "shipping_required": true,
+        "shipping_taxable": true,
+        "shipping_class": "",
+        "shipping_class_id": 0,
+        "reviews_allowed": true,
+        "average_rating": "0.00",
+        "rating_count": 0,
+        "upsell_ids": [],
+        "cross_sell_ids": [],
+        "parent_id": 0,
+        "purchase_note": "",
+        "categories": [
+            {
+                "id": 19,
+                "name": "Windows",
+                "slug": "windows"
+            },
+            {
+                "id": 18,
+                "name": "Wood",
+                "slug": "wood"
+            }
+        ],
+        "tags": [],
+        "images": [],
+        "attributes": [],
+        "default_attributes": [],
+        "variations": [],
+        "grouped_products": [],
+        "menu_order": 0,
+        "price_html": "",
+        "related_ids": [
+            58,
+            60,
+            57,
+            62,
+            64
+        ],
+        "meta_data": [
+            {
+                "id": 76,
+                "key": "type_of_product",
+                "value": "Window"
+            },
+            {
+                "id": 77,
+                "key": "_type_of_product",
+                "value": "field_658a9857e559c"
+            },
+            {
+                "id": 78,
+                "key": "window_size_frame_width_size__in_mm_minimumwidth",
+                "value": ""
+            },
+            {
+                "id": 79,
+                "key": "_window_size_frame_width_size__in_mm_minimumwidth",
+                "value": "field_658afe9659902"
+            },
+            {
+                "id": 80,
+                "key": "window_size_frame_width_size__in_mm_maximum_width",
+                "value": ""
+            },
+            {
+                "id": 81,
+                "key": "_window_size_frame_width_size__in_mm_maximum_width",
+                "value": "field_658afe9d59903"
+            },
+            {
+                "id": 82,
+                "key": "window_size_frame_width_size__in_mm",
+                "value": ""
+            },
+            {
+                "id": 83,
+                "key": "_window_size_frame_width_size__in_mm",
+                "value": "field_658afe8259901"
+            },
+            {
+                "id": 84,
+                "key": "window_size_frame_height_size_in_mm_min_height",
+                "value": ""
+            },
+            {
+                "id": 85,
+                "key": "_window_size_frame_height_size_in_mm_min_height",
+                "value": "field_658afec659906"
+            },
+            {
+                "id": 86,
+                "key": "window_size_frame_height_size_in_mm_max_height",
+                "value": ""
+            },
+            {
+                "id": 87,
+                "key": "_window_size_frame_height_size_in_mm_max_height",
+                "value": "field_658afed259907"
+            },
+            {
+                "id": 88,
+                "key": "window_size_frame_height_size_in_mm",
+                "value": ""
+            },
+            {
+                "id": 89,
+                "key": "_window_size_frame_height_size_in_mm",
+                "value": "field_658afec059905"
+            },
+            {
+                "id": 90,
+                "key": "window_size",
+                "value": ""
+            },
+            {
+                "id": 91,
+                "key": "_window_size",
+                "value": "field_658a964f6323b"
+            },
+            {
+                "id": 92,
+                "key": "materials_choose_material_type",
+                "value": "Wood"
+            },
+            {
+                "id": 93,
+                "key": "_materials_choose_material_type",
+                "value": "field_658a96ed8bd33"
+            },
+            {
+                "id": 94,
+                "key": "materials",
+                "value": ""
+            },
+            {
+                "id": 95,
+                "key": "_materials",
+                "value": "field_658a96df8bd32"
+            },
+            {
+                "id": 96,
+                "key": "colors",
+                "value": ""
+            },
+            {
+                "id": 97,
+                "key": "_colors",
+                "value": "field_658a981ba4822"
+            },
+            {
+                "id": 98,
+                "key": "profile",
+                "value": ""
+            },
+            {
+                "id": 99,
+                "key": "_profile",
+                "value": "field_658a9752b3d5f"
+            },
+            {
+                "id": 100,
+                "key": "glazing",
+                "value": "No Glazing"
+            },
+            {
+                "id": 101,
+                "key": "_glazing",
+                "value": "field_658a98de7f924"
+            },
+            {
+                "id": 102,
+                "key": "ventilation_grid",
+                "value": "Yes"
+            },
+            {
+                "id": 103,
+                "key": "_ventilation_grid",
+                "value": "field_658a990748927"
+            },
+            {
+                "id": 104,
+                "key": "_yoast_wpseo_primary_product_cat",
+                "value": "18"
+            },
+            {
+                "id": 105,
+                "key": "_yoast_wpseo_content_score",
+                "value": "90"
+            },
+            {
+                "id": 106,
+                "key": "_yoast_wpseo_estimated-reading-time-minutes",
+                "value": "1"
+            },
+            {
+                "id": 107,
+                "key": "_yoast_wpseo_wordproof_timestamp",
+                "value": ""
+            }
+        ],
+        "stock_status": "instock",
+        "has_options": false,
+        "post_password": "",
+        "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v21.7 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>Wooden Fixed Glass Frame | 1 Box - User&#039;s blog</title>\n<!-- Admin only notice: this page does not show a meta description because it does not have one, either write it for this page specifically or go into the [Yoast SEO - Settings] menu and set up a template. -->\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-1-box/\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:locale\" content=\"en_US\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:type\" content=\"article\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:title\" content=\"Wooden Fixed Glass Frame | 1 Box - User&#039;s blog\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:description\" content=\"This 1-box wooden frame includes a single compartment with fixed glass. All Quint Kozijnen frames are designed to adhere to the SKG quality mark and the Policy Quality Mark for Safe Living. Customize your frame by choosing a delivery option that includes either a topcoat or prepaint layer. Options for glazing Feel peace of mind [&hellip;]\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:url\" content=\"http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-1-box/\" class=\"yoast-seo-meta-tag\" />\n<meta property=\"og:site_name\" content=\"User&#039;s blog\" class=\"yoast-seo-meta-tag\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" class=\"yoast-seo-meta-tag\" />\n<meta name=\"twitter:label1\" content=\"Est. reading time\" class=\"yoast-seo-meta-tag\" />\n\t<meta name=\"twitter:data1\" content=\"1 minute\" class=\"yoast-seo-meta-tag\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-1-box/\",\"url\":\"http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-1-box/\",\"name\":\"Wooden Fixed Glass Frame | 1 Box - User&#039;s blog\",\"isPartOf\":{\"@id\":\"http://18.156.79.18/#website\"},\"datePublished\":\"2023-12-26T19:04:33+00:00\",\"dateModified\":\"2023-12-26T19:04:33+00:00\",\"breadcrumb\":{\"@id\":\"http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-1-box/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-1-box/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-1-box/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http://18.156.79.18/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Shop\",\"item\":\"https://18.156.79.18/shop/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Wooden Fixed Glass Frame | 1 Box\"}]},{\"@type\":\"WebSite\",\"@id\":\"http://18.156.79.18/#website\",\"url\":\"http://18.156.79.18/\",\"name\":\"User&#039;s blog\",\"description\":\"\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"http://18.156.79.18/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"en-US\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+        "yoast_head_json": {
+            "title": "Wooden Fixed Glass Frame | 1 Box - User&#039;s blog",
+            "robots": {
+                "index": "index",
+                "follow": "follow",
+                "max-snippet": "max-snippet:-1",
+                "max-image-preview": "max-image-preview:large",
+                "max-video-preview": "max-video-preview:-1"
+            },
+            "canonical": "http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-1-box/",
+            "og_locale": "en_US",
+            "og_type": "article",
+            "og_title": "Wooden Fixed Glass Frame | 1 Box - User&#039;s blog",
+            "og_description": "This 1-box wooden frame includes a single compartment with fixed glass. All Quint Kozijnen frames are designed to adhere to the SKG quality mark and the Policy Quality Mark for Safe Living. Customize your frame by choosing a delivery option that includes either a topcoat or prepaint layer. Options for glazing Feel peace of mind [&hellip;]",
+            "og_url": "http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-1-box/",
+            "og_site_name": "User&#039;s blog",
+            "twitter_card": "summary_large_image",
+            "twitter_misc": {
+                "Est. reading time": "1 minute"
+            },
+            "schema": {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "WebPage",
+                        "@id": "http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-1-box/",
+                        "url": "http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-1-box/",
+                        "name": "Wooden Fixed Glass Frame | 1 Box - User&#039;s blog",
+                        "isPartOf": {
+                            "@id": "http://18.156.79.18/#website"
+                        },
+                        "datePublished": "2023-12-26T19:04:33+00:00",
+                        "dateModified": "2023-12-26T19:04:33+00:00",
+                        "breadcrumb": {
+                            "@id": "http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-1-box/#breadcrumb"
+                        },
+                        "inLanguage": "en-US",
+                        "potentialAction": [
+                            {
+                                "@type": "ReadAction",
+                                "target": [
+                                    "http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-1-box/"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "BreadcrumbList",
+                        "@id": "http://thedarkstarsoft.com/quint/product/wooden-fixed-glass-frame-1-box/#breadcrumb",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Home",
+                                "item": "http://18.156.79.18/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Shop",
+                                "item": "https://18.156.79.18/shop/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "Wooden Fixed Glass Frame | 1 Box"
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "WebSite",
+                        "@id": "http://18.156.79.18/#website",
+                        "url": "http://18.156.79.18/",
+                        "name": "User&#039;s blog",
+                        "description": "",
+                        "potentialAction": [
+                            {
+                                "@type": "SearchAction",
+                                "target": {
+                                    "@type": "EntryPoint",
+                                    "urlTemplate": "http://18.156.79.18/?s={search_term_string}"
+                                },
+                                "query-input": "required name=search_term_string"
+                            }
+                        ],
+                        "inLanguage": "en-US"
+                    }
+                ]
+            }
+        },
+        "acf": {
+            "type_of_product": "Window",
+            "window_size": {
+                "frame_width_size__in_mm": {
+                    "minimumwidth": "",
+                    "maximum_width": ""
+                },
+                "frame_height_size_in_mm": {
+                    "min_height": "",
+                    "max_height": ""
+                }
+            },
+            "materials": {
+                "choose_material_type": "Wood"
+            },
+            "colors": [],
+            "profile": [],
+            "glazing": "No Glazing",
+            "ventilation_grid": "Yes"
+        },
+        "_links": {
+            "self": [
+                {
+                    "href": "https://18.156.79.18/wp-json/wc/v3/products/55"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://18.156.79.18/wp-json/wc/v3/products"
+                }
+            ]
+        }
+    }
+]

@@ -1,0 +1,64 @@
+.delivery {
+  margin: 112px 0;
+  span {
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  h3 {
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  p {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  &__body {
+    align-items: center;
+    justify-content: center;
+    .col-3 {
+      max-width: 23%;
+    }
+    &__card {
+      border: 1px solid black;
+      border-radius: 20px;
+      padding: 24px;
+      margin-right: 32px;
+      &:last-child {
+        margin-right: 0;
+      }
+      span,
+      h3,
+      p {
+        text-align: unset;
+      }
+      h3 {
+        font-size: 24px;
+      }
+      img {
+        margin-bottom: 16px;
+      }
+      p {
+        font-size: 16px;
+        margin-top: 8px;
+        margin-bottom: 24px;
+      }
+      a {
+        margin: 0;
+        padding: 0;
+        color: #a31332;
+        display: block;
+        margin-bottom: 10px;
+        img {
+          margin: 0;
+          margin-left: 7px;
+        }
+      }
+    }
+  }
+}

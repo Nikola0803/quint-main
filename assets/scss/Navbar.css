@@ -1,0 +1,71 @@
+.navbar {
+  margin: 15px 0;
+  padding: 0;
+}
+.navbar img {
+  cursor: pointer;
+}
+.navbar .btn-white {
+  margin-right: 15px;
+}
+.navbar__left, .navbar__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar__left .dropdown {
+  display: inline-block;
+}
+.navbar__left ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 15px;
+}
+.navbar__left ul a {
+  margin: 0 15px;
+}
+
+/* Your custom styles */
+.btn-secondary {
+  background-color: transparent;
+  color: black;
+  border: none;
+}
+.btn-secondary:hover {
+  background-color: transparent;
+  border-color: transparent;
+  color: black;
+}
+.btn-secondary:active {
+  background-color: transparent;
+  border-color: transparent;
+  color: black;
+}
+
+/* Overwrite the specific styles you want to change */
+.btn-secondary:not(:disabled):not(.disabled).active,
+.btn-secondary:not(:disabled):not(.disabled):active,
+.show > .btn-secondary.dropdown-toggle {
+  color: black;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.btn-secondary:not(:disabled):not(.disabled).active:focus,
+.btn-secondary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-secondary.dropdown-toggle:focus {
+  box-shadow: none;
+}
+
+.btn-secondary.focus,
+.btn-secondary:focus {
+  box-shadow: none;
+}
+
+.dropdown-menu {
+  background-color: #d9d9d9;
+}
+.dropdown-menu .dropdown-item {
+  margin: 0;
+}/*# sourceMappingURL=Navbar.css.map */
