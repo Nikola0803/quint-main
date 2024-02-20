@@ -784,7 +784,7 @@ function SingleProductPage() {
         }
       });
     };
-
+  };
   return (
     <div className="single-product-page">
       <div className="container">
