@@ -784,7 +784,22 @@ function SingleProductPage() {
         }
       });
     };
+
+    return (
+      <form onSubmit={handleSubmit}>
+        <CardElement />
+        <AddressElement options={{ mode: "billing" }} />
+        <button
+          disabled={!stripe}
+          style={{ backgroundColor: sucess ? "green" : "" }}
+          className="btn-colored"
+        >
+          {sucess ? "Successfully ordered" : "Order this frame"}
+        </button>
+      </form>
+    );
   };
+
   return (
     <div className="single-product-page">
       <div className="container">
