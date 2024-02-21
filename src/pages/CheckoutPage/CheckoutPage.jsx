@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import "/Users/nikolazivkovic/Downloads/window-app/src/components/Checkout/Checkout.scss";
+import "../../components/Checkout/Checkout.scss";
 
 const CheckoutPage = () => {
   const [customerDetails, setCustomerDetails] = useState({
