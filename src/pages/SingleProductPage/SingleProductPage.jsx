@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext  } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import "./SingleProductPage.scss";
 import ImageGallery from "react-image-gallery";
@@ -12,8 +12,8 @@ import ruler from "../../assets/clarity_ruler-pencil-line.svg";
 import littleWindow from "../../assets/little-window.png";
 import Card from "../../components/Card/Card";
 import { loadStripe } from "@stripe/stripe-js";
-import CheckoutButton from '../../components/Checkout/Checkout.jsx';
-import { useCart } from '../../context/CartContext.js';
+import CheckoutButton from "../../components/Checkout/Checkout.jsx";
+import { useCart } from "../../context/CartContext.js";
 
 import {
   AddressElement,
@@ -112,15 +112,10 @@ function SingleProductPage() {
                   }
                   alt={colorOption[0]?.color_name}
                   onError={(e) => (e.target.src = "")}
-                  style={{
-                    width: "50px",
-                    height: "50px",
-                    marginRight: "10px",
-                  }}
                 />
                 <div>
                   <p>{colorOption[0]?.color_name}</p>
-                  <p>€{colorOption[0]?.["color_price_in_%"] || "N/A"}</p>
+                  {/* <p>€{colorOption[0]?.["color_price_in_%"] || "N/A"}</p> */}
                 </div>
               </div>
             ))}
@@ -145,15 +140,10 @@ function SingleProductPage() {
                   src={profile?.profile_image?.url}
                   alt={profile?.profile_name}
                   onError={(e) => (e.target.src = "")}
-                  style={{
-                    width: "50px",
-                    height: "50px",
-                    marginRight: "10px",
-                  }}
                 />
                 <div>
                   <p>{profile?.profile_name}</p>
-                  <p>€{profile["profile_price"]}</p>
+                  {/* <p>€{profile["profile_price"]}</p> */}
                 </div>
               </div>
             ))}
@@ -179,14 +169,29 @@ function SingleProductPage() {
                   src={profile[0].image}
                   alt=""
                   onError={(e) => (e.target.src = "")}
-                  style={{
-                    width: "50px",
-                    height: "50px",
-                    marginRight: "10px",
-                  }}
                 />
                 <div>
-                  <p>{profile[0]?.price_per_sqm}</p>
+                  {index === 0 && ( // Display the first key for the first product
+                    <p key={Object.keys(glassLayersArray)[0]}>
+                      {Object.keys(glassLayersArray)[0]
+                        .charAt(0)
+                        .toUpperCase() +
+                        Object.keys(glassLayersArray)[0]
+                          .slice(1)
+                          .replace("_", " ")}
+                    </p>
+                  )}
+                  {index === 1 && ( // Display the second key for the second product
+                    <p key={Object.keys(glassLayersArray)[1]}>
+                      {Object.keys(glassLayersArray)[1]
+                        .charAt(0)
+                        .toUpperCase() +
+                        Object.keys(glassLayersArray)[1]
+                          .slice(1)
+                          .replace("_", " ")}
+                    </p>
+                  )}
+                  {/* <p>{profile[0]?.price_per_sqm}</p> */}
                 </div>
               </div>
             ))}
@@ -234,15 +239,10 @@ function SingleProductPage() {
                   src={profile?.image_of_handle?.url}
                   alt=""
                   onError={(e) => (e.target.src = "")}
-                  style={{
-                    width: "50px",
-                    height: "50px",
-                    marginRight: "10px",
-                  }}
                 />
                 <div>
                   <p>{profile?.name_of_handle}</p>
-                  <p>€{profile?.price_of_handle}</p>
+                  {/* <p>€{profile?.price_of_handle}</p> */}
                 </div>
               </div>
             ))}
@@ -268,15 +268,10 @@ function SingleProductPage() {
                   src={profile?.image_of_ventilation_grid?.url}
                   alt=""
                   onError={(e) => (e.target.src = "")}
-                  style={{
-                    width: "50px",
-                    height: "50px",
-                    marginRight: "10px",
-                  }}
                 />
                 <div>
                   <p>{profile?.name_of_ventilation_grid}</p>
-                  <p>€{profile?.price_of_ventilation_grid}</p>
+                  {/* <p>€{profile?.price_of_ventilation_grid}</p> */}
                 </div>
               </div>
             ))}
@@ -521,16 +516,7 @@ function SingleProductPage() {
               }`}
               onClick={() => setSelectedOpening(product?.acf?.opening_type)}
             >
-              <img
-                src={"#"}
-                alt=""
-                onError={(e) => (e.target.src = "")}
-                style={{
-                  width: "50px",
-                  height: "50px",
-                  marginRight: "10px",
-                }}
-              />
+              <img src={"#"} alt="" onError={(e) => (e.target.src = "")} />
               <div>
                 <p>{product?.acf?.opening_type}</p>
               </div>
@@ -739,7 +725,7 @@ function SingleProductPage() {
     "pk_test_51OjiJRAgVqMLdvyKEDiUCfTwAU4eVazBSDEGvwK5Ce2a20lvKlf8RKqsXe7ZlX5o9JCxl7yhIngvoWAZKsw0MFvZ00R93r14k2"
   );
 
-const CheckoutForm = () => {
+  const CheckoutForm = () => {
     const stripe = useStripe();
     const elements = useElements();
     const [success, setSuccess] = useState(false);
@@ -748,14 +734,16 @@ const CheckoutForm = () => {
     const handleAddToCart = () => {
       // Define your productConfig here or ensure it's available in this scope
       const productConfig = {
-          product_id: "someId",
-          custom_price: 1000,
-          items: { /* Your item details */ },
+        product_id: "someId",
+        custom_price: 1000,
+        items: {
+          /* Your item details */
+        },
       };
 
       addToCart(productConfig);
       console.log("Product added to cart", productConfig);
-  };
+    };
     const handleSubmit = async (event) => {
       event.preventDefault();
 
