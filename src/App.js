@@ -10,11 +10,14 @@ import CategoryPage from "./pages/CategoryPage/CategoryPage";
 import SingleProductPage from "./pages/SingleProductPage/SingleProductPage";
 import CheckoutPage from "./pages/CheckoutPage/CheckoutPage";
 import CartPage from "./pages/CartPage/CartPage";
+import { CartProvider } from './context/CartContext';
+
 
 
 function App() {
   return (
     <div>
+      <CartProvider>
       <Navbar />
 
       <Routes>
@@ -33,6 +36,7 @@ function App() {
       </Routes>
 
       <Footer />
+      </CartProvider>
     </div>
   );
 }
