@@ -12,7 +12,7 @@ import ruler from "../../assets/clarity_ruler-pencil-line.svg";
 import littleWindow from "../../assets/little-window.png";
 import Card from "../../components/Card/Card";
 import { loadStripe } from "@stripe/stripe-js";
-import CheckoutButton from '/Users/nikolazivkovic/Downloads/window-app/src/components/Checkout/Checkout.jsx';
+import CheckoutButton from '../../components/Checkout/Checkout.jsx';
 import {
   AddressElement,
   CardElement,
