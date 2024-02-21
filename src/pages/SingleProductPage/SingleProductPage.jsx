@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext  } from "react";
 import { useParams } from "react-router-dom";
 import "./SingleProductPage.scss";
 import ImageGallery from "react-image-gallery";
@@ -13,6 +13,8 @@ import littleWindow from "../../assets/little-window.png";
 import Card from "../../components/Card/Card";
 import { loadStripe } from "@stripe/stripe-js";
 import CheckoutButton from '../../components/Checkout/Checkout.jsx';
+import { useCart } from '../../context/CartContext.js';
+
 import {
   AddressElement,
   CardElement,
@@ -26,6 +28,7 @@ function SingleProductPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { productId } = useParams();
+  const { addToCart } = useCart();
 
   const [currentStep, setCurrentStep] = useState(1);
 
@@ -739,7 +742,20 @@ function SingleProductPage() {
 const CheckoutForm = () => {
     const stripe = useStripe();
     const elements = useElements();
+    const [success, setSuccess] = useState(false);
+    const { addToCart } = useCart();
 
+    const handleAddToCart = () => {
+      // Define your productConfig here or ensure it's available in this scope
+      const productConfig = {
+          product_id: "someId",
+          custom_price: 1000,
+          items: { /* Your item details */ },
+      };
+
+      addToCart(productConfig);
+      console.log("Product added to cart", productConfig);
+  };
     const handleSubmit = async (event) => {
       event.preventDefault();
 
@@ -797,8 +813,7 @@ const CheckoutForm = () => {
         >
           {sucess ? "Successfully ordered" : "Order this frame"}
         </button>
-        <CheckoutButton options={{ mode: "billing" }}
-          className="btn-colored"/>
+        <button onClick={handleAddToCart}>Add to Cart</button>
       </form>
     );
   };
