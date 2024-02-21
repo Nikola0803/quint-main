@@ -21,7 +21,7 @@ const CartPage = () => {
           <span>${(item.price / 100).toFixed(2)} x {item.quantity}</span>
         </div>
       ))}
-      <div className="cart-total">Total: ${(total / 100).toFixed(2)}</div>
+      <div className="cart-total">Total: €{(total / 100).toFixed(2)}</div>
       <CheckoutButton total={total} className="btn-colored"/>
     </div>
   );
