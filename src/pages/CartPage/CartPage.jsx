@@ -18,7 +18,7 @@ const CartPage = () => {
       {dummyCartItems.map(item => (
         <div key={item.id} className="cart-item">
           <span>{item.name}</span>
-          <span>${(item.price / 100).toFixed(2)} x {item.quantity}</span>
+          <span>€{(item.price / 100).toFixed(2)} x {item.quantity}</span>
         </div>
       ))}
       <div className="cart-total">Total: €{(total / 100).toFixed(2)}</div>
