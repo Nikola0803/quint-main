@@ -8,6 +8,9 @@ import "react-multi-carousel/lib/styles.css";
 import ProductsPage from "./pages/ProductsPage/ProductsPage";
 import CategoryPage from "./pages/CategoryPage/CategoryPage";
 import SingleProductPage from "./pages/SingleProductPage/SingleProductPage";
+import CheckoutPage from "./pages/CheckoutPage/CheckoutPage";
+import CartPage from "./pages/CartPage/CartPage";
+
 
 function App() {
   return (
@@ -19,6 +22,9 @@ function App() {
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/category" element={<CategoryPage />} />
         <Route path="/product/:productId" element={<SingleProductPage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/cart" element={<CartPage />} />
+        
 
         {/* Add more routes if needed */}
 

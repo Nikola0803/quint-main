@@ -12,6 +12,7 @@ import ruler from "../../assets/clarity_ruler-pencil-line.svg";
 import littleWindow from "../../assets/little-window.png";
 import Card from "../../components/Card/Card";
 import { loadStripe } from "@stripe/stripe-js";
+import CheckoutButton from '/Users/nikolazivkovic/Downloads/window-app/src/components/Checkout/Checkout.jsx';
 import {
   AddressElement,
   CardElement,
@@ -735,7 +736,7 @@ function SingleProductPage() {
     "pk_test_51OjiJRAgVqMLdvyKEDiUCfTwAU4eVazBSDEGvwK5Ce2a20lvKlf8RKqsXe7ZlX5o9JCxl7yhIngvoWAZKsw0MFvZ00R93r14k2"
   );
 
-  const CheckoutForm = () => {
+const CheckoutForm = () => {
     const stripe = useStripe();
     const elements = useElements();
 
@@ -796,6 +797,8 @@ function SingleProductPage() {
         >
           {sucess ? "Successfully ordered" : "Order this frame"}
         </button>
+        <CheckoutButton options={{ mode: "billing" }}
+          className="btn-colored"/>
       </form>
     );
   };
