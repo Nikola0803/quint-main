@@ -734,10 +734,18 @@ function SingleProductPage() {
     const handleAddToCart = () => {
       // Define your productConfig here or ensure it's available in this scope
       const productConfig = {
-        product_id: "someId",
-        custom_price: 1000,
+        product_id: product?.id,
+        custom_price: totalPriceIncludingVAT?.toFixed(2),
         items: {
           /* Your item details */
+          // Example custom fields
+          color_selection: selectedColor?.color_name,
+          glass_layers: selectedGlassLayers?.price_per_sqm,
+          glass_type: selectedGlassTypes?.color_of_glass,
+          handle: selectedHandles?.name_of_handle,
+          profile: selectedProfile?.profile_name,
+          ventilation_grid: selectedGrids?.name_of_ventilation_grid,
+          window_size: { width: frameWidth, height: frameHeight },
         },
       };
 
@@ -791,18 +799,20 @@ function SingleProductPage() {
     };
 
     return (
-      <form onSubmit={handleSubmit}>
-        <CardElement />
-        <AddressElement options={{ mode: "billing" }} />
-        <button
-          disabled={!stripe}
-          style={{ backgroundColor: sucess ? "green" : "" }}
-          className="btn-colored"
-        >
-          {sucess ? "Successfully ordered" : "Order this frame"}
-        </button>
+      <>
+        <form onSubmit={handleSubmit}>
+          <CardElement />
+          <AddressElement options={{ mode: "billing" }} />
+          <button
+            disabled={!stripe}
+            style={{ backgroundColor: sucess ? "green" : "" }}
+            className="btn-colored"
+          >
+            {sucess ? "Successfully ordered" : "Order this frame"}
+          </button>
+        </form>
         <button onClick={handleAddToCart}>Add to Cart</button>
-      </form>
+      </>
     );
   };
 

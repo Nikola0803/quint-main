@@ -7,7 +7,7 @@ $highlight-color: #A31332;
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
   .cart-header {
     margin-bottom: 20px;
@@ -32,6 +32,16 @@ $highlight-color: #A31332;
     font-weight: bold;
     text-align: right;
   }
+}
+
+.btn-clear-cart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  color: red;
+  padding: 10px 15px;
+  border-radius: 15px;
 }
 
 .checkout-button {
