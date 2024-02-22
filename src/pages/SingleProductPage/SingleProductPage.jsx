@@ -503,17 +503,17 @@ function SingleProductPage() {
             }`}
           >
             <div
-              className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                selectedOpening === product?.acf?.opening_type ? "selected" : ""
-              }`}
-              onClick={() => setSelectedOpening(product?.acf?.opening_type)}
-            >
-              <img src={"#"} alt="" onError={(e) => (e.target.src = "")} />
-              <div>
-                <p>{product?.acf?.opening_type}</p>
-              </div>
-            </div>
-          </div>
+  className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+    selectedOpening === product?.acf?.opening_type.name ? "selected" : ""
+  }`}
+  onClick={() => setSelectedOpening(product?.acf?.opening_type.name)}
+>
+  <img src={"#"} alt="" onError={(e) => (e.target.src = "")} />
+  <div>
+    <p>{product?.acf?.opening_type.name}</p> {/* Adjusted to access a property of the object */}
+  </div>
+</div>
+
           <div className="single-product-page__customize__left__option-holder__option__btn-wrapper">
             <button
               className={`btn-colored ${activeId !== "step4" ? "d-none" : ""}`}
