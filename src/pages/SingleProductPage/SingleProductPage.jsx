@@ -362,14 +362,6 @@ function SingleProductPage() {
                 type="number"
                 value={frameWidth}
                 onChange={(e) => setFrameWidth(e.target.value)}
-                onBlur={() => {
-                  // Clamp the value to min/max when user moves away from the input field
-                  const clampedValue = Math.max(
-                    Math.min(Number(frameWidth), maxWidth),
-                    minWidth
-                  );
-                  setFrameWidth(clampedValue);
-                }}
                 placeholder="Number"
                 style={{ textAlign: "center" }}
               />
