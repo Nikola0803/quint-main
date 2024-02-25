@@ -11,7 +11,7 @@ function Delivery() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://thedarkstarsoft.com/quint/wp-json/wp/v2/pages/51");
+        const response = await fetch("https://thedarkstarsoft.com/quint/wp-json/wp/v2/pages/51");
         const data = await response.json();
         const boxKeys = Object.keys(data.acf["4_boxes"]);
         // Filter out keys starting with "box_" to get the boxes

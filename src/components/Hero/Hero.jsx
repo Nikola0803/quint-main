@@ -7,7 +7,7 @@ function Hero() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://thedarkstarsoft.com/quint/wp-json/wp/v2/pages/51");
+        const response = await fetch("https://thedarkstarsoft.com/quint/wp-json/wp/v2/pages/51");
         const data = await response.json();
         setHeroData(data.acf.hero_section); // Assuming hero_section is what you want
       } catch (error) {
