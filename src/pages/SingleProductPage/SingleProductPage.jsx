@@ -869,7 +869,7 @@ function SingleProductPage() {
                       src={
                         product?.images[0]
                           ? product?.images[0]?.src
-                          : "http://localhost:3000/static/media/little-window.baf3ac1bbd2d082f644e.png"
+                          : "../static/media/little-window.baf3ac1bbd2d082f644e.png"
                       }
                       alt=""
                     />

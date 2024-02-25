@@ -11,10 +11,12 @@ import SingleProductPage from "./pages/SingleProductPage/SingleProductPage";
 import CheckoutPage from "./pages/CheckoutPage/CheckoutPage";
 import CartPage from "./pages/CartPage/CartPage";
 import { CartProvider } from './context/CartContext';
-
+import useHubSpotChat from './hooks/useHubSpotChat.js'; 
 
 
 function App() {
+  useHubSpotChat('141377845');
+
   return (
     <div>
       <CartProvider>
