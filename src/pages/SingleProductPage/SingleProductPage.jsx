@@ -82,7 +82,7 @@ function SingleProductPage() {
   const MiniConfigurator = () => {
     // Extract colorOptionsArray from product?.acf?.color_selection[0] safely
     const colorOptionsArray =
-      (product?.acf?.color_selection && product?.acf?.color_selection[0]) || {};
+      (product?.acf?.color_selection && product?.acf?.colors[0]) || {};
     // Get colorOptions as an array of values from colorOptionsArray
     const colorOptions = Object.values(colorOptionsArray);
 
@@ -93,111 +93,99 @@ function SingleProductPage() {
     const glassLayers = Object.values(glassLayersArray);
 
     const two = () => {
+      // Assuming product.acf.colors is the path to the color options in your product object
+      const colorCategories = product?.acf?.colors[0]; // Access the first item in the colors array
+    
+      // Flatten all color options into a single array
+      const allColorOptions = [
+        ...(colorCategories.case_color || []),
+        ...(colorCategories.window_color || []),
+        ...(colorCategories.case_color_inside || []),
+        ...(colorCategories.color_options_copy2 || []),
+      ];
+    
       return (
         <>
-          {colorOptions &&
-            colorOptions?.map((colorOption, index) => (
+          {allColorOptions.length > 0 &&
+            allColorOptions.map((colorOption, index) => (
               <div
                 key={index}
                 className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                  selectedColor?.color_name === colorOption[0]?.color_name
-                    ? "selected"
-                    : ""
+                  selectedColor?.color_name === colorOption.color_name ? "selected" : ""
                 }`}
-                onClick={() => setSelectedColor(colorOption[0])} // Add the onClick event handler here
+                onClick={() => setSelectedColor(colorOption)} // Adjusted to the current colorOption structure
               >
                 <img
-                  src={
-                    colorOption ? colorOption[0]?.color_image?.url : undefined
-                  }
-                  alt={colorOption[0]?.color_name}
+                  src={colorOption.color_image?.url || undefined}
+                  alt={colorOption.color_name}
                   onError={(e) => (e.target.src = "")}
                 />
                 <div>
-                  <p>{colorOption[0]?.color_name}</p>
-                  {/* <p>€{colorOption[0]?.["color_price_in_%"] || "N/A"}</p> */}
+                  <p>{colorOption.color_name}</p>
+                  <p>€{colorOption["color_price_in_%"] || "N/A"}</p> {/* Uncommented and adjusted to display the price */}
                 </div>
               </div>
             ))}
         </>
       );
     };
+    
     const three = () => {
       return (
         <>
           {product?.acf?.profile &&
-            product?.acf?.profile?.map((profile, index) => (
+            product?.acf?.profile.map((profile, index) => (
               <div
                 key={index}
                 className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                  selectedProfile?.profile_name === profile?.profile_name
-                    ? "selected"
-                    : ""
+                  selectedProfile?.profile_name === profile?.profile_name ? "selected" : ""
                 }`}
                 onClick={() => setSelectedProfile(profile)}
               >
                 <img
-                  src={profile?.profile_image?.url}
-                  alt={profile?.profile_name}
-                  onError={(e) => (e.target.src = "")}
+                  src={profile?.profile_image?.url || ''}
+                  alt={profile?.profile_name || 'Profile Image'}
+                  onError={(e) => (e.target.src = "path/to/default/image.png")} // Replace 'path/to/default/image.png' with actual path
                 />
                 <div>
                   <p>{profile?.profile_name}</p>
-                  {/* <p>€{profile["profile_price"]}</p> */}
+                  <p>€{profile?.profile_price || "N/A"}</p>
                 </div>
               </div>
             ))}
         </>
       );
     };
+    
     const five = () => {
+      // Assuming 'product?.acf?.glass_layers' is the correct path to the glass layers data
+      const glassLayers = product?.acf?.glass_layers || [];
+    
       return (
         <>
-          {glassLayers &&
-            glassLayers?.map((profile, index) => (
-              <div
-                key={index}
-                className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                  selectedGlassLayers?.price_per_sqm ===
-                  profile[0]?.price_per_sqm
-                    ? "selected"
-                    : ""
-                }`}
-                onClick={() => setSelectedGlassLayers(profile[0])}
-              >
-                <img
-                  src={profile[0].image}
-                  alt=""
-                  onError={(e) => (e.target.src = "")}
-                />
-                <div>
-                  {index === 0 && ( // Display the first key for the first product
-                    <p key={Object.keys(glassLayersArray)[0]}>
-                      {Object.keys(glassLayersArray)[0]
-                        .charAt(0)
-                        .toUpperCase() +
-                        Object.keys(glassLayersArray)[0]
-                          .slice(1)
-                          .replace("_", " ")}
-                    </p>
-                  )}
-                  {index === 1 && ( // Display the second key for the second product
-                    <p key={Object.keys(glassLayersArray)[1]}>
-                      {Object.keys(glassLayersArray)[1]
-                        .charAt(0)
-                        .toUpperCase() +
-                        Object.keys(glassLayersArray)[1]
-                          .slice(1)
-                          .replace("_", " ")}
-                    </p>
-                  )}
-                  {/* <p>{profile[0]?.price_per_sqm}</p> */}
-                </div>
+          {glassLayers.map((glassLayer, index) => (
+            <div
+              key={index}
+              className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+                selectedGlassLayers?.price_per_sqm === glassLayer.price_per_sqm ? "selected" : ""
+              }`}
+              onClick={() => setSelectedGlassLayers(glassLayer)}
+            >
+              <img
+                src={glassLayer.glass_image?.url || ''}
+                alt={`Glass layer ${index + 1}`}
+                onError={(e) => (e.target.src = "path/to/default/image.png")} // Provide a fallback image path
+              />
+              <div>
+                <p>{glassLayer.glass_type}</p>
+                <p>€{glassLayer.price_per_sqm || "N/A"}</p>
               </div>
-            ))}
+            </div>
+          ))}
         </>
       );
     };
+    
 
     const six = () => {
       return (
