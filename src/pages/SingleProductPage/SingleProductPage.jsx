@@ -15,7 +15,9 @@ import { loadStripe } from "@stripe/stripe-js";
 import CheckoutButton from "../../components/Checkout/Checkout.jsx";
 import { useCart } from "../../context/CartContext.js";
 import { Stage, Layer, Rect, Text } from 'react-konva';
-import TrippleCanvasComponent from '../../components/Canvas/TrippleCanvasComponent.jsx'; // Assuming CanvasComponent is imported from a separate file
+import Canvas from '../../components/Canvas/Canvas.jsx';
+import TwoPartCanvasComponent from '../../components/Canvas/TwoPartCanvasComponent.jsx';
+import TrippleCanvasComponent from '../../components/Canvas/TrippleCanvasComponent.jsx';
 
 
 import {
@@ -773,6 +775,24 @@ function SingleProductPage() {
       });
     };
 
+      // Render the canvas component based on the type of window
+  const { typeOfWindow, widthInCm, heightInCm } = product;
+  let canvasComponent = null;
+
+  switch (typeOfWindow) {
+    case 'Single Opening':
+      canvasComponent = <CanvasComponent width={widthInCm} height={heightInCm} />;
+      break;
+    case 'Two Openings':
+      canvasComponent = <TwoPartCanvasComponent width={widthInCm} height={heightInCm} />;
+      break;
+    case 'Tripple Openings':
+      canvasComponent = <TrippleCanvasComponent width={widthInCm} height={heightInCm} />;
+      break;
+    default:
+      canvasComponent = null;
+  }
+
     return (
       <>
         <form onSubmit={handleSubmit}>
@@ -849,7 +869,7 @@ function SingleProductPage() {
                 <div className="single-product-page__customize__right__product">
                   <div className="single-product-page__customize__right__product__top">
                     {/* Assuming there's an image to display */}                  
-                    <TrippleCanvasComponent width={widthInCm} height={heightInCm} />                
+                    {canvasComponent}                
                   </div>
                   <div className="single-product-page__customize__right__product__body">
                     <div className="single-product-page__customize__right__product__body__option__mid">
