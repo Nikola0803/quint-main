@@ -16,7 +16,8 @@ import CheckoutButton from "../../components/Checkout/Checkout.jsx";
 import { useCart } from "../../context/CartContext.js";
 import { Stage, Layer, Rect, Text } from 'react-konva';
 import CanvasComponent from '../../components/Canvas/Canvas.jsx'; // Assuming CanvasComponent is imported from a separate file
-
+import TwoPartCanvasComponent from '../../components/Canvas/TwoPartCanvasComponent.jsx';
+import TrippleCanvasComponent from '../../components/Canvas/TrippleCanvasComponent.jsx';
 
 import {
   AddressElement,
@@ -849,7 +850,9 @@ function SingleProductPage() {
                 <div className="single-product-page__customize__right__product">
                   <div className="single-product-page__customize__right__product__top">
                     {/* Assuming there's an image to display */}                  
-                    <CanvasComponent width={widthInCm} height={heightInCm} />                
+                    {typeOfWindow === 'Single Opening' && <CanvasComponent width={widthInCm} height={heightInCm} />}
+                    {typeOfWindow === 'Two Openings' && <TwoPartCanvasComponent width={widthInCm} height={heightInCm} />}
+                    {typeOfWindow === 'Tripple Openings' && <TrippleCanvasComponent width={widthInCm} height={heightInCm} />}               
                   </div>
                   <div className="single-product-page__customize__right__product__body">
                     <div className="single-product-page__customize__right__product__body__option__mid">
