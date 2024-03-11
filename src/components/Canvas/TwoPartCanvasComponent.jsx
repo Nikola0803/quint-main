@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 
-const CanvasComponent = ({ width, height }) => {
+const TwoPartCanvasComponent = ({ width, height }) => {
   const canvasRef = useRef(null);
   const canvasWidth = 700; // Width of the canvas frame
   const canvasHeight = 500; // Height of the canvas frame
