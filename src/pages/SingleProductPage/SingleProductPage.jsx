@@ -585,13 +585,13 @@ function SingleProductPage() {
   }, [productId]);
 
   const incrementWidth = () =>
-    setFrameWidth((current) => Math.min(current + 1, maxWidth));
+    setFrameWidth((current) => Math.min(current + 10, maxWidth));
   const decrementWidth = () =>
-    setFrameWidth((current) => Math.max(current - 1, minWidth));
+    setFrameWidth((current) => Math.max(current - 10, minWidth));
   const incrementHeight = () =>
-    setFrameHeight((current) => Math.min(current + 1, maxHeight));
+    setFrameHeight((current) => Math.min(current + 10, maxHeight));
   const decrementHeight = () =>
-    setFrameHeight((current) => Math.max(current - 1, minHeight));
+    setFrameHeight((current) => Math.max(current - 10, minHeight));
 
   // Convert mm to cm for both width and height
   const widthInCm = frameWidth / 10;
