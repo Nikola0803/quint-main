@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 
 const CanvasComponent = ({ width, height }) => {
-  const canvasRef = useRef(null);
+  const canvasRef = 500;
   const canvasWidth = 700; // Width of the canvas frame
   const canvasHeight = height; // Height of the canvas frame (maintaining the previous height)
   const windowWidth = width; // Width of the window shape
