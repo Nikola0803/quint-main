@@ -7,7 +7,7 @@ const CanvasComponent = ({ width, height }) => {
   const windowWidth = width; // Width of the window shape
   const windowHeight = height; // Height of the window shape
   const borderWidth = 10; // Width of the border
-  const divisionWidth = 10; // Width of the dividing lines
+  const divisionWidth = 2; // Width of the dividing lines
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -27,6 +27,7 @@ const CanvasComponent = ({ width, height }) => {
 
     // Draw dividing lines
     const numberOfDivisions = 3; // Number of divisions
+    context.strokeStyle = '#888'; // Light gray lines
     context.lineWidth = divisionWidth;
     for (let i = 1; i < numberOfDivisions; i++) {
       const divisionX = (canvasWidth / numberOfDivisions) * i;
