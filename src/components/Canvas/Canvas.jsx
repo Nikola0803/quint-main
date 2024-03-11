@@ -24,16 +24,16 @@ const CanvasComponent = ({ width, height }) => {
     context.strokeRect(x, y, rectWidth, rectHeight);
 
     // Draw three evenly spaced rectangles within the outermost one
-    const rectangleWidth = (rectWidth - 40) / numRectangles; // Subtracting 40 for spacing
-    const startX = (canvasWidth - rectWidth) / 2 + 20; // Start X coordinate
-    const startY = (canvasHeight - rectHeight) / 2 + 20; // Start Y coordinate
+    const rectangleWidth = (rectWidth - 30) / numRectangles; // Subtracting 30 for spacing
+    const startX = (canvasWidth - rectWidth) / 2 + 15; // Start X coordinate
+    const startY = (canvasHeight - rectHeight) / 2 + 15; // Start Y coordinate
     for (let i = 0; i < numRectangles; i++) {
-      const rectX = startX + i * (rectangleWidth + 20); // Adding 20 for spacing
-      context.strokeRect(rectX, startY, rectangleWidth, rectHeight - 40); // Subtracting 40 for spacing
+      const rectX = startX + i * (rectangleWidth + 10); // Adding 10 for spacing
+      context.strokeRect(rectX, startY, rectangleWidth, rectHeight - 30); // Subtracting 30 for spacing
 
       // Add number to the bottom right corner of each rectangle
-      const numberX = rectX + rectangleWidth - 20;
-      const numberY = startY + rectHeight - 20;
+      const numberX = rectX + rectangleWidth - 15;
+      const numberY = startY + rectHeight - 15;
       context.fillStyle = '#000'; // Black color
       context.font = 'bold 16px Arial';
       context.fillText(i + 1, numberX, numberY);
