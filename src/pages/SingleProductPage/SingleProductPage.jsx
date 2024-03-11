@@ -350,13 +350,12 @@ function SingleProductPage() {
               className="single-product-page__customize__left__option-holder__option__input-wrapper__input"
               style={{ display: "flex", alignItems: "center" }}
             >
-             <input
+              <input
                 type="number"
                 value={frameWidth}
-                onChange={handleWidthChange}
-                ref={widthInputRef}
-                placeholder="Width"
-                style={{ textAlign: "center", marginRight: "5px" }}
+                onInput={(e) => setFrameWidth(e.target.value)}
+                placeholder="Number"
+                style={{ textAlign: "center" }}
               />
               <div
                 style={{
@@ -400,13 +399,12 @@ function SingleProductPage() {
               style={{ display: "flex", alignItems: "center" }}
             >
               <input
-        type="number"
-        value={frameHeight}
-        onChange={handleHeightChange}
-        ref={heightInputRef}
-        placeholder="Height"
-        style={{ textAlign: "center", marginRight: "5px" }}
-      />
+              type="number"
+              value={frameHeight}
+              onInput={(e) => setFrameHeight(e.target.value)}
+              placeholder="Number"
+              style={{ textAlign: "center" }}
+            />
               <div
                 style={{
                   display: "flex",
