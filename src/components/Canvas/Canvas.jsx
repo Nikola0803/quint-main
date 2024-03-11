@@ -30,6 +30,13 @@ const CanvasComponent = ({ width, height }) => {
     for (let i = 0; i < numRectangles; i++) {
       const rectX = startX + i * (rectangleWidth + 20); // Adding 20 for spacing
       context.strokeRect(rectX, startY, rectangleWidth, rectHeight - 40); // Subtracting 40 for spacing
+
+      // Add number to the bottom right corner of each rectangle
+      const numberX = rectX + rectangleWidth - 20;
+      const numberY = startY + rectHeight - 20;
+      context.fillStyle = '#000'; // Black color
+      context.font = 'bold 16px Arial';
+      context.fillText(i + 1, numberX, numberY);
     }
   }, [width, height]);
 
