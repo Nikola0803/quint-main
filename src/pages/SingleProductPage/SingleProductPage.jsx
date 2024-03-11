@@ -536,7 +536,7 @@ function SingleProductPage() {
         const consumerKey = process.env.REACT_APP_CONSUMER_KEY;
         const consumerSecret = process.env.REACT_APP_CONSUMER_SECRET;
         const response = await fetch(
-          `https://thedarkstarsoft.com/quint/wp-json/wc/v3/products/${productId}`,
+        `https://thedarkstarsoft.com/quint/wp-json/wc/v3/products/${productId}`,
           {
             headers: {
               Authorization: `Basic ${btoa(
@@ -848,7 +848,7 @@ function SingleProductPage() {
                 <div className="single-product-page__customize__right__product">
                   <div className="single-product-page__customize__right__product__top">
                     {/* Assuming there's an image to display */}
-                    <CanvasComponent width={widthInCm} height={heightInCm} openingType={typeOfWindow} />
+                    <CanvasComponent width={widthInCm} height={heightInCm} openingType={openingTypeValue} />
                   </div>
                   <div className="single-product-page__customize__right__product__body">
                     <div className="single-product-page__customize__right__product__body__option__mid">
