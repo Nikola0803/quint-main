@@ -15,7 +15,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import CheckoutButton from "../../components/Checkout/Checkout.jsx";
 import { useCart } from "../../context/CartContext.js";
 import { Stage, Layer, Rect, Text } from 'react-konva';
-import CanvasComponent from '../../components/Canvas/TrippleCanvasComponent.jsx'; // Assuming CanvasComponent is imported from a separate file
+import TrippleCanvasComponent from '../../components/Canvas/TrippleCanvasComponent.jsx'; // Assuming CanvasComponent is imported from a separate file
 
 
 import {
