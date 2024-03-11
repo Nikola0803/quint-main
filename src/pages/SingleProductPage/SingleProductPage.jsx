@@ -29,24 +29,7 @@ import {
   useStripe,
 } from "@stripe/react-stripe-js";
 function SingleProductPage() {
-        // Render the canvas component based on the type of window
-        const { typeOfWindow, widthInCm, heightInCm } = product;
-        let canvasComponent = null;
-      
-        switch (typeOfWindow) {
-          case 'Single Opening':
-            canvasComponent = <CanvasComponent width={widthInCm} height={heightInCm} />;
-            break;
-          case 'Two Openings':
-            canvasComponent = <TwoPartCanvasComponent width={widthInCm} height={heightInCm} />;
-            break;
-          case 'Tripple Openings':
-            canvasComponent = <TrippleCanvasComponent width={widthInCm} height={heightInCm} />;
-            break;
-          default:
-            canvasComponent = null;
-        }
-        
+  const [typeOfWindow, setTypeOfWindow] = useState('Single Opening'); // Set the default value here
   const [openingTypeValue, setOpeningTypeValue] = useState(null);
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -869,7 +852,9 @@ function SingleProductPage() {
                 <div className="single-product-page__customize__right__product">
                   <div className="single-product-page__customize__right__product__top">
                     {/* Assuming there's an image to display */}                  
-                    {canvasComponent}                
+                    {typeOfWindow === 'Single Opening' && <CanvasComponent width={widthInCm} height={heightInCm} />}
+                    {typeOfWindow === 'Two Openings' && <TwoPartCanvasComponent width={widthInCm} height={heightInCm} />}
+                    {typeOfWindow === 'Tripple Openings' && <TrippleCanvasComponent width={widthInCm} height={heightInCm} />}
                   </div>
                   <div className="single-product-page__customize__right__product__body">
                     <div className="single-product-page__customize__right__product__body__option__mid">
