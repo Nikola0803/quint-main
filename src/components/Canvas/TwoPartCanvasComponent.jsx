@@ -17,9 +17,9 @@ const TwoPartCanvasComponent = ({ width, height }) => {
 
     // Draw outer lines of the rectangle shape
     const outerX = (canvasWidth - width) / 2 - 8; // Adjusted left position
-    const outerY = (canvasHeight - height) / 2 + borderWidth / 2 - 5; // Adjusted top position
+    const outerY = (canvasHeight - height) / 2 + borderWidth / 2 - 5 - 10; // Adjusted top position with additional 10px
     const outerWidth = width + 16 + 10; // Adjusted width with extra spacing on the right
-    const outerHeight = height + 20 - borderWidth + 10; // Adjusted height with extra spacing on top and bottom
+    const outerHeight = height + 20 - borderWidth + 10 + 10; // Adjusted height with extra spacing on top and bottom
     context.strokeStyle = '#000'; // Black color
     context.lineWidth = borderWidth;
     context.strokeRect(outerX, outerY, outerWidth, outerHeight);
