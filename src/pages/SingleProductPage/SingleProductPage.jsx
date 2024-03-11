@@ -29,6 +29,24 @@ import {
   useStripe,
 } from "@stripe/react-stripe-js";
 function SingleProductPage() {
+        // Render the canvas component based on the type of window
+        const { typeOfWindow, widthInCm, heightInCm } = product;
+        let canvasComponent = null;
+      
+        switch (typeOfWindow) {
+          case 'Single Opening':
+            canvasComponent = <CanvasComponent width={widthInCm} height={heightInCm} />;
+            break;
+          case 'Two Openings':
+            canvasComponent = <TwoPartCanvasComponent width={widthInCm} height={heightInCm} />;
+            break;
+          case 'Tripple Openings':
+            canvasComponent = <TrippleCanvasComponent width={widthInCm} height={heightInCm} />;
+            break;
+          default:
+            canvasComponent = null;
+        }
+        
   const [openingTypeValue, setOpeningTypeValue] = useState(null);
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -774,24 +792,6 @@ function SingleProductPage() {
         }
       });
     };
-
-      // Render the canvas component based on the type of window
-  const { typeOfWindow, widthInCm, heightInCm } = product;
-  let canvasComponent = null;
-
-  switch (typeOfWindow) {
-    case 'Single Opening':
-      canvasComponent = <CanvasComponent width={widthInCm} height={heightInCm} />;
-      break;
-    case 'Two Openings':
-      canvasComponent = <TwoPartCanvasComponent width={widthInCm} height={heightInCm} />;
-      break;
-    case 'Tripple Openings':
-      canvasComponent = <TrippleCanvasComponent width={widthInCm} height={heightInCm} />;
-      break;
-    default:
-      canvasComponent = null;
-  }
 
     return (
       <>
