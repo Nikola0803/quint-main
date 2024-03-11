@@ -351,12 +351,12 @@ function SingleProductPage() {
               style={{ display: "flex", alignItems: "center" }}
             >
               <input
-                type="number"
-                value={frameWidth}
-                onChange={(e) => setFrameWidth(e.target.value)}
-                placeholder="Number"
-                style={{ textAlign: "center" }}
-              />
+              type="number"
+              value={frameWidth}
+              onInput={(e) => setFrameWidth(e.target.value)}
+              placeholder="Number"
+              style={{ textAlign: "center" }}
+            />
               <div
                 style={{
                   display: "flex",
@@ -399,20 +399,12 @@ function SingleProductPage() {
               style={{ display: "flex", alignItems: "center" }}
             >
               <input
-                type="number"
-                value={frameHeight}
-                onChange={(e) => setFrameHeight(e.target.value)}
-                onBlur={() => {
-                  // Clamp the value to min/max when user moves away from the input field
-                  const clampedValue = Math.max(
-                    Math.min(Number(frameHeight), maxHeight),
-                    minHeight
-                  );
-                  setFrameHeight(clampedValue);
-                }}
-                placeholder="Number"
-                style={{ textAlign: "center", marginRight: "5px" }} // Ensure input is aligned and has space for buttons
-              />
+              type="number"
+              value={frameHeight}
+              onInput={(e) => setFrameHeight(e.target.value)}
+              placeholder="Number"
+              style={{ textAlign: "center" }}
+            />
               <div
                 style={{
                   display: "flex",
