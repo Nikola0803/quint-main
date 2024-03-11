@@ -29,7 +29,7 @@ import {
   useStripe,
 } from "@stripe/react-stripe-js";
 function SingleProductPage() {
-  const [typeOfWindow, setTypeOfWindow] = useState('Single Opening'); // Set the default value here
+  const [typeOfWindow, setTypeOfWindow] = useState('Two Openings'); // Set the default value here
   const [openingTypeValue, setOpeningTypeValue] = useState(null);
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -98,6 +98,10 @@ function SingleProductPage() {
       (product?.acf?.glass_layers && product?.acf?.glass_layers[0]) || {};
     // Get glassLayers as an array of values from glassLayersArray
     const glassLayers = Object.values(glassLayersArray);
+
+    const one = () => {
+
+    }
 
     const two = () => {
       // Assuming product.acf.colors is the path to the color options in your product object
