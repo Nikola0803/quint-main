@@ -5,7 +5,7 @@ const CanvasComponent = ({ width, height }) => {
   const canvasWidth = 700; // Width of the canvas frame
   const canvasHeight = 500; // Height of the canvas frame
   const borderWidth = 1; // Width of the border
-  const numRectangles = 3; // Number of rectangles
+  const numRectangles = 1; // Number of rectangles
   const spacing = 10; // Adjusted spacing between rectangles
 
   useEffect(() => {
@@ -16,29 +16,30 @@ const CanvasComponent = ({ width, height }) => {
     context.clearRect(0, 0, canvasWidth, canvasHeight);
 
     // Draw outer lines of the rectangle shape
-    const x = (canvasWidth - width) / 2 + borderWidth / 2;
-    const y = (canvasHeight - height) / 2 + borderWidth / 2;
-    const rectWidth = width - borderWidth;
-    const rectHeight = height - borderWidth;
+    const outerX = (canvasWidth - width) / 2 + borderWidth / 2 + spacing; // Adjusted X position with spacing
+    const outerY = (canvasHeight - height) / 2 + borderWidth / 2 + spacing; // Adjusted Y position with spacing
+    const outerWidth = width - 2 * spacing - borderWidth; // Adjusted width with spacing
+    const outerHeight = height - 2 * spacing - borderWidth; // Adjusted height with spacing
     context.strokeStyle = '#000'; // Black color
     context.lineWidth = borderWidth;
-    context.strokeRect(x, y, rectWidth, rectHeight);
+    context.strokeRect(outerX, outerY, outerWidth, outerHeight);
 
-    // Draw three evenly spaced rectangles within the outermost one
-    const rectangleWidth = (rectWidth - 30 - 20) / numRectangles; // Adjusted for spacing and extra space
-    const startX = (canvasWidth - rectWidth) / 2 + 15; // Start X coordinate
-    const startY = (canvasHeight - rectHeight) / 2 + 15; // Start Y coordinate
-    for (let i = 0; i < numRectangles; i++) {
-      const rectX = startX + i * (rectangleWidth + spacing); // Adding spacing
-      context.strokeRect(rectX, startY, rectangleWidth, rectHeight - 30); // Subtracting 30 for spacing
+    // Draw one rectangle inside the outermost one
+    const rectangleWidth = outerWidth - 2 * spacing; // Adjusted width with spacing
+    const startX = outerX + spacing; // Start X coordinate
+    const startY = outerY + spacing; // Start Y coordinate
+    const rectX = startX; // X coordinate of the inner rectangle
+    const rectY = startY; // Y coordinate of the inner rectangle
+    const rectWidth = rectangleWidth; // Width of the inner rectangle
+    const rectHeight = outerHeight - 2 * spacing; // Adjusted height of the inner rectangle
+    context.strokeRect(rectX, rectY, rectWidth, rectHeight); // Draw inner rectangle
 
-      // Add number to the bottom right corner of each rectangle
-      const numberX = rectX + rectangleWidth - 15;
-      const numberY = startY + rectHeight - 15;
-      context.fillStyle = '#000'; // Black color
-      context.font = 'bold 16px Arial';
-      context.fillText(i + 1, numberX, numberY);
-    }
+    // Add number to the bottom right corner of the inner rectangle
+    const numberX = rectX + rectWidth - 15;
+    const numberY = rectY + rectHeight - 15;
+    context.fillStyle = '#000'; // Black color
+    context.font = 'bold 16px Arial';
+    context.fillText('1', numberX, numberY); // Write number 1 for the single inner rectangle
   }, [width, height]);
 
   return (

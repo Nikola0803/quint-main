@@ -29,7 +29,7 @@ import {
   useStripe,
 } from "@stripe/react-stripe-js";
 function SingleProductPage() {
-  const [typeOfWindow, setTypeOfWindow] = useState('Two Openings'); // Set the default value here
+  const [typeOfWindow, setTypeOfWindow] = useState('Single Opening'); // Set the default value here
   const [openingTypeValue, setOpeningTypeValue] = useState(null);
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
