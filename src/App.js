@@ -10,7 +10,6 @@ import CategoryPage from "./pages/CategoryPage/CategoryPage";
 import SingleProductPage from "./pages/SingleProductPage/SingleProductPage";
 import CheckoutPage from "./pages/CheckoutPage/CheckoutPage";
 import CartPage from "./pages/CartPage/CartPage";
-import ConfiguratorPage from "./pages/ConfiguratorPage/ConfiguratorPage";
 import { CartProvider } from './context/CartContext';
 import useHubSpotChat from './hooks/useHubSpotChat.js'; 
 
@@ -29,9 +28,7 @@ function App() {
         <Route path="/category" element={<CategoryPage />} />
         <Route path="/product/:productId" element={<SingleProductPage />} />
         <Route path="/checkout" element={<CheckoutPage />} />
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="/configurator" element={<ConfiguratorPage />} />
-        
+        <Route path="/cart" element={<CartPage />} />        
 
         {/* Add more routes if needed */}
 
