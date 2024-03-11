@@ -2,12 +2,9 @@ import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import "./SingleProductPage.scss";
 import ImageGallery from "react-image-gallery";
-// import "react-image-gallery/styles/css/image-gallery.css";
-import { FaChevronDown } from "react-icons/fa6";
-import { FaTurnDown } from "react-icons/fa6";
+import { FaChevronDown, FaTurnDown } from "react-icons/fa6";
 import { CiCirclePlus, CiCircleMinus } from "react-icons/ci";
-import { FaChevronRight } from "react-icons/fa";
-import { FaCheck } from "react-icons/fa6";
+import { FaChevronRight, FaCheck } from "react-icons/fa6";
 import ruler from "../../assets/clarity_ruler-pencil-line.svg";
 import littleWindow from "../../assets/little-window.png";
 import Card from "../../components/Card/Card";
@@ -15,7 +12,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import CheckoutButton from "../../components/Checkout/Checkout.jsx";
 import { useCart } from "../../context/CartContext.js";
 import { Stage, Layer, Rect, Text } from 'react-konva';
-import CanvasComponent from '../../components/Canvas/Canvas.jsx'; // Assuming CanvasComponent is imported from a separate file
+import CanvasComponent from '../../components/Canvas/Canvas.jsx';
 import TwoPartCanvasComponent from '../../components/Canvas/TwoPartCanvasComponent.jsx';
 import TrippleCanvasComponent from '../../components/Canvas/TrippleCanvasComponent.jsx';
 
@@ -27,9 +24,8 @@ import {
   useElements,
   useStripe,
 } from "@stripe/react-stripe-js";
-const typeOfWindow = 'Single Opening';
 
-function SingleProductPage({typeOfWindow}) {
+function SingleProductPage({ typeOfWindow }) {
   const [openingTypeValue, setOpeningTypeValue] = useState(null);
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
