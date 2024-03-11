@@ -24,7 +24,7 @@ const CanvasComponent = ({ width, height }) => {
     context.strokeRect(x, y, rectWidth, rectHeight);
 
     // Draw three evenly spaced rectangles within the outermost one
-    const rectangleWidth = (rectWidth - 30 - 12) / numRectangles; // Subtracting 30 for spacing and 12 for buffer
+    const rectangleWidth = (rectWidth - 30 - 12 + 6) / numRectangles; // Adjusted for extra 6 pixels
     const startX = (canvasWidth - rectWidth) / 2 + 15; // Start X coordinate
     const startY = (canvasHeight - rectHeight) / 2 + 15; // Start Y coordinate
     for (let i = 0; i < numRectangles; i++) {
