@@ -39,6 +39,9 @@ const CanvasComponent = ({ width, height }) => {
       context.font = 'bold 16px Arial';
       context.fillText(i + 1, numberX, numberY);
     }
+
+    // Adjust the outermost rectangle to have 10px more space on the right side
+    context.strokeRect(x, y, rectWidth + 10, rectHeight);
   }, [width, height]);
 
   return (
