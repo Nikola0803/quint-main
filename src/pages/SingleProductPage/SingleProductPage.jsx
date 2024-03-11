@@ -552,7 +552,7 @@ function SingleProductPage() {
         setMinWidth(
           meta.find(
             (m) => m.key === "window_size_frame_width_size__in_mm_minimumwidth"
-          )?.value || 0
+          )?.value || minWidth
         );
         setMaxWidth(
           meta.find(
@@ -562,7 +562,7 @@ function SingleProductPage() {
         setMinHeight(
           meta.find(
             (m) => m.key === "window_size_frame_height_size_in_mm_min_height"
-          )?.value || 0
+          )?.value ||minHeight
         );
         setMaxHeight(
           meta.find(
