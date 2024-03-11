@@ -848,7 +848,7 @@ function SingleProductPage() {
                 <div className="single-product-page__customize__right__product">
                   <div className="single-product-page__customize__right__product__top">
                     {/* Assuming there's an image to display */}
-                          <CanvasComponent width={widthInCm} height={heightInCm} />
+                    <CanvasComponent width={widthInCm} height={heightInCm} openingType={openingType} />
                   </div>
                   <div className="single-product-page__customize__right__product__body">
                     <div className="single-product-page__customize__right__product__body__option__mid">
