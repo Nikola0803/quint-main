@@ -30,8 +30,8 @@ const CanvasComponent = ({ windowWidth, windowHeight }) => {
     for (let i = 1; i <= numberOfDivisions; i++) {
       const divisionX = borderWidth + divisionSpacing * i;
       context.beginPath();
-      context.moveTo(divisionX, 0);
-      context.lineTo(divisionX, windowHeight);
+      context.moveTo(divisionX, borderWidth / 2);
+      context.lineTo(divisionX, windowHeight - borderWidth / 2);
       context.stroke();
     }
   }, [windowWidth, windowHeight]);
