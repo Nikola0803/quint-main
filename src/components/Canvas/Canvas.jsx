@@ -1,10 +1,13 @@
 import React, { useRef, useEffect } from 'react';
 
-const CanvasComponent = ({ windowWidth, windowHeight }) => {
+const CanvasComponent = ({ width, height }) => {
   const canvasRef = useRef(null);
   const canvasWidth = 700; // Width of the canvas frame
   const canvasHeight = 500; // Height of the canvas frame
-  const borderWidth = 10; // Width of the border
+  const windowWidth = width; // Width of the window shape
+  const windowHeight = height; // Height of the window shape
+  const frameWidth = 10; // Width of the frame
+  const numDividers = 3; // Number of dividing lines
   const dividerWidth = 10; // Width of the dividing lines
 
   useEffect(() => {
@@ -18,17 +21,22 @@ const CanvasComponent = ({ windowWidth, windowHeight }) => {
     context.fillStyle = '#fff'; // White background
     context.fillRect(0, 0, canvasWidth, canvasHeight);
 
+    // Calculate spacing between dividing lines
+    const spacing = (windowWidth - (numDividers - 1) * dividerWidth) / numDividers;
+
     // Draw outer lines of the window
-    const frameX = (canvasWidth - windowWidth) / 2; // X coordinate of the window
-    const frameY = (canvasHeight - windowHeight) / 2; // Y coordinate of the window
+    const frameX = (canvasWidth - windowWidth) / 2 + frameWidth / 2; // X coordinate of the window
+    const frameY = (canvasHeight - windowHeight) / 2 + frameWidth / 2; // Y coordinate of the window
     context.strokeStyle = '#000'; // Black lines
     context.lineWidth = 2;
-    context.strokeRect(frameX, frameY, windowWidth, windowHeight);
+    context.strokeRect(frameX, frameY, windowWidth - frameWidth, windowHeight - frameWidth);
 
     // Draw dividing lines
-    const dividerX = canvasWidth / 2 - dividerWidth / 2; // X coordinate of the divider
-    context.fillRect(dividerX, 0, dividerWidth, canvasHeight);
-  }, [windowWidth, windowHeight]);
+    for (let i = 0; i < numDividers; i++) {
+      const dividerX = frameX + i * (spacing + dividerWidth); // X coordinate of the divider
+      context.strokeRect(dividerX, frameY, dividerWidth, windowHeight - frameWidth);
+    }
+  }, [width, height]);
 
   return (
     <canvas
