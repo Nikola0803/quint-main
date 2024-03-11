@@ -7,6 +7,8 @@ const CanvasComponent = ({ width, height }) => {
   const windowWidth = width; // Width of the window shape
   const windowHeight = height; // Height of the window shape
   const frameWidth = 10; // Width of the frame
+  const numDividers = 3; // Number of dividing lines
+  const dividerWidth = 10; // Width of the dividing lines
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -19,12 +21,21 @@ const CanvasComponent = ({ width, height }) => {
     context.fillStyle = '#fff'; // White background
     context.fillRect(0, 0, canvasWidth, canvasHeight);
 
-    // Draw outer frame
-    const frameX = (canvasWidth - windowWidth) / 2 - frameWidth; // X coordinate of the window
-    const frameY = (canvasHeight - windowHeight) / 2 - frameWidth; // Y coordinate of the window
+    // Calculate spacing between dividing lines
+    const spacing = (windowWidth - (numDividers - 1) * dividerWidth) / numDividers;
+
+    // Draw outer lines of the window
+    const frameX = (canvasWidth - windowWidth) / 2 + frameWidth / 2; // X coordinate of the window
+    const frameY = (canvasHeight - windowHeight) / 2 + frameWidth / 2; // Y coordinate of the window
     context.strokeStyle = '#000'; // Black lines
-    context.lineWidth = frameWidth;
-    context.strokeRect(frameX, frameY, windowWidth + 2 * frameWidth, windowHeight + 2 * frameWidth);
+    context.lineWidth = 2;
+    context.strokeRect(frameX, frameY, windowWidth - frameWidth, windowHeight - frameWidth);
+
+    // Draw dividing lines
+    for (let i = 0; i < numDividers; i++) {
+      const dividerX = frameX + i * (spacing + dividerWidth); // X coordinate of the divider
+      context.strokeRect(dividerX, frameY, dividerWidth, windowHeight - frameWidth);
+    }
   }, [width, height]);
 
   return (
