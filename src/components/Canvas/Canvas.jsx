@@ -51,20 +51,25 @@ const CanvasComponent = ({ width, height, openingType }) => {
 
   // Function to draw window frame for two openings
   const drawTwoOpenings = (context, width, height) => {
-    const dividerWidth = (canvasWidth - width) / 2; // Width of the divider
-    const dividerX = canvasWidth / 2 - dividerWidth / 2; // X coordinate of the divider
-    drawSingleOpening(context, width, height);
+    const dividerWidth = 10; // Width of the divider
+    const leftFrameWidth = (canvasWidth - width - dividerWidth) / 2;
+    drawSingleOpening(context, leftFrameWidth, height);
+    drawSingleOpening(context, leftFrameWidth + dividerWidth, height);
     // Draw divider
+    const dividerX = (canvasWidth - dividerWidth) / 2;
     context.fillRect(dividerX, 0, dividerWidth, canvasHeight);
   };
 
   // Function to draw window frame for triple openings
   const drawTripleOpenings = (context, width, height) => {
-    const dividerWidth = (canvasWidth - width) / 3; // Width of the divider
-    const dividerX1 = canvasWidth / 3 - dividerWidth / 2; // X coordinate of the first divider
-    const dividerX2 = (2 * canvasWidth) / 3 - dividerWidth / 2; // X coordinate of the second divider
-    drawSingleOpening(context, width, height);
+    const dividerWidth = 10; // Width of the divider
+    const frameWidth = (canvasWidth - 2 * dividerWidth) / 3;
+    drawSingleOpening(context, frameWidth, height);
+    drawSingleOpening(context, frameWidth + dividerWidth, height);
+    drawSingleOpening(context, frameWidth * 2 + dividerWidth * 2, height);
     // Draw dividers
+    const dividerX1 = frameWidth;
+    const dividerX2 = frameWidth * 2 + dividerWidth;
     context.fillRect(dividerX1, 0, dividerWidth, canvasHeight);
     context.fillRect(dividerX2, 0, dividerWidth, canvasHeight);
   };
