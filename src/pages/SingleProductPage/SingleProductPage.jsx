@@ -2,9 +2,12 @@ import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import "./SingleProductPage.scss";
 import ImageGallery from "react-image-gallery";
-import { FaChevronDown, FaTurnDown } from "react-icons/fa6";
+// import "react-image-gallery/styles/css/image-gallery.css";
+import { FaChevronDown } from "react-icons/fa6";
+import { FaTurnDown } from "react-icons/fa6";
 import { CiCirclePlus, CiCircleMinus } from "react-icons/ci";
-import { FaChevronRight, FaCheck } from "react-icons/fa6";
+import { FaChevronRight } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa6";
 import ruler from "../../assets/clarity_ruler-pencil-line.svg";
 import littleWindow from "../../assets/little-window.png";
 import Card from "../../components/Card/Card";
@@ -12,9 +15,8 @@ import { loadStripe } from "@stripe/stripe-js";
 import CheckoutButton from "../../components/Checkout/Checkout.jsx";
 import { useCart } from "../../context/CartContext.js";
 import { Stage, Layer, Rect, Text } from 'react-konva';
-import CanvasComponent from '../../components/Canvas/Canvas.jsx';
-import TwoPartCanvasComponent from '../../components/Canvas/TwoPartCanvasComponent.jsx';
-import TrippleCanvasComponent from '../../components/Canvas/TrippleCanvasComponent.jsx';
+import CanvasComponent from '../../components/Canvas/Canvas.jsx'; // Assuming CanvasComponent is imported from a separate file
+
 
 import {
   AddressElement,
@@ -24,8 +26,7 @@ import {
   useElements,
   useStripe,
 } from "@stripe/react-stripe-js";
-
-function SingleProductPage({ typeOfWindow }) {
+function SingleProductPage() {
   const [openingTypeValue, setOpeningTypeValue] = useState(null);
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -848,9 +849,7 @@ function SingleProductPage({ typeOfWindow }) {
                 <div className="single-product-page__customize__right__product">
                   <div className="single-product-page__customize__right__product__top">
                     {/* Assuming there's an image to display */}                  
-                    {typeOfWindow === 'Single Opening' && <CanvasComponent width={widthInCm} height={heightInCm} />}
-                  {typeOfWindow === 'Two Openings' && <TwoPartCanvasComponent width={widthInCm} height={heightInCm} />}
-                  {typeOfWindow === 'Tripple Openings' && <TrippleCanvasComponent width={widthInCm} height={heightInCm} />}               
+                    <CanvasComponent width={widthInCm} height={heightInCm} />                
                   </div>
                   <div className="single-product-page__customize__right__product__body">
                     <div className="single-product-page__customize__right__product__body__option__mid">
