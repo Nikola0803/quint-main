@@ -25,10 +25,11 @@ const CanvasComponent = ({ width, height }) => {
 
     // Draw three evenly spaced rectangles within the outermost one
     const rectangleWidth = (rectWidth - 30 - 12 + 6) / numRectangles; // Adjusted for extra 6 pixels
+    const spacing = 10; // Adjusted spacing between rectangles
     const startX = (canvasWidth - rectWidth) / 2 + 15; // Start X coordinate
     const startY = (canvasHeight - rectHeight) / 2 + 15; // Start Y coordinate
     for (let i = 0; i < numRectangles; i++) {
-      const rectX = startX + i * (rectangleWidth + 10); // Adding 10 for spacing
+      const rectX = startX + i * (rectangleWidth + spacing); // Adding spacing
       context.strokeRect(rectX, startY, rectangleWidth, rectHeight - 30); // Subtracting 30 for spacing
 
       // Add number to the bottom right corner of each rectangle
