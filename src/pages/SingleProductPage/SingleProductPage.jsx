@@ -65,8 +65,8 @@ function SingleProductPage() {
   //   selectedOpening,
   //   selectedProfile,
   // ]);
-  const [frameWidth, setFrameWidth] = useState(0);
-  const [frameHeight, setFrameHeight] = useState(0);
+  const [frameWidth, setFrameWidth] = useState(minWidth);
+  const [frameHeight, setFrameHeight] = useState(minHeight);
   const [minWidth, setMinWidth] = useState(0);
   const [maxWidth, setMaxWidth] = useState(0);
   const [minHeight, setMinHeight] = useState(0);
