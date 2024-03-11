@@ -29,6 +29,7 @@ function App() {
         <Route path="/product/:productId" element={<SingleProductPage />} />
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/configurator" element={<ConfiguratorPage />} />
         
 
         {/* Add more routes if needed */}
