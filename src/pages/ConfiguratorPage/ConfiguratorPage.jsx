@@ -5,15 +5,15 @@ import createStore from "./store";
 import App from "./components/App";
 
 function ConfiguratorPage() {
-    
-window.store = createStore();
+  window.store = createStore();
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(
-  <Provider store={window.store}>
-    <App />
-  </Provider>,
-  rootElement
-);
+  const rootElement = document.getElementById("root");
+  ReactDOM.render(
+    <Provider store={window.store}>
+      <App />
+    </Provider>,
+    rootElement
+  );
+}
 
 export default ConfiguratorPage;
