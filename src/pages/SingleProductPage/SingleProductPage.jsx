@@ -14,6 +14,9 @@ import Card from "../../components/Card/Card";
 import { loadStripe } from "@stripe/stripe-js";
 import CheckoutButton from "../../components/Checkout/Checkout.jsx";
 import { useCart } from "../../context/CartContext.js";
+import { Stage, Layer, Rect, Text } from 'react-konva';
+import CanvasComponent from '../../components/Canvas/Canvas.jsx'; // Assuming CanvasComponent is imported from a separate file
+
 
 import {
   AddressElement,
@@ -188,84 +191,85 @@ function SingleProductPage() {
     
 
     const six = () => {
+      // Directly using 'product?.acf?.glass_type' based on the API structure provided
+      const glassTypes = product?.acf?.glass_type || [];
+    
       return (
         <>
-          {product?.acf?.glass_type &&
-            product?.acf?.glass_type?.map((profile, index) => (
-              <div
-                key={index}
-                className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                  selectedGlassTypes?.color_of_glass === profile.color_of_glass
-                    ? "selected"
-                    : ""
-                }`}
-                onClick={() => setSelectedGlassTypes(profile)}
-              >
-                <div>
-                  <p>{profile?.color_of_glass}</p>
-                </div>
+          {glassTypes.map((glassType, index) => (
+            <div
+              key={index}
+              className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+                selectedGlassTypes?.color_of_glass === glassType.color_of_glass ? "selected" : ""
+              }`}
+              onClick={() => setSelectedGlassTypes(glassType)}
+            >
+              <div>
+                <p>{glassType.color_of_glass}</p>
               </div>
-            ))}
+            </div>
+          ))}
         </>
       );
     };
+    
     const seven = () => {
+      const handles = product?.acf?.handle || [];
+    
       return (
         <>
-          {product?.acf?.handle &&
-            product?.acf?.handle?.map((profile, index) => (
-              <div
-                key={index}
-                className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                  selectedHandles?.name_of_handle === profile.name_of_handle
-                    ? "selected"
-                    : ""
-                }`}
-                onClick={() => setSelectedHandles(profile)}
-              >
-                <img
-                  src={profile?.image_of_handle?.url}
-                  alt=""
-                  onError={(e) => (e.target.src = "")}
-                />
-                <div>
-                  <p>{profile?.name_of_handle}</p>
-                  {/* <p>€{profile?.price_of_handle}</p> */}
-                </div>
+          {handles.map((handle, index) => (
+            <div
+              key={index}
+              className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+                selectedHandles?.name_of_handle === handle.name_of_handle ? "selected" : ""
+              }`}
+              onClick={() => setSelectedHandles(handle)}
+            >
+              <img
+                src={handle.image_of_handle?.url || 'path/to/default/image/if/needed'}
+                alt={handle.name_of_handle}
+                onError={(e) => (e.target.src = 'path/to/default/image/if/needed')}
+              />
+              <div>
+                <p>{handle.name_of_handle}</p>
+                <p>€{handle.price_of_handle}</p> {/* Assuming price_of_handle exists and you want to display it */}
               </div>
-            ))}
+            </div>
+          ))}
         </>
       );
     };
+    
     const eight = () => {
+      const ventilationGrids = product?.acf?.ventilation_grid || [];
+    
       return (
         <>
-          {product?.acf?.ventilation_grid &&
-            product?.acf?.ventilation_grid?.map((profile, index) => (
-              <div
-                key={index}
-                className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                  selectedGrids?.name_of_ventilation_grid ===
-                  profile.name_of_ventilation_grid
-                    ? "selected"
-                    : ""
-                }`}
-                onClick={() => setSelectedGrids(profile)}
-              >
-                <img
-                  src={profile?.image_of_ventilation_grid?.url}
-                  alt=""
-                  onError={(e) => (e.target.src = "")}
-                />
-                <div>
-                  <p>{profile?.name_of_ventilation_grid}</p>
-                  {/* <p>€{profile?.price_of_ventilation_grid}</p> */}
-                </div>
+          {ventilationGrids.map((grid, index) => (
+            <div
+              key={index}
+              className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+                selectedGrids?.choose_ventilation_grid === grid.choose_ventilation_grid ? "selected" : ""
+              }`}
+              onClick={() => setSelectedGrids(grid)}
+            >
+              {/* Assuming there's an image and a name associated with each grid, which might need adjustment */}
+              <img
+                src={grid.image_of_ventilation_grid?.url || 'path/to/default/image'}
+                alt={`Ventilation Grid ${index + 1}`}
+                onError={(e) => (e.target.src = 'path/to/default/image')}
+              />
+              <div>
+                <p>{`Ventilation Grid ${index + 1}`}</p>
+                <p>€{grid.price_of_ventilation_grid}</p>
               </div>
-            ))}
+            </div>
+          ))}
         </>
       );
     };
+    
     const Input = ({ stepNumber, nextStep, map, text }) => {
       return (
         <div
@@ -480,7 +484,7 @@ function SingleProductPage() {
             }`}
             onClick={() => handleClick("step4")}
           >
-            <h3>Opening Type</h3>
+            <h3>Window Type</h3>
             <span>
               <FaChevronDown color={activeId === "step4" ? "white" : "black"} />
             </span>
@@ -606,7 +610,6 @@ function SingleProductPage() {
   // Ensure pricePerCm is a number and calculate dimension price
   const pricePerCm = Number(product?.acf?.window_size?.price_per_cm);
   const dimensionPrice = totalLengthInCm * pricePerCm;
-
   // Assuming selectedColor.color_price is a string, convert it to number
   const colorPrice = selectedColor
     ? Number(selectedColor["color_price_in_%"] || 0)
@@ -853,14 +856,7 @@ function SingleProductPage() {
                 <div className="single-product-page__customize__right__product">
                   <div className="single-product-page__customize__right__product__top">
                     {/* Assuming there's an image to display */}
-                    <img
-                      src={
-                        product?.images[0]
-                          ? product?.images[0]?.src
-                          : "../static/media/little-window.baf3ac1bbd2d082f644e.png"
-                      }
-                      alt=""
-                    />
+                    <CanvasComponent width={widthInCm} height={heightInCm} />
                   </div>
                   <div className="single-product-page__customize__right__product__body">
                     <div className="single-product-page__customize__right__product__body__option__mid">
