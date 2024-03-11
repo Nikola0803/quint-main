@@ -22,7 +22,8 @@ const CanvasComponent = ({ width, height }) => {
     context.fillRect(0, 0, canvasWidth, canvasHeight);
 
     // Calculate spacing between dividing lines
-    const spacing = (windowWidth - (numDividers - 1) * dividerWidth) / numDividers;
+    const totalDividerWidth = numDividers * dividerWidth;
+    const spacing = (windowWidth - frameWidth * 2 - totalDividerWidth) / (numDividers - 1);
 
     // Draw outer lines of the window
     const frameX = (canvasWidth - windowWidth) / 2 + frameWidth / 2; // X coordinate of the window
@@ -33,7 +34,7 @@ const CanvasComponent = ({ width, height }) => {
 
     // Draw dividing lines
     for (let i = 0; i < numDividers; i++) {
-      const dividerX = frameX + i * (spacing + dividerWidth); // X coordinate of the divider
+      const dividerX = frameX + frameWidth + i * (spacing + dividerWidth); // X coordinate of the divider
       context.strokeRect(dividerX, frameY, dividerWidth, windowHeight - frameWidth);
     }
   }, [width, height]);
