@@ -6,8 +6,6 @@ const CanvasComponent = ({ windowWidth, windowHeight }) => {
   const canvasHeight = 500; // Height of the canvas frame
   const borderWidth = 10; // Width of the border
   const divisionWidth = 10; // Width of the dividing lines
-  const windowWidth = width; // Width of the window shape
-  const windowHeight = height; // Height of the window shape
 
   useEffect(() => {
     const canvas = canvasRef.current;
