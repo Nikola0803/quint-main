@@ -20,27 +20,27 @@ const CanvasComponent = ({ width, height }) => {
 
     // Draw outer lines of the window
     const frameWidth = 10; // Width of the frame
-    const frameX = (canvasWidth - windowWidth) / 2; // X coordinate of the window
-    const frameY = (canvasHeight - windowHeight) / 2; // Y coordinate of the window
+    const frameX = (canvasWidth - windowWidth) / 2 + frameWidth / 2; // X coordinate of the window
+    const frameY = (canvasHeight - windowHeight) / 2 + frameWidth / 2; // Y coordinate of the window
     context.strokeStyle = '#000'; // Black lines
     context.lineWidth = 2;
-    context.strokeRect(frameX, frameY, windowWidth, windowHeight);
+    context.strokeRect(frameX, frameY, windowWidth - frameWidth, windowHeight - frameWidth);
 
     // Draw inner lines of the window frame
-    const frameMiddleX1 = frameX + windowWidth / 3 - frameWidth / 2; // X coordinate of the first middle line
-    const frameMiddleX2 = frameX + (2 * windowWidth) / 3 - frameWidth / 2; // X coordinate of the second middle line
+    const frameMiddleX1 = frameX + windowWidth / 3; // X coordinate of the first middle line
+    const frameMiddleX2 = frameX + (2 * windowWidth) / 3; // X coordinate of the second middle line
     const frameMiddleWidth = frameWidth; // Width of the middle line
     context.strokeRect(
-      frameMiddleX1 - 1,
+      frameMiddleX1 - frameWidth / 2,
       frameY,
       frameMiddleWidth,
-      windowHeight
+      windowHeight - frameWidth
     );
     context.strokeRect(
-      frameMiddleX2 - 1,
+      frameMiddleX2 - frameWidth / 2,
       frameY,
       frameMiddleWidth,
-      windowHeight
+      windowHeight - frameWidth
     );
   }, [width, height]);
 
