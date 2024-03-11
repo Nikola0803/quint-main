@@ -6,6 +6,7 @@ const CanvasComponent = ({ width, height }) => {
   const canvasHeight = 500; // Height of the canvas frame
   const borderWidth = 1; // Width of the border
   const numRectangles = 3; // Number of rectangles
+  const spacing = 10; // Adjusted spacing between rectangles
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -24,8 +25,7 @@ const CanvasComponent = ({ width, height }) => {
     context.strokeRect(x, y, rectWidth, rectHeight);
 
     // Draw three evenly spaced rectangles within the outermost one
-    const rectangleWidth = (rectWidth - 30) / numRectangles; // Adjusted for spacing
-    const spacing = 10; // Adjusted spacing between rectangles
+    const rectangleWidth = (rectWidth - 30 - 14) / numRectangles; // Adjusted for spacing and extra space
     const startX = (canvasWidth - rectWidth) / 2 + 15; // Start X coordinate
     const startY = (canvasHeight - rectHeight) / 2 + 15; // Start Y coordinate
     for (let i = 0; i < numRectangles; i++) {
