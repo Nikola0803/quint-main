@@ -22,7 +22,7 @@ const CanvasComponent = ({ width, height }) => {
     context.lineWidth = borderWidth;
     context.strokeRect(x, y, rectWidth, rectHeight);
 
-    // Draw three evenly spaced rectangles in the middle
+    // Draw three evenly spaced rectangles within the outermost one
     const numRectangles = 3;
     const rectangleWidth = (rectWidth - 40) / numRectangles; // Subtracting 40 for spacing
     const startX = (canvasWidth - rectWidth) / 2 + 20; // Start X coordinate
@@ -37,6 +37,15 @@ const CanvasComponent = ({ width, height }) => {
       context.fillStyle = '#000'; // Black color
       context.font = 'bold 16px Arial';
       context.fillText(i + 1, numberX, numberY);
+
+      // Adjust rectangle dimensions for the numbers
+      const rectXAdjusted = rectX + 5;
+      const rectWidthAdjusted = rectangleWidth - 10;
+      const rectYAdjusted = startY + 5;
+      const rectHeightAdjusted = rectHeight - 10;
+
+      // Draw rectangles with adjusted dimensions
+      context.strokeRect(rectXAdjusted, rectYAdjusted, rectWidthAdjusted, rectHeightAdjusted);
     }
   }, [width, height]);
 
