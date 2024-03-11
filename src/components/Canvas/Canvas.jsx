@@ -6,8 +6,9 @@ const CanvasComponent = ({ width, height }) => {
   const canvasHeight = 500; // Height of the canvas frame
   const windowWidth = width; // Width of the window shape
   const windowHeight = height; // Height of the window shape
-  const borderWidth = 10; // Width of the border
-  const divisionWidth = 10; // Width of the dividing lines
+  const frameWidth = 10; // Width of the frame
+  const numDividers = 3; // Number of dividing lines
+  const dividerWidth = 10; // Width of the dividing lines
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -20,20 +21,20 @@ const CanvasComponent = ({ width, height }) => {
     context.fillStyle = '#fff'; // White background
     context.fillRect(0, 0, canvasWidth, canvasHeight);
 
-    // Draw outer frame
+    // Calculate spacing between dividing lines
+    const spacing = (windowWidth - (numDividers - 1) * dividerWidth) / numDividers;
+
+    // Draw outer lines of the window
+    const frameX = (canvasWidth - windowWidth) / 2 + frameWidth / 2; // X coordinate of the window
+    const frameY = (canvasHeight - windowHeight) / 2 + frameWidth / 2; // Y coordinate of the window
     context.strokeStyle = '#000'; // Black lines
-    context.lineWidth = borderWidth;
-    context.strokeRect(borderWidth / 2, borderWidth / 2, windowWidth + borderWidth, windowHeight + borderWidth);
+    context.lineWidth = 2;
+    context.strokeRect(frameX, frameY, windowWidth - frameWidth, windowHeight - frameWidth);
 
     // Draw dividing lines
-    const numberOfDivisions = 3; // Number of divisions
-    context.lineWidth = divisionWidth;
-    for (let i = 1; i < numberOfDivisions; i++) {
-      const divisionX = (canvasWidth / numberOfDivisions) * i;
-      context.beginPath();
-      context.moveTo(divisionX, 0);
-      context.lineTo(divisionX, canvasHeight);
-      context.stroke();
+    for (let i = 0; i < numDividers; i++) {
+      const dividerX = frameX + i * (spacing + dividerWidth); // X coordinate of the divider
+      context.strokeRect(dividerX, frameY, dividerWidth, windowHeight - frameWidth);
     }
   }, [width, height]);
 

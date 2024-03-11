@@ -4,6 +4,8 @@ import { Provider } from "mobx-react";
 import createStore from "./store";
 import App from "./components/App";
 
+function ConfiguratorPage() {
+    
 window.store = createStore();
 
 const rootElement = document.getElementById("root");
@@ -13,3 +15,5 @@ ReactDOM.render(
   </Provider>,
   rootElement
 );
+
+export default ConfiguratorPage;
