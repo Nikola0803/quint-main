@@ -6,6 +6,8 @@ const CanvasComponent = ({ windowWidth, windowHeight }) => {
   const canvasHeight = 500; // Height of the canvas frame
   const borderWidth = 10; // Width of the border
   const divisionWidth = 10; // Width of the dividing lines
+  const windowWidth = width; // Width of the window shape
+  const windowHeight = height; // Height of the window shape
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -26,12 +28,12 @@ const CanvasComponent = ({ windowWidth, windowHeight }) => {
     // Draw dividing lines
     const numberOfDivisions = 3; // Number of divisions
     context.lineWidth = divisionWidth;
-    const divisionSpacing = (canvasWidth - 2 * borderWidth) / (numberOfDivisions + 1);
+    const divisionSpacing = (windowWidth - 2 * borderWidth) / (numberOfDivisions + 1);
     for (let i = 1; i <= numberOfDivisions; i++) {
       const divisionX = borderWidth + divisionSpacing * i;
       context.beginPath();
       context.moveTo(divisionX, borderWidth);
-      context.lineTo(divisionX, canvasHeight - borderWidth);
+      context.lineTo(divisionX, windowHeight - borderWidth);
       context.stroke();
     }
   }, [windowWidth, windowHeight]);
