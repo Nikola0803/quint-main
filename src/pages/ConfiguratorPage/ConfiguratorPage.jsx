@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "mobx-react";
 import createStore from "./store";
 import App from "./components/App";
+import Store from "./store.js";
 
 function ConfiguratorPage() {
   window.store = createStore();
