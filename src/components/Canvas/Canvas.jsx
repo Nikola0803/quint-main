@@ -27,10 +27,17 @@ const CanvasComponent = ({ width, height }) => {
     context.strokeRect(frameX, frameY, windowWidth, windowHeight);
 
     // Draw inner lines of the window frame
-    const frameMiddleX = frameX + windowWidth / 2; // X coordinate of the middle line
-    const frameMiddleWidth = 2; // Width of the middle line
+    const frameMiddleX1 = frameX + windowWidth / 3 - frameWidth / 2; // X coordinate of the first middle line
+    const frameMiddleX2 = frameX + (2 * windowWidth) / 3 - frameWidth / 2; // X coordinate of the second middle line
+    const frameMiddleWidth = frameWidth; // Width of the middle line
     context.strokeRect(
-      frameMiddleX - 1,
+      frameMiddleX1 - 1,
+      frameY,
+      frameMiddleWidth,
+      windowHeight
+    );
+    context.strokeRect(
+      frameMiddleX2 - 1,
       frameY,
       frameMiddleWidth,
       windowHeight
