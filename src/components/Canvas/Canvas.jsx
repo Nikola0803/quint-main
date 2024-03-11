@@ -7,7 +7,7 @@ const CanvasComponent = ({ width, height }) => {
   const windowWidth = width; // Width of the window shape
   const windowHeight = height; // Height of the window shape
   const frameWidth = 10; // Width of the frame
-  const numDividers = 3; // Number of dividing lines
+  const numDividers = 2; // Number of dividing lines
   const dividerWidth = 10; // Width of the dividing lines
 
   useEffect(() => {
