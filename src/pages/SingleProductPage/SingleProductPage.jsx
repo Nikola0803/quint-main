@@ -399,20 +399,22 @@ function SingleProductPage() {
               style={{ display: "flex", alignItems: "center" }}
             >
               <input
-                type="number"
-                value={frameHeight}
-                onChange={(e) => setFrameHeight(e.target.value)}
-                onBlur={() => {
-                  // Clamp the value to min/max when user moves away from the input field
-                  const clampedValue = Math.max(
-                    Math.min(Number(frameHeight), maxHeight),
-                    minHeight
-                  );
-                  setFrameHeight(clampedValue);
-                }}
-                placeholder="Number"
-                style={{ textAlign: "center", marginRight: "5px" }} // Ensure input is aligned and has space for buttons
-              />
+              type="number"
+              value={frameHeight}
+              onChange={(e) => {
+                // Update the input value
+                const newValue = e.target.value;
+                // Clamp the value to min/max
+                const clampedValue = Math.max(
+                  Math.min(Number(newValue), maxHeight),
+                  minHeight
+                );
+                // Update the state with the clamped value
+                setFrameHeight(clampedValue);
+              }}
+              placeholder="Number"
+              style={{ textAlign: "center", marginRight: "5px" }}
+            />
               <div
                 style={{
                   display: "flex",
