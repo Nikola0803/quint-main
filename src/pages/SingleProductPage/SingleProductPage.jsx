@@ -351,12 +351,12 @@ function SingleProductPage() {
               style={{ display: "flex", alignItems: "center" }}
             >
               <input
-              type="number"
-              value={frameWidth}
-              onInput={(e) => setFrameWidth(e.target.value)}
-              placeholder="Number"
-              style={{ textAlign: "center" }}
-            />
+                type="number"
+                value={frameWidth}
+                onInput={(e) => setFrameWidth(e.target.value)}
+                placeholder="Number"
+                style={{ textAlign: "center" }}
+              />
               <div
                 style={{
                   display: "flex",
