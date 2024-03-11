@@ -51,4 +51,4 @@ const CanvasComponent = ({ width, height }) => {
   );
 };
 
-export default CanvasComponent;
+export default TwoPartCanvasComponent;

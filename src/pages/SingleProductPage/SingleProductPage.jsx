@@ -15,7 +15,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import CheckoutButton from "../../components/Checkout/Checkout.jsx";
 import { useCart } from "../../context/CartContext.js";
 import { Stage, Layer, Rect, Text } from 'react-konva';
-import CanvasComponent from '../../components/Canvas/Canvas.jsx'; // Assuming CanvasComponent is imported from a separate file
+import CanvasComponent from '../../components/Canvas/TrippleCanvasComponent.jsx'; // Assuming CanvasComponent is imported from a separate file
 
 
 import {
@@ -849,7 +849,7 @@ function SingleProductPage() {
                 <div className="single-product-page__customize__right__product">
                   <div className="single-product-page__customize__right__product__top">
                     {/* Assuming there's an image to display */}                  
-                    <CanvasComponent width={widthInCm} height={heightInCm} />                
+                    <TrippleCanvasComponent width={widthInCm} height={heightInCm} />                
                   </div>
                   <div className="single-product-page__customize__right__product__body">
                     <div className="single-product-page__customize__right__product__body__option__mid">
