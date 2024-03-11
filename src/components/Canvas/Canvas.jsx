@@ -4,6 +4,7 @@ const CanvasComponent = ({ width, height }) => {
   const canvasRef = useRef(null);
   const canvasWidth = 700; // Width of the canvas frame
   const canvasHeight = 500; // Height of the canvas frame
+  const borderWidth = 1; // Width of the border
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -12,11 +13,24 @@ const CanvasComponent = ({ width, height }) => {
     // Clear canvas
     context.clearRect(0, 0, canvasWidth, canvasHeight);
 
-    // Draw rectangle shape
-    const x = (canvasWidth - width) / 2;
-    const y = (canvasHeight - height) / 2;
-    context.fillStyle = '#000'; // Black color
-    context.fillRect(x, y, width, height);
+    // Draw outer lines of the rectangle shape
+    const x = (canvasWidth - width) / 2 + borderWidth / 2;
+    const y = (canvasHeight - height) / 2 + borderWidth / 2;
+    const rectWidth = width - borderWidth;
+    const rectHeight = height - borderWidth;
+    context.strokeStyle = '#000'; // Black color
+    context.lineWidth = borderWidth;
+    context.strokeRect(x, y, rectWidth, rectHeight);
+
+    // Draw three evenly spaced rectangles in the middle
+    const numRectangles = 3;
+    const rectangleWidth = (rectWidth - 40) / numRectangles; // Subtracting 40 for spacing
+    const startX = (canvasWidth - rectWidth) / 2 + 20; // Start X coordinate
+    const startY = (canvasHeight - rectHeight) / 2 + 20; // Start Y coordinate
+    for (let i = 0; i < numRectangles; i++) {
+      const rectX = startX + i * (rectangleWidth + 20); // Adding 20 for spacing
+      context.strokeRect(rectX, startY, rectangleWidth, rectHeight - 40); // Subtracting 40 for spacing
+    }
   }, [width, height]);
 
   return (
