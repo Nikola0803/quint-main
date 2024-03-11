@@ -24,7 +24,7 @@ const CanvasComponent = ({ width, height }) => {
     context.strokeRect(x, y, rectWidth, rectHeight);
 
     // Draw three evenly spaced rectangles within the outermost one
-    const rectangleWidth = (rectWidth - 30 - 12 + 6) / numRectangles; // Adjusted for extra 6 pixels
+    const rectangleWidth = (rectWidth - 30) / numRectangles; // Adjusted for spacing
     const spacing = 10; // Adjusted spacing between rectangles
     const startX = (canvasWidth - rectWidth) / 2 + 15; // Start X coordinate
     const startY = (canvasHeight - rectHeight) / 2 + 15; // Start Y coordinate
@@ -39,9 +39,6 @@ const CanvasComponent = ({ width, height }) => {
       context.font = 'bold 16px Arial';
       context.fillText(i + 1, numberX, numberY);
     }
-
-    // Adjust the outermost rectangle to have 10px more space on the right side
-    context.strokeRect(x, y, rectWidth + 10, rectHeight);
   }, [width, height]);
 
   return (
