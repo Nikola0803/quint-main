@@ -350,13 +350,21 @@ function SingleProductPage() {
               className="single-product-page__customize__left__option-holder__option__input-wrapper__input"
               style={{ display: "flex", alignItems: "center" }}
             >
-              <input
-                type="number"
-                value={frameWidth}
-                onChange={(e) => setFrameWidth(e.target.value)}
-                placeholder="Number"
-                style={{ textAlign: "center" }}
-              />
+             <input
+      type="number"
+      value={frameWidth}
+      onChange={handleWidthChange}
+      onBlur={() => {
+        // Clamp the value to min/max when user moves away from the input field
+        const clampedValue = Math.max(
+          Math.min(Number(frameWidth), maxWidth),
+          minWidth
+        );
+        setFrameWidth(clampedValue);
+      }}
+      placeholder="Number"
+      style={{ textAlign: "center" }}
+    />
               <div
                 style={{
                   display: "flex",
@@ -401,15 +409,13 @@ function SingleProductPage() {
               <input
               type="number"
               value={frameHeight}
-              onChange={(e) => {
-                // Update the input value
-                const newValue = e.target.value;
-                // Clamp the value to min/max
+              onChange={handleHeightChange}
+              onBlur={() => {
+                // Clamp the value to min/max when user moves away from the input field
                 const clampedValue = Math.max(
-                  Math.min(Number(newValue), maxHeight),
+                  Math.min(Number(frameHeight), maxHeight),
                   minHeight
                 );
-                // Update the state with the clamped value
                 setFrameHeight(clampedValue);
               }}
               placeholder="Number"
