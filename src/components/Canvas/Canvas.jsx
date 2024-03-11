@@ -3,9 +3,9 @@ import React, { useRef, useEffect } from 'react';
 const CanvasComponent = ({ width, height }) => {
   const canvasRef = useRef(null);
   const canvasWidth = 700; // Width of the canvas frame
-  const canvasHeight = 500; // Height of the canvas frame
+  const canvasHeight = height; // Height of the canvas frame (maintaining the previous height)
   const windowWidth = width; // Width of the window shape
-  const windowHeight = height; // Height of the window shape
+  const windowHeight = canvasHeight; // Height of the window shape (maintaining the previous height)
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -37,6 +37,10 @@ const CanvasComponent = ({ width, height }) => {
 
     // Draw middle frame
     context.strokeRect(middleFrameX, 0, windowWidth, frameHeight);
+
+    // Draw dividing lines
+    const dividerX = middleFrameX + windowWidth / 2;
+    context.fillRect(dividerX, 0, 2, frameHeight);
 
     // Calculate X coordinate for the right frame
     const rightFrameX = middleFrameX + windowWidth + frameSpacing;
