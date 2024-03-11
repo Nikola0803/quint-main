@@ -27,7 +27,7 @@ import {
   useElements,
   useStripe,
 } from "@stripe/react-stripe-js";
-function SingleProductPage() {
+function SingleProductPage({typeOfWindow}) {
   const [openingTypeValue, setOpeningTypeValue] = useState(null);
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
