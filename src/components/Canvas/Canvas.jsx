@@ -23,7 +23,7 @@ const CanvasComponent = ({ windowWidth, windowHeight }) => {
     // Draw outer frame
     context.strokeStyle = '#000'; // Black lines
     context.lineWidth = borderWidth;
-    context.strokeRect(borderWidth / 2, borderWidth / 2, canvasWidth - borderWidth, canvasHeight - borderWidth);
+    context.strokeRect(borderWidth / 2, borderWidth / 2, windowWidth - borderWidth, windowHeight - borderWidth);
 
     // Draw dividing lines
     const numberOfDivisions = 3; // Number of divisions
