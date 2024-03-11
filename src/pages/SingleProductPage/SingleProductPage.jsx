@@ -848,10 +848,9 @@ function SingleProductPage() {
                 <h3>Customize windows frame</h3>
                 <div className="single-product-page__customize__right__product">
                   <div className="single-product-page__customize__right__product__top">
-                    {/* Assuming there's an image to display */}
-                    {openingTypeValue && (
-        <CanvasComponent width={widthInCm} height={heightInCm} openingType={openingTypeValue} />
-      )}                  </div>
+                    {/* Assuming there's an image to display */}                  
+                    <CanvasComponent width={widthInCm} height={heightInCm} />                
+                  </div>
                   <div className="single-product-page__customize__right__product__body">
                     <div className="single-product-page__customize__right__product__body__option__mid">
                       <h3>Price total:</h3>
