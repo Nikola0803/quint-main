@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 
-const CanvasComponent = ({ windowWidth, windowHeight }) => {
+const CanvasComponent = ({ width, height }) => {
   const canvasRef = useRef(null);
   const canvasWidth = 700; // Width of the canvas frame
   const canvasHeight = 500; // Height of the canvas frame
@@ -21,19 +21,19 @@ const CanvasComponent = ({ windowWidth, windowHeight }) => {
     // Draw outer frame
     context.strokeStyle = '#000'; // Black lines
     context.lineWidth = borderWidth;
-    context.strokeRect(borderWidth / 2, borderWidth / 2, windowWidth - borderWidth, windowHeight - borderWidth);
+    context.strokeRect(borderWidth / 2, borderWidth / 2, width - borderWidth, height - borderWidth);
 
     // Draw dividing lines
     const numberOfDivisions = 3; // Number of divisions
     context.lineWidth = divisionWidth;
     for (let i = 1; i < numberOfDivisions; i++) {
-      const divisionX = (windowWidth / numberOfDivisions) * i;
+      const divisionX = (canvasWidth / numberOfDivisions) * i;
       context.beginPath();
       context.moveTo(divisionX, 0);
-      context.lineTo(divisionX, windowHeight);
+      context.lineTo(divisionX, canvasHeight);
       context.stroke();
     }
-  }, [windowWidth, windowHeight]);
+  }, [width, height]);
 
   return (
     <canvas
