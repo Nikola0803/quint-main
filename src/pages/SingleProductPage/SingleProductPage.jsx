@@ -29,7 +29,7 @@ import {
   useStripe,
 } from "@stripe/react-stripe-js";
 function SingleProductPage() {
-  const [typeOfWindow, setTypeOfWindow] = useState('Single Opening'); // Set the default value here
+  const [typeOfWindow, setTypeOfWindow] = useState('Tripple Openings'); // Set the default value here
   const [openingTypeValue, setOpeningTypeValue] = useState(null);
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -50,6 +50,25 @@ function SingleProductPage() {
   const [selectedHandles, setSelectedHandles] = useState(null);
   const [selectedGrids, setSelectedGrids] = useState(null);
   const [sucess, setSuccess] = useState(false);
+  const [fixedDistribution, setFixedDistribution] = useState(""); // State to store the selected fixed distribution
+  const [width1, setWidth1] = useState(""); // State to store the width of turn/tilt window in section 1
+  const [width2, setWidth2] = useState(""); // State to store the width of fixed glass in section 2
+  const [width3, setWidth3] = useState(""); // State to store the width of turn/tilt window in section 3
+  const [openingType, setOpeningType] = useState(""); // State to store the selected opening type
+
+    // Function to handle the change in opening type
+    const handleOpeningTypeChange = (event) => {
+      const { value } = event.target;
+      setOpeningType(value);
+    };
+  
+    // Function to handle the change in fixed distribution
+    const handleFixedDistributionChange = (event) => {
+      const { value } = event.target;
+      setFixedDistribution(value);
+    };
+
+    
   // useEffect(() => {
   //   console.log(
   //     selectedColor,
@@ -462,72 +481,76 @@ function SingleProductPage() {
           )}
         </div>      
 
-        <Input stepNumber={2} nextStep={"step3"} map={two} text={"Profile"} />
+        <Input stepNumber={2} nextStep={"step3"} map={three} text={"Profile"} />
 
-        <Input
-          stepNumber={3}
-          nextStep={"step4"}
-          map={three}
-          text={"Choose Color"}
-        />
-        <div
-          className={`single-product-page__customize__left__option-holder__option ${
-            activeId === "step4" ? "top-active" : ""
-          }`}
-          id={"step4"}
-        >
-          <div
-            className={`single-product-page__customize__left__option-holder__option__top ${
-              activeId === "step4"
-                ? "single-product-page__customize__left__option-holder__option__top-active"
-                : ""
-            }`}
-            onClick={() => handleClick("step4")}
-          >
-            <h3>Window Type</h3>
-            <span>
-              <FaChevronDown color={activeId === "step4" ? "white" : "black"} />
-            </span>
+        <div className={`single-product-page__customize__left__option-holder__option ${activeId === "step3" ? "top-active" : ""}`} id={"step3"}>
+        <div className={`single-product-page__customize__left__option-holder__option__top ${activeId === "step4" ? "single-product-page__customize__left__option-holder__option__top-active" : ""}`} onClick={handleClick}>
+          <h3>Plane Division</h3>
+          <span>
+            <FaChevronDown color={activeId === "step3" ? "white" : "black"} />
+          </span>
+        </div>
+        <div className={`single-product-page__customize__left__option-holder__option__body ${activeId !== "step3" ? "d-none" : ""}`}>
+          {/* Fixed distribution */}
+          <div className="option">
+            <label htmlFor="fixedDistribution">Fixed Distribution:</label>
+            <select id="fixedDistribution" value={fixedDistribution} onChange={handleFixedDistributionChange}>
+              <option value="">Select Fixed Distribution</option>
+              <option value="1:1:1">1:1:1</option>
+              <option value="1:2:1">1:2:1</option>
+              <option value="Manual">Manual</option>
+            </select>
           </div>
-          <div
-            className={`single-product-page__customize__left__option-holder__option__body ${
-              activeId !== "step4" ? "d-none" : ""
-            }`}
-          >
-            <div
-            className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-              selectedOpening === product?.acf?.opening_type.name ? "selected" : ""
-            }`}
-            onClick={() => setSelectedOpening(product?.acf?.opening_type.name)}
-          >
-            <img src={"#"} alt="" onError={(e) => (e.target.src = "")} />
-            <div>
-              <p>{product?.acf?.opening_type.name}</p> {/* Adjusted to access a property of the object */}
-            </div>
-          </div></div>
+
+          {/* Width of turn/tilt window in section 1 */}
+          <div className="option">
+            <label htmlFor="width1" class="left-widths">Width of turn/tilt window (inward opening) in section 1 (in mm):<span><br></br>(Calculated automatically)</span>
+</label>
+            <input type="number" id="width1" value={width1} onChange={(event) => setWidth1(event.target.value)} disabled={fixedDistribution !== "Manual"} />
+          </div>
+
+          {/* Width of fixed glass in section 2 */}
+          <div className="option">
+            <label htmlFor="width2" class="left-widths">Width of fixed glass in section 2 (in mm):<span><br></br>(Calculated automatically)</span></label>
+            <input type="number" id="width2" value={width2} onChange={(event) => setWidth2(event.target.value)} disabled={fixedDistribution !== "Manual"} />
+          </div>
+
+          {/* Width of turn/tilt window in section 3 */}
+          <div className="option">
+            <label htmlFor="width3" class="left-widths">Width of turn/tilt window (inward opening) in section 3 (in mm):<span><br></br>(Calculated automatically)</span>
+</label>
+            <input type="number" id="width3" value={width3} onChange={(event) => setWidth3(event.target.value)} disabled={fixedDistribution !== "Manual"} />
+          </div>
+
+          {/* Go to next step button */}
           <div className="single-product-page__customize__left__option-holder__option__btn-wrapper">
-            <button
-              className={`btn-colored ${activeId !== "step4" ? "d-none" : ""}`}
-              onClick={() => goToNextStep("step5")}
-            >
-              Go to next step <FaTurnDown />
-            </button>
+            <button className="btn-colored" onClick={goToNextStep}>Go to next step <FaTurnDown /></button>
           </div>
         </div>
+      </div>
+
+        <Input
+          stepNumber={4}
+          nextStep={"step5"}
+          map={two}
+          text={"Choose Color"}
+        />
+
         <Input
           stepNumber={5}
           nextStep={"step6"}
           map={five}
-          text={"Glass Layers"}
+          text={"Glass Type"}
         />
+
         <Input
           stepNumber={6}
           nextStep={"step7"}
           map={six}
-          text={"Glass Type"}
+          text={"Handle"}
         />
 
-        <Input stepNumber={7} nextStep={"step8"} map={seven} text={"Handle"} />
+        <Input stepNumber={7} nextStep={"step8"} map={seven} text={"Upsells"} />
         <Input
           stepNumber={8}
           nextStep={"step1"}
@@ -858,7 +881,16 @@ function SingleProductPage() {
                     {/* Assuming there's an image to display */}                  
                     {typeOfWindow === 'Single Opening' && <CanvasComponent width={widthInCm} height={heightInCm} />}
                     {typeOfWindow === 'Two Openings' && <TwoPartCanvasComponent width={widthInCm} height={heightInCm} />}
-                    {typeOfWindow === 'Tripple Openings' && <TrippleCanvasComponent width={widthInCm} height={heightInCm} />}
+                    {typeOfWindow === 'Tripple Openings' && (
+                    <TrippleCanvasComponent
+                      width={widthInCm}
+                      height={heightInCm}
+                      fixedDistribution={fixedDistribution}
+                      width1={width1}
+                      width2={width2}
+                      width3={width3}
+                    />
+                  )}
                   </div>
                   <div className="single-product-page__customize__right__product__body">
                     <div className="single-product-page__customize__right__product__body__option__mid">

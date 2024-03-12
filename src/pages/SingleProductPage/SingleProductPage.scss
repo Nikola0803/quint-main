@@ -5,6 +5,24 @@
   margin-bottom: 10px;
 }
 
+.left-widths{
+  width:40%;
+}
+
+#width1,
+#width2,
+#width3{
+  width:50%;
+}
+
+.option {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin: 10px 0px;
+}
+
 .single-product-page {
   border-top: 1px solid black;
   padding-top: 70px;
