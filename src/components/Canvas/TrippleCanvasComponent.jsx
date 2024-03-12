@@ -1,19 +1,35 @@
 import React, { useRef, useEffect, useState } from 'react';
 
-const TrippleCanvasComponent = ({ width, height, fixedDistribution }) => {
+const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, width2, width3 }) => {
   const canvasRef = useRef(null);
   const canvasWidth = 700; // Width of the canvas frame
   const canvasHeight = 500; // Height of the canvas frame
   const borderWidth = 1; // Width of the border
-  const numRectangles = 3; // Number of rectangles
   const spacing = 10; // Adjusted spacing between rectangles
 
-  const [widths, setWidths] = useState({
-    width1: width / 3,
-    width2: width / 3,
-    width3: width / 3,
-  });
+  // Function to calculate the widths of the rectangles based on fixed distribution
+  const calculateRectWidths = () => {
+    if (fixedDistribution === '1:1:1') {
+      return [width / 3, width / 3, width / 3];
+    } else if (fixedDistribution === '1:2:1') {
+      const middleWidth = (width * 3) / 7; // Adjusted the middle width to be larger
+      const sideWidth = (width - middleWidth) / 2;
+      return [sideWidth, middleWidth, sideWidth];
+    } else {
+      // Handle unexpected fixedDistribution values
+      console.error('Unexpected fixedDistribution value:', fixedDistribution);
+      // Return some default widths or throw an error
+      // For now, let's return equal widths as a fallback
+      return [width / 3, width / 3, width / 3];
+    }
+  };  
 
+  // Function to convert millimeters to pixels
+  const mmToPx = (mm) => {
+    return mm / 10; // Divide by 10 to convert from millimeters to pixels
+  };
+
+  // Effect to draw on the canvas when dimensions or fixedDistribution change
   useEffect(() => {
     const canvas = canvasRef.current;
     const context = canvas.getContext('2d');
@@ -35,35 +51,14 @@ const TrippleCanvasComponent = ({ width, height, fixedDistribution }) => {
     // Draw the rectangles based on the calculated widths or manual inputs
     let startX = outerRectX + spacing + borderWidth; // Start X coordinate
     const startY = outerRectY + spacing + borderWidth; // Start Y coordinate
-    const rectWidths = fixedDistribution === 'Manual' ? Object.values(widths) : calculateRectWidths();
-    for (let i = 0; i < numRectangles; i++) {
+    const rectWidths = fixedDistribution === 'Manual' ? [mmToPx(width1), mmToPx(width2), mmToPx(width3)] : calculateRectWidths();
+    for (let i = 0; i < rectWidths.length; i++) {
       const rectX = startX;
       const rectWidth = rectWidths[i];
       context.strokeRect(rectX, startY, rectWidth, height); // Height is the same for all rectangles
       startX += rectWidth + spacing; // Adjust startX for the next rectangle
     }
-  }, [width, height, fixedDistribution, widths]);
-
-  const calculateRectWidths = () => {
-    if (fixedDistribution === '1:1:1') {
-      return [width / 3, width / 3, width / 3];
-    } else if (fixedDistribution === '1:2:1') {
-      const middleWidth = (width * 3) / 7; // Adjusted the middle width to be larger
-      const sideWidth = (width - middleWidth) / 2;
-      return [sideWidth, middleWidth, sideWidth];
-    } else {
-      // Handle unexpected fixedDistribution values
-      console.error('Unexpected fixedDistribution value:', fixedDistribution);
-      // Return some default widths or throw an error
-      // For now, let's return equal widths as a fallback
-      return [width / 3, width / 3, width / 3];
-    }
-  };  
-
-  const handleWidthChange = (event, key) => {
-    const newValue = parseInt(event.target.value);
-    setWidths(prevWidths => ({ ...prevWidths, [key]: newValue }));
-  };
+  }, [width, height, fixedDistribution, width1, width2, width3]);
 
   return (
     <>
@@ -77,15 +72,15 @@ const TrippleCanvasComponent = ({ width, height, fixedDistribution }) => {
         <>
           <div className="option">
             <label htmlFor="width1">Width of section 1 (in mm):</label>
-            <input type="number" id="width1" value={widths.width1} onChange={(e) => handleWidthChange(e, 'width1')} />
+            <input type="number" id="width1" value={width1} onChange={(e) => width1 = e.target.value} />
           </div>
           <div className="option">
             <label htmlFor="width2">Width of section 2 (in mm):</label>
-            <input type="number" id="width2" value={widths.width2} onChange={(e) => handleWidthChange(e, 'width2')} />
+            <input type="number" id="width2" value={width2} onChange={(e) => width2 = e.target.value} />
           </div>
           <div className="option">
             <label htmlFor="width3">Width of section 3 (in mm):</label>
-            <input type="number" id="width3" value={widths.width3} onChange={(e) => handleWidthChange(e, 'width3')} />
+            <input type="number" id="width3" value={width3} onChange={(e) => width3 = e.target.value} />
           </div>
         </>
       )}
