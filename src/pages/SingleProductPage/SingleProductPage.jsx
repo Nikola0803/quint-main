@@ -460,16 +460,16 @@ function SingleProductPage() {
               </button>
             </div>
           )}
-        </div>
+        </div>      
+
+        <Input stepNumber={2} nextStep={"step3"} map={two} text={"Profile"} />
+
         <Input
-          stepNumber={2}
-          nextStep={"step3"}
-          map={two}
+          stepNumber={3}
+          nextStep={"step4"}
+          map={three}
           text={"Choose Color"}
         />
-
-        <Input stepNumber={3} nextStep={"step4"} map={three} text={"Profile"} />
-
         <div
           className={`single-product-page__customize__left__option-holder__option ${
             activeId === "step4" ? "top-active" : ""
