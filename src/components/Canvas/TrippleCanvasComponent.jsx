@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, width2, width3 }) => {
   const canvasRef = useRef(null);
@@ -29,6 +29,28 @@ const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, widt
     return mm / 10; // Divide by 10 to convert from millimeters to pixels
   };
 
+  // Function to calculate the total length of lines in the shapes
+  const calculateTotalLineLength = (rectWidths) => {
+    let totalLength = 0;
+
+    // Iterate through each rectangle
+    for (let i = 0; i < rectWidths.length; i++) {
+      const rectWidth = rectWidths[i];
+      const rectHeight = height;
+
+      // Calculate the length of horizontal lines
+      const horizontalLength = rectWidth * 2 + rectHeight * 2;
+
+      // Calculate the length of vertical lines
+      const verticalLength = rectHeight;
+
+      // Add the lengths of horizontal and vertical lines
+      totalLength += horizontalLength + verticalLength;
+    }
+
+    return totalLength;
+  };
+
   // Effect to draw on the canvas when dimensions or fixedDistribution change
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -56,8 +78,20 @@ const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, widt
       const rectX = startX;
       const rectWidth = rectWidths[i];
       context.strokeRect(rectX, startY, rectWidth, height); // Height is the same for all rectangles
+
+      // Draw additional rectangular shape inside width1 and width3
+      if ((i === 0 || i === 2)) {
+        const innerRectWidth = rectWidth - 20; // 10 pixels smaller on each side
+        const innerRectX = rectX + 10; // 10 pixels offset from the outer rectangle
+        context.strokeRect(innerRectX, startY + 10, innerRectWidth, height - 20); // Adjusted height for inner rectangle
+      }
+
       startX += rectWidth + spacing; // Adjust startX for the next rectangle
     }
+
+    // Calculate and log the total length of all lines in the shapes
+    const totalLineLength = calculateTotalLineLength(rectWidths);
+    console.log('Total length of all lines:', totalLineLength);
   }, [width, height, fixedDistribution, width1, width2, width3]);
 
   return (

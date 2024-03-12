@@ -628,21 +628,22 @@ function SingleProductPage() {
   const widthInCm = frameWidth / 10;
   const heightInCm = frameHeight / 10;
   // Calculate the total length in cm (assuming linear calculation means perimeter for a rectangle)
-  const totalLengthInCm = 2 * (widthInCm + heightInCm);
+  const totalLengthInCm = ((12 * heightInCm) + (widthInCm * 4 ) + 4 * widthInCm);
 
-  // Ensure pricePerCm is a number and calculate dimension price
-  const pricePerCm = Number(product?.acf?.window_size?.price_per_cm);
-  const dimensionPrice = totalLengthInCm * pricePerCm;
+  
   // Assuming selectedColor.color_price is a string, convert it to number
   const colorPrice = selectedColor
     ? Number(selectedColor["color_price_in_%"] || 0)
     : 0;
-  const profilePrice = Number(selectedProfile?.profile_price ?? 0);
+  const profilePrice = (Number(selectedProfile?.profile_price ?? 0) /100);
+  const pricePerCm = profilePrice;
   const glassLayerPrice = Number(selectedGlassLayers?.price_per_sqm ?? 0);
   const handlePrice = Number(selectedHandles?.price_of_handle ?? 0);
   const gridPrice = Number(selectedGrids?.price_of_ventilation_grid ?? 0);
-  const calc = profilePrice + glassLayerPrice + handlePrice + gridPrice;
-  const totalPriceBeforeVAT = dimensionPrice + colorPrice + calc;
+  const calc = glassLayerPrice + handlePrice + gridPrice;
+  const dimensionPrice = totalLengthInCm * pricePerCm;
+  const totalPriceBeforeVAT = dimensionPrice + (dimensionPrice/colorPrice) + calc;
+
 
   const VAT_RATE = 0.2; // 20%
   const vat = totalPriceBeforeVAT * VAT_RATE;
@@ -936,7 +937,7 @@ function SingleProductPage() {
                             : "Selected option"}
                         </p>
                         <p>
-                          €
+                          %
                           {selectedColor
                             ? selectedColor["color_price_in_%"]
                             : "0"}
