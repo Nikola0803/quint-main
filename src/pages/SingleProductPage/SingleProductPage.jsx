@@ -120,40 +120,150 @@ function SingleProductPage() {
     const glassLayers = Object.values(glassLayersArray);
 
     const two = () => {
-      // Assuming product?.acf?.colors is the path to the color options in your product object
-      const colorCategories = product?.acf?.colors || []; // Access all color categories, with a fallback to an empty array
-      
+      // Check if product exists and has color data
+      if (!product || !product.acf || !product.acf.colors || product.acf.colors.length === 0) {
+        return <p>No color data available</p>;
+      }
+    
+      // Extract case_color, window_color, case_color_inside, and window_color_inside options from the API response
+      const caseColorOptions = product.acf.colors.flatMap(category => category.case_color || []);
+      const windowColorOptions = product.acf.colors.flatMap(category => category.window_color || []);
+      const caseColorInsideOptions = product.acf.colors.flatMap(category => category.case_color_inside || []);
+      const windowColorInsideOptions = product.acf.colors.flatMap(category => category.window_color_inside || []);
+    
+      // Check if there are no options available for any of the colors
+      if (caseColorOptions.length === 0 && windowColorOptions.length === 0 && caseColorInsideOptions.length === 0 && windowColorInsideOptions.length === 0) {
+        return <p>No color data available</p>;
+      }
+    
       return (
         <>
-          {colorCategories.map((colorCategory, categoryIndex) => (
-            <div key={categoryIndex}>
-              <h2>{colorCategory.title}</h2> {/* Display the title of the color category */}
-              {colorCategory.options && colorCategory.options.length > 0 && // Check if options exist and have a length
-                colorCategory.options.map((colorOption, optionIndex) => (
-                  <div
-                    key={optionIndex}
-                    className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                      selectedColor?.color_name === colorOption.color_name ? "selected" : ""
-                    }`}
-                    onClick={() => setSelectedColor(colorOption)} // Adjusted to the current colorOption structure
-                  >
-                    <img
-                      src={colorOption.color_image?.url || undefined}
-                      alt={colorOption.color_name}
-                      onError={(e) => (e.target.src = "")}
-                    />
-                    <div>
-                      <p>{colorOption.color_name}</p>
-                      <p>€{colorOption["color_price_in_%"] || "N/A"}</p> {/* Uncommented and adjusted to display the price */}
-                    </div>
+          {caseColorOptions.length > 0 && (
+            <div className="color-options-container">
+              <h5>Case Color</h5>
+              <div className="">
+              {caseColorOptions.map((colorOption, index) => (
+                <div
+                  key={index}
+                  className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+                    selectedColor?.color_name === colorOption.color_name ? "selected" : ""
+                  }`}
+                  onClick={() => setSelectedColor(colorOption)} // Add the onClick event handler here
+                >
+                  <img
+                    src={colorOption.color_image?.url}
+                    alt={colorOption.color_name}
+                    onError={(e) => (e.target.src = "")}
+                    style={{
+                      width: "50px",
+                      height: "50px",
+                      marginRight: "10px",
+                    }}
+                  />
+                  <div>
+                    <p>{colorOption.color_name}</p>
+                    <p>€{colorOption.color_price_in_percent || "N/A"}</p>
                   </div>
-                ))}
+                </div>           
+              ))}
             </div>
-          ))}
+             </div>
+          )}
+    
+          {windowColorOptions.length > 0 && (
+            <div className="color-options-container">
+              <h5>Window Color</h5>
+              {windowColorOptions.map((colorOption, index) => (
+                <div
+                  key={index}
+                  className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+                    selectedColor?.color_name === colorOption.color_name ? "selected" : ""
+                  }`}
+                  onClick={() => setSelectedColor(colorOption)} // Add the onClick event handler here
+                >
+                  <img
+                    src={colorOption.color_image?.url}
+                    alt={colorOption.color_name}
+                    onError={(e) => (e.target.src = "")}
+                    style={{
+                      width: "50px",
+                      height: "50px",
+                      marginRight: "10px",
+                    }}
+                  />
+                  <div>
+                    <p>{colorOption.color_name}</p>
+                    <p>€{colorOption.color_price_in_percent || "N/A"}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+    
+          {caseColorInsideOptions.length > 0 && (
+            <div className="color-options-container">
+              <h5>Case Color Inside</h5>
+              {caseColorInsideOptions.map((colorOption, index) => (
+                <div
+                  key={index}
+                  className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+                    selectedColor?.color_name === colorOption.color_name ? "selected" : ""
+                  }`}
+                  onClick={() => setSelectedColor(colorOption)} // Add the onClick event handler here
+                >
+                  <img
+                    src={colorOption.color_image?.url}
+                    alt={colorOption.color_name}
+                    onError={(e) => (e.target.src = "")}
+                    style={{
+                      width: "50px",
+                      height: "50px",
+                      marginRight: "10px",
+                    }}
+                  />
+                  <div>
+                    <p>{colorOption.color_name}</p>
+                    <p>€{colorOption.color_price_in_percent || "N/A"}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+    
+          {windowColorInsideOptions.length > 0 && (
+            <div className="color-options-container">
+              <h5>Window Color Inside</h5>
+              {windowColorInsideOptions.map((colorOption, index) => (
+                <div
+                  key={index}
+                  className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+                    selectedColor?.color_name === colorOption.color_name ? "selected" : ""
+                  }`}
+                  onClick={() => setSelectedColor(colorOption)} // Add the onClick event handler here
+                >
+                  <img
+                    src={colorOption.color_image?.url}
+                    alt={colorOption.color_name}
+                    onError={(e) => (e.target.src = "")}
+                    style={{
+                      width: "50px",
+                      height: "50px",
+                      marginRight: "10px",
+                    }}
+                  />
+                  <div>
+                    <p>{colorOption.color_name}</p>
+                    <p>€{colorOption.color_price_in_percent || "N/A"}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </>
       );
-    };    
+    };
     
+       
     const three = () => {
       return (
         <>
@@ -410,7 +520,7 @@ function SingleProductPage() {
               <input
                 type="number"
                 value={frameWidth}
-                onInput={(e) => setFrameWidth(e.target.value)}
+                onChange={(e) => setFrameWidth(e.target.value)}
                 placeholder="Number"
                 style={{ textAlign: "center" }}
               />
@@ -458,7 +568,7 @@ function SingleProductPage() {
               <input
               type="number"
               value={frameHeight}
-              onInput={(e) => setFrameHeight(e.target.value)}
+              onChange={(e) => setFrameHeight(e.target.value)}
               placeholder="Number"
               style={{ textAlign: "center" }}
             />
