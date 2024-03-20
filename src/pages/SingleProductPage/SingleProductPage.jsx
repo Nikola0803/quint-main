@@ -119,20 +119,16 @@ function SingleProductPage() {
     // Get glassLayers as an array of values from glassLayersArray
     const glassLayers = Object.values(glassLayersArray);
 
-    const one = () => {
-
-    }
-
     const two = () => {
-      // Assuming product.acf.colors is the path to the color options in your product object
-      const colorCategories = product?.acf?.colors; // Access all color categories
+      // Assuming product?.acf?.colors is the path to the color options in your product object
+      const colorCategories = product?.acf?.colors || []; // Access all color categories, with a fallback to an empty array
       
       return (
         <>
           {colorCategories.map((colorCategory, categoryIndex) => (
             <div key={categoryIndex}>
               <h2>{colorCategory.title}</h2> {/* Display the title of the color category */}
-              {colorCategory.options.length > 0 &&
+              {colorCategory.options && colorCategory.options.length > 0 && // Check if options exist and have a length
                 colorCategory.options.map((colorOption, optionIndex) => (
                   <div
                     key={optionIndex}
@@ -184,6 +180,42 @@ function SingleProductPage() {
         </>
       );
     };
+
+    const four = () => {
+      return (
+        <div>
+          <div className={`single-product-page__customize__left__option-holder__option__body ${activeId === "step4" ? "" : "d-none"}`}>
+            {/* Fixed distribution */}
+            <div className="option">
+              <label htmlFor="fixedDistribution">Fixed Distribution:</label>
+              <select id="fixedDistribution" value={fixedDistribution} onChange={handleFixedDistributionChange}>
+                <option value="">Select Fixed Distribution</option>
+                <option value="1:1:1">1:1:1</option>
+                <option value="1:2:1">1:2:1</option>
+                <option value="Manual">Manual</option>
+              </select>
+            </div>
+    
+            {/* Width inputs */}
+            <div className="option">
+              <label htmlFor="width1" className="left-widths">Width of turn/tilt window (inward opening) in section 1 (in mm):<span><br />(Calculated automatically)</span></label>
+              <input type="number" id="width1" value={width1} onChange={(event) => setWidth1(event.target.value)} disabled={fixedDistribution !== "Manual"} />
+            </div>
+    
+            <div className="option">
+              <label htmlFor="width2" className="left-widths">Width of fixed glass in section 2 (in mm):<span><br />(Calculated automatically)</span></label>
+              <input type="number" id="width2" value={width2} onChange={(event) => setWidth2(event.target.value)} disabled={fixedDistribution !== "Manual"} />
+            </div>
+    
+            <div className="option">
+              <label htmlFor="width3" className="left-widths">Width of turn/tilt window (inward opening) in section 3 (in mm):<span><br />(Calculated automatically)</span></label>
+              <input type="number" id="width3" value={width3} onChange={(event) => setWidth3(event.target.value)} disabled={fixedDistribution !== "Manual"} />
+            </div>
+          </div>
+        </div>
+      );
+    };
+    
     
     const five = () => {
       // Assuming 'product?.acf?.glass_layers' is the correct path to the glass layers data
@@ -477,62 +509,13 @@ function SingleProductPage() {
               </button>
             </div>
           )}
-        </div>      
+        </div> 
 
-        <Input stepNumber={2} nextStep={"step3"} map={three} text={"Profile"} />
+        <Input stepNumber={2} nextStep={"step3"} map={two} text={"Choose Color"} />
 
-        <div className={`single-product-page__customize__left__option-holder__option ${activeId === "step3" ? "top-active" : ""}`} id={"step3"}>
-        <div className={`single-product-page__customize__left__option-holder__option__top ${activeId === "step4" ? "single-product-page__customize__left__option-holder__option__top-active" : ""}`} onClick={handleClick}>
-          <h3>Plane Division</h3>
-          <span>
-            <FaChevronDown color={activeId === "step3" ? "white" : "black"} />
-          </span>
-        </div>
-        <div className={`single-product-page__customize__left__option-holder__option__body ${activeId !== "step3" ? "d-none" : ""}`}>
-          {/* Fixed distribution */}
-          <div className="option">
-            <label htmlFor="fixedDistribution">Fixed Distribution:</label>
-            <select id="fixedDistribution" value={fixedDistribution} onChange={handleFixedDistributionChange}>
-              <option value="">Select Fixed Distribution</option>
-              <option value="1:1:1">1:1:1</option>
-              <option value="1:2:1">1:2:1</option>
-              <option value="Manual">Manual</option>
-            </select>
-          </div>
+        <Input stepNumber={3} nextStep={"step4"} map={three} text={"Profile"} />
 
-          {/* Width of turn/tilt window in section 1 */}
-          <div className="option">
-            <label htmlFor="width1" class="left-widths">Width of turn/tilt window (inward opening) in section 1 (in mm):<span><br></br>(Calculated automatically)</span>
-</label>
-            <input type="number" id="width1" value={width1} onChange={(event) => setWidth1(event.target.value)} disabled={fixedDistribution !== "Manual"} />
-          </div>
-
-          {/* Width of fixed glass in section 2 */}
-          <div className="option">
-            <label htmlFor="width2" class="left-widths">Width of fixed glass in section 2 (in mm):<span><br></br>(Calculated automatically)</span></label>
-            <input type="number" id="width2" value={width2} onChange={(event) => setWidth2(event.target.value)} disabled={fixedDistribution !== "Manual"} />
-          </div>
-
-          {/* Width of turn/tilt window in section 3 */}
-          <div className="option">
-            <label htmlFor="width3" class="left-widths">Width of turn/tilt window (inward opening) in section 3 (in mm):<span><br></br>(Calculated automatically)</span>
-</label>
-            <input type="number" id="width3" value={width3} onChange={(event) => setWidth3(event.target.value)} disabled={fixedDistribution !== "Manual"} />
-          </div>
-
-          {/* Go to next step button */}
-          <div className="single-product-page__customize__left__option-holder__option__btn-wrapper">
-            <button className="btn-colored" onClick={goToNextStep}>Go to next step <FaTurnDown /></button>
-          </div>
-        </div>
-      </div>
-
-        <Input
-          stepNumber={4}
-          nextStep={"step5"}
-          map={two}
-          text={"Choose Color"}
-        />
+        <Input stepNumber={4} nextStep={"step5"} map={four} text={"Plane Division"} />
 
         <Input
           stepNumber={5}
@@ -633,19 +616,19 @@ function SingleProductPage() {
   // const totalLengthInCm = ((8 * heightInCm) + (widthInCm * 2 ) + ( 2 * firstWindow) + ( 2 * secondWindow));
   // Vertical windows - it has 1/3 proportion for the fixed window down or up. Opening side is always 2/3 iffixedratios/.Minimum200
 
-  const totalLengthInCmTrippleOpening = ((8 * heightInCm) + (widthInCm * 2 ) + ( 2 * firstWindow) + ( 2 * secondWindow));
-  const totalLengthInCmTrippleSingleOpening = ((6 * heightInCm) + (widthInCm * 2 ) + ( 2 * middleWindowWidth) + ( 4 * outerWindowWidths));
-  const totalLengthInCmTrippleFixed = ((4 * heightInCm) + (widthInCm * 2 ));
-  const totalLengthInCmTwoPartOpening = ((7 * heightInCm) + (widthInCm * 2 ) + ( 2 * firstWindow) + ( 2 * secondWindow));
-  const totalLengthInCmTwoPartOpeningAll = ((6 * heightInCm) + (widthInCm * 2 ) + ( 2 * firstWindow) + ( 2 * secondWindow));
-  const totalLengthInCmTwoPartOpeningOne = ((5 * heightInCm) + (widthInCm * 2 ) + ( 2 * firstWindow) + ( 2 * secondWindow));
-  const totalLengthInCmTwoPartFixed = ((3 * heightInCm) + (widthInCm * 2 ));
-  const totalLengthInCmSingleFixed = ((4 * heightInCm) + (widthInCm * 4 ));
-  const totalLengthInCmSingletFixed = ((2 * heightInCm) + (widthInCm * 2 ));
-  const totalLengthInCmVerticalFixed = ((2 * heightInCm) + (widthInCm * 3 ));
-  const totalLengthInCmVerticalFixedTripple = ((2 * heightInCm) + (widthInCm * 4 ));
-  const totalLengthInCmVerticalBottom = ((2 * heightInCm) + (widthInCm * 3 ) + (2 * windowHeight));
-  const totalLengthInCmVerticalTop = ((2 * heightInCm) + (widthInCm * 5 ) + (2 * windowHeight));
+  // const totalLengthInCmTrippleOpening = ((8 * heightInCm) + (widthInCm * 2 ) + ( 2 * firstWindow) + ( 2 * secondWindow));
+  // const totalLengthInCmTrippleSingleOpening = ((6 * heightInCm) + (widthInCm * 2 ) + ( 2 * middleWindowWidth) + ( 4 * outerWindowWidths));
+  // const totalLengthInCmTrippleFixed = ((4 * heightInCm) + (widthInCm * 2 ));
+  // const totalLengthInCmTwoPartOpening = ((7 * heightInCm) + (widthInCm * 2 ) + ( 2 * firstWindow) + ( 2 * secondWindow));
+  // const totalLengthInCmTwoPartOpeningAll = ((6 * heightInCm) + (widthInCm * 2 ) + ( 2 * firstWindow) + ( 2 * secondWindow));
+  // const totalLengthInCmTwoPartOpeningOne = ((5 * heightInCm) + (widthInCm * 2 ) + ( 2 * firstWindow) + ( 2 * secondWindow));
+  // const totalLengthInCmTwoPartFixed = ((3 * heightInCm) + (widthInCm * 2 ));
+  // const totalLengthInCmSingleFixed = ((4 * heightInCm) + (widthInCm * 4 ));
+  // const totalLengthInCmSingletFixed = ((2 * heightInCm) + (widthInCm * 2 ));
+  // const totalLengthInCmVerticalFixed = ((2 * heightInCm) + (widthInCm * 3 ));
+  // const totalLengthInCmVerticalFixedTripple = ((2 * heightInCm) + (widthInCm * 4 ));
+  // const totalLengthInCmVerticalBottom = ((2 * heightInCm) + (widthInCm * 3 ) + (2 * windowHeight));
+  // const totalLengthInCmVerticalTop = ((2 * heightInCm) + (widthInCm * 5 ) + (2 * windowHeight));
   
   const totalLengthInCm = ((8 * heightInCm) + (widthInCm * 2 ) + ( 2 * firstWindow) + ( 2 * secondWindow));
 
@@ -660,8 +643,10 @@ function SingleProductPage() {
   const glassLayerPrice = Number(selectedGlassLayers?.price_per_sqm ?? 0);
   const handlePrice = Number(selectedHandles?.price_of_handle ?? 0);
   const gridPrice = Number(selectedGrids?.price_of_ventilation_grid ?? 0);
-  const securityPrice =  Number(selectedSecurity?.price_of_extra_security ?? 0);
-  const calc = glassLayerPrice + handlePrice + gridPrice + securityPrice;
+  // const securityPrice =  Number(selectedSecurity?.price_of_extra_security ?? 0);
+  // const calc = glassLayerPrice + handlePrice + gridPrice + securityPrice;
+  const calc = glassLayerPrice + handlePrice + gridPrice;
+
   const dimensionPrice = totalLengthInCm * pricePerCm;
   const totalPriceBeforeVAT = dimensionPrice + (dimensionPrice/colorPrice) + calc;
   const colorFrontSide = totalPriceBeforeVAT * colorPrice;
