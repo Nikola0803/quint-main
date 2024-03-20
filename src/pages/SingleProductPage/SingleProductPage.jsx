@@ -49,6 +49,7 @@ function SingleProductPage() {
   const [selectedGlassTypes, setSelectedGlassTypes] = useState(null);
   const [selectedHandles, setSelectedHandles] = useState(null);
   const [selectedGrids, setSelectedGrids] = useState(null);
+  const [extraSecurity, setSelectedSecurity] = useState(null);
   const [sucess, setSuccess] = useState(false);
   const [fixedDistribution, setFixedDistribution] = useState(""); // State to store the selected fixed distribution
   const [width1, setWidth1] = useState(""); // State to store the width of turn/tilt window in section 1
@@ -124,41 +125,38 @@ function SingleProductPage() {
 
     const two = () => {
       // Assuming product.acf.colors is the path to the color options in your product object
-      const colorCategories = product?.acf?.colors[0]; // Access the first item in the colors array
-    
-      // Flatten all color options into a single array
-      const allColorOptions = [
-        ...(colorCategories.case_color || []),
-        ...(colorCategories.window_color || []),
-        ...(colorCategories.case_color_inside || []),
-        ...(colorCategories.color_options_copy2 || []),
-      ];
-    
+      const colorCategories = product?.acf?.colors; // Access all color categories
+      
       return (
         <>
-          {allColorOptions.length > 0 &&
-            allColorOptions.map((colorOption, index) => (
-              <div
-                key={index}
-                className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                  selectedColor?.color_name === colorOption.color_name ? "selected" : ""
-                }`}
-                onClick={() => setSelectedColor(colorOption)} // Adjusted to the current colorOption structure
-              >
-                <img
-                  src={colorOption.color_image?.url || undefined}
-                  alt={colorOption.color_name}
-                  onError={(e) => (e.target.src = "")}
-                />
-                <div>
-                  <p>{colorOption.color_name}</p>
-                  <p>€{colorOption["color_price_in_%"] || "N/A"}</p> {/* Uncommented and adjusted to display the price */}
-                </div>
-              </div>
-            ))}
+          {colorCategories.map((colorCategory, categoryIndex) => (
+            <div key={categoryIndex}>
+              <h2>{colorCategory.title}</h2> {/* Display the title of the color category */}
+              {colorCategory.options.length > 0 &&
+                colorCategory.options.map((colorOption, optionIndex) => (
+                  <div
+                    key={optionIndex}
+                    className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+                      selectedColor?.color_name === colorOption.color_name ? "selected" : ""
+                    }`}
+                    onClick={() => setSelectedColor(colorOption)} // Adjusted to the current colorOption structure
+                  >
+                    <img
+                      src={colorOption.color_image?.url || undefined}
+                      alt={colorOption.color_name}
+                      onError={(e) => (e.target.src = "")}
+                    />
+                    <div>
+                      <p>{colorOption.color_name}</p>
+                      <p>€{colorOption["color_price_in_%"] || "N/A"}</p> {/* Uncommented and adjusted to display the price */}
+                    </div>
+                  </div>
+                ))}
+            </div>
+          ))}
         </>
       );
-    };
+    };    
     
     const three = () => {
       return (
@@ -627,8 +625,30 @@ function SingleProductPage() {
   // Convert mm to cm for both width and height
   const widthInCm = frameWidth / 10;
   const heightInCm = frameHeight / 10;
+  const firstWindow = 10 ;
+  const secondWindow = 10 ;
+
   // Calculate the total length in cm (assuming linear calculation means perimeter for a rectangle)
-  const totalLengthInCm = ((12 * heightInCm) + (widthInCm * 4 ) + 4 * widthInCm);
+  // THIS CALCULATION IS FOR 3 PART WINDOW!!! Height and width are dependable on the product type!
+  // const totalLengthInCm = ((8 * heightInCm) + (widthInCm * 2 ) + ( 2 * firstWindow) + ( 2 * secondWindow));
+  // Vertical windows - it has 1/3 proportion for the fixed window down or up. Opening side is always 2/3 iffixedratios/.Minimum200
+
+  const totalLengthInCmTrippleOpening = ((8 * heightInCm) + (widthInCm * 2 ) + ( 2 * firstWindow) + ( 2 * secondWindow));
+  const totalLengthInCmTrippleSingleOpening = ((6 * heightInCm) + (widthInCm * 2 ) + ( 2 * middleWindowWidth) + ( 4 * outerWindowWidths));
+  const totalLengthInCmTrippleFixed = ((4 * heightInCm) + (widthInCm * 2 ));
+  const totalLengthInCmTwoPartOpening = ((7 * heightInCm) + (widthInCm * 2 ) + ( 2 * firstWindow) + ( 2 * secondWindow));
+  const totalLengthInCmTwoPartOpeningAll = ((6 * heightInCm) + (widthInCm * 2 ) + ( 2 * firstWindow) + ( 2 * secondWindow));
+  const totalLengthInCmTwoPartOpeningOne = ((5 * heightInCm) + (widthInCm * 2 ) + ( 2 * firstWindow) + ( 2 * secondWindow));
+  const totalLengthInCmTwoPartFixed = ((3 * heightInCm) + (widthInCm * 2 ));
+  const totalLengthInCmSingleFixed = ((4 * heightInCm) + (widthInCm * 4 ));
+  const totalLengthInCmSingletFixed = ((2 * heightInCm) + (widthInCm * 2 ));
+  const totalLengthInCmVerticalFixed = ((2 * heightInCm) + (widthInCm * 3 ));
+  const totalLengthInCmVerticalFixedTripple = ((2 * heightInCm) + (widthInCm * 4 ));
+  const totalLengthInCmVerticalBottom = ((2 * heightInCm) + (widthInCm * 3 ) + (2 * windowHeight));
+  const totalLengthInCmVerticalTop = ((2 * heightInCm) + (widthInCm * 5 ) + (2 * windowHeight));
+  
+  const totalLengthInCm = ((8 * heightInCm) + (widthInCm * 2 ) + ( 2 * firstWindow) + ( 2 * secondWindow));
+
 
   
   // Assuming selectedColor.color_price is a string, convert it to number
@@ -640,12 +660,17 @@ function SingleProductPage() {
   const glassLayerPrice = Number(selectedGlassLayers?.price_per_sqm ?? 0);
   const handlePrice = Number(selectedHandles?.price_of_handle ?? 0);
   const gridPrice = Number(selectedGrids?.price_of_ventilation_grid ?? 0);
-  const calc = glassLayerPrice + handlePrice + gridPrice;
+  const securityPrice =  Number(selectedSecurity?.price_of_extra_security ?? 0);
+  const calc = glassLayerPrice + handlePrice + gridPrice + securityPrice;
   const dimensionPrice = totalLengthInCm * pricePerCm;
   const totalPriceBeforeVAT = dimensionPrice + (dimensionPrice/colorPrice) + calc;
+  const colorFrontSide = totalPriceBeforeVAT * colorPrice;
+  const colorBackSide = totalPriceBeforeVAT * colorPrice;
+  const colorBothSides = colorFrontSide + colorBackSide;
 
 
-  const VAT_RATE = 0.2; // 20%
+
+  const VAT_RATE = 0.21; // 21%
   const vat = totalPriceBeforeVAT * VAT_RATE;
 
   // const glassTypePrice = selectedGlassTypes?.color_of_glass;
