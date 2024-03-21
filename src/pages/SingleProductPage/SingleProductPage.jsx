@@ -931,25 +931,25 @@ function SingleProductPage() {
                           style={{ display: "flex", alignItems: "center" }}
                         >
                           <input
-    type="number"
-    value={frameWidth}
-    onChange={(e) => {
-      const newValue = parseInt(e.target.value);
-      if (newValue < minWidth || newValue > maxWidth) {
-        setErrorStringWidth(
-          newValue > maxWidth
-            ? "It's higher than " + maxWidth
-            : "It's lower than " + minWidth
-        );
-        setFrameWidth(newValue);
-      } else {
-        setErrorStringWidth("");
-        setFrameWidth(newValue);
-      }
-    }}
-    placeholder="Number"
-    style={{ textAlign: "center" }}
-  />
+                          type="number"
+                          value={frameWidth}
+                          onChange={(e) => {
+                            const newValue = parseInt(e.target.value);
+                            if (newValue < minWidth || newValue > maxWidth) {
+                              setErrorStringWidth(
+                                newValue > maxWidth
+                                  ? "It's higher than " + maxWidth
+                                  : "It's lower than " + minWidth
+                              );
+                              setFrameWidth(newValue);
+                            } else {
+                              setErrorStringWidth("");
+                              setFrameWidth(newValue);
+                            }
+                          }}
+                          placeholder="Number"
+                          style={{ textAlign: "center" }}
+                        />
                           <div
                             style={{
                               display: "flex",
@@ -1001,25 +1001,25 @@ function SingleProductPage() {
                           style={{ display: "flex", alignItems: "center" }}
                         >
                           <input
-    type="number"
-    value={frameHeight}
-    onChange={(e) => {
-      const newValue = parseInt(e.target.value);
-      if (newValue < minHeight || newValue > maxHeight) {
-        setErrorStringWidth(
-          newValue > maxWidth
-            ? "It's higher than " + maxHeight
-            : "It's lower than " + minHeight
-        );
-        setFrameHeight(newValue);
-      } else {
-        setErrorStringHeight("");
-        setFrameHeight(newValue);
-      }
-    }}
-    placeholder="Number"
-    style={{ textAlign: "center" }}
-  />
+                        type="number"
+                        value={frameHeight}
+                        onChange={(e) => {
+                          const newValue = parseInt(e.target.value);
+                          if (newValue < minHeight || newValue > maxHeight) {
+                            setErrorStringWidth(
+                              newValue > maxWidth
+                                ? "It's higher than " + maxHeight
+                                : "It's lower than " + minHeight
+                            );
+                            setFrameHeight(newValue);
+                          } else {
+                            setErrorStringHeight("");
+                            setFrameHeight(newValue);
+                          }
+                        }}
+                        placeholder="Number"
+                        style={{ textAlign: "center" }}
+                      />
                           <div
                             style={{
                               display: "flex",
@@ -1049,28 +1049,28 @@ function SingleProductPage() {
                             </button>
                           </div>
                           <span>
-    {errorStringWidth ? (
-      <FaTimes color="red" />
-    ) : (
-      <FaCheck color="green" />
-    )}
-    mm
-  </span>
+                          {errorStringWidth ? (
+                            <FaTimes color="red" />
+                          ) : (
+                            <FaCheck color="green" />
+                          )}
+                          mm
+                        </span>
                         </div>
                       </div>
                       {currentStep > 1 ? (
                         ""
                       ) : (
-                        <div className="single-product-page__customize__left__option-holder__option__btn-wrapper">
-                          <button
-                            className={`btn-colored ${
-                              activeId !== "step1" ? "d-none" : ""
-                            }`}
-                            onClick={() => goToNextStep("step2")}
-                          >
-                            Go to next step <FaTurnDown />
-                          </button>
-                        </div>
+                        <button
+                        className={`btn-colored ${
+                          activeId !== "step1" || errorStringWidth ? "d-none" : ""
+                        }`}
+                        onClick={() => goToNextStep("step2")}
+                        disabled={errorStringWidth} // Disable the button if there's an error
+                        style={{ opacity: errorStringWidth ? 0.5 : 1 }} // Optionally, change opacity when disabled
+                      >
+                        Go to next step <FaTurnDown />
+                      </button>
                       )}
                     </div>
 
