@@ -971,7 +971,7 @@ function SingleProductPage() {
                           </div>
                           <span>
                               {errorStringWidth ? (
-                                <FaTimes color="red" />
+                                <FaCheck color="red" />
                               ) : (
                                 <FaCheck color="green" />
                               )}
