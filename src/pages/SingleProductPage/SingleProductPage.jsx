@@ -453,12 +453,7 @@ function SingleProductPage() {
                     src={colorOption.color_image?.url}
                     alt={colorOption.color_name}
                     onError={(e) => (e.target.src = "")}
-                    style={{
-                      width: "50px",
-                      height: "50px",
-                      marginRight: "10px",
-                    }}
-                  />
+                    />
                   <div>
                     <p>{colorOption.color_name}</p>
                     <p>€{colorOption.color_price_in_percent || "N/A"}</p>
@@ -486,12 +481,7 @@ function SingleProductPage() {
                   src={colorOption.color_image?.url}
                   alt={colorOption.color_name}
                   onError={(e) => (e.target.src = "")}
-                  style={{
-                    width: "50px",
-                    height: "50px",
-                    marginRight: "10px",
-                  }}
-                />
+                  />
                 <div>
                   <p>{colorOption.color_name}</p>
                   <p>€{colorOption.color_price_in_percent || "N/A"}</p>
@@ -518,11 +508,6 @@ function SingleProductPage() {
                   src={colorOption.color_image?.url}
                   alt={colorOption.color_name}
                   onError={(e) => (e.target.src = "")}
-                  style={{
-                    width: "50px",
-                    height: "50px",
-                    marginRight: "10px",
-                  }}
                 />
                 <div>
                   <p>{colorOption.color_name}</p>
@@ -622,54 +607,54 @@ function SingleProductPage() {
 
           {/* Width inputs */}
           <div className="option">
-            <label htmlFor="width1" className="left-widths">
-              Width of turn/tilt window (inward opening) in section 1 (in mm):
-              <span>
-                <br />
-                (Calculated automatically)
-              </span>
-            </label>
-            <input
-              type="number"
-              id="width1"
-              value={width1}
-              onChange={(event) => setWidth1(event.target.value)}
-              disabled={fixedDistribution !== "Manual"}
-            />
-          </div>
+          <label htmlFor="width1" className="left-widths">
+    Width of turn/tilt window (inward opening) in section 1 (in mm):
+    <span>
+      <br />
+      (Calculated automatically)
+    </span>
+  </label>
+  <input
+    type="number"
+    id="width1"
+    value={width1}
+    onChange={(event) => setWidth1(event.target.value)}
+    disabled={fixedDistribution !== "Manual"}
+  />
+</div>
 
-          <div className="option">
-            <label htmlFor="width2" className="left-widths">
-              Width of fixed glass in section 2 (in mm):
-              <span>
-                <br />
-                (Calculated automatically)
-              </span>
-            </label>
-            <input
-              type="number"
-              id="width2"
-              value={width2}
-              onChange={(event) => setWidth2(event.target.value)}
-              disabled
-            />
-          </div>
+<div className="option">
+  <label htmlFor="width2" className="left-widths">
+    Width of fixed glass in section 2 (in mm):
+    <span>
+      <br />
+      (Calculated automatically)
+    </span>
+  </label>
+  <input
+    type="number"
+    id="width2"
+    value={totalWidth - parseInt(width1) - parseInt(width3)}
+    onChange={() => {}}
+    disabled
+  />
+</div>
 
-          <div className="option">
-            <label htmlFor="width3" className="left-widths">
-              Width of turn/tilt window (inward opening) in section 3 (in mm):
-              <span>
-                <br />
-                (Calculated automatically)
-              </span>
-            </label>
-            <input
-              type="number"
-              id="width3"
-              value={width3}
-              onChange={(event) => setWidth3(event.target.value)}
-              disabled={fixedDistribution !== "Manual"}
-            />
+<div className="option">
+  <label htmlFor="width3" className="left-widths">
+    Width of turn/tilt window (inward opening) in section 3 (in mm):
+    <span>
+      <br />
+      (Calculated automatically)
+    </span>
+  </label>
+  <input
+    type="number"
+    id="width3"
+    value={width3}
+    onChange={(event) => setWidth3(event.target.value)}
+    disabled={fixedDistribution !== "Manual"}
+  />
           </div>
         </div>
       </div>
@@ -1062,20 +1047,20 @@ function SingleProductPage() {
                         ""
                       ) : (
                         <div className="single-product-page__customize__left__option-holder__option__btn-wrapper">
-<button
-    className={`btn-colored ${
-      activeId !== "step1" ? "d-none" : ""
-    }`}
-    onClick={() => {
-      if (!errorStringWidth) {
-        goToNextStep("step2");
-      }
-    }}
-    disabled={errorStringWidth ? true : false} // Disable the button if there's an error
-    style={{ opacity: errorStringWidth ? 0.5 : 1 }} // Optionally, change opacity when disabled
-  >
-    Go to next step <FaTurnDown />
-  </button>
+                      <button
+                          className={`btn-colored ${
+                            activeId !== "step1" ? "d-none" : ""
+                          }`}
+                          onClick={() => {
+                            if (!errorStringWidth) {
+                              goToNextStep("step2");
+                            }
+                          }}
+                          disabled={errorStringWidth ? true : false} // Disable the button if there's an error
+                          style={{ opacity: errorStringWidth ? 0.5 : 1 }} // Optionally, change opacity when disabled
+                        >
+                          Go to next step <FaTurnDown />
+                        </button>
                         </div>
                       )}
                     </div>
