@@ -634,7 +634,7 @@ function SingleProductPage() {
   <input
     type="number"
     id="width2"
-    value={widthInCm - parseInt(width1) - parseInt(width3)}
+    value={widthInCm - width1 - width3}
     onChange={() => {}}
     disabled
   />
