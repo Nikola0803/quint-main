@@ -1061,16 +1061,22 @@ function SingleProductPage() {
                       {currentStep > 1 ? (
                         ""
                       ) : (
-                        <button
-                        className={`btn-colored ${
-                          activeId !== "step1" || errorStringWidth ? "d-none" : ""
-                        }`}
-                        onClick={() => goToNextStep("step2")}
-                        disabled={errorStringWidth} // Disable the button if there's an error
-                        style={{ opacity: errorStringWidth ? 0.5 : 1 }} // Optionally, change opacity when disabled
-                      >
-                        Go to next step <FaTurnDown />
-                      </button>
+                        <div className="single-product-page__customize__left__option-holder__option__btn-wrapper">
+<button
+    className={`btn-colored ${
+      activeId !== "step1" ? "d-none" : ""
+    }`}
+    onClick={() => {
+      if (!errorStringWidth) {
+        goToNextStep("step2");
+      }
+    }}
+    disabled={errorStringWidth ? true : false} // Disable the button if there's an error
+    style={{ opacity: errorStringWidth ? 0.5 : 1 }} // Optionally, change opacity when disabled
+  >
+    Go to next step <FaTurnDown />
+  </button>
+                        </div>
                       )}
                     </div>
 
