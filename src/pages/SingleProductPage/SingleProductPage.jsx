@@ -1012,7 +1012,7 @@ function SingleProductPage() {
         );
         setFrameHeight(newValue);
       } else {
-        setErrorStringHEight("");
+        setErrorStringHeight("");
         setFrameHeight(newValue);
       }
     }}
@@ -1049,7 +1049,7 @@ function SingleProductPage() {
                           </div>
                           <span>
     {errorStringWidth ? (
-      <FaTimes color="red" />
+      <FaCheck color="red" />
     ) : (
       <FaCheck color="green" />
     )}
