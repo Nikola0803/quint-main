@@ -930,25 +930,25 @@ function SingleProductPage() {
                           style={{ display: "flex", alignItems: "center" }}
                         >
                           <input
-                            type="number"
-                            value={frameWidth}
-                            onChange={(e) => {
-                              const newValue = parseInt(e.target.value);
-                              if (newValue < minWidth || newValue > maxWidth) {
-                                setErrorStringWidth(
-                                  newValue > maxWidth
-                                    ? "It's higher than " + maxWidth
-                                    : "It's lower than " + minWidth
-                                );
-                                setFrameWidth(newValue);
-                              } else {
-                                setErrorStringWidth("");
-                                setFrameWidth(newValue);
-                              }
-                            }}
-                            placeholder="Number"
-                            style={{ textAlign: "center" }}
-                          />
+    type="number"
+    value={frameWidth}
+    onChange={(e) => {
+      const newValue = parseInt(e.target.value);
+      if (newValue < minWidth || newValue > maxWidth) {
+        setErrorStringWidth(
+          newValue > maxWidth
+            ? "It's higher than " + maxWidth
+            : "It's lower than " + minWidth
+        );
+        setFrameWidth(newValue);
+      } else {
+        setErrorStringWidth("");
+        setFrameWidth(newValue);
+      }
+    }}
+    placeholder="Number"
+    style={{ textAlign: "center" }}
+  />
                           <div
                             style={{
                               display: "flex",
@@ -1000,28 +1000,25 @@ function SingleProductPage() {
                           style={{ display: "flex", alignItems: "center" }}
                         >
                           <input
-                            type="number"
-                            value={frameHeight}
-                            onChange={(e) => {
-                              const newValue = parseInt(e.target.value);
-                              if (
-                                newValue < minHeight ||
-                                newValue > maxHeight
-                              ) {
-                                setErrorStringHeight(
-                                  newValue > maxHeight
-                                    ? "It's higher than " + maxHeight
-                                    : "It's lower than " + minHeight
-                                );
-                                setFrameHeight(newValue);
-                              } else {
-                                setErrorStringHeight("");
-                                setFrameHeight(newValue);
-                              }
-                            }}
-                            placeholder="Number"
-                            style={{ textAlign: "center" }}
-                          />
+    type="number"
+    value={frameHeight}
+    onChange={(e) => {
+      const newValue = parseInt(e.target.value);
+      if (newValue < minHeight || newValue > maxHeight) {
+        setErrorStringWidth(
+          newValue > maxWidth
+            ? "It's higher than " + maxHeight
+            : "It's lower than " + minHeight
+        );
+        setFrameHeight(newValue);
+      } else {
+        setErrorStringHEight("");
+        setFrameHeight(newValue);
+      }
+    }}
+    placeholder="Number"
+    style={{ textAlign: "center" }}
+  />
                           <div
                             style={{
                               display: "flex",
@@ -1051,8 +1048,13 @@ function SingleProductPage() {
                             </button>
                           </div>
                           <span>
-                            mm <FaCheck color="green" />
-                          </span>
+    {errorStringWidth ? (
+      <FaTimes color="red" />
+    ) : (
+      <FaCheck color="green" />
+    )}
+    mm
+  </span>
                         </div>
                       </div>
                       {currentStep > 1 ? (
