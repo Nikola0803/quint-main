@@ -14,11 +14,10 @@ import Card from "../../components/Card/Card";
 import { loadStripe } from "@stripe/stripe-js";
 import CheckoutButton from "../../components/Checkout/Checkout.jsx";
 import { useCart } from "../../context/CartContext.js";
-import { Stage, Layer, Rect, Text } from 'react-konva';
-import CanvasComponent from '../../components/Canvas/Canvas.jsx';
-import TwoPartCanvasComponent from '../../components/Canvas/TwoPartCanvasComponent.jsx';
-import TrippleCanvasComponent from '../../components/Canvas/TrippleCanvasComponent.jsx';
-
+import { Stage, Layer, Rect, Text } from "react-konva";
+import CanvasComponent from "../../components/Canvas/Canvas.jsx";
+import TwoPartCanvasComponent from "../../components/Canvas/TwoPartCanvasComponent.jsx";
+import TrippleCanvasComponent from "../../components/Canvas/TrippleCanvasComponent.jsx";
 
 import {
   AddressElement,
@@ -29,7 +28,7 @@ import {
   useStripe,
 } from "@stripe/react-stripe-js";
 function SingleProductPage() {
-  const [typeOfWindow, setTypeOfWindow] = useState('Tripple Openings'); // Set the default value here
+  const [typeOfWindow, setTypeOfWindow] = useState("Tripple Openings"); // Set the default value here
   const [openingTypeValue, setOpeningTypeValue] = useState(null);
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -57,19 +56,18 @@ function SingleProductPage() {
   const [width3, setWidth3] = useState(""); // State to store the width of turn/tilt window in section 3
   const [openingType, setOpeningType] = useState(""); // State to store the selected opening type
 
-    // Function to handle the change in opening type
-    const handleOpeningTypeChange = (event) => {
-      const { value } = event.target;
-      setOpeningType(value);
-    };
-  
-    // Function to handle the change in fixed distribution
-    const handleFixedDistributionChange = (event) => {
-      const { value } = event.target;
-      setFixedDistribution(value);
-    };
+  // Function to handle the change in opening type
+  const handleOpeningTypeChange = (event) => {
+    const { value } = event.target;
+    setOpeningType(value);
+  };
 
-    
+  // Function to handle the change in fixed distribution
+  const handleFixedDistributionChange = (event) => {
+    const { value } = event.target;
+    setFixedDistribution(value);
+  };
+
   // useEffect(() => {
   //   console.log(
   //     selectedColor,
@@ -89,8 +87,8 @@ function SingleProductPage() {
   //   selectedOpening,
   //   selectedProfile,
   // ]);
-  const [frameWidth, setFrameWidth] = useState(0);
-  const [frameHeight, setFrameHeight] = useState(0);
+  const [frameWidth, setFrameWidth] = useState(200);
+  const [frameHeight, setFrameHeight] = useState(2000);
   const [minWidth, setMinWidth] = useState(0);
   const [maxWidth, setMaxWidth] = useState(0);
   const [minHeight, setMinHeight] = useState(0);
@@ -106,559 +104,13 @@ function SingleProductPage() {
     setActiveId(clickedId); // Set the active ID
   };
 
-  const MiniConfigurator = () => {
-    // Extract colorOptionsArray from product?.acf?.color_selection[0] safely
-    const colorOptionsArray =
-      (product?.acf?.color_selection && product?.acf?.colors[0]) || {};
-    // Get colorOptions as an array of values from colorOptionsArray
-    const colorOptions = Object.values(colorOptionsArray);
-
-    // Extract glassLayers from product?.acf?.glass_layers[0] safely
-    const glassLayersArray =
-      (product?.acf?.glass_layers && product?.acf?.glass_layers[0]) || {};
-    // Get glassLayers as an array of values from glassLayersArray
-    const glassLayers = Object.values(glassLayersArray);
-
-    const two = () => {
-      // Check if product exists and has color data
-      if (!product || !product.acf || !product.acf.colors || product.acf.colors.length === 0) {
-        return <p>No color data available</p>;
-      }
-    
-      // Extract case_color, window_color, case_color_inside, and window_color_inside options from the API response
-      const caseColorOptions = product.acf.colors.flatMap(category => category.case_color || []);
-      const windowColorOptions = product.acf.colors.flatMap(category => category.window_color || []);
-      const caseColorInsideOptions = product.acf.colors.flatMap(category => category.case_color_inside || []);
-      const windowColorInsideOptions = product.acf.colors.flatMap(category => category.window_color_inside || []);
-    
-      // Check if there are no options available for any of the colors
-      if (caseColorOptions.length === 0 && windowColorOptions.length === 0 && caseColorInsideOptions.length === 0 && windowColorInsideOptions.length === 0) {
-        return <p>No color data available</p>;
-      }
-    
-      return (
-        <>
-          {caseColorOptions.length > 0 && (
-            <div className="color-options-container">
-              <h5>Case Color</h5>
-              <div className="">
-              {caseColorOptions.map((colorOption, index) => (
-                <div
-                  key={index}
-                  className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                    selectedColor?.color_name === colorOption.color_name ? "selected" : ""
-                  }`}
-                  onClick={() => setSelectedColor(colorOption)} // Add the onClick event handler here
-                >
-                  <img
-                    src={colorOption.color_image?.url}
-                    alt={colorOption.color_name}
-                    onError={(e) => (e.target.src = "")}
-                    style={{
-                      width: "50px",
-                      height: "50px",
-                      marginRight: "10px",
-                    }}
-                  />
-                  <div>
-                    <p>{colorOption.color_name}</p>
-                    <p>€{colorOption.color_price_in_percent || "N/A"}</p>
-                  </div>
-                </div>           
-              ))}
-            </div>
-             </div>
-          )}
-    
-          {windowColorOptions.length > 0 && (
-            <div className="color-options-container">
-              <h5>Window Color</h5>
-              {windowColorOptions.map((colorOption, index) => (
-                <div
-                  key={index}
-                  className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                    selectedColor?.color_name === colorOption.color_name ? "selected" : ""
-                  }`}
-                  onClick={() => setSelectedColor(colorOption)} // Add the onClick event handler here
-                >
-                  <img
-                    src={colorOption.color_image?.url}
-                    alt={colorOption.color_name}
-                    onError={(e) => (e.target.src = "")}
-                    style={{
-                      width: "50px",
-                      height: "50px",
-                      marginRight: "10px",
-                    }}
-                  />
-                  <div>
-                    <p>{colorOption.color_name}</p>
-                    <p>€{colorOption.color_price_in_percent || "N/A"}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-    
-          {caseColorInsideOptions.length > 0 && (
-            <div className="color-options-container">
-              <h5>Case Color Inside</h5>
-              {caseColorInsideOptions.map((colorOption, index) => (
-                <div
-                  key={index}
-                  className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                    selectedColor?.color_name === colorOption.color_name ? "selected" : ""
-                  }`}
-                  onClick={() => setSelectedColor(colorOption)} // Add the onClick event handler here
-                >
-                  <img
-                    src={colorOption.color_image?.url}
-                    alt={colorOption.color_name}
-                    onError={(e) => (e.target.src = "")}
-                    style={{
-                      width: "50px",
-                      height: "50px",
-                      marginRight: "10px",
-                    }}
-                  />
-                  <div>
-                    <p>{colorOption.color_name}</p>
-                    <p>€{colorOption.color_price_in_percent || "N/A"}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-    
-          {windowColorInsideOptions.length > 0 && (
-            <div className="color-options-container">
-              <h5>Window Color Inside</h5>
-              {windowColorInsideOptions.map((colorOption, index) => (
-                <div
-                  key={index}
-                  className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                    selectedColor?.color_name === colorOption.color_name ? "selected" : ""
-                  }`}
-                  onClick={() => setSelectedColor(colorOption)} // Add the onClick event handler here
-                >
-                  <img
-                    src={colorOption.color_image?.url}
-                    alt={colorOption.color_name}
-                    onError={(e) => (e.target.src = "")}
-                    style={{
-                      width: "50px",
-                      height: "50px",
-                      marginRight: "10px",
-                    }}
-                  />
-                  <div>
-                    <p>{colorOption.color_name}</p>
-                    <p>€{colorOption.color_price_in_percent || "N/A"}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-        </>
-      );
-    };
-    
-       
-    const three = () => {
-      return (
-        <>
-          {product?.acf?.profile &&
-            product?.acf?.profile.map((profile, index) => (
-              <div
-                key={index}
-                className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                  selectedProfile?.profile_name === profile?.profile_name ? "selected" : ""
-                }`}
-                onClick={() => setSelectedProfile(profile)}
-              >
-                <img
-                  src={profile?.profile_image?.url || ''}
-                  alt={profile?.profile_name || 'Profile Image'}
-                  onError={(e) => (e.target.src = "path/to/default/image.png")} // Replace 'path/to/default/image.png' with actual path
-                />
-                <div>
-                  <p>{profile?.profile_name}</p>
-                  <p>€{profile?.profile_price || "N/A"}</p>
-                </div>
-              </div>
-            ))}
-        </>
-      );
-    };
-
-    const four = () => {
-      return (
-        <div>
-          <div className={`single-product-page__customize__left__option-holder__option__body ${activeId === "step4" ? "" : "d-none"}`}>
-            {/* Fixed distribution */}
-            <div className="option">
-              <label htmlFor="fixedDistribution">Fixed Distribution:</label>
-              <select id="fixedDistribution" value={fixedDistribution} onChange={handleFixedDistributionChange}>
-                <option value="">Select Fixed Distribution</option>
-                <option value="1:1:1">1:1:1</option>
-                <option value="1:2:1">1:2:1</option>
-                <option value="Manual">Manual</option>
-              </select>
-            </div>
-    
-      {/* Width inputs */}
-      <div className="option">
-          <label htmlFor="width1" className="left-widths">Width of turn/tilt window (inward opening) in section 1 (in mm):<span><br />(Calculated automatically)</span></label>
-          <input type="number" id="width1" value={width1} onChange={(event) => setWidth1(event.target.value)} disabled={fixedDistribution !== "Manual"} />
-        </div>
-
-        <div className="option">
-          <label htmlFor="width2" className="left-widths">Width of fixed glass in section 2 (in mm):<span><br />(Calculated automatically)</span></label>
-          <input type="number" id="width2" value={width2} onChange={(event) => setWidth2(event.target.value)} disabled />
-        </div>
-
-        <div className="option">
-          <label htmlFor="width3" className="left-widths">Width of turn/tilt window (inward opening) in section 3 (in mm):<span><br />(Calculated automatically)</span></label>
-          <input type="number" id="width3" value={width3} onChange={(event) => setWidth3(event.target.value)} disabled={fixedDistribution !== "Manual"} />
-        </div>
-          </div>
-        </div>
-      );
-    };
-    
-    
-    const five = () => {
-      // Assuming 'product?.acf?.glass_layers' is the correct path to the glass layers data
-      const glassLayers = product?.acf?.glass_layers || [];
-    
-      return (
-        <>
-          {glassLayers.map((glassLayer, index) => (
-            <div
-              key={index}
-              className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                selectedGlassLayers?.price_per_sqm === glassLayer.price_per_sqm ? "selected" : ""
-              }`}
-              onClick={() => setSelectedGlassLayers(glassLayer)}
-            >
-              <img
-                src={glassLayer.glass_image?.url || ''}
-                alt={`Glass layer ${index + 1}`}
-                onError={(e) => (e.target.src = "path/to/default/image.png")} // Provide a fallback image path
-              />
-              <div>
-                <p>{glassLayer.glass_type}</p>
-                <p>€{glassLayer.price_per_sqm || "N/A"}</p>
-              </div>
-            </div>
-          ))}
-        </>
-      );
-    };
-    
-
-    const six = () => {
-      // Directly using 'product?.acf?.glass_type' based on the API structure provided
-      const glassTypes = product?.acf?.glass_type || [];
-    
-      return (
-        <>
-          {glassTypes.map((glassType, index) => (
-            <div
-              key={index}
-              className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                selectedGlassTypes?.color_of_glass === glassType.color_of_glass ? "selected" : ""
-              }`}
-              onClick={() => setSelectedGlassTypes(glassType)}
-            >
-              <div>
-                <p>{glassType.color_of_glass}</p>
-              </div>
-            </div>
-          ))}
-        </>
-      );
-    };
-    
-    const seven = () => {
-      const handles = product?.acf?.handle || [];
-    
-      return (
-        <>
-          {handles.map((handle, index) => (
-            <div
-              key={index}
-              className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                selectedHandles?.name_of_handle === handle.name_of_handle ? "selected" : ""
-              }`}
-              onClick={() => setSelectedHandles(handle)}
-            >
-              <img
-                src={handle.image_of_handle?.url || 'path/to/default/image/if/needed'}
-                alt={handle.name_of_handle}
-                onError={(e) => (e.target.src = 'path/to/default/image/if/needed')}
-              />
-              <div>
-                <p>{handle.name_of_handle}</p>
-                <p>€{handle.price_of_handle}</p> {/* Assuming price_of_handle exists and you want to display it */}
-              </div>
-            </div>
-          ))}
-        </>
-      );
-    };
-    
-    const eight = () => {
-      const ventilationGrids = product?.acf?.ventilation_grid || [];
-    
-      return (
-        <>
-          {ventilationGrids.map((grid, index) => (
-            <div
-              key={index}
-              className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                selectedGrids?.choose_ventilation_grid === grid.choose_ventilation_grid ? "selected" : ""
-              }`}
-              onClick={() => setSelectedGrids(grid)}
-            >
-              {/* Assuming there's an image and a name associated with each grid, which might need adjustment */}
-              <img
-                src={grid.image_of_ventilation_grid?.url || 'path/to/default/image'}
-                alt={`Ventilation Grid ${index + 1}`}
-                onError={(e) => (e.target.src = 'path/to/default/image')}
-              />
-              <div>
-                <p>{`Ventilation Grid ${index + 1}`}</p>
-                <p>€{grid.price_of_ventilation_grid}</p>
-              </div>
-            </div>
-          ))}
-        </>
-      );
-    };
-    
-    const Input = ({ stepNumber, nextStep, map, text }) => {
-      return (
-        <div
-          className={`single-product-page__customize__left__option-holder__option ${
-            activeId === `step${stepNumber}` ? "top-active" : ""
-          }`}
-          id={`step${stepNumber}`}
-        >
-          <div
-            className={`single-product-page__customize__left__option-holder__option__top ${
-              activeId === `step${stepNumber}`
-                ? "single-product-page__customize__left__option-holder__option__top-active"
-                : ""
-            }`}
-            onClick={() => handleClick(`step${stepNumber}`)}
-          >
-            <h3>{text}</h3>
-            <span>
-              <FaChevronDown
-                color={activeId === `step${stepNumber}` ? "white" : "black"}
-              />
-            </span>
-          </div>
-          <div
-            className={`single-product-page__customize__left__option-holder__option__body ${
-              activeId !== `step${stepNumber}` ? "d-none" : ""
-            }`}
-          >
-            {map()}
-          </div>
-          <div className="single-product-page__customize__left__option-holder__option__btn-wrapper">
-            <button
-              className={`btn-colored ${
-                activeId !== `step${stepNumber}` ? "d-none" : ""
-              }`}
-              onClick={() => goToNextStep(nextStep)}
-            >
-              Go to next step <FaTurnDown />
-            </button>
-          </div>
-        </div>
-      );
-    };
-
-    return (
-      <div>
-        <div
-          className={`single-product-page__customize__left__option-holder__option ${
-            activeId === `step${currentStep}` ? "top-active" : ""
-          }`}
-          id={"step1"}
-        >
-          <div
-            className={`single-product-page__customize__left__option-holder__option__top ${
-              activeId === "step1"
-                ? "single-product-page__customize__left__option-holder__option__top-active"
-                : ""
-            }`}
-            onClick={() => handleClick("step1")}
-          >
-            <h3>Choose Dimentions</h3>
-            <span>
-              <FaChevronDown color={activeId === "step1" ? "white" : "black"} />
-            </span>
-          </div>
-          <div
-            className={`single-product-page__customize__left__option-holder__option__input-wrapper ${
-              activeId !== "step1" ? "d-none" : ""
-            }`}
-          >
-            <div className="single-product-page__customize__left__option-holder__option__input-wrapper__title">
-              <h3>Frame Width size (in mm)</h3>
-              <p>
-                Min: {minWidth} mm | Max: {maxWidth} mm
-              </p>
-            </div>
-            <div
-              className="single-product-page__customize__left__option-holder__option__input-wrapper__input"
-              style={{ display: "flex", alignItems: "center" }}
-            >
-              <input
-                type="number"
-                value={frameWidth}
-                onChange={(e) => setFrameWidth(e.target.value)}
-                placeholder="Number"
-                style={{ textAlign: "center" }}
-              />
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  marginLeft: "10px",
-                }}
-              >
-                <button
-                  onClick={incrementWidth}
-                  className="dimension-adjust-button"
-                >
-                  <CiCirclePlus size={30} color="A31332" />
-                </button>
-                <button
-                  onClick={decrementWidth}
-                  className="dimension-adjust-button"
-                >
-                  <CiCircleMinus size={30} color="A31332" />
-                </button>
-              </div>
-              <span>
-                mm <FaCheck color="green" />
-              </span>
-            </div>
-          </div>
-          <div
-            className={`single-product-page__customize__left__option-holder__option__input-wrapper ${
-              activeId !== "step1" ? "d-none" : ""
-            }`}
-          >
-            <div className="single-product-page__customize__left__option-holder__option__input-wrapper__title">
-              <h3>Frame Height size (in mm)</h3>
-              <p>
-                Min: {minHeight} mm | Max: {maxHeight} mm
-              </p>
-            </div>
-
-            <div
-              className="single-product-page__customize__left__option-holder__option__input-wrapper__input"
-              style={{ display: "flex", alignItems: "center" }}
-            >
-              <input
-              type="number"
-              value={frameHeight}
-              onChange={(e) => setFrameHeight(e.target.value)}
-              placeholder="Number"
-              style={{ textAlign: "center" }}
-            />
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  marginLeft: "10px",
-                }}
-              >
-                <button
-                  onClick={() =>
-                    setFrameHeight((prevHeight) =>
-                      Math.min(Number(prevHeight) + 1, maxHeight)
-                    )
-                  }
-                  className="dimension-adjust-button"
-                >
-                  <CiCirclePlus size={30} color="A31332" />
-                </button>
-                <button
-                  onClick={() =>
-                    setFrameHeight((prevHeight) =>
-                      Math.max(Number(prevHeight) - 1, minHeight)
-                    )
-                  }
-                  className="dimension-adjust-button"
-                >
-                  <CiCircleMinus size={30} color="A31332" />
-                </button>
-              </div>
-              <span>
-                mm <FaCheck color="green" />
-              </span>
-            </div>
-          </div>
-          {currentStep > 1 ? (
-            ""
-          ) : (
-            <div className="single-product-page__customize__left__option-holder__option__btn-wrapper">
-              <button
-                className={`btn-colored ${
-                  activeId !== "step1" ? "d-none" : ""
-                }`}
-                onClick={() => goToNextStep("step2")}
-              >
-                Go to next step <FaTurnDown />
-              </button>
-            </div>
-          )}
-        </div> 
-
-        <Input stepNumber={2} nextStep={"step3"} map={two} text={"Choose Color"} />
-
-        <Input stepNumber={3} nextStep={"step4"} map={three} text={"Profile"} />
-
-        <Input stepNumber={4} nextStep={"step5"} map={four} text={"Plane Division"} />
-
-        <Input
-          stepNumber={5}
-          nextStep={"step6"}
-          map={five}
-          text={"Glass Type"}
-        />
-
-        <Input
-          stepNumber={6}
-          nextStep={"step7"}
-          map={six}
-          text={"Handle"}
-        />
-
-        <Input stepNumber={7} nextStep={"step8"} map={seven} text={"Upsells"} />
-        <Input
-          stepNumber={8}
-          nextStep={"step1"}
-          map={eight}
-          text={"Ventilation grid"}
-        />
-      </div>
-    );
-  };
-
   useEffect(() => {
     const fetchProduct = async () => {
       try {
         const consumerKey = process.env.REACT_APP_CONSUMER_KEY;
         const consumerSecret = process.env.REACT_APP_CONSUMER_SECRET;
         const response = await fetch(
-        `https://thedarkstarsoft.com/quint/wp-json/wc/v3/products/${productId}`,
+          `https://thedarkstarsoft.com/quint/wp-json/wc/v3/products/${productId}`,
           {
             headers: {
               Authorization: `Basic ${btoa(
@@ -718,8 +170,8 @@ function SingleProductPage() {
   // Convert mm to cm for both width and height
   const widthInCm = frameWidth / 10;
   const heightInCm = frameHeight / 10;
-  const firstWindow = 10 ;
-  const secondWindow = 10 ;
+  const firstWindow = 10;
+  const secondWindow = 10;
 
   // Calculate the total length in cm (assuming linear calculation means perimeter for a rectangle)
   // THIS CALCULATION IS FOR 3 PART WINDOW!!! Height and width are dependable on the product type!
@@ -739,16 +191,15 @@ function SingleProductPage() {
   // const totalLengthInCmVerticalFixedTripple = ((2 * heightInCm) + (widthInCm * 4 ));
   // const totalLengthInCmVerticalBottom = ((2 * heightInCm) + (widthInCm * 3 ) + (2 * windowHeight));
   // const totalLengthInCmVerticalTop = ((2 * heightInCm) + (widthInCm * 5 ) + (2 * windowHeight));
-  
-  const totalLengthInCm = ((8 * heightInCm) + (widthInCm * 2 ) + ( 2 * width1) + ( 2 * width3));
 
+  const totalLengthInCm =
+    8 * heightInCm + widthInCm * 2 + 2 * width1 + 2 * width3;
 
-  
   // Assuming selectedColor.color_price is a string, convert it to number
   const colorPrice = selectedColor
     ? Number(selectedColor["color_price_in_%"] || 0)
     : 0;
-  const profilePrice = (Number(selectedProfile?.profile_price ?? 0) /100);
+  const profilePrice = Number(selectedProfile?.profile_price ?? 0) / 100;
   const pricePerCm = profilePrice;
   const glassLayerPrice = Number(selectedGlassLayers?.price_per_sqm ?? 0);
   const handlePrice = Number(selectedHandles?.price_of_handle ?? 0);
@@ -763,8 +214,6 @@ function SingleProductPage() {
   const colorFrontSide = totalPriceBeforeVAT * colorPrice;
   const colorBackSide = totalPriceBeforeVAT * colorPrice;
   const colorBothSides = colorFrontSide + colorBackSide;
-
-
 
   const VAT_RATE = 0.21; // 21%
   const vat = totalPriceBeforeVAT * VAT_RATE;
@@ -943,6 +392,446 @@ function SingleProductPage() {
     );
   };
 
+  const two = () => {
+    // Check if product exists and has color data
+    if (
+      !product ||
+      !product.acf ||
+      !product.acf.colors ||
+      product.acf.colors.length === 0
+    ) {
+      return <p>No color data available</p>;
+    }
+
+    // Extract case_color, window_color, case_color_inside, and window_color_inside options from the API response
+    const caseColorOptions = product.acf.colors.flatMap(
+      (category) => category.case_color || []
+    );
+    const windowColorOptions = product.acf.colors.flatMap(
+      (category) => category.window_color || []
+    );
+    const caseColorInsideOptions = product.acf.colors.flatMap(
+      (category) => category.case_color_inside || []
+    );
+    const windowColorInsideOptions = product.acf.colors.flatMap(
+      (category) => category.window_color_inside || []
+    );
+
+    // Check if there are no options available for any of the colors
+    if (
+      caseColorOptions.length === 0 &&
+      windowColorOptions.length === 0 &&
+      caseColorInsideOptions.length === 0 &&
+      windowColorInsideOptions.length === 0
+    ) {
+      return <p>No color data available</p>;
+    }
+
+    return (
+      <>
+        {caseColorOptions.length > 0 && (
+          <div className="color-options-container">
+            <h5>Case Color</h5>
+            <div className="">
+              {caseColorOptions.map((colorOption, index) => (
+                <div
+                  key={index}
+                  className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+                    selectedColor?.color_name === colorOption.color_name
+                      ? "selected"
+                      : ""
+                  }`}
+                  onClick={() => setSelectedColor(colorOption)} // Add the onClick event handler here
+                >
+                  <img
+                    src={colorOption.color_image?.url}
+                    alt={colorOption.color_name}
+                    onError={(e) => (e.target.src = "")}
+                    style={{
+                      width: "50px",
+                      height: "50px",
+                      marginRight: "10px",
+                    }}
+                  />
+                  <div>
+                    <p>{colorOption.color_name}</p>
+                    <p>€{colorOption.color_price_in_percent || "N/A"}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {windowColorOptions.length > 0 && (
+          <div className="color-options-container">
+            <h5>Window Color</h5>
+            {windowColorOptions.map((colorOption, index) => (
+              <div
+                key={index}
+                className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+                  selectedColor?.color_name === colorOption.color_name
+                    ? "selected"
+                    : ""
+                }`}
+                onClick={() => setSelectedColor(colorOption)} // Add the onClick event handler here
+              >
+                <img
+                  src={colorOption.color_image?.url}
+                  alt={colorOption.color_name}
+                  onError={(e) => (e.target.src = "")}
+                  style={{
+                    width: "50px",
+                    height: "50px",
+                    marginRight: "10px",
+                  }}
+                />
+                <div>
+                  <p>{colorOption.color_name}</p>
+                  <p>€{colorOption.color_price_in_percent || "N/A"}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {caseColorInsideOptions.length > 0 && (
+          <div className="color-options-container">
+            <h5>Case Color Inside</h5>
+            {caseColorInsideOptions.map((colorOption, index) => (
+              <div
+                key={index}
+                className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+                  selectedColor?.color_name === colorOption.color_name
+                    ? "selected"
+                    : ""
+                }`}
+                onClick={() => setSelectedColor(colorOption)} // Add the onClick event handler here
+              >
+                <img
+                  src={colorOption.color_image?.url}
+                  alt={colorOption.color_name}
+                  onError={(e) => (e.target.src = "")}
+                  style={{
+                    width: "50px",
+                    height: "50px",
+                    marginRight: "10px",
+                  }}
+                />
+                <div>
+                  <p>{colorOption.color_name}</p>
+                  <p>€{colorOption.color_price_in_percent || "N/A"}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {windowColorInsideOptions.length > 0 && (
+          <div className="color-options-container">
+            <h5>Window Color Inside</h5>
+            {windowColorInsideOptions.map((colorOption, index) => (
+              <div
+                key={index}
+                className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+                  selectedColor?.color_name === colorOption.color_name
+                    ? "selected"
+                    : ""
+                }`}
+                onClick={() => setSelectedColor(colorOption)} // Add the onClick event handler here
+              >
+                <img
+                  src={colorOption.color_image?.url}
+                  alt={colorOption.color_name}
+                  onError={(e) => (e.target.src = "")}
+                  style={{
+                    width: "50px",
+                    height: "50px",
+                    marginRight: "10px",
+                  }}
+                />
+                <div>
+                  <p>{colorOption.color_name}</p>
+                  <p>€{colorOption.color_price_in_percent || "N/A"}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </>
+    );
+  };
+
+  const three = () => {
+    return (
+      <>
+        {product?.acf?.profile &&
+          product?.acf?.profile.map((profile, index) => (
+            <div
+              key={index}
+              className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+                selectedProfile?.profile_name === profile?.profile_name
+                  ? "selected"
+                  : ""
+              }`}
+              onClick={() => setSelectedProfile(profile)}
+            >
+              <img
+                src={profile?.profile_image?.url || ""}
+                alt={profile?.profile_name || "Profile Image"}
+                onError={(e) => (e.target.src = "")} // Replace '' with actual path
+              />
+              <div>
+                <p>{profile?.profile_name}</p>
+                <p>€{profile?.profile_price || "N/A"}</p>
+              </div>
+            </div>
+          ))}
+      </>
+    );
+  };
+
+  const four = () => {
+    return (
+      <div>
+        <div
+          className={`single-product-page__customize__left__option-holder__option__body ${
+            activeId === "step4" ? "" : "d-none"
+          }`}
+        >
+          {/* Fixed distribution */}
+          <div className="option">
+            <label htmlFor="fixedDistribution">Fixed Distribution:</label>
+            <select
+              id="fixedDistribution"
+              value={fixedDistribution}
+              onChange={handleFixedDistributionChange}
+            >
+              <option value="">Select Fixed Distribution</option>
+              <option value="1:1:1">1:1:1</option>
+              <option value="1:2:1">1:2:1</option>
+              <option value="Manual">Manual</option>
+            </select>
+          </div>
+
+          {/* Width inputs */}
+          <div className="option">
+            <label htmlFor="width1" className="left-widths">
+              Width of turn/tilt window (inward opening) in section 1 (in mm):
+              <span>
+                <br />
+                (Calculated automatically)
+              </span>
+            </label>
+            <input
+              type="number"
+              id="width1"
+              value={width1}
+              onChange={(event) => setWidth1(event.target.value)}
+              disabled={fixedDistribution !== "Manual"}
+            />
+          </div>
+
+          <div className="option">
+            <label htmlFor="width2" className="left-widths">
+              Width of fixed glass in section 2 (in mm):
+              <span>
+                <br />
+                (Calculated automatically)
+              </span>
+            </label>
+            <input
+              type="number"
+              id="width2"
+              value={width2}
+              onChange={(event) => setWidth2(event.target.value)}
+              disabled
+            />
+          </div>
+
+          <div className="option">
+            <label htmlFor="width3" className="left-widths">
+              Width of turn/tilt window (inward opening) in section 3 (in mm):
+              <span>
+                <br />
+                (Calculated automatically)
+              </span>
+            </label>
+            <input
+              type="number"
+              id="width3"
+              value={width3}
+              onChange={(event) => setWidth3(event.target.value)}
+              disabled={fixedDistribution !== "Manual"}
+            />
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const five = () => {
+    // Assuming 'product?.acf?.glass_layers' is the correct path to the glass layers data
+    const glassLayers = product?.acf?.glass_layers || [];
+
+    return (
+      <>
+        {glassLayers.map((glassLayer, index) => (
+          <div
+            key={index}
+            className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+              selectedGlassLayers?.price_per_sqm === glassLayer.price_per_sqm
+                ? "selected"
+                : ""
+            }`}
+            onClick={() => setSelectedGlassLayers(glassLayer)}
+          >
+            <img
+              src={glassLayer.glass_image?.url || ""}
+              alt={`Glass layer ${index + 1}`}
+              onError={(e) => (e.target.src = "")} // Provide a fallback image path
+            />
+            <div>
+              <p>{glassLayer.glass_type}</p>
+              <p>€{glassLayer.price_per_sqm || "N/A"}</p>
+            </div>
+          </div>
+        ))}
+      </>
+    );
+  };
+
+  const six = () => {
+    // Directly using 'product?.acf?.glass_type' based on the API structure provided
+    const glassTypes = product?.acf?.glass_type || [];
+
+    return (
+      <>
+        {glassTypes.map((glassType, index) => (
+          <div
+            key={index}
+            className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+              selectedGlassTypes?.color_of_glass === glassType.color_of_glass
+                ? "selected"
+                : ""
+            }`}
+            onClick={() => setSelectedGlassTypes(glassType)}
+          >
+            <div>
+              <p>{glassType.color_of_glass}</p>
+            </div>
+          </div>
+        ))}
+      </>
+    );
+  };
+
+  const seven = () => {
+    const handles = product?.acf?.handle || [];
+
+    return (
+      <>
+        {handles.map((handle, index) => (
+          <div
+            key={index}
+            className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+              selectedHandles?.name_of_handle === handle.name_of_handle
+                ? "selected"
+                : ""
+            }`}
+            onClick={() => setSelectedHandles(handle)}
+          >
+            <img
+              src={handle.image_of_handle?.url || ""}
+              alt={handle.name_of_handle}
+              onError={(e) => (e.target.src = "")}
+            />
+            <div>
+              <p>{handle.name_of_handle}</p>
+              <p>€{handle.price_of_handle}</p>{" "}
+              {/* Assuming price_of_handle exists and you want to display it */}
+            </div>
+          </div>
+        ))}
+      </>
+    );
+  };
+
+  const eight = () => {
+    const ventilationGrids = product?.acf?.ventilation_grid || [];
+
+    return (
+      <>
+        {ventilationGrids.map((grid, index) => (
+          <div
+            key={index}
+            className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+              selectedGrids?.choose_ventilation_grid ===
+              grid.choose_ventilation_grid
+                ? "selected"
+                : ""
+            }`}
+            onClick={() => setSelectedGrids(grid)}
+          >
+            {/* Assuming there's an image and a name associated with each grid, which might need adjustment */}
+            <img
+              src={grid.image_of_ventilation_grid?.url || ""}
+              alt={`Ventilation Grid ${index + 1}`}
+              onError={(e) => (e.target.src = "")}
+            />
+            <div>
+              <p>{`Ventilation Grid ${index + 1}`}</p>
+              <p>€{grid.price_of_ventilation_grid}</p>
+            </div>
+          </div>
+        ))}
+      </>
+    );
+  };
+
+  const Input = ({ stepNumber, nextStep, map, text }) => {
+    return (
+      <div
+        className={`single-product-page__customize__left__option-holder__option ${
+          activeId === `step${stepNumber}` ? "top-active" : ""
+        }`}
+        id={`step${stepNumber}`}
+      >
+        <div
+          className={`single-product-page__customize__left__option-holder__option__top ${
+            activeId === `step${stepNumber}`
+              ? "single-product-page__customize__left__option-holder__option__top-active"
+              : ""
+          }`}
+          onClick={() => handleClick(`step${stepNumber}`)}
+        >
+          <h3>{text}</h3>
+          <span>
+            <FaChevronDown
+              color={activeId === `step${stepNumber}` ? "white" : "black"}
+            />
+          </span>
+        </div>
+        <div
+          className={`single-product-page__customize__left__option-holder__option__body ${
+            activeId !== `step${stepNumber}` ? "d-none" : ""
+          }`}
+        >
+          {map()}
+        </div>
+        <div className="single-product-page__customize__left__option-holder__option__btn-wrapper">
+          <button
+            className={`btn-colored ${
+              activeId !== `step${stepNumber}` ? "d-none" : ""
+            }`}
+            onClick={() => goToNextStep(nextStep)}
+          >
+            Go to next step <FaTurnDown />
+          </button>
+        </div>
+      </div>
+    );
+  };
   return (
     <div className="single-product-page">
       <div className="container">
@@ -991,7 +880,326 @@ function SingleProductPage() {
                 <h3>Customize windows frame</h3>
                 <div className="single-product-page__customize__left__option-holder">
                   {/* Render content based on current step */}
-                  {<MiniConfigurator />}
+
+                  <div>
+                    <div
+                      className={`single-product-page__customize__left__option-holder__option ${
+                        activeId === `step${currentStep}` ? "top-active" : ""
+                      }`}
+                      id={"step1"}
+                    >
+                      <div
+                        className={`single-product-page__customize__left__option-holder__option__top ${
+                          activeId === "step1"
+                            ? "single-product-page__customize__left__option-holder__option__top-active"
+                            : ""
+                        }`}
+                        onClick={() => handleClick("step1")}
+                      >
+                        <h3>Choose Dimentions</h3>
+                        <span>
+                          <FaChevronDown
+                            color={activeId === "step1" ? "white" : "black"}
+                          />
+                        </span>
+                      </div>
+                      <div
+                        className={`single-product-page__customize__left__option-holder__option__input-wrapper ${
+                          activeId !== "step1" ? "d-none" : ""
+                        }`}
+                      >
+                        <div className="single-product-page__customize__left__option-holder__option__input-wrapper__title">
+                          <h3>Frame Width size (in mm)</h3>
+                          <p>
+                            Min: {minWidth} mm | Max: {maxWidth} mm
+                          </p>
+                        </div>
+                        <div
+                          className="single-product-page__customize__left__option-holder__option__input-wrapper__input"
+                          style={{ display: "flex", alignItems: "center" }}
+                        >
+                          <input
+                            type="number"
+                            value={frameWidth}
+                            onChange={(e) => {
+                              const newValue = Math.max(
+                                minWidth,
+                                Math.min(maxWidth, e.target.value)
+                              );
+                              setFrameWidth(newValue);
+                            }}
+                            placeholder="Number"
+                            style={{ textAlign: "center" }}
+                          />
+                          <div
+                            style={{
+                              display: "flex",
+                              flexDirection: "row",
+                              marginLeft: "10px",
+                            }}
+                          >
+                            <button
+                              onClick={incrementWidth}
+                              className="dimension-adjust-button"
+                            >
+                              <CiCirclePlus size={30} color="A31332" />
+                            </button>
+                            <button
+                              onClick={decrementWidth}
+                              className="dimension-adjust-button"
+                            >
+                              <CiCircleMinus size={30} color="A31332" />
+                            </button>
+                          </div>
+                          <span>
+                            mm <FaCheck color="green" />
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        className={`single-product-page__customize__left__option-holder__option__input-wrapper ${
+                          activeId !== "step1" ? "d-none" : ""
+                        }`}
+                      >
+                        <div className="single-product-page__customize__left__option-holder__option__input-wrapper__title">
+                          <h3>Frame Height size (in mm)</h3>
+                          <p>
+                            Min: {minHeight} mm | Max: {maxHeight} mm
+                          </p>
+                        </div>
+
+                        <div
+                          className="single-product-page__customize__left__option-holder__option__input-wrapper__input"
+                          style={{ display: "flex", alignItems: "center" }}
+                        >
+                          <input
+                            type="number"
+                            value={frameHeight}
+                            onChange={(e) => {
+                              const newValue = Math.max(
+                                minHeight,
+                                Math.min(maxHeight, e.target.value)
+                              );
+                              setFrameHeight(newValue);
+                            }}
+                            placeholder="Number"
+                            style={{ textAlign: "center" }}
+                          />
+                          <div
+                            style={{
+                              display: "flex",
+                              flexDirection: "row",
+                              marginLeft: "10px",
+                            }}
+                          >
+                            <button
+                              onClick={() =>
+                                setFrameHeight((prevHeight) =>
+                                  Math.min(Number(prevHeight) + 1, maxHeight)
+                                )
+                              }
+                              className="dimension-adjust-button"
+                            >
+                              <CiCirclePlus size={30} color="A31332" />
+                            </button>
+                            <button
+                              onClick={() =>
+                                setFrameHeight((prevHeight) =>
+                                  Math.max(Number(prevHeight) - 1, minHeight)
+                                )
+                              }
+                              className="dimension-adjust-button"
+                            >
+                              <CiCircleMinus size={30} color="A31332" />
+                            </button>
+                          </div>
+                          <span>
+                            mm <FaCheck color="green" />
+                          </span>
+                        </div>
+                      </div>
+                      {currentStep > 1 ? (
+                        ""
+                      ) : (
+                        <div className="single-product-page__customize__left__option-holder__option__btn-wrapper">
+                          <button
+                            className={`btn-colored ${
+                              activeId !== "step1" ? "d-none" : ""
+                            }`}
+                            onClick={() => goToNextStep("step2")}
+                          >
+                            Go to next step <FaTurnDown />
+                          </button>
+                        </div>
+                      )}
+                    </div>
+
+                    <Input
+                      stepNumber={2}
+                      nextStep={"step3"}
+                      map={two}
+                      text={"Choose Color"}
+                    />
+
+                    <Input
+                      stepNumber={3}
+                      nextStep={"step4"}
+                      map={three}
+                      text={"Profile"}
+                    />
+
+                    <div
+                      className={`single-product-page__customize__left__option-holder__option ${
+                        activeId === `step${4}` ? "top-active" : ""
+                      }`}
+                      id={`step${4}`}
+                    >
+                      <div
+                        className={`single-product-page__customize__left__option-holder__option__top ${
+                          activeId === `step${4}`
+                            ? "single-product-page__customize__left__option-holder__option__top-active"
+                            : ""
+                        }`}
+                        onClick={() => handleClick(`step${4}`)}
+                      >
+                        <h3>{"Plane Division"}</h3>
+                        <span>
+                          <FaChevronDown
+                            color={activeId === `step${4}` ? "white" : "black"}
+                          />
+                        </span>
+                      </div>
+                      <div
+                        className={`single-product-page__customize__left__option-holder__option__body ${
+                          activeId !== `step${4}` ? "d-none" : ""
+                        }`}
+                      >
+                        <div>
+                          <div
+                            className={`single-product-page__customize__left__option-holder__option__body ${
+                              activeId === "step4" ? "" : "d-none"
+                            }`}
+                          >
+                            {/* Fixed distribution */}
+                            <div className="option">
+                              <label htmlFor="fixedDistribution">
+                                Fixed Distribution:
+                              </label>
+                              <select
+                                id="fixedDistribution"
+                                value={fixedDistribution}
+                                onChange={handleFixedDistributionChange}
+                              >
+                                <option value="">
+                                  Select Fixed Distribution
+                                </option>
+                                <option value="1:1:1">1:1:1</option>
+                                <option value="1:2:1">1:2:1</option>
+                                <option value="Manual">Manual</option>
+                              </select>
+                            </div>
+
+                            {/* Width inputs */}
+                            <div className="option">
+                              <label htmlFor="width1" className="left-widths">
+                                Width of turn/tilt window (inward opening) in
+                                section 1 (in mm):
+                                <span>
+                                  <br />
+                                  (Calculated automatically)
+                                </span>
+                              </label>
+                              <input
+                                type="number"
+                                id="width1"
+                                value={width1}
+                                onChange={(event) =>
+                                  setWidth1(event.target.value)
+                                }
+                                disabled={fixedDistribution !== "Manual"}
+                              />
+                            </div>
+
+                            <div className="option">
+                              <label htmlFor="width2" className="left-widths">
+                                Width of fixed glass in section 2 (in mm):
+                                <span>
+                                  <br />
+                                  (Calculated automatically)
+                                </span>
+                              </label>
+                              <input
+                                type="number"
+                                id="width2"
+                                value={width2}
+                                onChange={(event) =>
+                                  setWidth2(event.target.value)
+                                }
+                                disabled
+                              />
+                            </div>
+
+                            <div className="option">
+                              <label htmlFor="width3" className="left-widths">
+                                Width of turn/tilt window (inward opening) in
+                                section 3 (in mm):
+                                <span>
+                                  <br />
+                                  (Calculated automatically)
+                                </span>
+                              </label>
+                              <input
+                                type="number"
+                                id="width3"
+                                value={width3}
+                                onChange={(event) =>
+                                  setWidth3(event.target.value)
+                                }
+                                disabled={fixedDistribution !== "Manual"}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="single-product-page__customize__left__option-holder__option__btn-wrapper">
+                        <button
+                          className={`btn-colored ${
+                            activeId !== `step${4}` ? "d-none" : ""
+                          }`}
+                          onClick={() => goToNextStep("step5")}
+                        >
+                          Go to next step <FaTurnDown />
+                        </button>
+                      </div>
+                    </div>
+
+                    <Input
+                      stepNumber={5}
+                      nextStep={"step6"}
+                      map={five}
+                      text={"Glass Type"}
+                    />
+
+                    <Input
+                      stepNumber={6}
+                      nextStep={"step7"}
+                      map={six}
+                      text={"Handle"}
+                    />
+
+                    <Input
+                      stepNumber={7}
+                      nextStep={"step8"}
+                      map={seven}
+                      text={"Upsells"}
+                    />
+                    <Input
+                      stepNumber={8}
+                      nextStep={"step1"}
+                      map={eight}
+                      text={"Ventilation grid"}
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -1000,19 +1208,26 @@ function SingleProductPage() {
                 <h3>Customize windows frame</h3>
                 <div className="single-product-page__customize__right__product">
                   <div className="single-product-page__customize__right__product__top">
-                    {/* Assuming there's an image to display */}                  
-                    {typeOfWindow === 'Single Opening' && <CanvasComponent width={widthInCm} height={heightInCm} />}
-                    {typeOfWindow === 'Two Openings' && <TwoPartCanvasComponent width={widthInCm} height={heightInCm} />}
-                    {typeOfWindow === 'Tripple Openings' && (
-                  <TrippleCanvasComponent
-                    width={widthInCm}
-                    height={heightInCm}
-                    fixedDistribution={fixedDistribution}
-                    width1={width1}
-                    width2={width2}
-                    width3={width3}
-                  />
-                )}
+                    {/* Assuming there's an image to display */}
+                    {typeOfWindow === "Single Opening" && (
+                      <CanvasComponent width={widthInCm} height={heightInCm} />
+                    )}
+                    {typeOfWindow === "Two Openings" && (
+                      <TwoPartCanvasComponent
+                        width={widthInCm}
+                        height={heightInCm}
+                      />
+                    )}
+                    {typeOfWindow === "Tripple Openings" && (
+                      <TrippleCanvasComponent
+                        width={widthInCm}
+                        height={heightInCm}
+                        fixedDistribution={fixedDistribution}
+                        width1={width1}
+                        width2={width2}
+                        width3={width3}
+                      />
+                    )}
                   </div>
                   <div className="single-product-page__customize__right__product__body">
                     <div className="single-product-page__customize__right__product__body__option__mid">

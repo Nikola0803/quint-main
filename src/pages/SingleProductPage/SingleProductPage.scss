@@ -5,6 +5,14 @@
   margin-bottom: 10px;
 }
 
+.single-product-page__customize__left__option-holder__option .selected img {
+  border: 2px solid red;
+}
+.single-product-page__customize__left__option-holder__option__body__color-option img {
+  width: 130px;
+  height: 130px;
+}
+
 .color-options-container{
   display:flex;
   flex-direction:row;
@@ -47,7 +55,7 @@
   //   }
   //   .image-gallery-slides {
   //     height: 332px;
-  //     width: 520px;
+  //     width: 520px;§
   //   }
   .image-gallery-thumbnails-container {
     height: 100%;
