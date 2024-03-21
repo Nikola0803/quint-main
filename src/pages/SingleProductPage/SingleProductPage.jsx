@@ -972,9 +972,9 @@ function SingleProductPage() {
                           </div>
                           <span>
                               {errorStringWidth ? (
-                                <FaCheck color="red" />
+                                <FaTimes color="red" />
                               ) : (
-                                <FaTimes color="green" />
+                                <FaCheck color="green" />
                               )}
                               mm
                           </span>
@@ -1050,9 +1050,9 @@ function SingleProductPage() {
                           </div>
                           <span>
     {errorStringWidth ? (
-      <FaCheck color="red" />
+      <FaTimes color="red" />
     ) : (
-      <FaTimes color="green" />
+      <FaCheck color="green" />
     )}
     mm
   </span>
