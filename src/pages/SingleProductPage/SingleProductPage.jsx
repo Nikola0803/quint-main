@@ -8,6 +8,7 @@ import { FaTurnDown } from "react-icons/fa6";
 import { CiCirclePlus, CiCircleMinus } from "react-icons/ci";
 import { FaChevronRight } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa6";
+import { FaTimes } from "react-icons/fa";
 import ruler from "../../assets/clarity_ruler-pencil-line.svg";
 import littleWindow from "../../assets/little-window.png";
 import Card from "../../components/Card/Card";
@@ -973,7 +974,7 @@ function SingleProductPage() {
                               {errorStringWidth ? (
                                 <FaCheck color="red" />
                               ) : (
-                                <FaCheck color="green" />
+                                <FaTimes color="green" />
                               )}
                               mm
                           </span>
@@ -1051,7 +1052,7 @@ function SingleProductPage() {
     {errorStringWidth ? (
       <FaCheck color="red" />
     ) : (
-      <FaCheck color="green" />
+      <FaTimes color="green" />
     )}
     mm
   </span>
