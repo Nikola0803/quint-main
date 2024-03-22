@@ -582,22 +582,8 @@ function SingleProductPage() {
     );
   };
 
-  const four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm, updateWidth2 }) => {
+  const four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm }) => {
 
-    // Calculate width2
-    const calculateWidth2 = () => {
-      return widthInCm - (parseInt(width1) + parseInt(width3));
-    };
-  
-    // Calculate width2 whenever width1 or width3 change
-    const width2 = calculateWidth2();
-  
-    // Handle input change for width3
-    const handleWidth3Change = (event) => {
-      const value = event.target.value;
-      updateWidth2(value); // Update width2 when width3 changes
-    };
-  
     return (
       <div>
         <div className={`single-product-page__customize__left__option-holder__option__body ${activeId === "step4" ? "" : "d-none"}`}>
@@ -654,7 +640,7 @@ function SingleProductPage() {
               type="number"
               id="width3"
               value={width3}
-              onChange={handleWidth3Change}
+              onChange={(event) => setWidth3(event.target.value)}
               disabled={fixedDistribution !== "Manual"}
             />
           </div>
@@ -1259,9 +1245,9 @@ function SingleProductPage() {
                         width={widthInCm}
                         height={heightInCm}
                         fixedDistribution={fixedDistribution}
-                        width1={width1}
-                        width2={(widthInCm - (width1 + width3))}
+                        width1={width1}                       
                         width3={width3}
+                        width2={(widthInCm - (width1 + width3))}
                       />
                     )}
                     {typeOfWindow === "Tripple Openings" && errorStringWidth && (
