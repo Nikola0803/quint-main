@@ -638,7 +638,7 @@ function SingleProductPage() {
   <input
     type="number"
     id="width2"
-    value={calculateWidth2()}
+    value={width3 + width1}
     readOnly
   />
 </div>
