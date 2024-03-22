@@ -581,88 +581,87 @@ function SingleProductPage() {
       </>
     );
   };
-  {
-    
-    const four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm, updateWidth2 }) => {
-      // Define width2
-      let width2 = '';
-    
-      // Calculate width2
-      const calculateWidth2 = () => {
-        return widthInCm - (parseInt(width1) + parseInt(width3));
-      };
-    
-      // Handle input change for width3
-      const handleWidth3Change = (event) => {
-        const value = event.target.value;
-        width2 = calculateWidth2(); // Update width2 when width3 changes
-        updateWidth2(value); // Assuming updateWidth2 is passed as a prop
-      };
-    
-      return (
-        <div>
-          <div className={`single-product-page__customize__left__option-holder__option__body ${activeId === "step4" ? "" : "d-none"}`}>
-            {/* Fixed distribution */}
-            <div className="option">
-              <label htmlFor="fixedDistribution">Fixed Distribution:</label>
-              <select
-                id="fixedDistribution"
-                value={fixedDistribution}
-                onChange={handleFixedDistributionChange}
-              >
-                <option value="">Select Fixed Distribution</option>
-                <option value="1:1:1">1:1:1</option>
-                <option value="1:2:1">1:2:1</option>
-                <option value="Manual">Manual</option>
-              </select>
-            </div>
-    
-            {/* Width inputs */}
-            <div className="option">
-              <label htmlFor="width1" className="left-widths">
-                Width of turn/tilt window (inward opening) in section 1 (in mm):
-                <span><br />(Calculated automatically)</span>
-              </label>
-              <input
-                type="number"
-                id="width1"
-                value={width1}
-                onChange={(event) => setWidth1(event.target.value)} // Assuming setWidth1 is passed as a prop
-                disabled={fixedDistribution !== "Manual"}
-              />
-            </div>
-    
-            <div className="option">
-              <label htmlFor="width2" className="left-widths">
-                Width of fixed glass in section 2 (in mm):
-                <span><br />(Calculated automatically)</span>
-              </label>
-              <input
-                type="number"
-                id="width2"
-                value={calculateWidth2()}
-                readOnly // Make the input read-only
-              />
-            </div>
-    
-            <div className="option">
-              <label htmlFor="width3" className="left-widths">
-                Width of turn/tilt window (inward opening) in section 3 (in mm):
-                <span><br />(Calculated automatically)</span>
-              </label>
-              <input
-                type="number"
-                id="width3"
-                value={width3}
-                onChange={handleWidth3Change}
-                disabled={fixedDistribution !== "Manual"}
-              />
-            </div>
+  const four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm, updateWidth2 }) => {
+    // Define width2
+    let width2 = '';
+  
+    // Calculate width2
+    const calculateWidth2 = () => {
+      return widthInCm - (parseInt(width1) + parseInt(width3));
+    };
+  
+    // Handle input change for width3
+    const handleWidth3Change = (event) => {
+      const value = event.target.value;
+      width2 = calculateWidth2(); // Update width2 when width3 changes
+      updateWidth2(value); // Assuming updateWidth2 is passed as a prop
+    };
+  
+    return (
+      <div>
+        <div className={`single-product-page__customize__left__option-holder__option__body ${activeId === "step4" ? "" : "d-none"}`}>
+          {/* Fixed distribution */}
+          <div className="option">
+            <label htmlFor="fixedDistribution">Fixed Distribution:</label>
+            <select
+              id="fixedDistribution"
+              value={fixedDistribution}
+              onChange={handleFixedDistributionChange}
+            >
+              <option value="">Select Fixed Distribution</option>
+              <option value="1:1:1">1:1:1</option>
+              <option value="1:2:1">1:2:1</option>
+              <option value="Manual">Manual</option>
+            </select>
+          </div>
+  
+          {/* Width inputs */}
+          <div className="option">
+            <label htmlFor="width1" className="left-widths">
+              Width of turn/tilt window (inward opening) in section 1 (in mm):
+              <span><br />(Calculated automatically)</span>
+            </label>
+            <input
+              type="number"
+              id="width1"
+              value={width1}
+              onChange={(event) => setWidth1(event.target.value)} // Assuming setWidth1 is passed as a prop
+              disabled={fixedDistribution !== "Manual"}
+            />
+          </div>
+  
+          <div className="option">
+            <label htmlFor="width2" className="left-widths">
+              Width of fixed glass in section 2 (in mm):
+              <span><br />(Calculated automatically)</span>
+            </label>
+            <input
+              type="number"
+              id="width2"
+              value={calculateWidth2()}
+              readOnly // Make the input read-only
+            />
+          </div>
+  
+          <div className="option">
+            <label htmlFor="width3" className="left-widths">
+              Width of turn/tilt window (inward opening) in section 3 (in mm):
+              <span><br />(Calculated automatically)</span>
+            </label>
+            <input
+              type="number"
+              id="width3"
+              value={width3}
+              onChange={handleWidth3Change}
+              disabled={fixedDistribution !== "Manual"}
+            />
           </div>
         </div>
-      );
-    };
-    
+      </div>
+    );
+  };
+  
+
   const five = () => {
     // Assuming 'product?.acf?.glass_layers' is the correct path to the glass layers data
     const glassLayers = product?.acf?.glass_layers || [];
