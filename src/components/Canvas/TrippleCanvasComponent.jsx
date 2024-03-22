@@ -7,35 +7,33 @@ const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, widt
   const borderWidth = 1; // Width of the border
   const spacing = 10; // Adjusted spacing between rectangles
 
-  // Function to calculate the widths of the rectangles based on fixed distribution
-  const calculateRectWidths = () => {
-    if (fixedDistribution === '1:1:1') {
-      return [width / 3, width / 3, width / 3];
-    } else if (fixedDistribution === '1:2:1') {
-      const middleWidth = (width * 3) / 7; // Adjusted the middle width to be larger
-      const sideWidth = (width - middleWidth) / 2;
-      return [sideWidth, middleWidth, sideWidth];
-    } else {
-      // Handle unexpected fixedDistribution values
-      console.error('Unexpected fixedDistribution value:', fixedDistribution);
-      // Return some default widths or throw an error
-      // For now, let's return equal widths as a fallback
-      return [width / 3, width / 3, width / 3];
-    }
-  };
-
-  // Function to convert millimeters to pixels
-  const mmToPx = (mm) => {
-    return mm / 10; // Divide by 10 to convert from millimeters to pixels
-  };
-
   useEffect(() => {
-    if (canvasRef.current && !errorStringWidth) {
-      const canvas = canvasRef.current;
-      const context = canvas.getContext('2d');
+    const canvas = canvasRef.current;
+    const context = canvas.getContext('2d');
+    context.clearRect(0, 0, canvasWidth, canvasHeight);
 
-      // Clear canvas
-      context.clearRect(0, 0, canvasWidth, canvasHeight);
+    if (!errorStringWidth) {
+      // Function to calculate the widths of the rectangles based on fixed distribution
+      const calculateRectWidths = () => {
+        if (fixedDistribution === '1:1:1') {
+          return [width / 3, width / 3, width / 3];
+        } else if (fixedDistribution === '1:2:1') {
+          const middleWidth = (width * 3) / 7; // Adjusted the middle width to be larger
+          const sideWidth = (width - middleWidth) / 2;
+          return [sideWidth, middleWidth, sideWidth];
+        } else {
+          // Handle unexpected fixedDistribution values
+          console.error('Unexpected fixedDistribution value:', fixedDistribution);
+          // Return some default widths or throw an error
+          // For now, let's return equal widths as a fallback
+          return [width / 3, width / 3, width / 3];
+        }
+      };
+
+      // Function to convert millimeters to pixels
+      const mmToPx = (mm) => {
+        return mm / 10; // Divide by 10 to convert from millimeters to pixels
+      };
 
       // Calculate the width and height of the outer shape
       const outerRectWidth = width + 2 * spacing + 2 * borderWidth + 20; // Add 20 pixels for the additional space
@@ -66,25 +64,19 @@ const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, widt
 
         startX += rectWidth + spacing; // Adjust startX for the next rectangle
       }
+    } else {
+      // Draw empty canvas with border if there's an error
+      context.strokeRect(0, 0, canvasWidth, canvasHeight);
     }
   }, [width, height, fixedDistribution, width1, width2, width3, errorStringWidth]);
 
   return (
-    <>
-      <canvas
-        ref={canvasRef}
-        width={canvasWidth}
-        height={canvasHeight}
-        style={{ border: '1px solid black', visibility: errorStringWidth ? 'hidden' : 'visible' }}
-      />
-      {errorStringWidth && (
-        <canvas
-          width={canvasWidth}
-          height={canvasHeight}
-          style={{ border: '1px solid black', visibility: 'visible' }}
-        />
-      )}
-    </>
+    <canvas
+      ref={canvasRef}
+      width={canvasWidth}
+      height={canvasHeight}
+      style={{ border: '1px solid black' }}
+    />
   );
 };
 
