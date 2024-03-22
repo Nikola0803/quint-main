@@ -586,7 +586,12 @@ function SingleProductPage() {
     const calculateWidth2 = () => {
       return widthInCm - (parseInt(width1) + parseInt(width3));
     };
-  
+    console.log("width1:", width1);
+    console.log("width3:", width3);
+    console.log("widthInCm:", widthInCm);
+    
+    const calculatedWidth2 = widthInCm - (parseInt(width1) + parseInt(width3));
+    console.log("calculatedWidth2:", calculatedWidth2);
     return (
       <div>
         <div
@@ -628,20 +633,19 @@ function SingleProductPage() {
           </div>
   
           <div className="option">
-  <label htmlFor="width2" className="left-widths">
-    Width of fixed glass in section 2 (in mm):
-    <span>
-      <br />
-      (Calculated automatically)
-    </span>
-  </label>
-  <input
-    type="number"
-    id="width2"
-    value={width3 + width1}
-    readOnly
-  />
-</div>
+            <label htmlFor="width2" className="left-widths">
+              Width of fixed glass in section 2 (in mm):
+              <span>
+                <br />
+                (Calculated automatically)
+              </span>
+            </label>
+            <input
+              type="number"
+              id="width2"
+              value={width3 + width2}
+            />
+          </div>
   
           <div className="option">
             <label htmlFor="width3" className="left-widths">
