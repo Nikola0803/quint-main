@@ -644,7 +644,7 @@ function SingleProductPage() {
             <input
               type="number"
               id="width2"
-              value={width3 + width2}
+              value={calculateWidth2}
             />
           </div>
   
@@ -1252,25 +1252,28 @@ function SingleProductPage() {
                     {typeOfWindow === "Single Opening" && (
                       <CanvasComponent width={widthInCm} height={heightInCm} />
                     )}
-                    {typeOfWindow === "Two Openings" && (
+                    {typeOfWindow === "Two Openings" && !errorStringWidth && (
                       <TwoPartCanvasComponent
                         width={widthInCm}
                         height={heightInCm}
                       />
                     )}
+                    {typeOfWindow === "Twoo Openings" && errorStringWidth && (
+                      <EmptyCanvasComponent canvasWidth={700} canvasHeight={500} />
+                    )}
                     {typeOfWindow === "Tripple Openings" && !errorStringWidth && (
-        <TrippleCanvasComponent
-          width={widthInCm}
-          height={heightInCm}
-          fixedDistribution={fixedDistribution}
-          width1={width1}
-          width2={width2}
-          width3={width3}
-        />
-      )}
-      {typeOfWindow === "Tripple Openings" && errorStringWidth && (
-        <EmptyCanvasComponent canvasWidth={700} canvasHeight={500} />
-      )}
+                      <TrippleCanvasComponent
+                        width={widthInCm}
+                        height={heightInCm}
+                        fixedDistribution={fixedDistribution}
+                        width1={width1}
+                        width2={width2}
+                        width3={width3}
+                      />
+                    )}
+                    {typeOfWindow === "Tripple Openings" && errorStringWidth && (
+                      <EmptyCanvasComponent canvasWidth={700} canvasHeight={500} />
+                    )}
                   </div>
                   <div className="single-product-page__customize__right__product__body">
                     <div className="single-product-page__customize__right__product__body__option__mid">
