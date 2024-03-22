@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 
-const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, width2, width3, setWidth1, setWidth2, setWidth3, errorStringWidth }) => {
+const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, width2, width3, errorStringWidth }) => {
   const canvasRef = useRef(null);
   const canvasWidth = 700; // Width of the canvas frame
   const canvasHeight = 500; // Height of the canvas frame
@@ -21,6 +21,8 @@ const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, widt
           const middleWidth = (width * 3) / 7; // Adjusted the middle width to be larger
           const sideWidth = (width - middleWidth) / 2;
           return [sideWidth, middleWidth, sideWidth];
+        } else if (fixedDistribution === 'Manual') {
+          return [parseInt(width1 / 10), parseInt(width2 / 10), parseInt(width3 / 10)];
         } else {
           // Handle unexpected fixedDistribution values
           console.error('Unexpected fixedDistribution value:', fixedDistribution);
@@ -49,7 +51,7 @@ const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, widt
       // Draw the rectangles based on the calculated widths or manual inputs
       let startX = outerRectX + spacing + borderWidth; // Start X coordinate
       const startY = outerRectY + spacing + borderWidth; // Start Y coordinate
-      const rectWidths = fixedDistribution === 'Manual' ? [mmToPx(width1), mmToPx(width2), mmToPx(width3)] : calculateRectWidths();
+      const rectWidths = calculateRectWidths();
       for (let i = 0; i < rectWidths.length; i++) {
         const rectX = startX;
         const rectWidth = rectWidths[i];
