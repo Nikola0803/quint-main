@@ -582,7 +582,7 @@ function SingleProductPage() {
     );
   };
 
-  const four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm, updateWidth2 }) => {
+  const Four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm, updateWidth2 }) => {
     // Calculate width2
     const calculateWidth2 = () => {
       return widthInCm - (parseInt(width1) + parseInt(width3));
@@ -635,7 +635,7 @@ function SingleProductPage() {
             <input
               type="number"
               id="width2"
-              value={calculateWidth2()}
+              value={width3}
               readOnly // Make the input read-only
             />
           </div>
