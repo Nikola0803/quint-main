@@ -1247,8 +1247,8 @@ function SingleProductPage() {
                         fixedDistribution={fixedDistribution}
                         width1={width1}                       
                         width3={width3}
-                        width2={(widthInCm - (width1 + width3))}
-                      />
+                        width2={widthInCm - (parseInt(width1) + parseInt(width3))}
+                        />
                     )}
                     {typeOfWindow === "Tripple Openings" && errorStringWidth && (
                       <EmptyCanvasComponent canvasWidth={700} canvasHeight={500} />
