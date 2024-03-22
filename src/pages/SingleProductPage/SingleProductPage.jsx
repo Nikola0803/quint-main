@@ -19,6 +19,7 @@ import { Stage, Layer, Rect, Text } from "react-konva";
 import CanvasComponent from "../../components/Canvas/Canvas.jsx";
 import TwoPartCanvasComponent from "../../components/Canvas/TwoPartCanvasComponent.jsx";
 import TrippleCanvasComponent from "../../components/Canvas/TrippleCanvasComponent.jsx";
+import EmptyCanvasComponent from '../../components/Canvas/EmptyCanvasComponent.jsx'; 
 
 import {
   AddressElement,
@@ -1258,15 +1259,18 @@ function SingleProductPage() {
                       />
                     )}
                     {typeOfWindow === "Tripple Openings" && !errorStringWidth && (
-                <TrippleCanvasComponent
-                  width={widthInCm}
-                  height={heightInCm}
-                  fixedDistribution={fixedDistribution}
-                  width1={width1}
-                  width2={width2}
-                  width3={width3}
-                />
-              )}
+        <TrippleCanvasComponent
+          width={widthInCm}
+          height={heightInCm}
+          fixedDistribution={fixedDistribution}
+          width1={width1}
+          width2={width2}
+          width3={width3}
+        />
+      )}
+      {typeOfWindow === "Tripple Openings" && errorStringWidth && (
+        <EmptyCanvasComponent canvasWidth={700} canvasHeight={500} />
+      )}
                   </div>
                   <div className="single-product-page__customize__right__product__body">
                     <div className="single-product-page__customize__right__product__body__option__mid">
