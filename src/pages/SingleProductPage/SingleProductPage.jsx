@@ -583,21 +583,21 @@ function SingleProductPage() {
   };
 
   const four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm, updateWidth2 }) => {
-    // State to hold the calculated width2 value
-    const [width2, setWidth2] = useState('');
-  
-    // Function to calculate width2
+    // Calculate width2 whenever width1, width3, or widthInCm changes
     const calculateWidth2 = () => {
       return widthInCm - parseInt(width1) - parseInt(width3);
     };
   
-    // Update width2 whenever width1 or width3 changes
-    useEffect(() => {
+    // Initialize width2 state with the initial value
+    const [width2, setWidth2] = useState(calculateWidth2());
+  
+    // Handle change in width3 and update width2 accordingly
+    const handleWidth3Change = (event) => {
+      const newWidth3 = event.target.value;
       const newWidth2 = calculateWidth2();
       setWidth2(newWidth2);
-      // If you need to update the parent component's state with the new width2 value, you can call the updateWidth2 function here
-      // updateWidth2(newWidth2);
-    }, [width1, width3, widthInCm]);
+      updateWidth2(newWidth2); // Assuming updateWidth2 is a function to update state in the parent component
+    };
   
     return (
       <div>
@@ -647,7 +647,7 @@ function SingleProductPage() {
               type="number"
               id="width2"
               value={width2}
-              readOnly // Make the input field readOnly since it's calculated automatically
+              readOnly
             />
           </div>
   
@@ -663,7 +663,7 @@ function SingleProductPage() {
               type="number"
               id="width3"
               value={width3}
-              onChange={(event) => setWidth3(event.target.value)}
+              onChange={handleWidth3Change}
               disabled={fixedDistribution !== "Manual"}
             />
           </div>
@@ -671,6 +671,7 @@ function SingleProductPage() {
       </div>
     );
   };
+  
   
 
   const five = () => {
