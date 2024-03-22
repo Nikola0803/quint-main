@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 
-const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, width2, width3 }) => {
+const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, width2, width3, setWidth1, setWidth2, setWidth3 }) => {
   const canvasRef = useRef(null);
   const canvasWidth = 700; // Width of the canvas frame
   const canvasHeight = 500; // Height of the canvas frame
@@ -106,15 +106,15 @@ const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, widt
         <>
           <div className="option">
             <label htmlFor="width1">Width of section 1 (in mm):</label>
-            <input type="number" id="width1" value={width1} onChange={(e) => width1 = e.target.value} />
+            <input type="number" id="width1" value={width1} onChange={(e) => setWidth1(e.target.value)} />
           </div>
           <div className="option">
             <label htmlFor="width2">Width of section 2 (in mm):</label>
-            <input type="number" id="width2" value={width2} onChange={(e) => width2 = e.target.value} />
+            <input type="number" id="width2" value={width2} onChange={(e) => setWidth2(e.target.value)} />
           </div>
           <div className="option">
             <label htmlFor="width3">Width of section 3 (in mm):</label>
-            <input type="number" id="width3" value={width3} onChange={(e) => width3 = e.target.value} />
+            <input type="number" id="width3" value={width3} onChange={(e) => setWidth3(e.target.value)} />
           </div>
         </>
       )}
