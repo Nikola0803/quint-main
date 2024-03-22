@@ -643,8 +643,7 @@ function SingleProductPage() {
             <input
               type="number"
               id="width2"
-              value={width3}
-              readOnly // Make the input read-only
+              value={500}
             />
           </div>
   
