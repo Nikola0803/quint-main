@@ -642,8 +642,10 @@ function SingleProductPage() {
             </label>
             <input
               type="number"
-              id="width2"
-              value={500}
+              id="width1"
+              value={width1}
+              onChange={(event) => setWidth1(event.target.value)} // Assuming setWidth1 is passed as a prop
+              disabled={fixedDistribution !== "Manual"}
             />
           </div>
   
@@ -657,7 +659,6 @@ function SingleProductPage() {
               id="width3"
               value={width3}
               onChange={handleWidth3Change}
-              onBlur={handleWidth3Blur} // Update width2 when width3 loses focus
               disabled={fixedDistribution !== "Manual"}
             />
           </div>
