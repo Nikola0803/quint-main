@@ -583,24 +583,16 @@ function SingleProductPage() {
   };
 
   const four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm, updateWidth2 }) => {
-    // Define width2
-    let width2 = '';
-  
     // Calculate width2
     const calculateWidth2 = () => {
       return widthInCm - (parseInt(width1) + parseInt(width3));
     };
   
-    // Handle input change for width3
-    const handleWidth3Change = (event) => {
-      const value = event.target.value;
-      updateWidth2(value); // Update width2 when width3 changes
-    };
-  
-    // Handle onBlur event for width3
-    const handleWidth3Blur = () => {
-      width2 = calculateWidth2(); // Calculate width2 when width3 input loses focus
-    };
+    // Update width2 whenever width3 changes
+    useEffect(() => {
+      const newWidth2 = calculateWidth2();
+      updateWidth2(newWidth2);
+    }, [width3, widthInCm, width1, updateWidth2]);
   
     return (
       <div>
@@ -657,8 +649,7 @@ function SingleProductPage() {
               type="number"
               id="width3"
               value={width3}
-              onChange={handleWidth3Change}
-              onBlur={handleWidth3Blur} // Update width2 when width3 loses focus
+              onChange={(event) => setWidth3(event.target.value)} // Assuming setWidth3 is passed as a prop
               disabled={fixedDistribution !== "Manual"}
             />
           </div>
@@ -666,7 +657,7 @@ function SingleProductPage() {
       </div>
     );
   };
-  
+   
   const five = () => {
     // Assuming 'product?.acf?.glass_layers' is the correct path to the glass layers data
     const glassLayers = product?.acf?.glass_layers || [];
