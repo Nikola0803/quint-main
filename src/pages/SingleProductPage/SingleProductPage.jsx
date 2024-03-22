@@ -1257,16 +1257,21 @@ function SingleProductPage() {
                         height={heightInCm}
                       />
                     )}
-                    {typeOfWindow === "Tripple Openings" && !errorStringWidth && (
-                  <TrippleCanvasComponent
-                    width={widthInCm}
-                    height={heightInCm}
-                    fixedDistribution={fixedDistribution}
-                    width1={width1}
-                    width2={width2}
-                    width3={width3}
-                  />
-                )}
+                    {/* Conditionally render the canvas component */}
+                    {typeOfWindow === "Tripple Openings" && (
+                      <TrippleCanvasComponent
+                        width={widthInCm}
+                        height={heightInCm}
+                        fixedDistribution={fixedDistribution}
+                        width1={width1}
+                        width2={width2}
+                        width3={width3}
+                        errorStringWidth={errorStringWidth} // Pass the error state
+                        setWidth1={setWidth1} // Assuming these are setters for width1, width2, and width3
+                        setWidth2={setWidth2}
+                        setWidth3={setWidth3}
+                      />
+                    )}
                   </div>
                   <div className="single-product-page__customize__right__product__body">
                     <div className="single-product-page__customize__right__product__body__option__mid">

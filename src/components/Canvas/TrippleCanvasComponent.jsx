@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 
-const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, width2, width3, setWidth1, setWidth2, setWidth3 }) => {
+const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, width2, width3, setWidth1, setWidth2, setWidth3, errorStringWidth }) => {
   const canvasRef = useRef(null);
   const canvasWidth = 700; // Width of the canvas frame
   const canvasHeight = 500; // Height of the canvas frame
@@ -96,12 +96,16 @@ const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, widt
 
   return (
     <>
-      <canvas
-        ref={canvasRef}
-        width={canvasWidth}
-        height={canvasHeight}
-        style={{ border: '1px solid black' }}
-      />
+      {/* Conditionally render canvas only if there's no error */}
+      {!errorStringWidth && (
+        <canvas
+          ref={canvasRef}
+          width={canvasWidth}
+          height={canvasHeight}
+          style={{ border: '1px solid black' }}
+        />
+      )}
+
       {fixedDistribution === 'Manual' && (
         <>
           <div className="option">
