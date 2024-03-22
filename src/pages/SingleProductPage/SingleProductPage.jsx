@@ -583,23 +583,25 @@ function SingleProductPage() {
   };
 
   const four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm, updateWidth2 }) => {
-    // Calculate width2
+    // State to hold the calculated width2 value
+    const [width2, setWidth2] = useState('');
+  
+    // Function to calculate width2
     const calculateWidth2 = () => {
-      return widthInCm - (parseInt(width1) + parseInt(width3));
+      return widthInCm - parseInt(width1) - parseInt(width3);
     };
-    console.log("width1:", width1);
-    console.log("width3:", width3);
-    console.log("widthInCm:", widthInCm);
-    
-    const calculatedWidth2 = widthInCm - (parseInt(width1) + parseInt(width3));
-    console.log("calculatedWidth2:", calculatedWidth2);
+  
+    // Update width2 whenever width1 or width3 changes
+    useEffect(() => {
+      const newWidth2 = calculateWidth2();
+      setWidth2(newWidth2);
+      // If you need to update the parent component's state with the new width2 value, you can call the updateWidth2 function here
+      // updateWidth2(newWidth2);
+    }, [width1, width3, widthInCm]);
+  
     return (
       <div>
-        <div
-          className={`single-product-page__customize__left__option-holder__option__body ${
-            activeId === "step4" ? "" : "d-none"
-          }`}
-        >
+        <div className={`single-product-page__customize__left__option-holder__option__body ${activeId === "step4" ? "" : "d-none"}`}>
           {/* Fixed distribution */}
           <div className="option">
             <label htmlFor="fixedDistribution">Fixed Distribution:</label>
@@ -628,27 +630,27 @@ function SingleProductPage() {
               type="number"
               id="width1"
               value={width1}
-              onChange={(event) => setWidth1(event.target.value)} // Assuming setWidth1 is passed as prop
+              onChange={(event) => setWidth1(event.target.value)}
               disabled={fixedDistribution !== "Manual"}
             />
           </div>
   
           <div className="option">
-          <label htmlFor="width2" className="left-widths">
-            Width of fixed glass in section 2 (in mm):
-            <span>
-              <br />
-              (Calculated automatically)
-            </span>
-          </label>
-          <input
-            type="number"
-            id="width2"
-            value={calculateWidth2()} // Call the calculateWidth2 function
-            readOnly // Make the input field readOnly since it's calculated automatically
-          />
-        </div>
-
+            <label htmlFor="width2" className="left-widths">
+              Width of fixed glass in section 2 (in mm):
+              <span>
+                <br />
+                (Calculated automatically)
+              </span>
+            </label>
+            <input
+              type="number"
+              id="width2"
+              value={width2}
+              readOnly // Make the input field readOnly since it's calculated automatically
+            />
+          </div>
+  
           <div className="option">
             <label htmlFor="width3" className="left-widths">
               Width of turn/tilt window (inward opening) in section 3 (in mm):
@@ -661,7 +663,7 @@ function SingleProductPage() {
               type="number"
               id="width3"
               value={width3}
-              onChange={(event) => setWidth3(event.target.value)} // Assuming setWidth3 is passed as prop
+              onChange={(event) => setWidth3(event.target.value)}
               disabled={fixedDistribution !== "Manual"}
             />
           </div>
