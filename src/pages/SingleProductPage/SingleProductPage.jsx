@@ -634,20 +634,21 @@ function SingleProductPage() {
           </div>
   
           <div className="option">
-            <label htmlFor="width2" className="left-widths">
-              Width of fixed glass in section 2 (in mm):
-              <span>
-                <br />
-                (Calculated automatically)
-              </span>
-            </label>
-            <input
-              type="number"
-              id="width2"
-              value={calculateWidth2}
-            />
-          </div>
-  
+          <label htmlFor="width2" className="left-widths">
+            Width of fixed glass in section 2 (in mm):
+            <span>
+              <br />
+              (Calculated automatically)
+            </span>
+          </label>
+          <input
+            type="number"
+            id="width2"
+            value={calculateWidth2()} // Call the calculateWidth2 function
+            readOnly // Make the input field readOnly since it's calculated automatically
+          />
+        </div>
+
           <div className="option">
             <label htmlFor="width3" className="left-widths">
               Width of turn/tilt window (inward opening) in section 3 (in mm):
