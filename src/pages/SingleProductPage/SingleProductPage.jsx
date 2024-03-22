@@ -1257,16 +1257,16 @@ function SingleProductPage() {
                         height={heightInCm}
                       />
                     )}
-                    {typeOfWindow === "Tripple Openings" && (
-                      <TrippleCanvasComponent
-                        width={widthInCm}
-                        height={heightInCm}
-                        fixedDistribution={fixedDistribution}
-                        width1={width1}
-                        width2={width2}
-                        width3={width3}
-                      />
-                    )}
+                    {typeOfWindow === "Tripple Openings" && !errorStringWidth && (
+                  <TrippleCanvasComponent
+                    width={widthInCm}
+                    height={heightInCm}
+                    fixedDistribution={fixedDistribution}
+                    width1={width1}
+                    width2={width2}
+                    width3={width3}
+                  />
+                )}
                   </div>
                   <div className="single-product-page__customize__right__product__body">
                     <div className="single-product-page__customize__right__product__body__option__mid">
