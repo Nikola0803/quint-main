@@ -1260,7 +1260,7 @@ function SingleProductPage() {
                         height={heightInCm}
                         fixedDistribution={fixedDistribution}
                         width1={width1}
-                        width2={widthInCm - (width1 + width3)}
+                        width2={(widthInCm - (width1 + width3))}
                         width3={width3}
                       />
                     )}
