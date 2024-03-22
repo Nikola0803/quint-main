@@ -22,7 +22,7 @@ const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, widt
           const sideWidth = (width - middleWidth) / 2;
           return [sideWidth, middleWidth, sideWidth];
         } else if (fixedDistribution === 'Manual') {
-          return [parseInt(width1 / 10), parseInt(width2 / 10), parseInt(width3 / 10)];
+          return [parseInt(width1), parseInt(width2), parseInt(width3)];
         } else {
           // Handle unexpected fixedDistribution values
           console.error('Unexpected fixedDistribution value:', fixedDistribution);
