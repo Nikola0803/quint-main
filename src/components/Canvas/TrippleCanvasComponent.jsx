@@ -71,19 +71,17 @@ const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, widt
 
   return (
     <>
-      {!errorStringWidth && (
-        <canvas
-          ref={canvasRef}
-          width={canvasWidth}
-          height={canvasHeight}
-          style={{ border: '1px solid black' }}
-        />
-      )}
+      <canvas
+        ref={canvasRef}
+        width={canvasWidth}
+        height={canvasHeight}
+        style={{ border: '1px solid black', visibility: errorStringWidth ? 'hidden' : 'visible' }}
+      />
       {errorStringWidth && (
         <canvas
           width={canvasWidth}
           height={canvasHeight}
-          style={{ border: '1px solid black' }}
+          style={{ border: '1px solid black', visibility: 'visible' }}
         />
       )}
     </>
