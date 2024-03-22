@@ -54,7 +54,7 @@ function SingleProductPage() {
   const [sucess, setSuccess] = useState(false);
   const [fixedDistribution, setFixedDistribution] = useState(""); // State to store the selected fixed distribution
   const [width1, setWidth1] = useState(""); // State to store the width of turn/tilt window in section 1
-  const [width2, setWidth2] = widthInCm - (parseInt(width1) + parseInt(width3)); // State to store the width of fixed glass in section 2
+  const [width2, setWidth2] = useState(""); // State to store the width of fixed glass in section 2
   const [width3, setWidth3] = useState(""); // State to store the width of turn/tilt window in section 3
   const [openingType, setOpeningType] = useState(""); // State to store the selected opening type
   const [errorStringWidth, setErrorStringWidth] = useState("");
