@@ -584,7 +584,7 @@ function SingleProductPage() {
   const four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm, updateWidth2 }) => {
     // Calculate width2
     const calculateWidth2 = () => {
-      return widthInCm - (width1 - width3);
+      return widthInCm - (parseInt(width1) + parseInt(width3));
     };
   
     return (
