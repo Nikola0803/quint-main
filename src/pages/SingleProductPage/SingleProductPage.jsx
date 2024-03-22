@@ -1247,7 +1247,7 @@ function SingleProductPage() {
                         fixedDistribution={fixedDistribution}
                         width1={width1}                       
                         width3={width3}
-                        width2={widthInCm - (parseInt(width1) + parseInt(width3))}
+                        width2={parseInt(widthInCm) - (parseInt(width1) + parseInt(width3))}
                         />
                     )}
                     {typeOfWindow === "Tripple Openings" && errorStringWidth && (
