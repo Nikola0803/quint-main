@@ -30,7 +30,7 @@ const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, widt
   };
 
   useEffect(() => {
-    if (canvasRef.current) {
+    if (canvasRef.current && !errorStringWidth) {
       const canvas = canvasRef.current;
       const context = canvas.getContext('2d');
 
@@ -55,12 +55,10 @@ const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, widt
       for (let i = 0; i < rectWidths.length; i++) {
         const rectX = startX;
         const rectWidth = rectWidths[i];
-        if (!errorStringWidth) { // Only draw if there is no error
-          context.strokeRect(rectX, startY, rectWidth, height); // Height is the same for all rectangles
-        }
+        context.strokeRect(rectX, startY, rectWidth, height); // Height is the same for all rectangles
 
         // Draw additional rectangular shape inside width1 and width3
-        if (!errorStringWidth && (i === 0 || i === 2)) {
+        if ((i === 0 || i === 2)) {
           const innerRectWidth = rectWidth - 20; // 10 pixels smaller on each side
           const innerRectX = rectX + 10; // 10 pixels offset from the outer rectangle
           context.strokeRect(innerRectX, startY + 10, innerRectWidth, height - 20); // Adjusted height for inner rectangle
@@ -72,12 +70,23 @@ const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, widt
   }, [width, height, fixedDistribution, width1, width2, width3, errorStringWidth]);
 
   return (
-    <canvas
-      ref={canvasRef}
-      width={canvasWidth}
-      height={canvasHeight}
-      style={{ border: '1px solid black', display: errorStringWidth ? 'none' : 'block' }} // Hide canvas if there's an error
-    />
+    <>
+      {!errorStringWidth && (
+        <canvas
+          ref={canvasRef}
+          width={canvasWidth}
+          height={canvasHeight}
+          style={{ border: '1px solid black' }}
+        />
+      )}
+      {errorStringWidth && (
+        <canvas
+          width={canvasWidth}
+          height={canvasHeight}
+          style={{ border: '1px solid black' }}
+        />
+      )}
+    </>
   );
 };
 
