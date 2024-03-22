@@ -581,7 +581,6 @@ function SingleProductPage() {
       </>
     );
   };
-
   const four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm, updateWidth2 }) => {
     // Define width2
     let width2 = '';
