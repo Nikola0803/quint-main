@@ -583,20 +583,19 @@ function SingleProductPage() {
   };
 
   const four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm, updateWidth2 }) => {
-    // Calculate width2 whenever width1, width3, or widthInCm changes
+    // Define width2
+    let width2 = '';
+  
+    // Calculate width2
     const calculateWidth2 = () => {
-      return widthInCm - parseInt(width1) - parseInt(width3);
+      return widthInCm - (parseInt(width1) + parseInt(width3));
     };
   
-    // Initialize width2 state with the initial value
-    const [width2, setWidth2] = useState(calculateWidth2());
-  
-    // Handle change in width3 and update width2 accordingly
+    // Handle input change for width3
     const handleWidth3Change = (event) => {
-      const newWidth3 = event.target.value;
-      const newWidth2 = calculateWidth2();
-      setWidth2(newWidth2);
-      updateWidth2(newWidth2); // Assuming updateWidth2 is a function to update state in the parent component
+      const value = event.target.value;
+      width2 = calculateWidth2(); // Update width2 when width3 changes
+      updateWidth2(value); // Assuming updateWidth2 is passed as a prop
     };
   
     return (
@@ -621,16 +620,13 @@ function SingleProductPage() {
           <div className="option">
             <label htmlFor="width1" className="left-widths">
               Width of turn/tilt window (inward opening) in section 1 (in mm):
-              <span>
-                <br />
-                (Calculated automatically)
-              </span>
+              <span><br />(Calculated automatically)</span>
             </label>
             <input
               type="number"
               id="width1"
               value={width1}
-              onChange={(event) => setWidth1(event.target.value)}
+              onChange={(event) => setWidth1(event.target.value)} // Assuming setWidth1 is passed as a prop
               disabled={fixedDistribution !== "Manual"}
             />
           </div>
@@ -638,26 +634,20 @@ function SingleProductPage() {
           <div className="option">
             <label htmlFor="width2" className="left-widths">
               Width of fixed glass in section 2 (in mm):
-              <span>
-                <br />
-                (Calculated automatically)
-              </span>
+              <span><br />(Calculated automatically)</span>
             </label>
             <input
               type="number"
               id="width2"
-              value={width2}
-              readOnly
+              value={calculateWidth2()}
+              readOnly // Make the input read-only
             />
           </div>
   
           <div className="option">
             <label htmlFor="width3" className="left-widths">
               Width of turn/tilt window (inward opening) in section 3 (in mm):
-              <span>
-                <br />
-                (Calculated automatically)
-              </span>
+              <span><br />(Calculated automatically)</span>
             </label>
             <input
               type="number"
@@ -671,7 +661,6 @@ function SingleProductPage() {
       </div>
     );
   };
-  
   
 
   const five = () => {
