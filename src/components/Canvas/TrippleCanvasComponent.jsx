@@ -30,72 +30,54 @@ const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, widt
   };
 
   useEffect(() => {
-    if (canvasRef.current && !errorStringWidth) {
+    if (canvasRef.current) {
       const canvas = canvasRef.current;
       const context = canvas.getContext('2d');
 
       // Clear canvas
       context.clearRect(0, 0, canvasWidth, canvasHeight);
 
-      // Calculate the width and height of the outer shape
-      const outerRectWidth = width + 2 * spacing + 2 * borderWidth + 20; // Add 20 pixels for the additional space
-      const outerRectHeight = height + 2 * spacing + 2 * borderWidth;
+      if (!errorStringWidth) {
+        // Calculate the width and height of the outer shape
+        const outerRectWidth = width + 2 * spacing + 2 * borderWidth + 20; // Add 20 pixels for the additional space
+        const outerRectHeight = height + 2 * spacing + 2 * borderWidth;
 
-      // Draw outer lines of the rectangle shape
-      const outerRectX = (canvasWidth - outerRectWidth) / 2;
-      const outerRectY = (canvasHeight - outerRectHeight) / 2;
-      context.strokeStyle = '#000'; // Black color
-      context.lineWidth = borderWidth;
-      context.strokeRect(outerRectX, outerRectY, outerRectWidth, outerRectHeight);
+        // Draw outer lines of the rectangle shape
+        const outerRectX = (canvasWidth - outerRectWidth) / 2;
+        const outerRectY = (canvasHeight - outerRectHeight) / 2;
+        context.strokeStyle = '#000'; // Black color
+        context.lineWidth = borderWidth;
+        context.strokeRect(outerRectX, outerRectY, outerRectWidth, outerRectHeight);
 
-      // Draw the rectangles based on the calculated widths or manual inputs
-      let startX = outerRectX + spacing + borderWidth; // Start X coordinate
-      const startY = outerRectY + spacing + borderWidth; // Start Y coordinate
-      const rectWidths = fixedDistribution === 'Manual' ? [mmToPx(width1), mmToPx(width2), mmToPx(width3)] : calculateRectWidths();
-      for (let i = 0; i < rectWidths.length; i++) {
-        const rectX = startX;
-        const rectWidth = rectWidths[i];
-        context.strokeRect(rectX, startY, rectWidth, height); // Height is the same for all rectangles
+        // Draw the rectangles based on the calculated widths or manual inputs
+        let startX = outerRectX + spacing + borderWidth; // Start X coordinate
+        const startY = outerRectY + spacing + borderWidth; // Start Y coordinate
+        const rectWidths = fixedDistribution === 'Manual' ? [mmToPx(width1), mmToPx(width2), mmToPx(width3)] : calculateRectWidths();
+        for (let i = 0; i < rectWidths.length; i++) {
+          const rectX = startX;
+          const rectWidth = rectWidths[i];
+          context.strokeRect(rectX, startY, rectWidth, height); // Height is the same for all rectangles
 
-        // Draw additional rectangular shape inside width1 and width3
-        if ((i === 0 || i === 2)) {
-          const innerRectWidth = rectWidth - 20; // 10 pixels smaller on each side
-          const innerRectX = rectX + 10; // 10 pixels offset from the outer rectangle
-          context.strokeRect(innerRectX, startY + 10, innerRectWidth, height - 20); // Adjusted height for inner rectangle
+          // Draw additional rectangular shape inside width1 and width3
+          if ((i === 0 || i === 2)) {
+            const innerRectWidth = rectWidth - 20; // 10 pixels smaller on each side
+            const innerRectX = rectX + 10; // 10 pixels offset from the outer rectangle
+            context.strokeRect(innerRectX, startY + 10, innerRectWidth, height - 20); // Adjusted height for inner rectangle
+          }
+
+          startX += rectWidth + spacing; // Adjust startX for the next rectangle
         }
-
-        startX += rectWidth + spacing; // Adjust startX for the next rectangle
       }
     }
   }, [width, height, fixedDistribution, width1, width2, width3, errorStringWidth]);
 
   return (
-    <>
-      {!errorStringWidth && (
-        <canvas
-          ref={canvasRef}
-          width={canvasWidth}
-          height={canvasHeight}
-          style={{ border: '1px solid black' }}
-        />
-      )}
-      {fixedDistribution === 'Manual' && !errorStringWidth && (
-        <>
-          <div className="option">
-            <label htmlFor="width1">Width of section 1 (in mm):</label>
-            <input type="number" id="width1" value={width1} onChange={(e) => setWidth1(e.target.value)} />
-          </div>
-          <div className="option">
-            <label htmlFor="width2">Width of section 2 (in mm):</label>
-            <input type="number" id="width2" value={width2} onChange={(e) => setWidth2(e.target.value)} />
-          </div>
-          <div className="option">
-            <label htmlFor="width3">Width of section 3 (in mm):</label>
-            <input type="number" id="width3" value={width3} onChange={(e) => setWidth3(e.target.value)} />
-          </div>
-        </>
-      )}
-    </>
+    <canvas
+      ref={canvasRef}
+      width={canvasWidth}
+      height={canvasHeight}
+      style={{ border: '1px solid black', display: errorStringWidth ? 'none' : 'block' }}
+    />
   );
 };
 
