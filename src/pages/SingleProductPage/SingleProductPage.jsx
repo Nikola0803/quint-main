@@ -198,8 +198,7 @@ function SingleProductPage() {
   // const totalLengthInCmVerticalBottom = ((2 * heightInCm) + (widthInCm * 3 ) + (2 * windowHeight));
   // const totalLengthInCmVerticalTop = ((2 * heightInCm) + (widthInCm * 5 ) + (2 * windowHeight));
 
-  const totalLengthInCm =
-    8 * heightInCm + widthInCm * 2 + 2 * width1 + 2 * width3;
+  const totalLengthInCm = 8 * heightInCm + widthInCm * 2 + 2 * width1 + 2 * width3;
 
   // Assuming selectedColor.color_price is a string, convert it to number
   const colorPrice = selectedColor
@@ -484,7 +483,7 @@ function SingleProductPage() {
                   />
                 <div>
                   <p>{colorOption.color_name}</p>
-                  <p>€{colorOption.color_price_in_percent || "N/A"}</p>
+                  <p>{colorOption.color_price_in_percent || "N/A"}</p>
                 </div>
               </div>
             ))}
@@ -511,7 +510,7 @@ function SingleProductPage() {
                 />
                 <div>
                   <p>{colorOption.color_name}</p>
-                  <p>€{colorOption.color_price_in_percent || "N/A"}</p>
+                  <p>{colorOption.color_price_in_percent || "N/A"}</p>
                 </div>
               </div>
             ))}
@@ -574,7 +573,7 @@ function SingleProductPage() {
               />
               <div>
                 <p>{profile?.profile_name}</p>
-                <p>€{profile?.profile_price || "N/A"}</p>
+                <p>{profile?.profile_price || "N/A"}</p>
               </div>
             </div>
           ))}
@@ -583,6 +582,10 @@ function SingleProductPage() {
   };
 
   const four = () => {
+    const [width1, setWidth1] = useState(0);
+    const [width3, setWidth3] = useState(0);
+    const [fixedDistribution, setFixedDistribution] = useState("Manual");
+  
     return (
       <div>
         <div
@@ -604,57 +607,57 @@ function SingleProductPage() {
               <option value="Manual">Manual</option>
             </select>
           </div>
-
+  
           {/* Width inputs */}
           <div className="option">
-          <label htmlFor="width1" className="left-widths">
-    Width of turn/tilt window (inward opening) in section 1 (in mm):
-    <span>
-      <br />
-      (Calculated automatically)
-    </span>
-  </label>
-  <input
-    type="number"
-    id="width1"
-    value={width1}
-    onChange={(event) => setWidth1(event.target.value)}
-    disabled={fixedDistribution !== "Manual"}
-  />
-</div>
-
-<div className="option">
-  <label htmlFor="width2" className="left-widths">
-    Width of fixed glass in section 2 (in mm):
-    <span>
-      <br />
-      (Calculated automatically)
-    </span>
-  </label>
-  <input
-    type="number"
-    id="width2"
-    value={widthInCm - (width1 - width3)}
-    onChange={() => {}}
-    disabled
-  />
-</div>
-
-<div className="option">
-  <label htmlFor="width3" className="left-widths">
-    Width of turn/tilt window (inward opening) in section 3 (in mm):
-    <span>
-      <br />
-      (Calculated automatically)
-    </span>
-  </label>
-  <input
-    type="number"
-    id="width3"
-    value={width3}
-    onChange={(event) => setWidth3(event.target.value)}
-    disabled={fixedDistribution !== "Manual"}
-  />
+            <label htmlFor="width1" className="left-widths">
+              Width of turn/tilt window (inward opening) in section 1 (in mm):
+              <span>
+                <br />
+                (Calculated automatically)
+              </span>
+            </label>
+            <input
+              type="number"
+              id="width1"
+              value={width1}
+              onChange={(event) => setWidth1(event.target.value)}
+              disabled={fixedDistribution !== "Manual"}
+            />
+          </div>
+  
+          <div className="option">
+            <label htmlFor="width2" className="left-widths">
+              Width of fixed glass in section 2 (in mm):
+              <span>
+                <br />
+                (Calculated automatically)
+              </span>
+            </label>
+            <input
+              type="number"
+              id="width2"
+              value={width1 - width3}
+              onChange={() => {}}
+              disabled
+            />
+          </div>
+  
+          <div className="option">
+            <label htmlFor="width3" className="left-widths">
+              Width of turn/tilt window (inward opening) in section 3 (in mm):
+              <span>
+                <br />
+                (Calculated automatically)
+              </span>
+            </label>
+            <input
+              type="number"
+              id="width3"
+              value={width3}
+              onChange={(event) => setWidth3(event.target.value)}
+              disabled={fixedDistribution !== "Manual"}
+            />
           </div>
         </div>
       </div>
