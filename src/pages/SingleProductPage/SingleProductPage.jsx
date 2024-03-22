@@ -54,7 +54,7 @@ function SingleProductPage() {
   const [sucess, setSuccess] = useState(false);
   const [fixedDistribution, setFixedDistribution] = useState(""); // State to store the selected fixed distribution
   const [width1, setWidth1] = useState(""); // State to store the width of turn/tilt window in section 1
-  const [width2, setWidth2] = useState(""); // State to store the width of fixed glass in section 2
+  const [width2, setWidth2] = widthInCm - (parseInt(width1) + parseInt(width3)); // State to store the width of fixed glass in section 2
   const [width3, setWidth3] = useState(""); // State to store the width of turn/tilt window in section 3
   const [openingType, setOpeningType] = useState(""); // State to store the selected opening type
   const [errorStringWidth, setErrorStringWidth] = useState("");
@@ -583,9 +583,7 @@ function SingleProductPage() {
   };
 
   const four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm, updateWidth2 }) => {
-    // Define width2
-    let width2 = '';
-  
+
     // Calculate width2
     const calculateWidth2 = () => {
       return widthInCm - (parseInt(width1) + parseInt(width3));
@@ -642,8 +640,8 @@ function SingleProductPage() {
             </label>
             <input
               type="number"
-              id="width1"
-              value={width1}
+              id="width2"
+              value={width2}
               onChange={(event) => setWidth1(event.target.value)} // Assuming setWidth1 is passed as a prop
               disabled={fixedDistribution !== "Manual"}
             />
