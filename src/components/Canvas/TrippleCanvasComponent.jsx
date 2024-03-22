@@ -30,7 +30,7 @@ const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, widt
   };
 
   useEffect(() => {
-    if (canvasRef.current) {
+    if (canvasRef.current && !errorStringWidth) {
       const canvas = canvasRef.current;
       const context = canvas.getContext('2d');
 
@@ -67,7 +67,7 @@ const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, widt
         startX += rectWidth + spacing; // Adjust startX for the next rectangle
       }
     }
-  }, [width, height, fixedDistribution, width1, width2, width3]);
+  }, [width, height, fixedDistribution, width1, width2, width3, errorStringWidth]);
 
   return (
     <>
