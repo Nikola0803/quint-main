@@ -589,15 +589,13 @@ function SingleProductPage() {
       return widthInCm - (parseInt(width1) + parseInt(width3));
     };
   
+    // Calculate width2 whenever width1 or width3 change
+    const width2 = calculateWidth2();
+  
     // Handle input change for width3
     const handleWidth3Change = (event) => {
       const value = event.target.value;
       updateWidth2(value); // Update width2 when width3 changes
-    };
-  
-    // Handle onBlur event for width3
-    const handleWidth3Blur = () => {
-      width2 = calculateWidth2(); // Calculate width2 when width3 input loses focus
     };
   
     return (
@@ -628,7 +626,7 @@ function SingleProductPage() {
               type="number"
               id="width1"
               value={width1}
-              onChange={(event) => setWidth1(event.target.value)} // Assuming setWidth1 is passed as a prop
+              onChange={(event) => setWidth1(event.target.value)}
               disabled={fixedDistribution !== "Manual"}
             />
           </div>
@@ -642,7 +640,7 @@ function SingleProductPage() {
               type="number"
               id="width2"
               value={width2}
-              onChange={(event) => setWidth1(event.target.value)} // Assuming setWidth1 is passed as a prop
+              readOnly // Make the input read-only
               disabled={fixedDistribution !== "Manual"}
             />
           </div>
