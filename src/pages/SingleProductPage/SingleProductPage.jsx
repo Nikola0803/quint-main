@@ -581,11 +581,7 @@ function SingleProductPage() {
     );
   };
 
-  const four = () => {
-    const [width1, setWidth1] = useState(0);
-    const [width3, setWidth3] = useState(0);
-    const [fixedDistribution, setFixedDistribution] = useState("Manual");
-  
+  const Four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm }) => {
     return (
       <div>
         <div
@@ -621,7 +617,7 @@ function SingleProductPage() {
               type="number"
               id="width1"
               value={width1}
-              onChange={(event) => setWidth1(event.target.value)}
+              onChange={(event) => setWidth1(event.target.value)} // Assuming setWidth1 is passed as prop
               disabled={fixedDistribution !== "Manual"}
             />
           </div>
@@ -637,8 +633,8 @@ function SingleProductPage() {
             <input
               type="number"
               id="width2"
-              value={width1 - width3}
-              onChange={() => {}}
+              value={widthInCm - (width1 - width3)}
+              onChange={() => {}} // No change needed for onChange as it's disabled
               disabled
             />
           </div>
@@ -655,7 +651,7 @@ function SingleProductPage() {
               type="number"
               id="width3"
               value={width3}
-              onChange={(event) => setWidth3(event.target.value)}
+              onChange={(event) => setWidth3(event.target.value)} // Assuming setWidth3 is passed as prop
               disabled={fixedDistribution !== "Manual"}
             />
           </div>
