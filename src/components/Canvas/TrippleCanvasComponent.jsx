@@ -71,13 +71,15 @@ const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, widt
 
   return (
     <>
-      <canvas
-        ref={canvasRef}
-        width={canvasWidth}
-        height={canvasHeight}
-        style={{ border: '1px solid black' }}
-      />
-      {fixedDistribution === 'Manual' && (
+      {!errorStringWidth && (
+        <canvas
+          ref={canvasRef}
+          width={canvasWidth}
+          height={canvasHeight}
+          style={{ border: '1px solid black' }}
+        />
+      )}
+      {fixedDistribution === 'Manual' && !errorStringWidth && (
         <>
           <div className="option">
             <label htmlFor="width1">Width of section 1 (in mm):</label>
