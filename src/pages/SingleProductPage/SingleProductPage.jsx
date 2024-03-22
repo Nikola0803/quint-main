@@ -581,6 +581,7 @@ function SingleProductPage() {
       </>
     );
   };
+
   const four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm, updateWidth2 }) => {
     // Define width2
     let width2 = '';
@@ -593,8 +594,12 @@ function SingleProductPage() {
     // Handle input change for width3
     const handleWidth3Change = (event) => {
       const value = event.target.value;
-      width2 = calculateWidth2(); // Update width2 when width3 changes
-      updateWidth2(value); // Assuming updateWidth2 is passed as a prop
+      updateWidth2(value); // Update width2 when width3 changes
+    };
+  
+    // Handle onBlur event for width3
+    const handleWidth3Blur = () => {
+      width2 = calculateWidth2(); // Calculate width2 when width3 input loses focus
     };
   
     return (
@@ -653,6 +658,7 @@ function SingleProductPage() {
               id="width3"
               value={width3}
               onChange={handleWidth3Change}
+              onBlur={handleWidth3Blur} // Update width2 when width3 loses focus
               disabled={fixedDistribution !== "Manual"}
             />
           </div>
@@ -661,7 +667,6 @@ function SingleProductPage() {
     );
   };
   
-
   const five = () => {
     // Assuming 'product?.acf?.glass_layers' is the correct path to the glass layers data
     const glassLayers = product?.acf?.glass_layers || [];
