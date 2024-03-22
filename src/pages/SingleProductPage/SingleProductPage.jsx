@@ -581,7 +581,7 @@ function SingleProductPage() {
     );
   };
 
-  const Four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm }) => {
+  const four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm }) => {
     return (
       <div>
         <div
@@ -635,7 +635,7 @@ function SingleProductPage() {
               id="width2"
               value={widthInCm - (width1 - width3)}
               onChange={() => {}} // No change needed for onChange as it's disabled
-              disabled
+              readOnly
             />
           </div>
   
