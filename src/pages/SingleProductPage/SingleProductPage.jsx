@@ -583,22 +583,21 @@ function SingleProductPage() {
   };
   {
     
-    const four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm }) => {
-      // Function to calculate width2
-      const calculateWidth2 = (newWidth3) => {
-        return widthInCm - parseInt(width1) - parseInt(newWidth3);
+    const four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm, updateWidth2 }) => {
+      // Define width2
+      let width2 = '';
+    
+      // Calculate width2
+      const calculateWidth2 = () => {
+        return widthInCm - (parseInt(width1) + parseInt(width3));
       };
     
-      // Function to handle change in width3
+      // Handle input change for width3
       const handleWidth3Change = (event) => {
-        const newWidth3 = event.target.value;
-        const newWidth2 = calculateWidth2(newWidth3);
-        // Assuming updateWidth2 is passed as a prop
-        updateWidth2(newWidth2); // Update width2 directly
+        const value = event.target.value;
+        width2 = calculateWidth2(); // Update width2 when width3 changes
+        updateWidth2(value); // Assuming updateWidth2 is passed as a prop
       };
-    
-      // Initial calculation of width2
-      const initialWidth2 = calculateWidth2(width3);
     
       return (
         <div>
@@ -641,7 +640,7 @@ function SingleProductPage() {
               <input
                 type="number"
                 id="width2"
-                value={initialWidth2}
+                value={calculateWidth2()}
                 readOnly // Make the input read-only
               />
             </div>
@@ -655,7 +654,7 @@ function SingleProductPage() {
                 type="number"
                 id="width3"
                 value={width3}
-                onChange={handleWidth3Change} // Update width2 when width3 changes
+                onChange={handleWidth3Change}
                 disabled={fixedDistribution !== "Manual"}
               />
             </div>
