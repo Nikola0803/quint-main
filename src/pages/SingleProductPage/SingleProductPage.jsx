@@ -581,7 +581,12 @@ function SingleProductPage() {
     );
   };
 
-  const four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm }) => {
+  const four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm, updateWidth2 }) => {
+    // Calculate width2
+    const calculateWidth2 = () => {
+      return widthInCm - (width1 - width3);
+    };
+  
     return (
       <div>
         <div
@@ -623,21 +628,20 @@ function SingleProductPage() {
           </div>
   
           <div className="option">
-            <label htmlFor="width2" className="left-widths">
-              Width of fixed glass in section 2 (in mm):
-              <span>
-                <br />
-                (Calculated automatically)
-              </span>
-            </label>
-            <input
-              type="number"
-              id="width2"
-              value={widthInCm - (width1 - width3)}
-              onChange={() => {}} // No change needed for onChange as it's disabled
-              readOnly
-            />
-          </div>
+  <label htmlFor="width2" className="left-widths">
+    Width of fixed glass in section 2 (in mm):
+    <span>
+      <br />
+      (Calculated automatically)
+    </span>
+  </label>
+  <input
+    type="number"
+    id="width2"
+    value={calculateWidth2()}
+    readOnly
+  />
+</div>
   
           <div className="option">
             <label htmlFor="width3" className="left-widths">
@@ -659,6 +663,7 @@ function SingleProductPage() {
       </div>
     );
   };
+  
 
   const five = () => {
     // Assuming 'product?.acf?.glass_layers' is the correct path to the glass layers data
