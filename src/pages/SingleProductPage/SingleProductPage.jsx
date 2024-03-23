@@ -204,7 +204,6 @@ function SingleProductPage() {
   const colorPrice = selectedColor
     ? Number(selectedColor["color_price_in_percent"] || 0)
     : 0;
-  const price_per_sqm = widthInCm * heightInCm;;
   const profilePrice = Number(selectedProfile?.profile_price ?? 0) / 100;
   const pricePerCm = profilePrice;
   const glassLayerPrice = Number(selectedGlassLayers?.price_per_sqm ?? 0);
