@@ -1,12 +1,7 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, width2, width3, errorStringWidth }) => {
   const canvasRef = useRef(null);
-  const manualWidth1Ref = useRef(null);
-  const manualWidth2Ref = useRef(null);
-  const manualWidth3Ref = useRef(null);
-  const [scaledWidths, setScaledWidths] = useState([width / 3, width / 3, width / 3]);
-
   const canvasWidth = 700; // Width of the canvas frame
   const canvasHeight = 500; // Height of the canvas frame
   const borderWidth = 1; // Width of the border
@@ -21,12 +16,13 @@ const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, widt
       // Function to calculate the widths of the rectangles based on fixed distribution
       const calculateRectWidths = () => {
         if (fixedDistribution === '1:1:1') {
-          return [scaledWidths[0], scaledWidths[1], scaledWidths[2]];
+          return [width / 3, width / 3, width / 3];
         } else if (fixedDistribution === '1:2:1') {
-          const middleWidth = (scaledWidths[0] + scaledWidths[2]) / 2; // Adjusted the middle width to be larger
-          return [scaledWidths[0], middleWidth, scaledWidths[2]];
+          const middleWidth = (width * 3) / 7; // Adjusted the middle width to be larger
+          const sideWidth = (width - middleWidth) / 2;
+          return [sideWidth, middleWidth, sideWidth];
         } else if (fixedDistribution === 'Manual') {
-          return scaledWidths;
+          return [parseInt(width1), parseInt(width2), parseInt(width3)];
         } else {
           // Handle unexpected fixedDistribution values
           console.error('Unexpected fixedDistribution value:', fixedDistribution);
@@ -42,7 +38,7 @@ const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, widt
       };
 
       // Calculate the width and height of the outer shape
-      const outerRectWidth = scaledWidths.reduce((acc, cur) => acc + cur, 2 * spacing + 2 * borderWidth + 20);
+      const outerRectWidth = width + 2 * spacing + 2 * borderWidth + 20; // Add 20 pixels for the additional space
       const outerRectHeight = height + 2 * spacing + 2 * borderWidth;
 
       // Draw outer lines of the rectangle shape
@@ -74,38 +70,15 @@ const TrippleCanvasComponent = ({ width, height, fixedDistribution, width1, widt
       // Draw empty canvas with border if there's an error
       context.strokeRect(0, 0, canvasWidth, canvasHeight);
     }
-  }, [width, height, fixedDistribution, scaledWidths, errorStringWidth]);
-
-  // Update scaled widths when manual inputs change
-  useEffect(() => {
-    setScaledWidths([
-      parseInt(manualWidth1Ref.current.value) * 10,
-      parseInt(manualWidth2Ref.current.value) * 10,
-      parseInt(manualWidth3Ref.current.value) * 10
-    ]);
-  }, [manualWidth1Ref.current.value, manualWidth2Ref.current.value, manualWidth3Ref.current.value]);
+  }, [width, height, fixedDistribution, width1, width2, width3, errorStringWidth]);
 
   return (
-    <div>
-      <div>
-        <label>Width 1 (cm): </label>
-        <input ref={manualWidth1Ref} type="number" defaultValue={width1} />
-      </div>
-      <div>
-        <label>Width 2 (cm): </label>
-        <input ref={manualWidth2Ref} type="number" defaultValue={width2} />
-      </div>
-      <div>
-        <label>Width 3 (cm): </label>
-        <input ref={manualWidth3Ref} type="number" defaultValue={width3} />
-      </div>
-      <canvas
-        ref={canvasRef}
-        width={canvasWidth}
-        height={canvasHeight}
-        style={{ border: '1px solid black' }}
-      />
-    </div>
+    <canvas
+      ref={canvasRef}
+      width={canvasWidth}
+      height={canvasHeight}
+      style={{ border: '1px solid black' }}
+    />
   );
 };
 
