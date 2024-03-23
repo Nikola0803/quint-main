@@ -199,11 +199,13 @@ function SingleProductPage() {
   // const totalLengthInCmVerticalBottom = ((2 * heightInCm) + (widthInCm * 3 ) + (2 * windowHeight));
   // const totalLengthInCmVerticalTop = ((2 * heightInCm) + (widthInCm * 5 ) + (2 * windowHeight));
 
+  const totalLengthInCm = (8 * heightInCm) + (widthInCm * 2) + (2 * width1) + (2 * width3) + (2 * width2);
 
   // Assuming selectedColor.color_price is a string, convert it to number
   const colorPrice = selectedColor
     ? Number(selectedColor["color_price_in_percent"] || 0)
     : 0;
+  const price_per_sqm = heightInCm * widthInCm;
   const profilePrice = Number(selectedProfile?.profile_price ?? 0) / 100;
   const pricePerCm = profilePrice;
   const glassLayerPrice = Number(selectedGlassLayers?.price_per_sqm ?? 0);
@@ -219,8 +221,6 @@ function SingleProductPage() {
   const colorFrontSide = totalPriceBeforeVAT * (colorPrice/100); // aadded /100 to calculate 10% for example
   const colorBackSide = totalPriceBeforeVAT * (colorPrice/100); // aadded /100 to calculate 10% for example
   const colorBothSides = colorFrontSide + colorBackSide;
-
-  const totalLengthInCm = (8 * heightInCm) + (widthInCm * 2) + (2 * width1) + (2 * width3) + (2 * width2);
 
   const VAT_RATE = 0.21; // 21%
   const vat = totalPriceBeforeVAT * VAT_RATE;
