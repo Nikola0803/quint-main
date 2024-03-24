@@ -15,12 +15,17 @@
 
 .color-options-container{
   display:flex;
-  flex-direction:row;
+  flex-direction:column;
 }
 
 .color-options-container-main{
   display:flex;
   flex-direction:column;
+}
+
+.color-options-inner{
+  display:flex;
+  flex-direction:row;
 }
 
 .left-widths{

@@ -441,7 +441,7 @@ function SingleProductPage() {
         {caseColorOptions.length > 0 && (
           <div className="color-options-container">
             <h5>Case Color</h5>
-            <div className="">
+            <div className="color-options-inner">
               {caseColorOptions.map((colorOption, index) => (
                 <div
                   key={index}
@@ -470,6 +470,7 @@ function SingleProductPage() {
         {windowColorOptions.length > 0 && (
           <div className="color-options-container">
             <h5>Window Color</h5>
+            <div className="color-options-inner">
             {windowColorOptions.map((colorOption, index) => (
               <div
                 key={index}
@@ -491,12 +492,14 @@ function SingleProductPage() {
                 </div>
               </div>
             ))}
+            </div>
           </div>
         )}
 
         {caseColorInsideOptions.length > 0 && (
           <div className="color-options-container">
             <h5>Case Color Inside</h5>
+            <div className="color-options-inner">
             {caseColorInsideOptions.map((colorOption, index) => (
               <div
                 key={index}
@@ -519,11 +522,13 @@ function SingleProductPage() {
               </div>
             ))}
           </div>
+          </div>
         )}
 
         {windowColorInsideOptions.length > 0 && (
           <div className="color-options-container">
             <h5>Window Color Inside</h5>
+            <div className="color-options-inner">
             {windowColorInsideOptions.map((colorOption, index) => (
               <div
                 key={index}
@@ -545,6 +550,7 @@ function SingleProductPage() {
                 </div>
               </div>
             ))}
+          </div>
           </div>
         )}
         </div>
