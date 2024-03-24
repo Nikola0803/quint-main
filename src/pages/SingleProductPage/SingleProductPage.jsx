@@ -453,7 +453,7 @@ function SingleProductPage() {
                   onClick={() => setSelectedColor(colorOption)} // Add the onClick event handler here
                 >
                   <img
-                    src={colorOption.color_image?.url}
+                    src={colorOption.color_image?.url || "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png"}
                     alt={colorOption.color_name}
                     onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")}
                     />
@@ -481,7 +481,7 @@ function SingleProductPage() {
                 onClick={() => setSelectedColor(colorOption)} // Add the onClick event handler here
               >
                 <img
-                  src={colorOption.color_image?.url}
+                  src={colorOption.color_image?.url || "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png"}
                   alt={colorOption.color_name}
                   onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")}
                   />
@@ -508,7 +508,7 @@ function SingleProductPage() {
                 onClick={() => setSelectedColor(colorOption)} // Add the onClick event handler here
               >
                 <img
-                  src={colorOption.color_image?.url}
+                  src={colorOption.color_image?.url || "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png"}
                   alt={colorOption.color_name}
                   onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")}
                 />
@@ -535,7 +535,7 @@ function SingleProductPage() {
                 onClick={() => setSelectedColor(colorOption)} // Add the onClick event handler here
               >
                 <img
-                  src={colorOption.color_image?.url}
+                  src={colorOption.color_image?.url || "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png"}
                   alt={colorOption.color_name}
                   onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")}
                 />
@@ -567,7 +567,7 @@ function SingleProductPage() {
               onClick={() => setSelectedProfile(profile)}
             >
               <img
-                src={profile?.profile_image?.url || ""}
+                src={profile?.profile_image?.url || "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png"}
                 alt={profile?.profile_name || "Profile Image"}
                 onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")} // Replace '' with actual path
               />
@@ -665,7 +665,7 @@ function SingleProductPage() {
             onClick={() => setSelectedGlassLayers(glassLayer)}
           >
             <img
-              src={glassLayer.glass_image?.url || ""}
+              src={glassLayer.glass_image?.url || "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png"}
               alt={`Glass layer ${index + 1}`}
               onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")} // Provide a fallback image path
             />
@@ -720,7 +720,7 @@ function SingleProductPage() {
             onClick={() => setSelectedHandles(handle)}
           >
             <img
-              src={handle.image_of_handle?.url || ""}
+              src={handle.image_of_handle?.url || "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png"}
               alt={handle.name_of_handle}
               onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")}
             />
