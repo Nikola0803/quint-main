@@ -631,6 +631,7 @@ function SingleProductPage() {
               type="number"
               id="width2"
               value={width2}
+              onChange={(event) => setWidth2(event.target.value)}
               readOnly // Make the input read-only
               disabled={fixedDistribution !== "Manual"}
             />
