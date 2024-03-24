@@ -437,6 +437,7 @@ function SingleProductPage() {
 
     return (
       <>
+      <div className="color-options-container-main">
         {caseColorOptions.length > 0 && (
           <div className="color-options-container">
             <h5>Case Color</h5>
@@ -537,11 +538,6 @@ function SingleProductPage() {
                   src={colorOption.color_image?.url}
                   alt={colorOption.color_name}
                   onError={(e) => (e.target.src = "")}
-                  style={{
-                    width: "50px",
-                    height: "50px",
-                    marginRight: "10px",
-                  }}
                 />
                 <div>
                   <p>{colorOption.color_name}</p>
@@ -551,6 +547,7 @@ function SingleProductPage() {
             ))}
           </div>
         )}
+        </div>
       </>
     );
   };
