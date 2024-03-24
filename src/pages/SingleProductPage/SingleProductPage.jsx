@@ -455,7 +455,7 @@ function SingleProductPage() {
                   <img
                     src={colorOption.color_image?.url}
                     alt={colorOption.color_name}
-                    onError={(e) => (e.target.src = "")}
+                    onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")}
                     />
                   <div>
                     <p>{colorOption.color_name}</p>
@@ -483,7 +483,7 @@ function SingleProductPage() {
                 <img
                   src={colorOption.color_image?.url}
                   alt={colorOption.color_name}
-                  onError={(e) => (e.target.src = "")}
+                  onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")}
                   />
                 <div>
                   <p>{colorOption.color_name}</p>
@@ -510,7 +510,7 @@ function SingleProductPage() {
                 <img
                   src={colorOption.color_image?.url}
                   alt={colorOption.color_name}
-                  onError={(e) => (e.target.src = "")}
+                  onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")}
                 />
                 <div>
                   <p>{colorOption.color_name}</p>
@@ -537,7 +537,7 @@ function SingleProductPage() {
                 <img
                   src={colorOption.color_image?.url}
                   alt={colorOption.color_name}
-                  onError={(e) => (e.target.src = "")}
+                  onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")}
                 />
                 <div>
                   <p>{colorOption.color_name}</p>
@@ -569,7 +569,7 @@ function SingleProductPage() {
               <img
                 src={profile?.profile_image?.url || ""}
                 alt={profile?.profile_name || "Profile Image"}
-                onError={(e) => (e.target.src = "")} // Replace '' with actual path
+                onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")} // Replace '' with actual path
               />
               <div>
                 <p>{profile?.profile_name}</p>
@@ -667,7 +667,7 @@ function SingleProductPage() {
             <img
               src={glassLayer.glass_image?.url || ""}
               alt={`Glass layer ${index + 1}`}
-              onError={(e) => (e.target.src = "")} // Provide a fallback image path
+              onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")} // Provide a fallback image path
             />
             <div>
               <p>{glassLayer.glass_type}</p>
@@ -722,7 +722,7 @@ function SingleProductPage() {
             <img
               src={handle.image_of_handle?.url || ""}
               alt={handle.name_of_handle}
-              onError={(e) => (e.target.src = "")}
+              onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")}
             />
             <div>
               <p>{handle.name_of_handle}</p>
@@ -755,7 +755,7 @@ function SingleProductPage() {
             <img
               src={grid.image_of_ventilation_grid?.url || ""}
               alt={`Ventilation Grid ${index + 1}`}
-              onError={(e) => (e.target.src = "")}
+              onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")}
             />
             <div>
               <p>{`Ventilation Grid ${index + 1}`}</p>
