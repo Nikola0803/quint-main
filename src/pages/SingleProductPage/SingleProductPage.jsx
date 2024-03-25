@@ -205,12 +205,12 @@ function SingleProductPage() {
   const colorPrice = selectedColor
     ? Number(selectedColor["color_price_in_percent"] || 0)
     : 0;
+  const price_per_sqm = heightInCm * widthInCm;
   const pricePerCm = profilePrice;
   const profilePrice = Number(selectedProfile?.profile_price ?? 0) / 100;
   const glassLayerPrice = Number(selectedGlassLayers?.price_per_sqm ?? 0);
   const handlePrice = Number(selectedHandles?.price_of_handle ?? 0);
   const gridPrice = Number(selectedGrids?.price_of_ventilation_grid ?? 0);
-  const price_per_sqm = heightInCm * widthInCm;
   // const securityPrice =  Number(selectedSecurity?.price_of_extra_security ?? 0);
   // const calc = glassLayerPrice + handlePrice + gridPrice + securityPrice;
   const calc = glassLayerPrice + handlePrice + gridPrice;
