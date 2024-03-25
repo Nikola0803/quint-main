@@ -1328,7 +1328,7 @@ function SingleProductPage() {
                         <p>
                           €
                           {selectedProfile
-                            ? selectedProfile?.profile_price
+                            ? selectedProfile?.profilePrice
                             : "0"}
                         </p>
                       </div>
