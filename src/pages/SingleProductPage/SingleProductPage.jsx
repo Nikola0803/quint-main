@@ -1266,7 +1266,7 @@ function SingleProductPage() {
                       <h3>€{totalPriceBeforeVAT.toFixed(2)}</h3>
                     </div>
                     {/* Displaying the input values and calculated price for dimensions */}
-                    <div className="single-product-page__customize__right__product__body__option">
+                    {/* <div className="single-product-page__customize__right__product__body__option">
                       <div className="single-product-page__customize__right__product__body__option__top">
                         <span>1</span>
                         <p>
@@ -1285,7 +1285,7 @@ function SingleProductPage() {
                           €{selectedColor ? totalLengthInCm.toFixed(2) : "0"}
                         </p>
                       </div>
-                    </div>
+                    </div> */}
 
                     {/* Displaying the selected color option and its price */}
                     <div className="single-product-page__customize__right__product__body__option">
