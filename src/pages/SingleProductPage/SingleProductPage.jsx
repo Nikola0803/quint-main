@@ -250,7 +250,7 @@ const windowColorInsidePrice = selectedWindowColorInside
   const colorWindow = totalPriceBeforeVAT * (windowColorPrice/100); // aadded /100 to calculate 10% for example
   const colorCaseInsidenside = totalPriceBeforeVAT * (caseColorInsidePrice/100); // aadded /100 to calculate 10% for example
   const colorWindowInside = totalPriceBeforeVAT * (windowColorInsidePrice/100); // aadded /100 to calculate 10% for example
-  const colorBothSides = colorCase + colorWindow + colorCaseInsidenside + colorWindowInside;
+  const colorAllSides = colorCase + colorWindow + colorCaseInsidenside + colorWindowInside;
 
   const VAT_RATE = 0.21; // 21%
   const vat = totalPriceBeforeVAT * VAT_RATE;
@@ -725,6 +725,7 @@ const windowColorInsidePrice = selectedWindowColorInside
     );
   };
   
+
   const five = () => {
    
     // Check if product exists and has color data
@@ -791,9 +792,9 @@ const windowColorInsidePrice = selectedWindowColorInside
                         {/* Display White color option */}
                         <div
                             className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                                selectedCaseColor === 'White' ? 'selected' : ''
+                                selectedColor === 'White' ? 'selected' : ''
                             }`}
-                            onClick={() => handleColorOptionClick('White', setSelectedCaseColor)}
+                            onClick={() => handleColorOptionClick('White', setSelectedColor)}
                         >
                             {/* Placeholder for White color option content */}
                         </div>
@@ -1584,19 +1585,19 @@ const windowColorInsidePrice = selectedWindowColorInside
                       <div className="single-product-page__customize__right__product__body__option__top">
                         <span>4</span>
                         <p>
-                          {selectedCaseColor
-                            ? `Color: ${selectedCaseColor.color_name}`
+                          {selectedColor
+                            ? `Color: ${selectedColor.color_name}`
                             : "Option name"}
                         </p>
                       </div>
                       <div className="single-product-page__customize__right__product__body__option__mid">
                       <p>
-                        {selectedCaseColor
-                            ? `Selected Color: ${selectedCaseColor.color_name}`
+                        {selectedColor
+                            ? `Selected Color: ${selectedColor.color_name}`
                             : "Selected option"}
                     </p>
                     <p>
-                        €{selectedCaseColor ? caseColorPrice.toFixed(2) : "0"}
+                        €{selectedColor ? colorAllSides.toFixed(2) : "0"}
                     </p>
                       </div>
                     </div>
