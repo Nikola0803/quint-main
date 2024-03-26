@@ -813,10 +813,6 @@ const windowColorInsidePrice = selectedWindowColorInside
     {caseColorOptions.map((colorOption, index) => {
     // Convert color price from string to number
     const priceInPercent = parseFloat(colorOption.color_price_in_percent || 0);
-
-    console.log('Color Option:', colorOption);
-    console.log('Price in Percent:', priceInPercent);
-
     return (
         <div
             key={index}
@@ -833,7 +829,7 @@ const windowColorInsidePrice = selectedWindowColorInside
             <div>
                 <p>{colorOption.color_name}</p>
                 {/* Display the color price */}
-                <p>€{priceInPercent || 'N/A'}</p>
+                <p>€{parseFloat(priceInPercent) || 'N/A'}</p>
             </div>
         </div>
     );
