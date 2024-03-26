@@ -725,37 +725,6 @@ const windowColorInsidePrice = selectedWindowColorInside
     );
   };
   
-  // const five = () => {
-  //   // Assuming 'product?.acf?.glass_layers' is the correct path to the glass layers data
-  //   const glassLayers = product?.acf?.glass_layers || [];
-
-  //   return (
-  //     <>
-  //       {glassLayers.map((glassLayer, index) => (
-  //         <div
-  //           key={index}
-  //           className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-  //             selectedGlassLayers?.price_per_sqm === glassLayer.price_per_sqm
-  //               ? "selected"
-  //               : ""
-  //           }`}
-  //           onClick={() => setSelectedGlassLayers(glassLayer)}
-  //         >
-  //           <img
-  //             src={glassLayer.glass_image?.url || "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png"}
-  //             alt={`Glass layer ${index + 1}`}
-  //             onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")} // Provide a fallback image path
-  //           />
-  //           <div>
-  //             <p>{glassLayer.glass_type}</p>
-  //             <p>€{glassLayer.price_per_sqm || "N/A"}</p>
-  //           </div>
-  //         </div>
-  //       ))}
-  //     </>
-  //   );
-  // };
-
   const five = () => {
    
     // Check if product exists and has color data
@@ -824,7 +793,7 @@ const windowColorInsidePrice = selectedWindowColorInside
                             className={`single-product-page__customize__left__option-holder__option__body__color-option ${
                                 selectedCaseColor === 'White' ? 'selected' : ''
                             }`}
-                            onClick={() => handleCaseColorInsideOptionClick('White', setSelectedCaseColor)}
+                            onClick={() => handleColorOptionClick('White', setSelectedCaseColor)}
                         >
                             {/* Placeholder for White color option content */}
                         </div>
@@ -896,7 +865,7 @@ const windowColorInsidePrice = selectedWindowColorInside
                 className={`single-product-page__customize__left__option-holder__option__body__color-option ${
                     selectedCaseColorInside === colorOption.color_name ? 'selected' : ''
                 }`}
-                onClick={() => handleColorOptionClick(colorOption.color_name, setSelectedCaseColorInside)}
+                onClick={() => handleCaseColorInsideOptionClick(colorOption.color_name, setSelectedCaseColorInside)}
             >
                 <img
                     src={colorOption.color_image?.url || 'https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png'}
@@ -1627,7 +1596,7 @@ const windowColorInsidePrice = selectedWindowColorInside
                             : "Selected option"}
                     </p>
                     <p>
-                        €{selectedColor ? caseColorPrice.toFixed(2) : "0"}
+                    {selectedGlassLayers ? glassLayerPrice.toFixed(2) : "0"}
                     </p>
                       </div>
                     </div>
