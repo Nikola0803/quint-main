@@ -1529,6 +1529,24 @@ function SingleProductPage() {
                       <div className="single-product-page__customize__right__product__body__option__top">
                         <span>3</span>
                         <p>
+                          {selectedHandles
+                            ? `Handle: ${selectedHandles?.name_of_handle}`
+                            : "Option name"}
+                        </p>
+                      </div>
+                      <div className="single-product-page__customize__right__product__body__option__mid">
+                        <p>
+                          {selectedHandles
+                            ? `Selected Handle: ${selectedHandles?.name_of_handle}`
+                            : "Selected option"}
+                        </p>
+                        <p>Included</p>
+                      </div>
+                    </div>
+                    <div className="single-product-page__customize__right__product__body__option">
+                      <div className="single-product-page__customize__right__product__body__option__top">
+                        <span>4</span>
+                        <p>
                           {selectedColor
                             ? `Color: ${selectedColor.color_name}`
                             : "Option name"}
@@ -1546,24 +1564,7 @@ function SingleProductPage() {
                         </p>
                       </div>
                     </div>
-                    <div className="single-product-page__customize__right__product__body__option">
-                      <div className="single-product-page__customize__right__product__body__option__top">
-                        <span>4</span>
-                        <p>
-                          {selectedHandles
-                            ? `Handle: ${selectedHandles?.name_of_handle}`
-                            : "Option name"}
-                        </p>
-                      </div>
-                      <div className="single-product-page__customize__right__product__body__option__mid">
-                        <p>
-                          {selectedHandles
-                            ? `Selected Handle: ${selectedHandles?.name_of_handle}`
-                            : "Selected option"}
-                        </p>
-                        <p>Included</p>
-                      </div>
-                    </div>
+
                     <div className="single-product-page__customize__right__product__body__option">
                       <div className="single-product-page__customize__right__product__body__option__top">
                         <span>5</span>
