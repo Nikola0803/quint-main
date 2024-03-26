@@ -186,7 +186,7 @@ function SingleProductPage() {
   // const totalLengthInCmVerticalBottom = ((2 * heightInCm) + (widthInCm * 3 ) + (2 * windowHeight));
   // const totalLengthInCmVerticalTop = ((2 * heightInCm) + (widthInCm * 5 ) + (2 * windowHeight));
 
-  const totalLengthInCm = (8 * heightInCm) + (widthInCm * 2) + (2 * width1) + (2 * width3) + (2 * width2);
+  const totalLengthInCm = (8 * heightInCm) + (widthInCm * 2) + ((2 * width1) + (2 * width3)/10);
 
   // Assuming selectedColor.color_price is a string, convert it to number
   const colorPrice = selectedColor
@@ -223,7 +223,7 @@ const windowColorInsidePrice = selectedWindowColorInside
   // const securityPrice =  Number(selectedSecurity?.price_of_extra_security ?? 0);
   // const calc = glassLayerPrice + handlePrice + gridPrice + securityPrice;
   const calc = glassLayerPrice + handlePrice + gridPrice;
-  const gridNewPrice = gridPrice * totalLengthInCm;
+  const gridNewPrice = gridPrice * widthInCm;
   const dimensionPrice = totalLengthInCm * pricePerCm;
   // const totalPriceBeforeVAT = dimensionPrice + (dimensionPrice/colorPrice) + calc;
   const totalPriceBeforeVAT = dimensionPrice + calc;
