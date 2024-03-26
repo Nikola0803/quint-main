@@ -782,12 +782,10 @@ const windowColorInsidePrice = selectedWindowColorInside
         return <p>No color data available</p>;
     }
 
-    const handleColorOptionClick = (colorOption, setSelectedColor, setColorPrice) => {
-      setSelectedColor(colorOption);
-      const price = colorOption ? Number(colorOption["color_price_in_percent"]) : 0;
-      setColorPrice(price);
-  };
-  
+    // Function to handle color option click for each row
+    const handleColorOptionClick = (colorOption, setSelectedColor) => {
+        setSelectedColor(colorOption);
+    };
 
     const handleCaseColorOptionClick = (colorOption) => {
       setSelectedCaseColor(colorOption);
@@ -831,13 +829,13 @@ const windowColorInsidePrice = selectedWindowColorInside
     <div className="color-options-inner">
         {/* Display case color options */}
         {caseColorOptions.map((colorOption, index) => (
-    <div
-        key={index}
-        className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-            selectedCaseColor === colorOption.color_name ? 'selected' : ''
-        }`}
-        onClick={() => handleColorOptionClick(colorOption, setSelectedCaseColor, setCaseColorPrice)}
-    >
+            <div
+                key={index}
+                className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+                    selectedCaseColor === colorOption.color_name ? 'selected' : ''
+                }`}
+                onClick={() => handleColorOptionClick(colorOption.color_name, setSelectedCaseColor)}
+            >
                 <img
                     src={colorOption.color_image?.url || 'https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png'}
                     alt={colorOption.color_name}
@@ -933,6 +931,7 @@ const windowColorInsidePrice = selectedWindowColorInside
     </div>
 </div>
 </div>
+
             </>
         );
     };
@@ -1605,25 +1604,26 @@ const windowColorInsidePrice = selectedWindowColorInside
                       </div>
                     </div>
                     <div className="single-product-page__customize__right__product__body__option">
-  <div className="single-product-page__customize__right__product__body__option__top">
-    <span>4</span>
-    <p>
-      {selectedColor
-        ? `Color: ${selectedColor.color_name}`
-        : "Option name"}
-    </p>
-  </div>
-  <div className="single-product-page__customize__right__product__body__option__mid">
-    <p>
-      {selectedColor
-        ? `Selected Color: ${selectedColor.color_name}`
-        : "Selected option"}
-    </p>
-    <p>
-      €{selectedColor ? caseColorPrice.toFixed(2) : "0"}
-    </p>
-  </div>
-</div>
+                      <div className="single-product-page__customize__right__product__body__option__top">
+                        <span>4</span>
+                        <p>
+                          {selectedColor
+                            ? `Color: ${selectedColor.color_name}`
+                            : "Option name"}
+                        </p>
+                      </div>
+                      <div className="single-product-page__customize__right__product__body__option__mid">
+                        <p>
+                          {selectedColor
+                            ? `Selected Color: ${selectedColor.color_name}`
+                            : "Selected option"}
+                        </p>
+                        <p>
+                        €
+                          {selectedColor ? colorCase.toFixed(2) : "0"}
+                        </p>
+                      </div>
+                    </div>
 
                     <div className="single-product-page__customize__right__product__body__option">
                       <div className="single-product-page__customize__right__product__body__option__top">
