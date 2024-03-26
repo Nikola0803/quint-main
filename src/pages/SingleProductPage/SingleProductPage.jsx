@@ -659,20 +659,19 @@ const windowColorInsidePrice = selectedWindowColorInside
   };
 
   const four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm }) => {
-    // Calculate width2 based on fixed distribution
-    const calculateWidth2 = () => {
-      if (fixedDistribution === "1:1:1") {
-        return (parseInt(widthInCm) - (parseInt(width1) + parseInt(width3))) / 2 / 10;
-      } else if (fixedDistribution === "1:2:1") {
-        return (parseInt(widthInCm) - (parseInt(width1) + parseInt(width3)) * 2 / 3) / 2 / 10;
-      }
-      return ''; // For "Manual" distribution
-    };
-  
-    // Calculate width values for "1:1:1" and "1:2:1" distributions
-    const width1Value = fixedDistribution === "1:1:1" || fixedDistribution === "1:2:1" ? width1 : '';
-    const width3Value = fixedDistribution === "1:1:1" || fixedDistribution === "1:2:1" ? width3 : '';
-    const width2Value = fixedDistribution === "1:1:1" || fixedDistribution === "1:2:1" ? calculateWidth2() : '';
+    let width1Calculated, width2Calculated, width3Calculated;
+    
+    if (fixedDistribution === "1:1:1") {
+      // Calculate widths for 1:1:1 distribution
+      width1Calculated = widthInCm / 3;
+      width2Calculated = widthInCm / 3;
+      width3Calculated = widthInCm / 3;
+    } else if (fixedDistribution === "1:2:1") {
+      // Calculate widths for 1:2:1 distribution
+      width1Calculated = widthInCm / 4;
+      width2Calculated = widthInCm / 2;
+      width3Calculated = widthInCm / 4;
+    }
   
     return (
       <div>
@@ -701,7 +700,7 @@ const windowColorInsidePrice = selectedWindowColorInside
             <input
               type="number"
               id="width1"
-              value={width1Value}
+              value={width1Calculated !== undefined ? width1Calculated : width1}
               onChange={(event) => setWidth1(event.target.value)}
               disabled={fixedDistribution !== "Manual"}
             />
@@ -715,7 +714,7 @@ const windowColorInsidePrice = selectedWindowColorInside
             <input
               type="number"
               id="width3"
-              value={width3Value}
+              value={width3Calculated !== undefined ? width3Calculated : width3}
               onChange={(event) => setWidth3(event.target.value)}
               disabled={fixedDistribution !== "Manual"}
             />
@@ -729,7 +728,7 @@ const windowColorInsidePrice = selectedWindowColorInside
             <input
               type="number"
               id="width2"
-              value={(parseInt(widthInCm) - (parseInt(width1) + parseInt(width3))) / 10}
+              value={width2Calculated}
               readOnly
               disabled={fixedDistribution !== "Manual"}
             />
