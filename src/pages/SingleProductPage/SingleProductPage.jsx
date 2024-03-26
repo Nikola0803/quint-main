@@ -217,26 +217,26 @@ function SingleProductPage() {
   const colorPrice = selectedColor
     ? Number(selectedColor["color_price_in_percent"] || 0)
     : 0;
-// Convert color price to number for selected case color
-const caseColorPrice = selectedCaseColor && selectedCaseColor["color_price_in_percent"]
-    ? Number(selectedCaseColor["color_price_in_percent"])
-    : 0;
 
-// Convert color price to number for selected window color
-const windowColorPrice = selectedWindowColor && selectedWindowColor["color_price_in_percent"]
-    ? Number(selectedWindowColor["color_price_in_percent"])
-    : 0;
+  // Update color price to number for selected case color
+const updatedCaseColorPrice = selectedCaseColor && selectedCaseColor["color_price_in_percent"]
+? Number(selectedCaseColor["color_price_in_percent"])
+: 0;
 
-// Convert color price to number for selected case color inside
-const caseColorInsidePrice = selectedCaseColorInside && selectedCaseColorInside["color_price_in_percent"]
-    ? Number(selectedCaseColorInside["color_price_in_percent"])
-    : 0;
+// Update color price to number for selected window color
+const updatedWindowColorPrice = selectedWindowColor && selectedWindowColor["color_price_in_percent"]
+? Number(selectedWindowColor["color_price_in_percent"])
+: 0;
 
-// Convert color price to number for selected window color inside
-const windowColorInsidePrice = selectedWindowColorInside && selectedWindowColorInside["color_price_in_percent"]
-    ? Number(selectedWindowColorInside["color_price_in_percent"])
-    : 0;
+// Update color price to number for selected case color inside
+const updatedCaseColorInsidePrice = selectedCaseColorInside && selectedCaseColorInside["color_price_in_percent"]
+? Number(selectedCaseColorInside["color_price_in_percent"])
+: 0;
 
+// Update color price to number for selected window color inside
+const updatedWindowColorInsidePrice = selectedWindowColorInside && selectedWindowColorInside["color_price_in_percent"]
+? Number(selectedWindowColorInside["color_price_in_percent"])
+: 0;
 
   const price_per_sqm = (heightInCm * widthInCm) / 10000;
   const profilePrice = Number(selectedProfile?.profile_price ?? 0) / 100;
