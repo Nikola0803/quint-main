@@ -559,7 +559,36 @@ function SingleProductPage() {
   // };
 
   const two = () => {
-   // Assuming 'product?.acf?.glass_layers' is the correct path to the glass layers data
+    return (
+      <>
+        {product?.acf?.profile &&
+          product?.acf?.profile.map((profile, index) => (
+            <div
+              key={index}
+              className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+                selectedProfile?.profile_name === profile?.profile_name
+                  ? "selected"
+                  : ""
+              }`}
+              onClick={() => setSelectedProfile(profile)}
+            >
+              <img
+                src={profile?.profile_image?.url || "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png"}
+                alt={profile?.profile_name || "Profile Image"}
+                onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")} // Replace '' with actual path
+              />
+              <div>
+                <p>{profile?.profile_name}</p>
+                <p>{profile?.profile_price || "N/A"}</p>
+              </div>
+            </div>
+          ))}
+      </>
+    );
+  };
+
+  const three = () => {
+       // Assuming 'product?.acf?.glass_layers' is the correct path to the glass layers data
    const glassLayers = product?.acf?.glass_layers || [];
 
    return (
@@ -587,35 +616,6 @@ function SingleProductPage() {
        ))}
      </>
    );
-  };
-
-  const three = () => {
-    return (
-      <>
-        {product?.acf?.profile &&
-          product?.acf?.profile.map((profile, index) => (
-            <div
-              key={index}
-              className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                selectedProfile?.profile_name === profile?.profile_name
-                  ? "selected"
-                  : ""
-              }`}
-              onClick={() => setSelectedProfile(profile)}
-            >
-              <img
-                src={profile?.profile_image?.url || "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png"}
-                alt={profile?.profile_name || "Profile Image"}
-                onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")} // Replace '' with actual path
-              />
-              <div>
-                <p>{profile?.profile_name}</p>
-                <p>{profile?.profile_price || "N/A"}</p>
-              </div>
-            </div>
-          ))}
-      </>
-    );
   };
 
   const four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm }) => {
@@ -1252,7 +1252,7 @@ function SingleProductPage() {
                       stepNumber={2}
                       nextStep={"step3"}
                       map={two}
-                      text={"Choose Color"}
+                      text={"Choose Glass"}
                     />
 
                     <Input
@@ -1391,7 +1391,7 @@ function SingleProductPage() {
                       stepNumber={5}
                       nextStep={"step6"}
                       map={five}
-                      text={"Glass Type"}
+                      text={"Choose Color"}
                     />
 
                     <Input
