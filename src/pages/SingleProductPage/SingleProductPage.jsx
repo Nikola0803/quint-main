@@ -724,6 +724,7 @@ function SingleProductPage() {
   // };
 
   const five = () => {
+   
     // Check if product exists and has color data
     if (
         !product ||
@@ -777,7 +778,7 @@ function SingleProductPage() {
                             }`}
                             onClick={() => handleColorOptionClick('White', setSelectedCaseColor)}
                         >
-                            {/* White color option content */}
+                            {/* Placeholder for White color option content */}
                         </div>
                     </div>
                 </div>
@@ -795,7 +796,7 @@ function SingleProductPage() {
                                 }`}
                                 onClick={() => handleColorOptionClick(colorOption.color_name, setSelectedCaseColor)}
                             >
-                                {/* Display case color option content */}
+                                {/* Placeholder for case color option content */}
                             </div>
                         ))}
                     </div>
@@ -814,7 +815,7 @@ function SingleProductPage() {
                                 }`}
                                 onClick={() => handleColorOptionClick(colorOption.color_name, setSelectedWindowColor)}
                             >
-                                {/* Display window color option content */}
+                                {/* Placeholder for window color option content */}
                             </div>
                         ))}
                     </div>
@@ -833,7 +834,7 @@ function SingleProductPage() {
                                 }`}
                                 onClick={() => handleColorOptionClick(colorOption.color_name, setSelectedCaseColorInside)}
                             >
-                                {/* Display case color inside option content */}
+                                {/* Placeholder for case color inside option content */}
                             </div>
                         ))}
                     </div>
@@ -850,17 +851,27 @@ function SingleProductPage() {
                                 className={`single-product-page__customize__left__option-holder__option__body__color-option ${
                                     selectedWindowColorInside === colorOption.color_name ? 'selected' : ''
                                 }`}
-                                onClick={() => handleColorOptionClick(colorOption.color_name, setSelectedWindowColorInside)}
-                            >
-                                {/* Display window color inside option content */}
-                            </div>
-                        ))}
+                                onClick={() => handleColorOptionClick(colorOption.color_name                                )}
+                                >
+                                    <img
+                                        src={colorOption.color_image?.url || 'https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png'}
+                                        alt={colorOption.color_name}
+                                        onError={(e) => (e.target.src = 'https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png')}
+                                    />
+                                    <div>
+                                        <p>{colorOption.color_name}</p>
+                                        <p>€{colorOption.color_price_in_percent || 'N/A'}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
-            </div>
-        </>
-    );
-};
+            </>
+        );
+    };
+    
+
 
   const six = () => {
     const handles = product?.acf?.handle || [];
