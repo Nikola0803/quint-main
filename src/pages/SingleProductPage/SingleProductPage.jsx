@@ -794,7 +794,7 @@ const windowColorInsidePrice = selectedWindowColorInside
     const handleColorOptionClick = (colorOption) => {
       setSelectedColor(colorOption);
   };
-  
+
   const handleCaseColorOptionClick = (colorOption) => {
     setSelectedCaseColor(colorOption);
   };
@@ -824,7 +824,7 @@ const windowColorInsidePrice = selectedWindowColorInside
                             className={`single-product-page__customize__left__option-holder__option__body__color-option ${
                                 selectedCaseColor === 'White' ? 'selected' : ''
                             }`}
-                            onClick={() => handleColorOptionClick('White', setSelectedCaseColor)}
+                            onClick={() => handleCaseColorInsideOptionClick('White', setSelectedCaseColor)}
                         >
                             {/* Placeholder for White color option content */}
                         </div>
@@ -842,7 +842,7 @@ const windowColorInsidePrice = selectedWindowColorInside
                 className={`single-product-page__customize__left__option-holder__option__body__color-option ${
                     selectedCaseColor === colorOption.color_name ? 'selected' : ''
                 }`}
-                onClick={() => handleColorOptionClick(colorOption.color_name, setSelectedCaseColor)}
+                onClick={() => handleCaseColorOptionClick(colorOption.color_name, setSelectedCaseColor)}
             >
                 <img
                     src={colorOption.color_image?.url || 'https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png'}
@@ -869,7 +869,7 @@ const windowColorInsidePrice = selectedWindowColorInside
                 className={`single-product-page__customize__left__option-holder__option__body__color-option ${
                     selectedWindowColor === colorOption.color_name ? 'selected' : ''
                 }`}
-                onClick={() => handleColorOptionClick(colorOption.color_name, setSelectedWindowColor)}
+                onClick={() => handleWindowColorOptionClick(colorOption.color_name, setSelectedWindowColor)}
             >
                 <img
                     src={colorOption.color_image?.url || 'https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png'}
@@ -923,7 +923,7 @@ const windowColorInsidePrice = selectedWindowColorInside
                 className={`single-product-page__customize__left__option-holder__option__body__color-option ${
                     selectedWindowColorInside === colorOption.color_name ? 'selected' : ''
                 }`}
-                onClick={() => handleColorOptionClick(colorOption.color_name, setSelectedWindowColorInside)}
+                onClick={() => handleWindowColorInsideOptionClick(colorOption.color_name, setSelectedWindowColorInside)}
             >
                 <img
                     src={colorOption.color_image?.url || 'https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png'}
