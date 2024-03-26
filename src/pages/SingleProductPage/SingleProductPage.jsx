@@ -1543,32 +1543,6 @@ function SingleProductPage() {
                       <div className="single-product-page__customize__right__product__body__option__top">
                         <span>4</span>
                         <p>
-                          {selectedGlassTypes
-                            ? `Glass Color: ${selectedGlassTypes.color_of_glass}`
-                            : "Option name"}
-                        </p>
-                      </div>
-                      <div className="single-product-page__customize__right__product__body__option__mid">
-                        <p>
-                          {selectedGlassTypes
-                            ? `Selected Glass Type Color: ${selectedGlassTypes.color_of_glass}`
-                            : "Selected option"}
-                        </p>
-                        <p>€{selectedGlassTypes ? "0" : "0"}</p>
-                      </div>
-                    </div>
-                    <div className="single-product-page__customize__right__product__body__option__top">
-                        <span>5</span>
-                        <p>
-                          {selectedColor
-                            ? `Color: ${selectedColor.color_name}`
-                            : "Option name"}
-                        </p>
-                      </div>
-                    <div className="single-product-page__customize__right__product__body__option">
-                      <div className="single-product-page__customize__right__product__body__option__top">
-                        <span>6</span>
-                        <p>
                           {selectedHandles
                             ? `Handle: ${selectedHandles?.name_of_handle}`
                             : "Option name"}
@@ -1585,7 +1559,43 @@ function SingleProductPage() {
                     </div>
                     <div className="single-product-page__customize__right__product__body__option">
                       <div className="single-product-page__customize__right__product__body__option__top">
-                        <span>7</span>
+                        <span>5</span>
+                        <p>
+                          {selectedGlassTypes
+                            ? `Glass Color: ${selectedGlassTypes.color_of_glass}`
+                            : "Option name"}
+                        </p>
+                      </div>
+                      <div className="single-product-page__customize__right__product__body__option__mid">
+                        <p>
+                          {selectedGlassTypes
+                            ? `Selected Glass Type Color: ${selectedGlassTypes.color_of_glass}`
+                            : "Selected option"}
+                        </p>
+                        <p>€{selectedGlassTypes ? "0" : "0"}</p>
+                      </div>
+                    </div>                  
+                    {/* <div className="single-product-page__customize__right__product__body__option">
+                      <div className="single-product-page__customize__right__product__body__option__top">
+                        <span>6</span>
+                        <p>
+                          {selectedHandles
+                            ? `Handle: ${selectedHandles?.name_of_handle}`
+                            : "Option name"}
+                        </p>
+                      </div>
+                      <div className="single-product-page__customize__right__product__body__option__mid">
+                        <p>
+                          {selectedHandles
+                            ? `Selected Handle: ${selectedHandles?.name_of_handle}`
+                            : "Selected option"}
+                        </p>
+                        <p>Included</p>
+                      </div>
+                    </div> */}
+                    <div className="single-product-page__customize__right__product__body__option">
+                      <div className="single-product-page__customize__right__product__body__option__top">
+                        <span>6</span>
                         <p>
                           {selectedGrids
                             ? `Ventilation grid: ${selectedGrids?.name_of_ventilation_grid}`
