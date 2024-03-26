@@ -44,11 +44,12 @@ function SingleProductPage() {
 
   // Define state for selectedColor
   const [selectedColor, setSelectedColor] = useState(null);
-      // Define state variables for each row's selected color
-      const [selectedCaseColor, setSelectedCaseColor] = useState(null);
-      const [selectedWindowColor, setSelectedWindowColor] = useState(null);
-      const [selectedCaseColorInside, setSelectedCaseColorInside] = useState(null);
-      const [selectedWindowColorInside, setSelectedWindowColorInside] = useState(null);
+  // Define state variables for each row's selected color
+  const [selectedCaseColor, setSelectedCaseColor] = useState(null);
+  const [selectedWindowColor, setSelectedWindowColor] = useState(null);
+  const [selectedCaseColorInside, setSelectedCaseColorInside] = useState(null);
+  const [selectedWindowColorInside, setSelectedWindowColorInside] = useState(null);
+
   const [selectedProfile, setSelectedProfile] = useState(null);
   const [selectedOpening, setSelectedOpening] = useState(null);
   const [selectedGlassLayers, setSelectedGlassLayers] = useState(null);
@@ -289,6 +290,11 @@ const windowColorInsidePrice = selectedWindowColorInside
         profile: selectedProfile?.profile_name,
         ventilation_grid: selectedGrids?.name_of_ventilation_grid,
         window_size: { width: frameWidth, height: frameHeight },
+         // Add the missing options here
+         case_color: selectedCaseColor?.color_name,
+         window_color: selectedWindowColor?.color_name,
+         case_color_inside: selectedCaseColorInside?.color_name,
+         window_color_inside: selectedWindowColorInside?.color_name,
       },
     };
 
@@ -781,26 +787,25 @@ const windowColorInsidePrice = selectedWindowColorInside
     ) {
         return <p>No color data available</p>;
     }
-
     // Function to handle color option click for each row
-    const handleColorOptionClick = (colorOption, setSelectedColor) => {
-        setSelectedColor(colorOption);
+    const handleColorOptionClick = (colorOption) => {
+      setSelectedColor(colorOption);
     };
 
     const handleCaseColorOptionClick = (colorOption) => {
-      setSelectedCaseColor(colorOption);
+    setSelectedCaseColor(colorOption);
     };
 
     const handleWindowColorOptionClick = (colorOption) => {
-      setSelectedWindowColor(colorOption);
+    setSelectedWindowColor(colorOption);
     };
-    
+
     const handleCaseColorInsideOptionClick = (colorOption) => {
-      setSelectedCaseColorInside(colorOption);
+    setSelectedCaseColorInside(colorOption);
     };
-    
+
     const handleWindowColorInsideOptionClick = (colorOption) => {
-      setSelectedWindowColorInside(colorOption);
+    setSelectedWindowColorInside(colorOption);
     };
     
 
