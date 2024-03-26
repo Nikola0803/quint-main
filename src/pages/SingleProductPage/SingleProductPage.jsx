@@ -791,28 +791,30 @@ const windowColorInsidePrice = selectedWindowColorInside
     ) {
         return <p>No color data available</p>;
     }
-    // Function to handle color option click for each row
     const handleColorOptionClick = (colorOption) => {
       setSelectedColor(colorOption);
-    };
-
-    const handleCaseColorOptionClick = (colorOption) => {
-    setSelectedCaseColor(colorOption);
-    };
-
-    const handleWindowColorOptionClick = (colorOption) => {
-    setSelectedWindowColor(colorOption);
-    };
-
-    const handleCaseColorInsideOptionClick = (colorOption) => {
-    setSelectedCaseColorInside(colorOption);
-    };
-
-    const handleWindowColorInsideOptionClick = (colorOption) => {
-    setSelectedWindowColorInside(colorOption);
-    };
+  };
+  
+  const handleCaseColorOptionClick = (colorOption) => {
+      setSelectedCaseColor(colorOption);
+      setSelectedColor(colorOption); // Also update selectedColor here if needed
+  };
+  
+  const handleWindowColorOptionClick = (colorOption) => {
+      setSelectedWindowColor(colorOption);
+      setSelectedColor(colorOption); // Also update selectedColor here if needed
+  };
+  
+  const handleCaseColorInsideOptionClick = (colorOption) => {
+      setSelectedCaseColorInside(colorOption);
+      setSelectedColor(colorOption); // Also update selectedColor here if needed
+  };
+  
+  const handleWindowColorInsideOptionClick = (colorOption) => {
+      setSelectedWindowColorInside(colorOption);
+      setSelectedColor(colorOption); // Also update selectedColor here if needed
+  };  
     
-
     return (
         <>
             <div className="color-options-container-main">
@@ -1622,15 +1624,14 @@ const windowColorInsidePrice = selectedWindowColorInside
                         </p>
                       </div>
                       <div className="single-product-page__customize__right__product__body__option__mid">
-                        <p>
-                          {selectedColor
+                      <p>
+                        {selectedColor
                             ? `Selected Color: ${selectedColor.color_name}`
                             : "Selected option"}
-                        </p>
-                        <p>
-                        €
-                          {selectedColor ? colorCase.toFixed(2) : "0"}
-                        </p>
+                    </p>
+                    <p>
+                        €{selectedColor ? caseColorPrice.toFixed(2) : "0"}
+                    </p>
                       </div>
                     </div>
 
