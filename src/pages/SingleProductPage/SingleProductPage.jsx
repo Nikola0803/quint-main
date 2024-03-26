@@ -782,10 +782,12 @@ const windowColorInsidePrice = selectedWindowColorInside
         return <p>No color data available</p>;
     }
 
-    // Function to handle color option click for each row
-    const handleColorOptionClick = (colorOption, setSelectedColor) => {
-        setSelectedColor(colorOption);
-    };
+    const handleColorOptionClick = (colorOption, setSelectedColor, setColorPrice) => {
+      setSelectedColor(colorOption);
+      const price = colorOption ? Number(colorOption["color_price_in_percent"]) : 0;
+      setColorPrice(price);
+  };
+  
 
     const handleCaseColorOptionClick = (colorOption) => {
       setSelectedCaseColor(colorOption);
@@ -829,13 +831,13 @@ const windowColorInsidePrice = selectedWindowColorInside
     <div className="color-options-inner">
         {/* Display case color options */}
         {caseColorOptions.map((colorOption, index) => (
-            <div
-                key={index}
-                className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                    selectedCaseColor === colorOption.color_name ? 'selected' : ''
-                }`}
-                onClick={() => handleColorOptionClick(colorOption.color_name, setSelectedCaseColor)}
-            >
+    <div
+        key={index}
+        className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+            selectedCaseColor === colorOption.color_name ? 'selected' : ''
+        }`}
+        onClick={() => handleColorOptionClick(colorOption, setSelectedCaseColor, setCaseColorPrice)}
+    >
                 <img
                     src={colorOption.color_image?.url || 'https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png'}
                     alt={colorOption.color_name}
@@ -1622,7 +1624,6 @@ const windowColorInsidePrice = selectedWindowColorInside
     </p>
   </div>
 </div>
-
 
                     <div className="single-product-page__customize__right__product__body__option">
                       <div className="single-product-page__customize__right__product__body__option__top">
