@@ -719,162 +719,107 @@ function SingleProductPage() {
   // };
 
   const five = () => {
-   // Check if product exists and has color data
+    // Check if product exists and has color data
     if (
-      !product ||
-      !product.acf ||
-      !product.acf.colors ||
-      product.acf.colors.length === 0
+        !product ||
+        !product.acf ||
+        !product.acf.colors ||
+        product.acf.colors.length === 0
     ) {
-      return <p>No color data available</p>;
+        return <p>No color data available</p>;
     }
 
     // Extract case_color, window_color, case_color_inside, and window_color_inside options from the API response
     const caseColorOptions = product.acf.colors.flatMap(
-      (category) => category.case_color || []
+        (category) => category.case_color || []
     );
     const windowColorOptions = product.acf.colors.flatMap(
-      (category) => category.window_color || []
+        (category) => category.window_color || []
     );
     const caseColorInsideOptions = product.acf.colors.flatMap(
-      (category) => category.case_color_inside || []
+        (category) => category.case_color_inside || []
     );
     const windowColorInsideOptions = product.acf.colors.flatMap(
-      (category) => category.window_color_inside || []
+        (category) => category.window_color_inside || []
     );
 
     // Check if there are no options available for any of the colors
     if (
-      caseColorOptions.length === 0 &&
-      windowColorOptions.length === 0 &&
-      caseColorInsideOptions.length === 0 &&
-      windowColorInsideOptions.length === 0
+        caseColorOptions.length === 0 &&
+        windowColorOptions.length === 0 &&
+        caseColorInsideOptions.length === 0 &&
+        windowColorInsideOptions.length === 0
     ) {
-      return <p>No color data available</p>;
+        return <p>No color data available</p>;
     }
 
+    // Function to handle color selection
+    const handleColorSelection = (colorOption) => {
+        setSelectedColor(colorOption); // Set selected color
+    };
+
     return (
-      <>
-      <div className="color-options-container-main">
-        {caseColorOptions.length > 0 && (
-          <div className="color-options-container">
-            <h5>Case Color</h5>
-            <div className="color-options-inner">
-              {caseColorOptions.map((colorOption, index) => (
-                <div
-                  key={index}
-                  className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                    selectedColor?.color_name === colorOption.color_name
-                      ? "selected"
-                      : ""
-                  }`}
-                  onClick={() => setSelectedColor(colorOption)} // Add the onClick event handler here
-                >
-                  <img
-                    src={colorOption.color_image?.url || "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png"}
-                    alt={colorOption.color_name}
-                    onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")}
-                    />
-                  <div>
-                    <p>{colorOption.color_name}</p>
-                    <p>€{colorOption.color_price_in_percent || "N/A"}</p>
-                  </div>
+        <>
+            <div className="color-options-container-main">
+                {/* Default color option "White" */}
+                <div className="color-options-container">
+                    <h5>Default Color (White)</h5>
+                    <div className="color-options-inner">
+                        <div
+                            className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+                                selectedColor?.color_name === 'White' ? 'selected' : ''
+                            }`}
+                            onClick={() => handleColorSelection({ color_name: 'White' })} // Handle color selection
+                        >
+                            {/* Display White color option */}
+                            <img
+                                src={'white-color-image-url'} // Replace 'white-color-image-url' with actual image URL for White color
+                                alt="White"
+                            />
+                            <div>
+                                <p>White</p>
+                                <p>N/A</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              ))}
+
+                {/* Case Color options */}
+                {caseColorOptions.length > 0 && (
+                    <div className="color-options-container">
+                        <h5>Case Color</h5>
+                        <div className="color-options-inner">
+                            {caseColorOptions.map((colorOption, index) => (
+                                <div
+                                    key={index}
+                                    className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+                                        selectedColor?.color_name === colorOption.color_name ? 'selected' : ''
+                                    }`}
+                                    onClick={() => handleColorSelection(colorOption)} // Handle color selection
+                                >
+                                    {/* Display case color option */}
+                                    <img
+                                        src={colorOption.color_image?.url || 'https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png'}
+                                        alt={colorOption.color_name}
+                                        onError={(e) => (e.target.src = 'https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png')}
+                                    />
+                                    <div>
+                                        <p>{colorOption.color_name}</p>
+                                        <p>€{colorOption.color_price_in_percent || 'N/A'}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                {/* Other color options (Window Color, Case Color Inside, Window Color Inside) */}
+                {/* Repeat similar logic for other color options */}
             </div>
-          </div>
-        )}
-
-        {windowColorOptions.length > 0 && (
-          <div className="color-options-container">
-            <h5>Window Color</h5>
-            <div className="color-options-inner">
-            {windowColorOptions.map((colorOption, index) => (
-              <div
-                key={index}
-                className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                  selectedColor?.color_name === colorOption.color_name
-                    ? "selected"
-                    : ""
-                }`}
-                onClick={() => setSelectedColor(colorOption)} // Add the onClick event handler here
-              >
-                <img
-                  src={colorOption.color_image?.url || "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png"}
-                  alt={colorOption.color_name}
-                  onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")}
-                  />
-                <div>
-                  <p>{colorOption.color_name}</p>
-                  <p>{colorOption.color_price_in_percent || "N/A"}</p>
-                </div>
-              </div>
-            ))}
-            </div>
-          </div>
-        )}
-
-        {caseColorInsideOptions.length > 0 && (
-          <div className="color-options-container">
-            <h5>Case Color Inside</h5>
-            <div className="color-options-inner">
-            {caseColorInsideOptions.map((colorOption, index) => (
-              <div
-                key={index}
-                className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                  selectedColor?.color_name === colorOption.color_name
-                    ? "selected"
-                    : ""
-                }`}
-                onClick={() => setSelectedColor(colorOption)} // Add the onClick event handler here
-              >
-                <img
-                  src={colorOption.color_image?.url || "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png"}
-                  alt={colorOption.color_name}
-                  onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")}
-                />
-                <div>
-                  <p>{colorOption.color_name}</p>
-                  <p>{colorOption.color_price_in_percent || "N/A"}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          </div>
-        )}
-
-        {windowColorInsideOptions.length > 0 && (
-          <div className="color-options-container">
-            <h5>Window Color Inside</h5>
-            <div className="color-options-inner">
-            {windowColorInsideOptions.map((colorOption, index) => (
-              <div
-                key={index}
-                className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                  selectedColor?.color_name === colorOption.color_name
-                    ? "selected"
-                    : ""
-                }`}
-                onClick={() => setSelectedColor(colorOption)} // Add the onClick event handler here
-              >
-                <img
-                  src={colorOption.color_image?.url || "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png"}
-                  alt={colorOption.color_name}
-                  onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")}
-                />
-                <div>
-                  <p>{colorOption.color_name}</p>
-                  <p>€{colorOption.color_price_in_percent || "N/A"}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          </div>
-        )}
-        </div>
-      </>
+        </>
     );
-  };
+};
+
 
   const six = () => {
     const handles = product?.acf?.handle || [];
