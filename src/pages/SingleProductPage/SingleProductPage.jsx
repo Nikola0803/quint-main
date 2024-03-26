@@ -186,7 +186,7 @@ function SingleProductPage() {
   // const totalLengthInCmVerticalBottom = ((2 * heightInCm) + (widthInCm * 3 ) + (2 * windowHeight));
   // const totalLengthInCmVerticalTop = ((2 * heightInCm) + (widthInCm * 5 ) + (2 * windowHeight));
 
-  const totalLengthInCm = (8 * heightInCm) + (widthInCm * 2) + ((2 * width1) + (2 * width3)/10);
+  const totalLengthInCm = (8 * heightInCm) + (widthInCm * 2) + ((2 * width1)/10 + (2 * width3)/10);
 
   // Assuming selectedColor.color_price is a string, convert it to number
   const colorPrice = selectedColor
