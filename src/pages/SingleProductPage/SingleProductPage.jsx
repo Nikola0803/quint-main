@@ -763,22 +763,27 @@ const windowColorInsidePrice = selectedWindowColorInside
     }
     const handleColorOptionClick = (colorOption) => {
       setSelectedColor(colorOption);
+      console.log("Selected color price:", colorOption.color_price_in_percent);
   };
 
   const handleCaseColorOptionClick = (colorOption) => {
     setSelectedCaseColor(colorOption);
+    console.log("Selected color price:", colorOption.color_price_in_percent);
   };
   
   const handleWindowColorOptionClick = (colorOption) => {
     setSelectedWindowColor(colorOption);
+    console.log("Selected color price:", colorOption.color_price_in_percent);
   };
   
   const handleCaseColorInsideOptionClick = (colorOption) => {
     setSelectedCaseColorInside(colorOption);
+    console.log("Selected color price:", colorOption.color_price_in_percent);
   };
   
   const handleWindowColorInsideOptionClick = (colorOption) => {
     setSelectedWindowColorInside(colorOption);
+    console.log("Selected color price:", colorOption.color_price_in_percent);
   };
   
     
