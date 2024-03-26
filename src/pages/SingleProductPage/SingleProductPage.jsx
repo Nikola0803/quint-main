@@ -1479,20 +1479,6 @@ function SingleProductPage() {
 
                     {/* Displaying the selected color option and its price */}
                     <div className="single-product-page__customize__right__product__body__option">
-
-                      <div className="single-product-page__customize__right__product__body__option__mid">
-                        <p>
-                          {selectedColor
-                            ? `Selected Color: ${selectedColor.color_name}`
-                            : "Selected option"}
-                        </p>
-                        <p>
-                        €
-                          {selectedColor ? colorBothSides.toFixed(2) : "0"}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="single-product-page__customize__right__product__body__option">
                       <div className="single-product-page__customize__right__product__body__option__top">
                         <span>1</span>
                         <p>
@@ -1536,20 +1522,20 @@ function SingleProductPage() {
                       <div className="single-product-page__customize__right__product__body__option__top">
                         <span>3</span>
                         <p>
-                          {selectedProfile
-                            ? `Profile: ${selectedColor?.profile_name}`
+                          {selectedColor
+                            ? `Color: ${selectedColor.color_name}`
                             : "Option name"}
                         </p>
                       </div>
                       <div className="single-product-page__customize__right__product__body__option__mid">
                         <p>
-                          {selectedProfile
-                            ? `Selected Profile: ${selectedProfile?.profile_name}`
+                          {selectedColor
+                            ? `Selected Color: ${selectedColor.color_name}`
                             : "Selected option"}
                         </p>
                         <p>
-                          €
-                          {selectedProfile? dimensionPrice.toFixed(2) : "0"}
+                        €
+                          {selectedColor ? colorBothSides.toFixed(2) : "0"}
                         </p>
                       </div>
                     </div>
