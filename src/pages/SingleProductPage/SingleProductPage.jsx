@@ -1516,9 +1516,7 @@ function SingleProductPage() {
                         </p>
                         <p>
                           €
-                          {selectedProfile
-                            ? selectedProfile?.profile_price
-                            : "0"}
+                          {selectedProfile? dimensionPrice.toFixed(2) : "0"}
                         </p>
                       </div>
                     </div>
