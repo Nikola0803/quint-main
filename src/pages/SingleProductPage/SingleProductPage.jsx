@@ -701,11 +701,11 @@ const windowColorInsidePrice = selectedWindowColorInside
             <input
               type="number"
               id="width2"
-              value={width2}
+              value={(parseInt(widthInCm) - (parseInt(width1) + parseInt(width3))) / 10}
               onChange={(event) => setWidth2(event.target.value)}
-              readOnly // Make the input read-only
+              readOnly
               disabled={fixedDistribution !== "Manual"}
-            />
+          />           
           </div>
   
           <div className="option">
