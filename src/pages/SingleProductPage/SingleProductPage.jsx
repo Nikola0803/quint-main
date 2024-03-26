@@ -244,9 +244,11 @@ const windowColorInsidePrice = selectedWindowColorInside
   const dimensionPrice = totalLengthInCm * pricePerCm;
   // const totalPriceBeforeVAT = dimensionPrice + (dimensionPrice/colorPrice) + calc;
   const totalPriceBeforeVAT = dimensionPrice + calc;
-  const colorFrontSide = totalPriceBeforeVAT * (colorPrice/100); // aadded /100 to calculate 10% for example
-  const colorBackSide = totalPriceBeforeVAT * (colorPrice/100); // aadded /100 to calculate 10% for example
-  const colorBothSides = caseColorPrice + windowColorPrice + caseColorInsidePrice + windowColorInsidePrice;
+  const colorCase = totalPriceBeforeVAT * (caseColorPrice/100); // aadded /100 to calculate 10% for example
+  const colorWindow = totalPriceBeforeVAT * (windowColorPrice/100); // aadded /100 to calculate 10% for example
+  const colorCaseInsidenside = totalPriceBeforeVAT * (caseColorInsidePrice/100); // aadded /100 to calculate 10% for example
+  const colorWindowInside = totalPriceBeforeVAT * (windowColorInsidePrice/100); // aadded /100 to calculate 10% for example
+  const colorBothSides = colorCase + colorWindow + colorCaseInsidenside + colorWindowInside;
 
   const VAT_RATE = 0.21; // 21%
   const vat = totalPriceBeforeVAT * VAT_RATE;
