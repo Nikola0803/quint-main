@@ -210,6 +210,26 @@ function SingleProductPage() {
   const colorPrice = selectedColor
     ? Number(selectedColor["color_price_in_percent"] || 0)
     : 0;
+
+  // Convert color price to number for selected case color
+const caseColorPrice = selectedCaseColor
+? Number(selectedCaseColor["color_price_in_percent"] || 0)
+: 0;
+
+// Convert color price to number for selected window color
+const windowColorPrice = selectedWindowColor
+? Number(selectedWindowColor["color_price_in_percent"] || 0)
+: 0;
+
+// Convert color price to number for selected case color inside
+const caseColorInsidePrice = selectedCaseColorInside
+? Number(selectedCaseColorInside["color_price_in_percent"] || 0)
+: 0;
+
+// Convert color price to number for selected window color inside
+const windowColorInsidePrice = selectedWindowColorInside
+? Number(selectedWindowColorInside["color_price_in_percent"] || 0)
+: 0;
   const price_per_sqm = (heightInCm * widthInCm) / 10000;
   const profilePrice = Number(selectedProfile?.profile_price ?? 0) / 100;
   const pricePerCm = profilePrice;
@@ -226,7 +246,7 @@ function SingleProductPage() {
   const totalPriceBeforeVAT = dimensionPrice + calc;
   const colorFrontSide = totalPriceBeforeVAT * (colorPrice/100); // aadded /100 to calculate 10% for example
   const colorBackSide = totalPriceBeforeVAT * (colorPrice/100); // aadded /100 to calculate 10% for example
-  const colorBothSides = colorFrontSide + colorBackSide;
+  const colorBothSides = caseColorPrice + windowColorPrice + caseColorInsidePrice + windowColorInsidePrice;
 
   const VAT_RATE = 0.21; // 21%
   const vat = totalPriceBeforeVAT * VAT_RATE;
