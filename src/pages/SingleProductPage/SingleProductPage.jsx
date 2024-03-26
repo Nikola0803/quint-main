@@ -931,7 +931,6 @@ const windowColorInsidePrice = selectedWindowColorInside
     </div>
 </div>
 </div>
-
             </>
         );
     };
@@ -1604,26 +1603,26 @@ const windowColorInsidePrice = selectedWindowColorInside
                       </div>
                     </div>
                     <div className="single-product-page__customize__right__product__body__option">
-                      <div className="single-product-page__customize__right__product__body__option__top">
-                        <span>4</span>
-                        <p>
-                          {selectedColor
-                            ? `Color: ${selectedColor.color_name}`
-                            : "Option name"}
-                        </p>
-                      </div>
-                      <div className="single-product-page__customize__right__product__body__option__mid">
-                        <p>
-                          {selectedColor
-                            ? `Selected Color: ${selectedColor.color_name}`
-                            : "Selected option"}
-                        </p>
-                        <p>
-                        €
-                          {selectedColor ? colorCase.toFixed(2) : "0"}
-                        </p>
-                      </div>
-                    </div>
+  <div className="single-product-page__customize__right__product__body__option__top">
+    <span>4</span>
+    <p>
+      {selectedColor
+        ? `Color: ${selectedColor.color_name}`
+        : "Option name"}
+    </p>
+  </div>
+  <div className="single-product-page__customize__right__product__body__option__mid">
+    <p>
+      {selectedColor
+        ? `Selected Color: ${selectedColor.color_name}`
+        : "Selected option"}
+    </p>
+    <p>
+      €{selectedColor ? caseColorPrice.toFixed(2) : "0"}
+    </p>
+  </div>
+</div>
+
 
                     <div className="single-product-page__customize__right__product__body__option">
                       <div className="single-product-page__customize__right__product__body__option__top">
