@@ -230,6 +230,7 @@ const caseColorInsidePrice = selectedCaseColorInside
 const windowColorInsidePrice = selectedWindowColorInside
 ? Number(selectedWindowColorInside["color_price_in_percent"] || 0)
 : 0;
+
   const price_per_sqm = (heightInCm * widthInCm) / 10000;
   const profilePrice = Number(selectedProfile?.profile_price ?? 0) / 100;
   const pricePerCm = profilePrice;
@@ -1601,7 +1602,7 @@ const windowColorInsidePrice = selectedWindowColorInside
                         </p>
                         <p>
                         €
-                          {selectedColor ? colorBothSides.toFixed(2) : "0"}
+                          {selectedColor ? colorCase.toFixed(2) : "0"}
                         </p>
                       </div>
                     </div>
