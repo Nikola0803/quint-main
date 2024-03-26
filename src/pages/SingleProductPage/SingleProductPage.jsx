@@ -214,6 +214,8 @@ const windowColorInsidePrice = selectedWindowColorInside
 : 0;
 
   const price_per_sqm = (heightInCm * widthInCm) / 10000;
+  const price_per_sqm_new = (heightInCm * widthInCm) / 100;
+
   const profilePrice = Number(selectedProfile?.profile_price ?? 0) / 100;
   const pricePerCm = profilePrice;
   const glassLayerPrice = Number(selectedGlassLayers?.price_per_sqm ?? 0) * price_per_sqm;
@@ -223,7 +225,7 @@ const windowColorInsidePrice = selectedWindowColorInside
   // const securityPrice =  Number(selectedSecurity?.price_of_extra_security ?? 0);
   // const calc = glassLayerPrice + handlePrice + gridPrice + securityPrice;
   const calc = glassLayerPrice + handlePrice + gridPrice;
-  const gridNewPrice = gridPrice * price_per_sqm;
+  const gridNewPrice = gridPrice * price_per_sqm_new;
 
   const dimensionPrice = totalLengthInCm * pricePerCm;
   // const totalPriceBeforeVAT = dimensionPrice + (dimensionPrice/colorPrice) + calc;
