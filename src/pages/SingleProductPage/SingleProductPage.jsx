@@ -365,6 +365,10 @@ const windowColorInsidePrice = selectedWindowColorInside
           profile: selectedProfile?.profile_name,
           ventilation_grid: selectedGrids?.name_of_ventilation_grid,
           window_size: { width: frameWidth, height: frameHeight },
+          case_color: selectedCaseColor?.color_name,
+          window_color: selectedWindowColor?.color_name,
+          case_color_inside: selectedCaseColorInside?.color_name,
+          window_color_inside: selectedWindowColorInside?.color_name,
         },
       };
 
