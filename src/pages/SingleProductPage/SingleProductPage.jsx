@@ -719,6 +719,12 @@ function SingleProductPage() {
   // };
 
   const five = () => {
+    // Define state variables for each row's selected color
+    const [selectedCaseColor, setSelectedCaseColor] = useState(null);
+    const [selectedWindowColor, setSelectedWindowColor] = useState(null);
+    const [selectedCaseColorInside, setSelectedCaseColorInside] = useState(null);
+    const [selectedWindowColorInside, setSelectedWindowColorInside] = useState(null);
+
     // Check if product exists and has color data
     if (
         !product ||
@@ -753,9 +759,9 @@ function SingleProductPage() {
         return <p>No color data available</p>;
     }
 
-    // Function to handle color selection
-    const handleColorSelection = (colorOption) => {
-        setSelectedColor(colorOption); // Set selected color
+    // Function to handle color option click for each row
+    const handleColorOptionClick = (colorOption, setSelectedColor) => {
+        setSelectedColor(colorOption);
     };
 
     return (
@@ -765,21 +771,14 @@ function SingleProductPage() {
                 <div className="color-options-container">
                     <h5>Default Color (White)</h5>
                     <div className="color-options-inner">
+                        {/* Display White color option */}
                         <div
                             className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                                selectedColor?.color_name === 'White' ? 'selected' : ''
+                                selectedCaseColor === 'White' ? 'selected' : ''
                             }`}
-                            onClick={() => handleColorSelection({ color_name: 'White' })} // Handle color selection
+                            onClick={() => handleColorOptionClick('White', setSelectedCaseColor)}
                         >
-                            {/* Display White color option */}
-                            <img
-                                src={'white-color-image-url'} // Replace 'white-color-image-url' with actual image URL for White color
-                                alt="White"
-                            />
-                            <div>
-                                <p>White</p>
-                                <p>N/A</p>
-                            </div>
+                            {/* White color option content */}
                         </div>
                     </div>
                 </div>
@@ -788,24 +787,16 @@ function SingleProductPage() {
                 <div className="color-options-container">
                     <h5>Case Color</h5>
                     <div className="color-options-inner">
+                        {/* Display case color options */}
                         {caseColorOptions.map((colorOption, index) => (
                             <div
                                 key={index}
                                 className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                                    selectedColor?.color_name === colorOption.color_name ? 'selected' : ''
+                                    selectedCaseColor === colorOption.color_name ? 'selected' : ''
                                 }`}
-                                onClick={() => handleColorSelection(colorOption)} // Handle color selection
+                                onClick={() => handleColorOptionClick(colorOption.color_name, setSelectedCaseColor)}
                             >
-                                {/* Display case color option */}
-                                <img
-                                    src={colorOption.color_image?.url || 'https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png'}
-                                    alt={colorOption.color_name}
-                                    onError={(e) => (e.target.src = 'https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png')}
-                                />
-                                <div>
-                                    <p>{colorOption.color_name}</p>
-                                    <p>€{colorOption.color_price_in_percent || 'N/A'}</p>
-                                </div>
+                                {/* Display case color option content */}
                             </div>
                         ))}
                     </div>
@@ -815,24 +806,16 @@ function SingleProductPage() {
                 <div className="color-options-container">
                     <h5>Window Color</h5>
                     <div className="color-options-inner">
+                        {/* Display window color options */}
                         {windowColorOptions.map((colorOption, index) => (
                             <div
                                 key={index}
                                 className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                                    selectedColor?.color_name === colorOption.color_name ? 'selected' : ''
+                                    selectedWindowColor === colorOption.color_name ? 'selected' : ''
                                 }`}
-                                onClick={() => handleColorSelection(colorOption)} // Handle color selection
+                                onClick={() => handleColorOptionClick(colorOption.color_name, setSelectedWindowColor)}
                             >
-                                {/* Display window color option */}
-                                <img
-                                    src={colorOption.color_image?.url || 'https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png'}
-                                    alt={colorOption.color_name}
-                                    onError={(e) => (e.target.src = 'https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png')}
-                                />
-                                <div>
-                                    <p>{colorOption.color_name}</p>
-                                    <p>€{colorOption.color_price_in_percent || 'N/A'}</p>
-                                </div>
+                                {/* Display window color option content */}
                             </div>
                         ))}
                     </div>
@@ -842,24 +825,16 @@ function SingleProductPage() {
                 <div className="color-options-container">
                     <h5>Case Color Inside</h5>
                     <div className="color-options-inner">
+                        {/* Display case color inside options */}
                         {caseColorInsideOptions.map((colorOption, index) => (
                             <div
                                 key={index}
                                 className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                                    selectedColor?.color_name === colorOption.color_name ? 'selected' : ''
+                                    selectedCaseColorInside === colorOption.color_name ? 'selected' : ''
                                 }`}
-                                onClick={() => handleColorSelection(colorOption)} // Handle color selection
+                                onClick={() => handleColorOptionClick(colorOption.color_name, setSelectedCaseColorInside)}
                             >
-                                {/* Display case color inside option */}
-                                <img
-                                    src={colorOption.color_image?.url || 'https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png'}
-                                    alt={colorOption.color_name}
-                                    onError={(e) => (e.target.src = 'https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png')}
-                                />
-                                <div>
-                                    <p>{colorOption.color_name}</p>
-                                    <p>€{colorOption.color_price_in_percent || 'N/A'}</p>
-                                </div>
+                                {/* Display case color inside option content */}
                             </div>
                         ))}
                     </div>
@@ -869,24 +844,16 @@ function SingleProductPage() {
                 <div className="color-options-container">
                     <h5>Window Color Inside</h5>
                     <div className="color-options-inner">
+                        {/* Display window color inside options */}
                         {windowColorInsideOptions.map((colorOption, index) => (
                             <div
                                 key={index}
                                 className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                                    selectedColor?.color_name === colorOption.color_name ? 'selected' : ''
+                                    selectedWindowColorInside === colorOption.color_name ? 'selected' : ''
                                 }`}
-                                onClick={() => handleColorSelection(colorOption)} // Handle color selection
+                                onClick={() => handleColorOptionClick(colorOption.color_name, setSelectedWindowColorInside)}
                             >
-                                {/* Display window color inside option */}
-                                <img
-                                    src={colorOption.color_image?.url || 'https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png'}
-                                    alt={colorOption.color_name}
-                                    onError={(e) => (e.target.src = 'https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png')}
-                                />
-                                <div>
-                                    <p>{colorOption.color_name}</p>
-                                    <p>€{colorOption.color_price_in_percent || 'N/A'}</p>
-                                </div>
+                                {/* Display window color inside option content */}
                             </div>
                         ))}
                     </div>
