@@ -659,7 +659,21 @@ const windowColorInsidePrice = selectedWindowColorInside
   };
 
   const four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm }) => {
-
+    // Calculate width2 based on fixed distribution
+    const calculateWidth2 = () => {
+      if (fixedDistribution === "1:1:1") {
+        return (parseInt(widthInCm) - (parseInt(width1) + parseInt(width3))) / 2 / 10;
+      } else if (fixedDistribution === "1:2:1") {
+        return (parseInt(widthInCm) - (parseInt(width1) + parseInt(width3)) * 2 / 3) / 2 / 10;
+      }
+      return ''; // For "Manual" distribution
+    };
+  
+    // Calculate width values for "1:1:1" and "1:2:1" distributions
+    const width1Value = fixedDistribution === "1:1:1" || fixedDistribution === "1:2:1" ? width1 : '';
+    const width3Value = fixedDistribution === "1:1:1" || fixedDistribution === "1:2:1" ? width3 : '';
+    const width2Value = fixedDistribution === "1:1:1" || fixedDistribution === "1:2:1" ? calculateWidth2() : '';
+  
     return (
       <div>
         <div className={`single-product-page__customize__left__option-holder__option__body ${activeId === "step4" ? "" : "d-none"}`}>
@@ -687,13 +701,11 @@ const windowColorInsidePrice = selectedWindowColorInside
             <input
               type="number"
               id="width1"
-              value={width1}
+              value={width1Value}
               onChange={(event) => setWidth1(event.target.value)}
               disabled={fixedDistribution !== "Manual"}
             />
           </div>
-  
-          
   
           <div className="option">
             <label htmlFor="width3" className="left-widths">
@@ -703,12 +715,12 @@ const windowColorInsidePrice = selectedWindowColorInside
             <input
               type="number"
               id="width3"
-              value={width3}
+              value={width3Value}
               onChange={(event) => setWidth3(event.target.value)}
               disabled={fixedDistribution !== "Manual"}
             />
           </div>
-
+  
           <div className="option">
             <label htmlFor="width2" className="left-widths">
               Width of fixed glass in section 2 (in mm):
@@ -718,10 +730,9 @@ const windowColorInsidePrice = selectedWindowColorInside
               type="number"
               id="width2"
               value={(parseInt(widthInCm) - (parseInt(width1) + parseInt(width3))) / 10}
-              onChange={(event) => setWidth2(event.target.value)}
               readOnly
               disabled={fixedDistribution !== "Manual"}
-          />           
+            />
           </div>
         </div>
       </div>
