@@ -44,6 +44,11 @@ function SingleProductPage() {
 
   // Define state for selectedColor
   const [selectedColor, setSelectedColor] = useState(null);
+      // Define state variables for each row's selected color
+      const [selectedCaseColor, setSelectedCaseColor] = useState(null);
+      const [selectedWindowColor, setSelectedWindowColor] = useState(null);
+      const [selectedCaseColorInside, setSelectedCaseColorInside] = useState(null);
+      const [selectedWindowColorInside, setSelectedWindowColorInside] = useState(null);
   const [selectedProfile, setSelectedProfile] = useState(null);
   const [selectedOpening, setSelectedOpening] = useState(null);
   const [selectedGlassLayers, setSelectedGlassLayers] = useState(null);
@@ -719,12 +724,6 @@ function SingleProductPage() {
   // };
 
   const five = () => {
-    // Define state variables for each row's selected color
-    const [selectedCaseColor, setSelectedCaseColor] = useState(null);
-    const [selectedWindowColor, setSelectedWindowColor] = useState(null);
-    const [selectedCaseColorInside, setSelectedCaseColorInside] = useState(null);
-    const [selectedWindowColorInside, setSelectedWindowColorInside] = useState(null);
-
     // Check if product exists and has color data
     if (
         !product ||
