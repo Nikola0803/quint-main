@@ -246,6 +246,7 @@ const windowColorInsidePrice = selectedWindowColorInside
   const dimensionPrice = totalLengthInCm * pricePerCm;
   // const totalPriceBeforeVAT = dimensionPrice + (dimensionPrice/colorPrice) + calc;
   const totalPriceBeforeVAT = dimensionPrice + calc;
+  const colorCaseMain = totalPriceBeforeVAT * (10/100);
   const colorCase = totalPriceBeforeVAT * (parseFloat(caseColorPrice)/100); // aadded /100 to calculate 10% for example
   const colorWindow = totalPriceBeforeVAT * (parseFloat(windowColorPrice)/100); // aadded /100 to calculate 10% for example
   const colorCaseInsidenside = totalPriceBeforeVAT * (parseFloat(caseColorInsidePrice)/100); // aadded /100 to calculate 10% for example
@@ -619,7 +620,6 @@ const windowColorInsidePrice = selectedWindowColorInside
               />
               <div>
                 <p>{profile?.profile_name}</p>
-                <p>{profile?.profile_price || "N/A"}</p>
               </div>
             </div>
           ))}
@@ -839,8 +839,6 @@ const windowColorInsidePrice = selectedWindowColorInside
             />
             <div>
                 <p>{colorOption.color_name}</p>
-                {/* Display the color price */}
-                <p>€{parseFloat(priceInPercent) || fallBackPriceColors}</p>
             </div>
         </div>
     );
@@ -869,7 +867,6 @@ const windowColorInsidePrice = selectedWindowColorInside
                 />
                 <div>
                     <p>{colorOption.color_name}</p>
-                    <p>€{colorOption.color_price_in_percent || fallBackPriceColors}</p>
                 </div>
             </div>
         ))}
@@ -896,7 +893,6 @@ const windowColorInsidePrice = selectedWindowColorInside
                 />
                 <div>
                     <p>{colorOption.color_name}</p>
-                    <p>€{colorOption.color_price_in_percent || fallBackPriceColors}</p>
                 </div>
             </div>
         ))}
@@ -923,7 +919,6 @@ const windowColorInsidePrice = selectedWindowColorInside
                 />
                 <div>
                     <p>{colorOption.color_name}</p>
-                    <p>€{colorOption.color_price_in_percent || fallBackPriceColors}</p>
                 </div>
             </div>
         ))}
@@ -1618,7 +1613,7 @@ const windowColorInsidePrice = selectedWindowColorInside
                             : "Selected option"}
                     </p>
                     <p>
-                        €{selectedColor ? colorAllSides.toFixed(2) : "0"}
+                        €{selectedColor ? colorCaseMain.toFixed(2) : "0"}
                     </p>
                       </div>
                     </div>
