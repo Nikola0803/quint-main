@@ -400,8 +400,325 @@ function SingleProductPage() {
     );
   };
 
+  // const two = () => {
+  //   // Check if product exists and has color data
+  //   if (
+  //     !product ||
+  //     !product.acf ||
+  //     !product.acf.colors ||
+  //     product.acf.colors.length === 0
+  //   ) {
+  //     return <p>No color data available</p>;
+  //   }
+
+  //   // Extract case_color, window_color, case_color_inside, and window_color_inside options from the API response
+  //   const caseColorOptions = product.acf.colors.flatMap(
+  //     (category) => category.case_color || []
+  //   );
+  //   const windowColorOptions = product.acf.colors.flatMap(
+  //     (category) => category.window_color || []
+  //   );
+  //   const caseColorInsideOptions = product.acf.colors.flatMap(
+  //     (category) => category.case_color_inside || []
+  //   );
+  //   const windowColorInsideOptions = product.acf.colors.flatMap(
+  //     (category) => category.window_color_inside || []
+  //   );
+
+  //   // Check if there are no options available for any of the colors
+  //   if (
+  //     caseColorOptions.length === 0 &&
+  //     windowColorOptions.length === 0 &&
+  //     caseColorInsideOptions.length === 0 &&
+  //     windowColorInsideOptions.length === 0
+  //   ) {
+  //     return <p>No color data available</p>;
+  //   }
+
+  //   return (
+  //     <>
+  //     <div className="color-options-container-main">
+  //       {caseColorOptions.length > 0 && (
+  //         <div className="color-options-container">
+  //           <h5>Case Color</h5>
+  //           <div className="color-options-inner">
+  //             {caseColorOptions.map((colorOption, index) => (
+  //               <div
+  //                 key={index}
+  //                 className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+  //                   selectedColor?.color_name === colorOption.color_name
+  //                     ? "selected"
+  //                     : ""
+  //                 }`}
+  //                 onClick={() => setSelectedColor(colorOption)} // Add the onClick event handler here
+  //               >
+  //                 <img
+  //                   src={colorOption.color_image?.url || "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png"}
+  //                   alt={colorOption.color_name}
+  //                   onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")}
+  //                   />
+  //                 <div>
+  //                   <p>{colorOption.color_name}</p>
+  //                   <p>€{colorOption.color_price_in_percent || "N/A"}</p>
+  //                 </div>
+  //               </div>
+  //             ))}
+  //           </div>
+  //         </div>
+  //       )}
+
+  //       {windowColorOptions.length > 0 && (
+  //         <div className="color-options-container">
+  //           <h5>Window Color</h5>
+  //           <div className="color-options-inner">
+  //           {windowColorOptions.map((colorOption, index) => (
+  //             <div
+  //               key={index}
+  //               className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+  //                 selectedColor?.color_name === colorOption.color_name
+  //                   ? "selected"
+  //                   : ""
+  //               }`}
+  //               onClick={() => setSelectedColor(colorOption)} // Add the onClick event handler here
+  //             >
+  //               <img
+  //                 src={colorOption.color_image?.url || "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png"}
+  //                 alt={colorOption.color_name}
+  //                 onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")}
+  //                 />
+  //               <div>
+  //                 <p>{colorOption.color_name}</p>
+  //                 <p>{colorOption.color_price_in_percent || "N/A"}</p>
+  //               </div>
+  //             </div>
+  //           ))}
+  //           </div>
+  //         </div>
+  //       )}
+
+  //       {caseColorInsideOptions.length > 0 && (
+  //         <div className="color-options-container">
+  //           <h5>Case Color Inside</h5>
+  //           <div className="color-options-inner">
+  //           {caseColorInsideOptions.map((colorOption, index) => (
+  //             <div
+  //               key={index}
+  //               className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+  //                 selectedColor?.color_name === colorOption.color_name
+  //                   ? "selected"
+  //                   : ""
+  //               }`}
+  //               onClick={() => setSelectedColor(colorOption)} // Add the onClick event handler here
+  //             >
+  //               <img
+  //                 src={colorOption.color_image?.url || "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png"}
+  //                 alt={colorOption.color_name}
+  //                 onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")}
+  //               />
+  //               <div>
+  //                 <p>{colorOption.color_name}</p>
+  //                 <p>{colorOption.color_price_in_percent || "N/A"}</p>
+  //               </div>
+  //             </div>
+  //           ))}
+  //         </div>
+  //         </div>
+  //       )}
+
+  //       {windowColorInsideOptions.length > 0 && (
+  //         <div className="color-options-container">
+  //           <h5>Window Color Inside</h5>
+  //           <div className="color-options-inner">
+  //           {windowColorInsideOptions.map((colorOption, index) => (
+  //             <div
+  //               key={index}
+  //               className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+  //                 selectedColor?.color_name === colorOption.color_name
+  //                   ? "selected"
+  //                   : ""
+  //               }`}
+  //               onClick={() => setSelectedColor(colorOption)} // Add the onClick event handler here
+  //             >
+  //               <img
+  //                 src={colorOption.color_image?.url || "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png"}
+  //                 alt={colorOption.color_name}
+  //                 onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")}
+  //               />
+  //               <div>
+  //                 <p>{colorOption.color_name}</p>
+  //                 <p>€{colorOption.color_price_in_percent || "N/A"}</p>
+  //               </div>
+  //             </div>
+  //           ))}
+  //         </div>
+  //         </div>
+  //       )}
+  //       </div>
+  //     </>
+  //   );
+  // };
+
   const two = () => {
-    // Check if product exists and has color data
+   // Assuming 'product?.acf?.glass_layers' is the correct path to the glass layers data
+   const glassLayers = product?.acf?.glass_layers || [];
+
+   return (
+     <>
+       {glassLayers.map((glassLayer, index) => (
+         <div
+           key={index}
+           className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+             selectedGlassLayers?.price_per_sqm === glassLayer.price_per_sqm
+               ? "selected"
+               : ""
+           }`}
+           onClick={() => setSelectedGlassLayers(glassLayer)}
+         >
+           <img
+             src={glassLayer.glass_image?.url || "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png"}
+             alt={`Glass layer ${index + 1}`}
+             onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")} // Provide a fallback image path
+           />
+           <div>
+             <p>{glassLayer.glass_type}</p>
+             <p>€{glassLayer.price_per_sqm || "N/A"}</p>
+           </div>
+         </div>
+       ))}
+     </>
+   );
+  };
+
+  const three = () => {
+    return (
+      <>
+        {product?.acf?.profile &&
+          product?.acf?.profile.map((profile, index) => (
+            <div
+              key={index}
+              className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+                selectedProfile?.profile_name === profile?.profile_name
+                  ? "selected"
+                  : ""
+              }`}
+              onClick={() => setSelectedProfile(profile)}
+            >
+              <img
+                src={profile?.profile_image?.url || "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png"}
+                alt={profile?.profile_name || "Profile Image"}
+                onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")} // Replace '' with actual path
+              />
+              <div>
+                <p>{profile?.profile_name}</p>
+                <p>{profile?.profile_price || "N/A"}</p>
+              </div>
+            </div>
+          ))}
+      </>
+    );
+  };
+
+  const four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm }) => {
+
+    return (
+      <div>
+        <div className={`single-product-page__customize__left__option-holder__option__body ${activeId === "step4" ? "" : "d-none"}`}>
+          {/* Fixed distribution */}
+          <div className="option">
+            <label htmlFor="fixedDistribution">Fixed Distribution:</label>
+            <select
+              id="fixedDistribution"
+              value={fixedDistribution}
+              onChange={handleFixedDistributionChange}
+            >
+              <option value="">Select Fixed Distribution</option>
+              <option value="1:1:1">1:1:1</option>
+              <option value="1:2:1">1:2:1</option>
+              <option value="Manual">Manual</option>
+            </select>
+          </div>
+  
+          {/* Width inputs */}
+          <div className="option">
+            <label htmlFor="width1" className="left-widths">
+              Width of turn/tilt window (inward opening) in section 1 (in mm):
+              <span><br />(Calculated automatically)</span>
+            </label>
+            <input
+              type="number"
+              id="width1"
+              value={width1}
+              onChange={(event) => setWidth1(event.target.value)}
+              disabled={fixedDistribution !== "Manual"}
+            />
+          </div>
+  
+          <div className="option">
+            <label htmlFor="width2" className="left-widths">
+              Width of fixed glass in section 2 (in mm):
+              <span><br />(Calculated automatically)</span>
+            </label>
+            <input
+              type="number"
+              id="width2"
+              value={width2}
+              onChange={(event) => setWidth2(event.target.value)}
+              readOnly // Make the input read-only
+              disabled={fixedDistribution !== "Manual"}
+            />
+          </div>
+  
+          <div className="option">
+            <label htmlFor="width3" className="left-widths">
+              Width of turn/tilt window (inward opening) in section 3 (in mm):
+              <span><br />(Calculated automatically)</span>
+            </label>
+            <input
+              type="number"
+              id="width3"
+              value={width3}
+              onChange={(event) => setWidth3(event.target.value)}
+              disabled={fixedDistribution !== "Manual"}
+            />
+          </div>
+        </div>
+      </div>
+    );
+  };
+  
+  // const five = () => {
+  //   // Assuming 'product?.acf?.glass_layers' is the correct path to the glass layers data
+  //   const glassLayers = product?.acf?.glass_layers || [];
+
+  //   return (
+  //     <>
+  //       {glassLayers.map((glassLayer, index) => (
+  //         <div
+  //           key={index}
+  //           className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+  //             selectedGlassLayers?.price_per_sqm === glassLayer.price_per_sqm
+  //               ? "selected"
+  //               : ""
+  //           }`}
+  //           onClick={() => setSelectedGlassLayers(glassLayer)}
+  //         >
+  //           <img
+  //             src={glassLayer.glass_image?.url || "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png"}
+  //             alt={`Glass layer ${index + 1}`}
+  //             onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")} // Provide a fallback image path
+  //           />
+  //           <div>
+  //             <p>{glassLayer.glass_type}</p>
+  //             <p>€{glassLayer.price_per_sqm || "N/A"}</p>
+  //           </div>
+  //         </div>
+  //       ))}
+  //     </>
+  //   );
+  // };
+
+  const five = () => {
+   // Check if product exists and has color data
     if (
       !product ||
       !product.acf ||
@@ -554,134 +871,6 @@ function SingleProductPage() {
           </div>
         )}
         </div>
-      </>
-    );
-  };
-
-  const three = () => {
-    return (
-      <>
-        {product?.acf?.profile &&
-          product?.acf?.profile.map((profile, index) => (
-            <div
-              key={index}
-              className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                selectedProfile?.profile_name === profile?.profile_name
-                  ? "selected"
-                  : ""
-              }`}
-              onClick={() => setSelectedProfile(profile)}
-            >
-              <img
-                src={profile?.profile_image?.url || "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png"}
-                alt={profile?.profile_name || "Profile Image"}
-                onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")} // Replace '' with actual path
-              />
-              <div>
-                <p>{profile?.profile_name}</p>
-                <p>{profile?.profile_price || "N/A"}</p>
-              </div>
-            </div>
-          ))}
-      </>
-    );
-  };
-
-  const four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm }) => {
-
-    return (
-      <div>
-        <div className={`single-product-page__customize__left__option-holder__option__body ${activeId === "step4" ? "" : "d-none"}`}>
-          {/* Fixed distribution */}
-          <div className="option">
-            <label htmlFor="fixedDistribution">Fixed Distribution:</label>
-            <select
-              id="fixedDistribution"
-              value={fixedDistribution}
-              onChange={handleFixedDistributionChange}
-            >
-              <option value="">Select Fixed Distribution</option>
-              <option value="1:1:1">1:1:1</option>
-              <option value="1:2:1">1:2:1</option>
-              <option value="Manual">Manual</option>
-            </select>
-          </div>
-  
-          {/* Width inputs */}
-          <div className="option">
-            <label htmlFor="width1" className="left-widths">
-              Width of turn/tilt window (inward opening) in section 1 (in mm):
-              <span><br />(Calculated automatically)</span>
-            </label>
-            <input
-              type="number"
-              id="width1"
-              value={width1}
-              onChange={(event) => setWidth1(event.target.value)}
-              disabled={fixedDistribution !== "Manual"}
-            />
-          </div>
-  
-          <div className="option">
-            <label htmlFor="width2" className="left-widths">
-              Width of fixed glass in section 2 (in mm):
-              <span><br />(Calculated automatically)</span>
-            </label>
-            <input
-              type="number"
-              id="width2"
-              value={width2}
-              onChange={(event) => setWidth2(event.target.value)}
-              readOnly // Make the input read-only
-              disabled={fixedDistribution !== "Manual"}
-            />
-          </div>
-  
-          <div className="option">
-            <label htmlFor="width3" className="left-widths">
-              Width of turn/tilt window (inward opening) in section 3 (in mm):
-              <span><br />(Calculated automatically)</span>
-            </label>
-            <input
-              type="number"
-              id="width3"
-              value={width3}
-              onChange={(event) => setWidth3(event.target.value)}
-              disabled={fixedDistribution !== "Manual"}
-            />
-          </div>
-        </div>
-      </div>
-    );
-  };
-  
-  const five = () => {
-    // Assuming 'product?.acf?.glass_layers' is the correct path to the glass layers data
-    const glassLayers = product?.acf?.glass_layers || [];
-
-    return (
-      <>
-        {glassLayers.map((glassLayer, index) => (
-          <div
-            key={index}
-            className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-              selectedGlassLayers?.price_per_sqm === glassLayer.price_per_sqm
-                ? "selected"
-                : ""
-            }`}
-            onClick={() => setSelectedGlassLayers(glassLayer)}
-          >
-            <img
-              src={glassLayer.glass_image?.url || "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png"}
-              alt={`Glass layer ${index + 1}`}
-              onError={(e) => (e.target.src = "https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png")} // Provide a fallback image path
-            />
-            <div>
-              <p>{glassLayer.glass_type}</p>
-              <p>€{glassLayer.price_per_sqm || "N/A"}</p>
-            </div>
-          </div>
-        ))}
       </>
     );
   };
