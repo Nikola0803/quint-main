@@ -658,29 +658,15 @@ const windowColorInsidePrice = selectedWindowColorInside
    );
   };
 
-  const four = ({ width1, setWidth1, width3, setWidth3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm }) => {
-    // Calculate width2 based on distribution type
-    let width2;
-    if (fixedDistribution === "1:1:1") {
-      width2 = widthInCm / 3;
-    } else if (fixedDistribution === "1:2:1") {
-      width2 = (widthInCm - width1 - width3) / 2;
-    } else {
-      // Calculate width2 for Manual distribution
-      width2 = widthInCm - width1 - width3;
-    }
+  const four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm }) => {
+    // Calculate width2 for 1:1:1 distribution
+    const width2For111 = widthInCm / 3;
+    
+    // Calculate width2 for 1:2:1 distribution
+    const width2For121 = (widthInCm - width1 - width3) / 2;
   
-    // Handler for dropdown change
-    const handleDistributionChange = (event) => {
-      const value = event.target.value;
-      handleFixedDistributionChange(value);
-  
-      // Clear input values when distribution type is changed
-      if (value !== "Manual") {
-        setWidth1("");
-        setWidth3("");
-      }
-    };
+    // Calculate width2 for Manual distribution
+    const width2ForManual = (parseInt(widthInCm) - (parseInt(width1) + parseInt(width3))) / 10;
   
     return (
       <div>
@@ -691,7 +677,7 @@ const windowColorInsidePrice = selectedWindowColorInside
             <select
               id="fixedDistribution"
               value={fixedDistribution}
-              onChange={handleDistributionChange}
+              onChange={handleFixedDistributionChange}
             >
               <option value="">Select Fixed Distribution</option>
               <option value="1:1:1">1:1:1</option>
@@ -737,8 +723,13 @@ const windowColorInsidePrice = selectedWindowColorInside
             <input
               type="number"
               id="width2"
-              value={width2}
+              value={
+                fixedDistribution === "1:1:1" ? width2For111 :
+                fixedDistribution === "1:2:1" ? width2For121 :
+                fixedDistribution === "Manual" ? width2ForManual : ""
+              }
               readOnly
+              disabled={fixedDistribution !== "Manual"}
             />
           </div>
         </div>
