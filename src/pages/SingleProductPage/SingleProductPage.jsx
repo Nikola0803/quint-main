@@ -693,20 +693,7 @@ const windowColorInsidePrice = selectedWindowColorInside
             />
           </div>
   
-          <div className="option">
-            <label htmlFor="width2" className="left-widths">
-              Width of fixed glass in section 2 (in mm):
-              <span><br />(Calculated automatically)</span>
-            </label>
-            <input
-              type="number"
-              id="width2"
-              value={(parseInt(widthInCm) - (parseInt(width1) + parseInt(width3))) / 10}
-              onChange={(event) => setWidth2(event.target.value)}
-              readOnly
-              disabled={fixedDistribution !== "Manual"}
-          />           
-          </div>
+          
   
           <div className="option">
             <label htmlFor="width3" className="left-widths">
@@ -720,6 +707,21 @@ const windowColorInsidePrice = selectedWindowColorInside
               onChange={(event) => setWidth3(event.target.value)}
               disabled={fixedDistribution !== "Manual"}
             />
+          </div>
+
+          <div className="option">
+            <label htmlFor="width2" className="left-widths">
+              Width of fixed glass in section 2 (in mm):
+              <span><br />(Calculated automatically)</span>
+            </label>
+            <input
+              type="number"
+              id="width2"
+              value={(parseInt(widthInCm) - (parseInt(width1) + parseInt(width3))) / 10}
+              onChange={(event) => setWidth2(event.target.value)}
+              readOnly
+              disabled={fixedDistribution !== "Manual"}
+          />           
           </div>
         </div>
       </div>
