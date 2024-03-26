@@ -226,7 +226,7 @@ function SingleProductPage() {
   const vat = totalPriceBeforeVAT * VAT_RATE;
 
   
-  // const glassTypePrice = selectedGlassTypes?.color_of_glass;
+  const glassTypePrice = selectedGlassTypes * price_per_sqm;
 
   // const openingPrice = selectedOpening?.price_of_handle;
 
@@ -1535,7 +1535,7 @@ function SingleProductPage() {
                             ? `Selected Opening: ${selectedOpening}`
                             : "Selected option"}
                         </p>
-                        <p>€{selectedGlassTypes ? "0" : "0"}</p>
+                        <p>€{selectedGlassTypes ? glassTypePrice.toFixed(2) : "0"}</p>
                       </div>
                     </div>
                     <div className="single-product-page__customize__right__product__body__option">
