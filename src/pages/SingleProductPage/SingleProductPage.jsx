@@ -1337,9 +1337,9 @@ function SingleProductPage() {
                       <div className="single-product-page__customize__right__product__body__option__top">
                         <span>4</span>
                         <p>
-                          {selectedOpening
-                            ? `Opening: ${selectedOpening}`
-                            : "Option name"}
+                          {selectedGlassLayers
+                            ? `Selected Glass Layer: Double/Triple Glazing`
+                            : "Selected option"}
                         </p>
                       </div>
                       <div className="single-product-page__customize__right__product__body__option__mid">
@@ -1348,7 +1348,7 @@ function SingleProductPage() {
                             ? `Selected Opening: ${selectedOpening}`
                             : "Selected option"}
                         </p>
-                        <p>€{selectedOpening ? "0" : "0"}</p>
+                        <p>€{selectedGlassTypes ? "0" : "0"}</p>
                       </div>
                     </div>
                     <div className="single-product-page__customize__right__product__body__option">
