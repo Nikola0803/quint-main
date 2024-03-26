@@ -44,18 +44,11 @@ function SingleProductPage() {
 
   // Define state for selectedColor
   const [selectedColor, setSelectedColor] = useState(null);
-  // Define state variables for each row's selected color
-  const [selectedCaseColor, setSelectedCaseColor] = useState(null);
-  const [selectedWindowColor, setSelectedWindowColor] = useState(null);
-  const [selectedCaseColorInside, setSelectedCaseColorInside] = useState(null);
-  const [selectedWindowColorInside, setSelectedWindowColorInside] = useState(null);
-
-  // Define state variables for each row's color price
-  const [caseColorPrice, setCaseColorPrice] = useState(0);
-  const [windowColorPrice, setWindowColorPrice] = useState(0);
-  const [caseColorInsidePrice, setCaseColorInsidePrice] = useState(0);
-  const [windowColorInsidePrice, setWindowColorInsidePrice] = useState(0);
-
+      // Define state variables for each row's selected color
+      const [selectedCaseColor, setSelectedCaseColor] = useState(null);
+      const [selectedWindowColor, setSelectedWindowColor] = useState(null);
+      const [selectedCaseColorInside, setSelectedCaseColorInside] = useState(null);
+      const [selectedWindowColorInside, setSelectedWindowColorInside] = useState(null);
   const [selectedProfile, setSelectedProfile] = useState(null);
   const [selectedOpening, setSelectedOpening] = useState(null);
   const [selectedGlassLayers, setSelectedGlassLayers] = useState(null);
@@ -218,24 +211,24 @@ function SingleProductPage() {
     ? Number(selectedColor["color_price_in_percent"] || 0)
     : 0;
 
-  // Update color price to number for selected case color
-const updatedCaseColorPrice = selectedCaseColor && selectedCaseColor["color_price_in_percent"]
-? Number(selectedCaseColor["color_price_in_percent"])
+  // Convert color price to number for selected case color
+const caseColorPrice = selectedCaseColor
+? Number(selectedCaseColor["color_price_in_percent"] || 0)
 : 0;
 
-// Update color price to number for selected window color
-const updatedWindowColorPrice = selectedWindowColor && selectedWindowColor["color_price_in_percent"]
-? Number(selectedWindowColor["color_price_in_percent"])
+// Convert color price to number for selected window color
+const windowColorPrice = selectedWindowColor
+? Number(selectedWindowColor["color_price_in_percent"] || 0)
 : 0;
 
-// Update color price to number for selected case color inside
-const updatedCaseColorInsidePrice = selectedCaseColorInside && selectedCaseColorInside["color_price_in_percent"]
-? Number(selectedCaseColorInside["color_price_in_percent"])
+// Convert color price to number for selected case color inside
+const caseColorInsidePrice = selectedCaseColorInside
+? Number(selectedCaseColorInside["color_price_in_percent"] || 0)
 : 0;
 
-// Update color price to number for selected window color inside
-const updatedWindowColorInsidePrice = selectedWindowColorInside && selectedWindowColorInside["color_price_in_percent"]
-? Number(selectedWindowColorInside["color_price_in_percent"])
+// Convert color price to number for selected window color inside
+const windowColorInsidePrice = selectedWindowColorInside
+? Number(selectedWindowColorInside["color_price_in_percent"] || 0)
 : 0;
 
   const price_per_sqm = (heightInCm * widthInCm) / 10000;
@@ -789,12 +782,10 @@ const updatedWindowColorInsidePrice = selectedWindowColorInside && selectedWindo
         return <p>No color data available</p>;
     }
 
-// Function to handle color option click for each row
-const handleColorOptionClick = (colorOption, setSelectedColor, setColorPrice) => {
-  setSelectedColor(colorOption);
-  const price = colorOption ? Number(colorOption["color_price_in_percent"]) : 0;
-  setColorPrice(price);
-};
+    // Function to handle color option click for each row
+    const handleColorOptionClick = (colorOption, setSelectedColor) => {
+        setSelectedColor(colorOption);
+    };
 
     const handleCaseColorOptionClick = (colorOption) => {
       setSelectedCaseColor(colorOption);
@@ -870,8 +861,8 @@ const handleColorOptionClick = (colorOption, setSelectedColor, setColorPrice) =>
                 className={`single-product-page__customize__left__option-holder__option__body__color-option ${
                     selectedWindowColor === colorOption.color_name ? 'selected' : ''
                 }`}
-                onClick={() => handleColorOptionClick(colorOption, setSelectedCaseColor, setCaseColorPrice)}
-                >
+                onClick={() => handleColorOptionClick(colorOption.color_name, setSelectedWindowColor)}
+            >
                 <img
                     src={colorOption.color_image?.url || 'https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png'}
                     alt={colorOption.color_name}
