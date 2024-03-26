@@ -251,6 +251,7 @@ const windowColorInsidePrice = selectedWindowColorInside
   const colorCaseInsidenside = totalPriceBeforeVAT * (parseFloat(caseColorInsidePrice)/100); // aadded /100 to calculate 10% for example
   const colorWindowInside = totalPriceBeforeVAT * (parseFloat(windowColorInsidePrice)/100); // aadded /100 to calculate 10% for example
   const colorAllSides = colorCase + colorWindow + colorCaseInsidenside + colorWindowInside;
+  const fallBackPriceColors = totalPriceBeforeVAT * (10/100);
 
   const VAT_RATE = 0.21; // 21%
   const vat = totalPriceBeforeVAT * VAT_RATE;
@@ -829,7 +830,7 @@ const windowColorInsidePrice = selectedWindowColorInside
             <div>
                 <p>{colorOption.color_name}</p>
                 {/* Display the color price */}
-                <p>€{parseFloat(priceInPercent) || 'N/A'}</p>
+                <p>€{parseFloat(priceInPercent) || fallBackPriceColors}</p>
             </div>
         </div>
     );
@@ -858,7 +859,7 @@ const windowColorInsidePrice = selectedWindowColorInside
                 />
                 <div>
                     <p>{colorOption.color_name}</p>
-                    <p>€{colorOption.color_price_in_percent || 'N/A'}</p>
+                    <p>€{colorOption.color_price_in_percent || fallBackPriceColors}</p>
                 </div>
             </div>
         ))}
@@ -885,7 +886,7 @@ const windowColorInsidePrice = selectedWindowColorInside
                 />
                 <div>
                     <p>{colorOption.color_name}</p>
-                    <p>€{colorOption.color_price_in_percent || 'N/A'}</p>
+                    <p>€{colorOption.color_price_in_percent || fallBackPriceColors}</p>
                 </div>
             </div>
         ))}
@@ -912,7 +913,7 @@ const windowColorInsidePrice = selectedWindowColorInside
                 />
                 <div>
                     <p>{colorOption.color_name}</p>
-                    <p>€{colorOption.color_price_in_percent || 'N/A'}</p>
+                    <p>€{colorOption.color_price_in_percent || fallBackPriceColors}</p>
                 </div>
             </div>
         ))}
