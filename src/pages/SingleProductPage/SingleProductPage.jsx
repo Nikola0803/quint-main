@@ -787,6 +787,11 @@ const windowColorInsidePrice = selectedWindowColorInside
         setSelectedColor(colorOption);
     };
 
+    const handleCaseColorOptionClick = (colorOption) => {
+      setSelectedCaseColor(colorOption);
+    };
+    
+
     return (
         <>
             <div className="color-options-container-main">
