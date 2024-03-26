@@ -1479,14 +1479,7 @@ function SingleProductPage() {
 
                     {/* Displaying the selected color option and its price */}
                     <div className="single-product-page__customize__right__product__body__option">
-                      <div className="single-product-page__customize__right__product__body__option__top">
-                        <span>1</span>
-                        <p>
-                          {selectedColor
-                            ? `Color: ${selectedColor.color_name}`
-                            : "Option name"}
-                        </p>
-                      </div>
+
                       <div className="single-product-page__customize__right__product__body__option__mid">
                         <p>
                           {selectedColor
@@ -1501,7 +1494,7 @@ function SingleProductPage() {
                     </div>
                     <div className="single-product-page__customize__right__product__body__option">
                       <div className="single-product-page__customize__right__product__body__option__top">
-                        <span>2</span>
+                        <span>1</span>
                         <p>
                           {selectedProfile
                             ? `Profile: ${selectedColor?.profile_name}`
@@ -1522,25 +1515,7 @@ function SingleProductPage() {
                     </div>
                     <div className="single-product-page__customize__right__product__body__option">
                       <div className="single-product-page__customize__right__product__body__option__top">
-                        <span>3</span>
-                        <p>
-                          {selectedGlassLayers
-                            ? `Selected Glass Layer: Double/Triple Glazing`
-                            : "Selected option"}
-                        </p>
-                      </div>
-                      <div className="single-product-page__customize__right__product__body__option__mid">
-                        <p>
-                          {selectedOpening
-                            ? `Selected Opening: ${selectedOpening}`
-                            : "Selected option"}
-                        </p>
-                        <p>€{selectedGlassTypes ? glassPrice.toFixed(2) : "0"}</p>
-                      </div>
-                    </div>
-                    <div className="single-product-page__customize__right__product__body__option">
-                      <div className="single-product-page__customize__right__product__body__option__top">
-                        <span>3</span>
+                        <span>2</span>
                         <p>
                           {selectedGlassLayers ? `Glass Layer` : "Option name"}
                         </p>
@@ -1559,7 +1534,7 @@ function SingleProductPage() {
                     </div>
                     <div className="single-product-page__customize__right__product__body__option">
                       <div className="single-product-page__customize__right__product__body__option__top">
-                        <span>4</span>
+                        <span>3</span>
                         <p>
                           {selectedProfile
                             ? `Profile: ${selectedColor?.profile_name}`
@@ -1580,7 +1555,7 @@ function SingleProductPage() {
                     </div>
                     <div className="single-product-page__customize__right__product__body__option">
                       <div className="single-product-page__customize__right__product__body__option__top">
-                        <span>5</span>
+                        <span>4</span>
                         <p>
                           {selectedGlassTypes
                             ? `Glass Color: ${selectedGlassTypes.color_of_glass}`
@@ -1596,6 +1571,14 @@ function SingleProductPage() {
                         <p>€{selectedGlassTypes ? "0" : "0"}</p>
                       </div>
                     </div>
+                    <div className="single-product-page__customize__right__product__body__option__top">
+                        <span>5</span>
+                        <p>
+                          {selectedColor
+                            ? `Color: ${selectedColor.color_name}`
+                            : "Option name"}
+                        </p>
+                      </div>
                     <div className="single-product-page__customize__right__product__body__option">
                       <div className="single-product-page__customize__right__product__body__option__top">
                         <span>6</span>
