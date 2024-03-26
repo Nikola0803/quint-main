@@ -186,7 +186,7 @@ function SingleProductPage() {
   // const totalLengthInCmVerticalBottom = ((2 * heightInCm) + (widthInCm * 3 ) + (2 * windowHeight));
   // const totalLengthInCmVerticalTop = ((2 * heightInCm) + (widthInCm * 5 ) + (2 * windowHeight));
 
-  const totalLengthInCm = (8 * heightInCm) + (widthInCm * 2) + ((2 * width1)/10 + (2 * width3)/10);
+  const totalLengthInCm = ((8 * heightInCm) + (widthInCm * 2) + ((2 * width1)/10 + (2 * width3)/10) * profitMaragin);
 
   // Assuming selectedColor.color_price is a string, convert it to number
   const colorPrice = selectedColor
@@ -212,7 +212,7 @@ const caseColorInsidePrice = selectedCaseColorInside
 const windowColorInsidePrice = selectedWindowColorInside
 ? Number(selectedWindowColorInside["color_price_in_percent"] || 0)
 : 0;
-
+  const profitMaragin = 2;
   const price_per_sqm = (heightInCm * widthInCm) / 10000;
   const profilePrice = Number(selectedProfile?.profile_price ?? 0) / 100;
   const pricePerCm = profilePrice;
