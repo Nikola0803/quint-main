@@ -796,24 +796,21 @@ const windowColorInsidePrice = selectedWindowColorInside
   };
   
   const handleCaseColorOptionClick = (colorOption) => {
-      setSelectedCaseColor(colorOption);
-      setSelectedColor(colorOption); // Also update selectedColor here if needed
+    setSelectedCaseColor(colorOption);
   };
   
   const handleWindowColorOptionClick = (colorOption) => {
-      setSelectedWindowColor(colorOption);
-      setSelectedColor(colorOption); // Also update selectedColor here if needed
+    setSelectedWindowColor(colorOption);
   };
   
   const handleCaseColorInsideOptionClick = (colorOption) => {
-      setSelectedCaseColorInside(colorOption);
-      setSelectedColor(colorOption); // Also update selectedColor here if needed
+    setSelectedCaseColorInside(colorOption);
   };
   
   const handleWindowColorInsideOptionClick = (colorOption) => {
-      setSelectedWindowColorInside(colorOption);
-      setSelectedColor(colorOption); // Also update selectedColor here if needed
-  };  
+    setSelectedWindowColorInside(colorOption);
+  };
+  
     
     return (
         <>
