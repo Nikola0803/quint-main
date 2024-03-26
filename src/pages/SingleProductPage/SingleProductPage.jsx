@@ -871,8 +871,6 @@ function SingleProductPage() {
         );
     };
     
-
-
   const six = () => {
     const handles = product?.acf?.handle || [];
 
