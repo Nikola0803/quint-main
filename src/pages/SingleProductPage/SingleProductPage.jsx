@@ -1252,14 +1252,14 @@ function SingleProductPage() {
                       stepNumber={2}
                       nextStep={"step3"}
                       map={two}
-                      text={"Choose Glass"}
+                      text={"Choose Profile"}
                     />
 
                     <Input
                       stepNumber={3}
                       nextStep={"step4"}
                       map={three}
-                      text={"Profile"}
+                      text={"Choose Glass"}
                     />
 
                     <div
