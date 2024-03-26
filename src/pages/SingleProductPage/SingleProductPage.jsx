@@ -805,28 +805,28 @@ const windowColorInsidePrice = selectedWindowColorInside
                         </div>
                     </div>
                 </div>
-              
-        {caseColorOptions.map((colorOption, index) => (
-            <div
-                key={index}
-                className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-                    selectedCaseColor === colorOption.color_name ? 'selected' : ''
-                }`}
-                onClick={() => handleCaseColorOptionClick(colorOption.color_name, setSelectedCaseColor)}
-            >
-                <img
-                    src={colorOption.color_image?.url || 'https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png'}
-                    alt={colorOption.color_name}
-                    onError={(e) => (e.target.src = 'https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png')}
-                />
-                <div>
-                    <p>{colorOption.color_name}</p>
-                    {/* Access and display the color price */}
-                    <p>€{colorOption.color_price_in_percent || 'N/A'}</p>
-                </div>
-            </div>
-        ))}
 
+                {// Case Color options}
+                {caseColorOptions.map((colorOption, index) => (
+                    <div
+                        key={index}
+                        className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+                            selectedCaseColor === colorOption.color_name ? 'selected' : ''
+                        }`}
+                        onClick={() => handleCaseColorOptionClick(colorOption.color_name, setSelectedCaseColor)}
+                    >
+                        <img
+                            src={colorOption.color_image?.url || 'https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png'}
+                            alt={colorOption.color_name}
+                            onError={(e) => (e.target.src = 'https://thedarkstarsoft.com/quint/wp-content/uploads/woocommerce-placeholder.png')}
+                        />
+                        <div>
+                            <p>{colorOption.color_name}</p>
+                            {/* Access and display the color price */}
+                            <p>€{colorOption.color_price_in_percent || 'N/A'}</p>
+                        </div>
+                    </div>
+                ))}
 
 {/* Window Color options */}
 <div className="color-options-container">
