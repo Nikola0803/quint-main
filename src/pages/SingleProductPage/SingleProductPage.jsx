@@ -209,6 +209,7 @@ function SingleProductPage() {
   const profilePrice = Number(selectedProfile?.profile_price ?? 0) / 100;
   const pricePerCm = profilePrice;
   const glassLayerPrice = Number(selectedGlassLayers?.price_per_sqm ?? 0);
+  const glassPrice = glassLayerPrice * price_per_sqm;
   const handlePrice = Number(selectedHandles?.price_of_handle ?? 0);
   const gridPrice = Number(selectedGrids?.price_of_ventilation_grid ?? 0);
   // const securityPrice =  Number(selectedSecurity?.price_of_extra_security ?? 0);
@@ -1535,7 +1536,7 @@ function SingleProductPage() {
                             ? `Selected Opening: ${selectedOpening}`
                             : "Selected option"}
                         </p>
-                        <p>€{selectedGlassTypes ? glassTypePrice.toFixed(2) : "0"}</p>
+                        <p>€{selectedGlassTypes ? glassPrice.toFixed(2) : "0"}</p>
                       </div>
                     </div>
                     <div className="single-product-page__customize__right__product__body__option">
