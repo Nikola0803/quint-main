@@ -44,11 +44,18 @@ function SingleProductPage() {
 
   // Define state for selectedColor
   const [selectedColor, setSelectedColor] = useState(null);
-      // Define state variables for each row's selected color
-      const [selectedCaseColor, setSelectedCaseColor] = useState(null);
-      const [selectedWindowColor, setSelectedWindowColor] = useState(null);
-      const [selectedCaseColorInside, setSelectedCaseColorInside] = useState(null);
-      const [selectedWindowColorInside, setSelectedWindowColorInside] = useState(null);
+  // Define state variables for each row's selected color
+  const [selectedCaseColor, setSelectedCaseColor] = useState(null);
+  const [selectedWindowColor, setSelectedWindowColor] = useState(null);
+  const [selectedCaseColorInside, setSelectedCaseColorInside] = useState(null);
+  const [selectedWindowColorInside, setSelectedWindowColorInside] = useState(null);
+
+  // Define state variables for each row's color price
+  const [caseColorPrice, setCaseColorPrice] = useState(0);
+  const [windowColorPrice, setWindowColorPrice] = useState(0);
+  const [caseColorInsidePrice, setCaseColorInsidePrice] = useState(0);
+  const [windowColorInsidePrice, setWindowColorInsidePrice] = useState(0);
+
   const [selectedProfile, setSelectedProfile] = useState(null);
   const [selectedOpening, setSelectedOpening] = useState(null);
   const [selectedGlassLayers, setSelectedGlassLayers] = useState(null);
@@ -210,26 +217,26 @@ function SingleProductPage() {
   const colorPrice = selectedColor
     ? Number(selectedColor["color_price_in_percent"] || 0)
     : 0;
-
-  // Convert color price to number for selected case color
-const caseColorPrice = selectedCaseColor
-? Number(selectedCaseColor["color_price_in_percent"] || 0)
-: 0;
+// Convert color price to number for selected case color
+const caseColorPrice = selectedCaseColor && selectedCaseColor["color_price_in_percent"]
+    ? Number(selectedCaseColor["color_price_in_percent"])
+    : 0;
 
 // Convert color price to number for selected window color
-const windowColorPrice = selectedWindowColor
-? Number(selectedWindowColor["color_price_in_percent"] || 0)
-: 0;
+const windowColorPrice = selectedWindowColor && selectedWindowColor["color_price_in_percent"]
+    ? Number(selectedWindowColor["color_price_in_percent"])
+    : 0;
 
 // Convert color price to number for selected case color inside
-const caseColorInsidePrice = selectedCaseColorInside
-? Number(selectedCaseColorInside["color_price_in_percent"] || 0)
-: 0;
+const caseColorInsidePrice = selectedCaseColorInside && selectedCaseColorInside["color_price_in_percent"]
+    ? Number(selectedCaseColorInside["color_price_in_percent"])
+    : 0;
 
 // Convert color price to number for selected window color inside
-const windowColorInsidePrice = selectedWindowColorInside
-? Number(selectedWindowColorInside["color_price_in_percent"] || 0)
-: 0;
+const windowColorInsidePrice = selectedWindowColorInside && selectedWindowColorInside["color_price_in_percent"]
+    ? Number(selectedWindowColorInside["color_price_in_percent"])
+    : 0;
+
 
   const price_per_sqm = (heightInCm * widthInCm) / 10000;
   const profilePrice = Number(selectedProfile?.profile_price ?? 0) / 100;
