@@ -658,19 +658,30 @@ const windowColorInsidePrice = selectedWindowColorInside
    );
   };
 
-  const four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm }) => {
-    let width1Calculated, width2Calculated, width3Calculated;
-    
+  const four = ({ width1, setWidth1, width3, setWidth3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm }) => {
+    // Calculate width2 based on distribution type
+    let width2;
     if (fixedDistribution === "1:1:1") {
-      // Calculate widths for 1:1:1 distribution
-      width1Calculated = widthInCm / 3;
-      width2Calculated = widthInCm / 3;
-      width3Calculated = widthInCm / 3;
+      width2 = widthInCm / 3;
     } else if (fixedDistribution === "1:2:1") {
-      // Calculate widths for 1:2:1 distribution
-      width1Calculated = widthInCm / 4;
-      width2Calculated = widthInCm / 2;
-      width3Calculated = widthInCm / 4;
+      width2 = (widthInCm - width1 - width3) / 2;
+    }
+  
+    // Handler for dropdown change
+    const handleDistributionChange = (event) => {
+      const value = event.target.value;
+      handleFixedDistributionChange(value);
+  
+      // Clear input values when distribution type is changed
+      if (value !== "Manual") {
+        setWidth1("");
+        setWidth3("");
+      }
+    };
+  
+    // Calculate width2 for Manual distribution
+    if (fixedDistribution === "Manual") {
+      width2 = widthInCm - width1 - width3;
     }
   
     return (
@@ -682,7 +693,7 @@ const windowColorInsidePrice = selectedWindowColorInside
             <select
               id="fixedDistribution"
               value={fixedDistribution}
-              onChange={handleFixedDistributionChange}
+              onChange={handleDistributionChange}
             >
               <option value="">Select Fixed Distribution</option>
               <option value="1:1:1">1:1:1</option>
@@ -700,7 +711,7 @@ const windowColorInsidePrice = selectedWindowColorInside
             <input
               type="number"
               id="width1"
-              value={width1Calculated !== undefined ? width1Calculated : width1}
+              value={width1}
               onChange={(event) => setWidth1(event.target.value)}
               disabled={fixedDistribution !== "Manual"}
             />
@@ -714,7 +725,7 @@ const windowColorInsidePrice = selectedWindowColorInside
             <input
               type="number"
               id="width3"
-              value={width3Calculated !== undefined ? width3Calculated : width3}
+              value={width3}
               onChange={(event) => setWidth3(event.target.value)}
               disabled={fixedDistribution !== "Manual"}
             />
@@ -728,9 +739,8 @@ const windowColorInsidePrice = selectedWindowColorInside
             <input
               type="number"
               id="width2"
-              value={width2Calculated}
+              value={width2}
               readOnly
-              disabled={fixedDistribution !== "Manual"}
             />
           </div>
         </div>
@@ -738,7 +748,6 @@ const windowColorInsidePrice = selectedWindowColorInside
     );
   };
   
-
   const five = () => {
    
     // Check if product exists and has color data
