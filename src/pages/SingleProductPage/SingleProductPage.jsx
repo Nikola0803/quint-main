@@ -805,12 +805,7 @@ const windowColorInsidePrice = selectedWindowColorInside
                         </div>
                     </div>
                 </div>
-
-{/* Case Color options */}
-<div className="color-options-container">
-    <h5>Case Color</h5>
-    <div className="color-options-inner">
-        {/* Display case color options */}
+              
         {caseColorOptions.map((colorOption, index) => (
             <div
                 key={index}
@@ -826,12 +821,12 @@ const windowColorInsidePrice = selectedWindowColorInside
                 />
                 <div>
                     <p>{colorOption.color_name}</p>
+                    {/* Access and display the color price */}
                     <p>€{colorOption.color_price_in_percent || 'N/A'}</p>
                 </div>
             </div>
         ))}
-    </div>
-</div>
+
 
 {/* Window Color options */}
 <div className="color-options-container">
