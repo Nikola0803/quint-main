@@ -665,6 +665,9 @@ const windowColorInsidePrice = selectedWindowColorInside
       width2 = widthInCm / 3;
     } else if (fixedDistribution === "1:2:1") {
       width2 = (widthInCm - width1 - width3) / 2;
+    } else {
+      // Calculate width2 for Manual distribution
+      width2 = widthInCm - width1 - width3;
     }
   
     // Handler for dropdown change
@@ -678,11 +681,6 @@ const windowColorInsidePrice = selectedWindowColorInside
         setWidth3("");
       }
     };
-  
-    // Calculate width2 for Manual distribution
-    if (fixedDistribution === "Manual") {
-      width2 = widthInCm - width1 - width3;
-    }
   
     return (
       <div>
