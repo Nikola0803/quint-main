@@ -923,7 +923,7 @@ function SingleProductPage() {
             />
             <div>
               <p>{handle.name_of_handle}</p>
-              <p>€{handle.price_of_handle}</p>{" "}
+              <p>Included</p>{" "}
               {/* Assuming price_of_handle exists and you want to display it */}
             </div>
           </div>
@@ -1580,12 +1580,7 @@ function SingleProductPage() {
                             ? `Selected Handle: ${selectedHandles?.name_of_handle}`
                             : "Selected option"}
                         </p>
-                        <p>
-                          €
-                          {selectedHandles
-                            ? selectedHandles?.price_of_handle
-                            : "0"}
-                        </p>
+                        <p>Included</p>
                       </div>
                     </div>
                     <div className="single-product-page__customize__right__product__body__option">
