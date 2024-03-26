@@ -877,31 +877,6 @@ function SingleProductPage() {
   };
 
   const six = () => {
-    // Directly using 'product?.acf?.glass_type' based on the API structure provided
-    const glassTypes = product?.acf?.glass_type || [];
-
-    return (
-      <>
-        {glassTypes.map((glassType, index) => (
-          <div
-            key={index}
-            className={`single-product-page__customize__left__option-holder__option__body__color-option ${
-              selectedGlassTypes?.color_of_glass === glassType.color_of_glass
-                ? "selected"
-                : ""
-            }`}
-            onClick={() => setSelectedGlassTypes(glassType)}
-          >
-            <div>
-              <p>{glassType.color_of_glass}</p>
-            </div>
-          </div>
-        ))}
-      </>
-    );
-  };
-
-  const seven = () => {
     const handles = product?.acf?.handle || [];
 
     return (
@@ -925,6 +900,31 @@ function SingleProductPage() {
               <p>{handle.name_of_handle}</p>
               <p>Included</p>{" "}
               {/* Assuming price_of_handle exists and you want to display it */}
+            </div>
+          </div>
+        ))}
+      </>
+    );
+  };
+
+  const seven = () => {
+    // Directly using 'product?.acf?.glass_type' based on the API structure provided
+    const glassTypes = product?.acf?.glass_type || [];
+
+    return (
+      <>
+        {glassTypes.map((glassType, index) => (
+          <div
+            key={index}
+            className={`single-product-page__customize__left__option-holder__option__body__color-option ${
+              selectedGlassTypes?.color_of_glass === glassType.color_of_glass
+                ? "selected"
+                : ""
+            }`}
+            onClick={() => setSelectedGlassTypes(glassType)}
+          >
+            <div>
+              <p>{glassType.color_of_glass}</p>
             </div>
           </div>
         ))}
