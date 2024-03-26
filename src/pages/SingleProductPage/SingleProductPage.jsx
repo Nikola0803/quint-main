@@ -1391,16 +1391,15 @@ function SingleProductPage() {
                     <Input
                       stepNumber={5}
                       nextStep={"step6"}
-                      map={six}
+                      map={five}
                       text={"Choose Color"}
                     />
-
 
                     <Input
                       stepNumber={6}
                       nextStep={"step7"}
-                      map={five}
-                      text={"Upsells"}
+                      map={six}
+                      text={"Handle"}
                     />
 
                     <Input
