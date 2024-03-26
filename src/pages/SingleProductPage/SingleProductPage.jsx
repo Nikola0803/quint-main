@@ -1503,24 +1503,6 @@ function SingleProductPage() {
                       <div className="single-product-page__customize__right__product__body__option__top">
                         <span>2</span>
                         <p>
-                          {selectedGlassLayers
-                            ? `Selected Glass Layer: Double/Triple Glazing`
-                            : "Selected option"}
-                        </p>
-                      </div>
-                      <div className="single-product-page__customize__right__product__body__option__mid">
-                        <p>
-                          {selectedOpening
-                            ? `Selected Opening: ${selectedOpening}`
-                            : "Selected option"}
-                        </p>
-                        <p>€{selectedGlassTypes ? glassPrice.toFixed(2) : "0"}</p>
-                      </div>
-                    </div>
-                    <div className="single-product-page__customize__right__product__body__option">
-                      <div className="single-product-page__customize__right__product__body__option__top">
-                        <span>3</span>
-                        <p>
                           {selectedProfile
                             ? `Profile: ${selectedColor?.profile_name}`
                             : "Option name"}
@@ -1558,7 +1540,7 @@ function SingleProductPage() {
                     </div>
                     <div className="single-product-page__customize__right__product__body__option">
                       <div className="single-product-page__customize__right__product__body__option__top">
-                        <span>4</span>
+                        <span>3</span>
                         <p>
                           {selectedGlassLayers ? `Glass Layer` : "Option name"}
                         </p>
@@ -1572,6 +1554,27 @@ function SingleProductPage() {
                         <p>
                           €
                           {selectedGlassLayers ? glassLayerPrice.toFixed(2) : "0"}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="single-product-page__customize__right__product__body__option">
+                      <div className="single-product-page__customize__right__product__body__option__top">
+                        <span>4</span>
+                        <p>
+                          {selectedProfile
+                            ? `Profile: ${selectedColor?.profile_name}`
+                            : "Option name"}
+                        </p>
+                      </div>
+                      <div className="single-product-page__customize__right__product__body__option__mid">
+                        <p>
+                          {selectedProfile
+                            ? `Selected Profile: ${selectedProfile?.profile_name}`
+                            : "Selected option"}
+                        </p>
+                        <p>
+                          €
+                          {selectedProfile? dimensionPrice.toFixed(2) : "0"}
                         </p>
                       </div>
                     </div>
