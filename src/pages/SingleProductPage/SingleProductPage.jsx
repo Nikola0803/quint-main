@@ -17,6 +17,7 @@ import CheckoutButton from "../../components/Checkout/Checkout.jsx";
 import { useCart } from "../../context/CartContext.js";
 import { Stage, Layer, Rect, Text } from "react-konva";
 import CanvasComponent from "../../components/Canvas/Canvas.jsx";
+import SingleFixedCanvasComponent from "../../components/Canvas/SingleFixedCanvas.jsx";
 import TwoPartCanvasComponent from "../../components/Canvas/TwoPartCanvasComponent.jsx";
 import TrippleCanvasComponent from "../../components/Canvas/TrippleCanvasComponent.jsx";
 import EmptyCanvasComponent from '../../components/Canvas/EmptyCanvasComponent.jsx'; 
@@ -93,24 +94,6 @@ function SingleProductPage() {
     setActiveId(text);
   }
   const [activeId, setActiveId] = useState("step1");
-
-// Define handleInputChange function outside of the four component
-const handleInputChange = (event, fieldName) => {
-  // Assuming you have state setters for width1, width2, and width3
-  switch (fieldName) {
-      case "width1":
-          setWidth1(event.target.value);
-          break;
-      case "width2":
-          setWidth2(event.target.value);
-          break;
-      case "width3":
-          setWidth3(event.target.value);
-          break;
-      default:
-          break;
-  }
-};
 
   const handleClick = (clickedId) => {
     setActiveId(clickedId); // Set the active ID
@@ -208,7 +191,7 @@ const handleInputChange = (event, fieldName) => {
     case "Tripple Fixed":
       totalLengthInCm = 4 * heightInCm + widthInCm * 2;
       break;
-    case "Two Part Opening":
+    case "Two Openings":
       totalLengthInCm = 7 * heightInCm + widthInCm * 2 + 2 * firstWindow + 2 * secondWindow;
       break;
     case "Two Part Opening All":
@@ -543,8 +526,28 @@ const windowColorInsidePrice = selectedWindowColorInside
      </>
    );
   };
-
-  <four
+  
+  const Four = ({ width1, width2, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm }) => {
+    const [value, setValue] = useState('')
+    const handleInputChange = (event, inputName) => {
+      const newValue = event.target.value;
+      // You can handle the input change here, for example, updating state
+      switch (inputName) {
+        case "width1":
+          setWidth1(newValue);
+          break;
+        case "width2":
+          // Handle width2 input change if needed
+          break;
+        case "width3":
+          setWidth3(newValue);
+          break;
+        default:
+          break;
+      }
+    };
+    
+  <Four
     width1={width1}
     width2={width2}
     width3={width3}
@@ -552,89 +555,91 @@ const windowColorInsidePrice = selectedWindowColorInside
     handleFixedDistributionChange={handleFixedDistributionChange}
     activeId={activeId}
     widthInCm={widthInCm}
-    handleInputChange={handleInputChange} // Pass the handleInputChange function as a prop
-/>
-
-const four = ({ width1, width2, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm }) => {
-  // Function to determine the value for width2 input
-  const getWidth2Value = () => {
-      switch (fixedDistribution) {
-          case "1:1:1":
-              return widthInCm / 3; // Set width2 to one-third of widthInCm
-          case "1:2:1":
-              return (widthInCm - width1 - width3) / 2;
-          case "Manual":
-              return width2;
-          default:
-              return "";
-      }
+    handleInputChange={handleInputChange} // Pass the handleInputChange function
+  />
+  
+    // Function to determine the value for width2 input
+    const getWidth2Value = () => {
+        switch (fixedDistribution) {
+            case "1:1:1":
+                return widthInCm / 3; // Set width2 to one-third of widthInCm
+            case "1:2:1":
+                return (widthInCm - width1 - width3) / 2;
+            case "Manual":
+                return width2;
+            default:
+                return "";
+        }
+    };
+  
+    useEffect(() => {
+      setValue(getWidth2Value())
+    }, [fixedDistribution])
+  
+    return (
+        <div>
+            <div className={`single-product-page__customize__left__option-holder__option__body ${activeId === "step4" ? "" : "d-none"}`}>
+                {/ Fixed distribution /}
+                <div className="option">
+                    <label htmlFor="fixedDistribution">Fixed Distribution:</label>
+                    <select
+                        id="fixedDistribution"
+                        value={fixedDistribution}
+                        onChange={handleFixedDistributionChange}
+                    >
+                        <option value="">Select Fixed Distribution</option>
+                        <option value="1:1:1">1:1:1</option>
+                        <option value="1:2:1">1:2:1</option>
+                        <option value="Manual">Manual</option>
+                    </select>
+                </div>
+    
+                {/ Width inputs /}
+                <div className="option">
+                    <label htmlFor="width1" className="left-widths">
+                        Width of turn/tilt window (inward opening) in section 1 (in mm):
+                        <span><br />(Calculated automatically)</span>
+                    </label>
+                    <input
+                        type="number"
+                        id="width1"
+                        value={fixedDistribution === "1:1:1" ? widthInCm / 3 : width1} // Set width1 to one-third of widthInCm if 1:1:1 is selected
+                        onChange={(event) => handleInputChange(event, "width1")}
+                        disabled={fixedDistribution !== "Manual"}
+                    />
+                </div>
+    
+                <div className="option">
+                    <label htmlFor="width3" className="left-widths">
+                        Width of turn/tilt window (inward opening) in section 3 (in mm):
+                        <span><br />(Calculated automatically)</span>
+                    </label>
+                    <input
+                        type="number"
+                        id="width3"
+                        value={fixedDistribution === "1:1:1" ? widthInCm / 3 : width3} // Set width3 to one-third of widthInCm if 1:1:1 is selected
+                        onChange={(event) => handleInputChange(event, "width3")}
+                        disabled={fixedDistribution !== "Manual"}
+                    />
+                </div>
+    
+                <div className="option">
+                    <label htmlFor="width2" className="left-widths">
+                        Width of fixed glass in section 2 (in mm):
+                        <span><br />(Calculated automatically)</span>
+                    </label>
+                    <input
+                        type="number"
+                        id="width2"
+                        value={value} // Assign calculated value here
+                        readOnly
+                        disabled={fixedDistribution !== "Manual"}
+                    />
+                </div>
+            </div>
+        </div>
+    );
   };
-
-  return (
-      <div>
-          <div className={`single-product-page__customize__left__option-holder__option__body ${activeId === "step4" ? "" : "d-none"}`}>
-              {/* Fixed distribution */}
-              <div className="option">
-                  <label htmlFor="fixedDistribution">Fixed Distribution:</label>
-                  <select
-                      id="fixedDistribution"
-                      value={fixedDistribution}
-                      onChange={handleFixedDistributionChange}
-                  >
-                      <option value="">Select Fixed Distribution</option>
-                      <option value="1:1:1">1:1:1</option>
-                      <option value="1:2:1">1:2:1</option>
-                      <option value="Manual">Manual</option>
-                  </select>
-              </div>
-  
-              {/* Width inputs */}
-              <div className="option">
-                  <label htmlFor="width1" className="left-widths">
-                      Width of turn/tilt window (inward opening) in section 1 (in mm):
-                      <span><br />(Calculated automatically)</span>
-                  </label>
-                  <input
-                      type="number"
-                      id="width1"
-                      value={fixedDistribution === "1:1:1" ? widthInCm / 3 : width1} // Set width1 to one-third of widthInCm if 1:1:1 is selected
-                      onChange={(event) => handleInputChange(event, "width1")}
-                      disabled={fixedDistribution !== "Manual"}
-                  />
-              </div>
-  
-              <div className="option">
-                  <label htmlFor="width3" className="left-widths">
-                      Width of turn/tilt window (inward opening) in section 3 (in mm):
-                      <span><br />(Calculated automatically)</span>
-                  </label>
-                  <input
-                      type="number"
-                      id="width3"
-                      value={fixedDistribution === "1:1:1" ? widthInCm / 3 : width3} // Set width3 to one-third of widthInCm if 1:1:1 is selected
-                      onChange={(event) => handleInputChange(event, "width3")}
-                      disabled={fixedDistribution !== "Manual"}
-                  />
-              </div>
-  
-              <div className="option">
-                  <label htmlFor="width2" className="left-widths">
-                      Width of fixed glass in section 2 (in mm):
-                      <span><br />(Calculated automatically)</span>
-                  </label>
-                  <input
-                      type="number"
-                      id="width2"
-                      value={getWidth2Value()} // Assign calculated value here
-                      readOnly
-                      disabled={fixedDistribution !== "Manual"}
-                  />
-              </div>
-          </div>
-      </div>
-  );
-};
-
 
 //   const five = () => {
    
@@ -1517,130 +1522,95 @@ const four = ({ width1, width2, width3, fixedDistribution, handleFixedDistributi
                       text={"Choose Glass"}
                     />
 
-                    <div
-                      className={`single-product-page__customize__left__option-holder__option ${
-                        activeId === `step${4}` ? "top-active" : ""
-                      }`}
-                      id={`step${4}`}
-                    >
-                      <div
-                        className={`single-product-page__customize__left__option-holder__option__top ${
-                          activeId === `step${4}`
-                            ? "single-product-page__customize__left__option-holder__option__top-active"
-                            : ""
-                        }`}
-                        onClick={() => handleClick(`step${4}`)}
-                      >
-                        <h3>{"Plane Division"}</h3>
-                        <span>
-                          <FaChevronDown
-                            color={activeId === `step${4}` ? "white" : "black"}
-                          />
-                        </span>
-                      </div>
-                      <div
-                        className={`single-product-page__customize__left__option-holder__option__body ${
-                          activeId !== `step${4}` ? "d-none" : ""
-                        }`}
-                      >
-                        <div>
-                          <div
-                            className={`single-product-page__customize__left__option-holder__option__body ${
-                              activeId === "step4" ? "" : "d-none"
-                            }`}
-                          >
-                            {/* Fixed distribution */}
-                            <div className="option">
-                              <label htmlFor="fixedDistribution">
-                                Fixed Distribution:
-                              </label>
-                              <select
-                                id="fixedDistribution"
-                                value={fixedDistribution}
-                                onChange={handleFixedDistributionChange}
-                              >
-                                <option value="">
-                                  Select Fixed Distribution
-                                </option>
-                                <option value="1:1:1">1:1:1</option>
-                                <option value="1:2:1">1:2:1</option>
-                                <option value="Manual">Manual</option>
-                              </select>
-                            </div>
+<div className={`single-product-page__customize__left__option-holder__option ${activeId === `step${4}` ? "top-active" : ""}`} id={`step${4}`}>
+      <div className={`single-product-page__customize__left__option-holder__option__top ${activeId === `step${4}` ? "single-product-page__customize__left__option-holder__option__top-active" : ""}`} onClick={() => handleClick(`step${4}`)}>
+        <h3>{"Plane Division"}</h3>
+        <span>
+          <FaChevronDown color={activeId === `step${4}` ? "white" : "black"} />
+        </span>
+      </div>
+      <div className={`single-product-page__customize__left__option-holder__option__body ${activeId !== `step${4}` ? "d-none" : ""}`}>
+        <div className={`single-product-page__customize__left__option-holder__option__body ${activeId === "step4" ? "" : "d-none"}`}>
+          {/* Fixed distribution */}
+          <div className="option">
+            <label htmlFor="fixedDistribution">
+              Fixed Distribution:
+            </label>
+            <select
+              id="fixedDistribution"
+              value={fixedDistribution}
+              onChange={handleFixedDistributionChange}
+            >
+              <option value="">
+                Select Fixed Distribution
+              </option>
+              <option value="1:1:1">1:1:1</option>
+              <option value="1:2:1">1:2:1</option>
+              <option value="Manual">Manual</option>
+            </select>
+          </div>
 
-                            {/* Width inputs */}
-                            <div className="option">
-                              <label htmlFor="width1" className="left-widths">
-                                Width of turn/tilt window (inward opening) in
-                                section 1 (in mm):
-                                <span>
-                                  <br />
-                                  (Calculated automatically)
-                                </span>
-                              </label>
-                              <input
-                                type="number"
-                                id="width1"
-                                value={width1}
-                                onChange={(event) =>
-                                  setWidth1(event.target.value)
-                                }
-                                disabled={fixedDistribution !== "Manual"}
-                              />
-                            </div>
+          {/* Width inputs */}
+          <div className="option">
+            <label htmlFor="width1" className="left-widths">
+              Width of turn/tilt window (inward opening) in
+              section 1 (in mm):
+              <span>
+                <br />
+                (Calculated automatically)
+              </span>
+            </label>
+            <input
+              type="number"
+              id="width1"
+              value={width1}
+              onChange={(event) => setWidth1(event.target.value)}
+              disabled={fixedDistribution !== "Manual"}
+            />
+          </div>
 
-                            <div className="option">
-                              <label htmlFor="width2" className="left-widths">
-                                Width of fixed glass in section 2 (in mm):
-                                <span>
-                                  <br />
-                                  (Calculated automatically)
-                                </span>
-                              </label>
-                              <input
-                                type="number"
-                                id="width2"
-                                value={width2}
-                                onChange={(event) =>
-                                  setWidth2(event.target.value)
-                                }
-                                disabled
-                              />
-                            </div>
+          <div className="option">
+            <label htmlFor="width2" className="left-widths">
+              Width of fixed glass in section 2 (in mm):
+              <span>
+                <br />
+                (Calculated automatically)
+              </span>
+            </label>
+            <input
+              type="number"
+              id="width2"
+              value={width2}
+              onChange={(event) => setWidth2(event.target.value)}
+              disabled
+            />
+          </div>
 
-                            <div className="option">
-                              <label htmlFor="width3" className="left-widths">
-                                Width of turn/tilt window (inward opening) in
-                                section 3 (in mm):
-                                <span>
-                                  <br />
-                                  (Calculated automatically)
-                                </span>
-                              </label>
-                              <input
-                                type="number"
-                                id="width3"
-                                value={width3}
-                                onChange={(event) =>
-                                  setWidth3(event.target.value)
-                                }
-                                disabled={fixedDistribution !== "Manual"}
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="single-product-page__customize__left__option-holder__option__btn-wrapper">
-                        <button
-                          className={`btn-colored ${
-                            activeId !== `step${4}` ? "d-none" : ""
-                          }`}
-                          onClick={() => goToNextStep("step5")}
-                        >
-                          Go to next step <FaTurnDown />
-                        </button>
-                      </div>
-                    </div>
+          <div className="option">
+            <label htmlFor="width3" className="left-widths">
+              Width of turn/tilt window (inward opening) in
+              section 3 (in mm):
+              <span>
+                <br />
+                (Calculated automatically)
+              </span>
+            </label>
+            <input
+              type="number"
+              id="width3"
+              value={width3}
+              onChange={(event) => setWidth3(event.target.value)}
+              disabled={fixedDistribution !== "Manual"}
+            />
+          </div>
+        </div>
+      </div>
+      <div className="single-product-page__customize__left__option-holder__option__btn-wrapper">
+        <button className={`btn-colored ${activeId !== `step${4}` ? "d-none" : ""}`} onClick={() => goToNextStep("step5")}>
+          Go to next step <FaTurnDown />
+        </button>
+      </div>
+    </div>
 
                     <Input
                       stepNumber={5}
@@ -1687,6 +1657,12 @@ const four = ({ width1, width2, width3, fixedDistribution, handleFixedDistributi
                     {/* Assuming there's an image to display */}
                     {typeOfWindow === "Single Opening" && !errorStringWidth && (
                       <CanvasComponent width={widthInCm} height={heightInCm} />
+                    )}
+                    {typeOfWindow === "Single Fixed" && !errorStringWidth && (
+                      <SingleFixedCanvasComponent width={widthInCm} height={heightInCm} />
+                    )}
+                    {typeOfWindow === "Two Opening" && !errorStringWidth && (
+                      <TwoPartCanvasComponent width={widthInCm} height={heightInCm} />
                     )}
                     {typeOfWindow === "Two Openings" && !errorStringWidth && (
                       <TwoPartCanvasComponent

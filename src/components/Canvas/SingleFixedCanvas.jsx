@@ -1,12 +1,11 @@
 import React, { useRef, useEffect } from 'react';
 
-const CanvasComponent = ({ width, height }) => {
+const SingleFixedCanvasComponent = ({ width, height, width1 }) => {
   const canvasRef = useRef(null);
   const canvasWidth = 700; // Width of the canvas frame
   const canvasHeight = 500; // Height of the canvas frame
   const borderWidth = 1; // Width of the border
   const spacing = 10; // Adjusted spacing between rectangles
-  const innerSpacing = 10; // Additional spacing inside the rectangle
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -33,14 +32,12 @@ const CanvasComponent = ({ width, height }) => {
     context.lineWidth = borderWidth;
     context.strokeRect(innerX, innerY, innerWidth, innerHeight);
 
-    // Calculate dimensions of the additional inner rectangle
-    const additionalInnerWidth = innerWidth - 2 * innerSpacing;
-    const additionalInnerHeight = innerHeight - 2 * innerSpacing;
-
-    // Draw additional rectangular shape inside the first inner rectangle
-    const additionalInnerX = innerX + innerSpacing;
-    const additionalInnerY = innerY + innerSpacing;
-    context.strokeRect(additionalInnerX, additionalInnerY, additionalInnerWidth, additionalInnerHeight);
+    // Draw additional rectangular shape inside width1
+    if (width1) {
+      const innerRectWidth = innerWidth - 20; // 10 pixels smaller on each side
+      const innerRectX = innerX + 10; // 10 pixels offset from the outer rectangle
+      context.strokeRect(innerRectX, innerY + 10, innerRectWidth, innerHeight - 20); // Adjusted height for inner rectangle
+    }
   
     // Add number to the bottom right corner of the inner rectangle
     const numberX = innerX + innerWidth - 15;
@@ -48,7 +45,7 @@ const CanvasComponent = ({ width, height }) => {
     context.fillStyle = '#000'; // Black color
     context.font = 'bold 16px Arial';
     context.fillText('1', numberX, numberY); // Write number 1 for the single inner rectangle
-  }, [width, height]);
+  }, [width, height, width1]);
   
 
   return (
@@ -61,4 +58,4 @@ const CanvasComponent = ({ width, height }) => {
   );
 };
 
-export default CanvasComponent;
+export default SingleFixedCanvasComponent;
