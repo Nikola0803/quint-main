@@ -30,7 +30,7 @@ import {
   useStripe,
 } from "@stripe/react-stripe-js";
 function SingleProductPage() {
-  const [typeOfWindow, setTypeOfWindow] = useState("Tripple Openings"); // Set the default value here
+  const [typeOfWindow, setTypeOfWindow] = useState(); // Set the default value here
   const [openingTypeValue, setOpeningTypeValue] = useState(null);
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -116,6 +116,12 @@ function SingleProductPage() {
         const data = await response.json();
 
         const meta = data.meta_data;
+
+        const windowTypeMeta = meta.find(m => m.key === "type_of_window");
+        if (windowTypeMeta) {
+          setTypeOfWindow(windowTypeMeta.value);
+        };
+
         setMinWidth(
           meta.find(
             (m) => m.key === "window_size_frame_width_size__in_mm_minimumwidth"
@@ -186,7 +192,7 @@ function SingleProductPage() {
   // const totalLengthInCmVerticalBottom = ((2 * heightInCm) + (widthInCm * 3 ) + (2 * windowHeight));
   // const totalLengthInCmVerticalTop = ((2 * heightInCm) + (widthInCm * 5 ) + (2 * windowHeight));
 
-  const totalLengthInCm = ((8 * heightInCm) + (widthInCm * 2) + ((2 * width1)/10 + (2 * width3)/10) * profitMaragin);
+  const totalLengthInCm = ((8 * heightInCm) + (widthInCm * 2) + ((2 * width1)/10 + (2 * width3)/10));
 
   // Assuming selectedColor.color_price is a string, convert it to number
   const colorPrice = selectedColor
@@ -1791,9 +1797,6 @@ const windowColorInsidePrice = selectedWindowColorInside
                         width={widthInCm}
                         height={heightInCm}
                       />
-                    )}
-                    {typeOfWindow === "Twoo Openings" && errorStringWidth && (
-                      <EmptyCanvasComponent canvasWidth={700} canvasHeight={500} />
                     )}
                     {typeOfWindow === "Tripple Openings" && !errorStringWidth && (
                       <TrippleCanvasComponent
