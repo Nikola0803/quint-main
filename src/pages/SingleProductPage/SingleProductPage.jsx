@@ -172,27 +172,58 @@ function SingleProductPage() {
   const heightInCm = frameHeight / 10;
   const firstWindow = 10;
   const secondWindow = 10;
-
+  const middleWindowWidth = 10;
+  const outerWindowWidths = 10;
+  const windowHeight = 10;
   // Calculate the total length in cm (assuming linear calculation means perimeter for a rectangle)
-  // THIS CALCULATION IS FOR 3 PART WINDOW!!! Height and width are dependable on the product type!
-  // const totalLengthInCm = ((8 * heightInCm) + (widthInCm * 2 ) + ( 2 * firstWindow) + ( 2 * secondWindow));
   // Vertical windows - it has 1/3 proportion for the fixed window down or up. Opening side is always 2/3 iffixedratios/.Minimum200
 
-  // const totalLengthInCmTrippleOpening = ((8 * heightInCm) + (widthInCm * 2 ) + ( 2 * firstWindow) + ( 2 * secondWindow));
-  // const totalLengthInCmTrippleSingleOpening = ((6 * heightInCm) + (widthInCm * 2 ) + ( 2 * middleWindowWidth) + ( 4 * outerWindowWidths));
-  // const totalLengthInCmTrippleFixed = ((4 * heightInCm) + (widthInCm * 2 ));
-  // const totalLengthInCmTwoPartOpening = ((7 * heightInCm) + (widthInCm * 2 ) + ( 2 * firstWindow) + ( 2 * secondWindow));
-  // const totalLengthInCmTwoPartOpeningAll = ((6 * heightInCm) + (widthInCm * 2 ) + ( 2 * firstWindow) + ( 2 * secondWindow));
-  // const totalLengthInCmTwoPartOpeningOne = ((5 * heightInCm) + (widthInCm * 2 ) + ( 2 * firstWindow) + ( 2 * secondWindow));
-  // const totalLengthInCmTwoPartFixed = ((3 * heightInCm) + (widthInCm * 2 ));
-  // const totalLengthInCmSingleFixed = ((4 * heightInCm) + (widthInCm * 4 ));
-  // const totalLengthInCmSingletFixed = ((2 * heightInCm) + (widthInCm * 2 ));
-  // const totalLengthInCmVerticalFixed = ((2 * heightInCm) + (widthInCm * 3 ));
-  // const totalLengthInCmVerticalFixedTripple = ((2 * heightInCm) + (widthInCm * 4 ));
-  // const totalLengthInCmVerticalBottom = ((2 * heightInCm) + (widthInCm * 3 ) + (2 * windowHeight));
-  // const totalLengthInCmVerticalTop = ((2 * heightInCm) + (widthInCm * 5 ) + (2 * windowHeight));
+  let totalLengthInCm;
 
-  const totalLengthInCm = ((8 * heightInCm) + (widthInCm * 2) + ((2 * width1)/10 + (2 * width3)/10));
+  switch (typeOfWindow) {
+    case "Tripple Opening":
+      totalLengthInCm = 8 * heightInCm + widthInCm * 2 + 2 * firstWindow + 2 * secondWindow;
+      break;
+    case "Tripple Single Opening":
+      totalLengthInCm = 6 * heightInCm + widthInCm * 2 + 2 * middleWindowWidth + 4 * outerWindowWidths;
+      break;
+    case "Tripple Fixed":
+      totalLengthInCm = 4 * heightInCm + widthInCm * 2;
+      break;
+    case "Two Part Opening":
+      totalLengthInCm = 7 * heightInCm + widthInCm * 2 + 2 * firstWindow + 2 * secondWindow;
+      break;
+    case "Two Part Opening All":
+      totalLengthInCm = 6 * heightInCm + widthInCm * 2 + 2 * firstWindow + 2 * secondWindow;
+      break;
+    case "Two Part Opening One":
+      totalLengthInCm = 5 * heightInCm + widthInCm * 2 + 2 * firstWindow + 2 * secondWindow;
+      break;
+    case "Two Part Fixed":
+      totalLengthInCm = 3 * heightInCm + widthInCm * 2;
+      break;
+    case "Single Fixed":
+      totalLengthInCm = 4 * heightInCm + widthInCm * 4;
+      break;
+    case "Singlet Fixed":
+      totalLengthInCm = 2 * heightInCm + widthInCm * 2;
+      break;
+    case "Vertical Fixed":
+      totalLengthInCm = 2 * heightInCm + widthInCm * 3;
+      break;
+    case "Vertical Fixed Tripple":
+      totalLengthInCm = 2 * heightInCm + widthInCm * 4;
+      break;
+    case "Vertical Bottom":
+      totalLengthInCm = 2 * heightInCm + widthInCm * 3 + 2 * windowHeight;
+      break;
+    case "Vertical Top":
+      totalLengthInCm = 2 * heightInCm + widthInCm * 5 + 2 * windowHeight;
+      break;
+    default:
+      totalLengthInCm = 0; // Set default value if window type is not recognized
+  }
+  
 
   // Assuming selectedColor.color_price is a string, convert it to number
   const colorPrice = selectedColor
