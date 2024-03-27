@@ -181,8 +181,8 @@ function SingleProductPage() {
   let totalLengthInCm;
 
   switch (typeOfWindow) {
-    case "Tripple Opening":
-      totalLengthInCm = 8 * heightInCm + widthInCm * 2 + 2 * firstWindow + 2 * secondWindow;
+    case "Tripple Openingsggi":
+      totalLengthInCm = ((8 * heightInCm) + (widthInCm * 2) + ((2 * width1)/10 + (2 * width3)/10));
       break;
     case "Tripple Single Opening":
       totalLengthInCm = 6 * heightInCm + widthInCm * 2 + 2 * middleWindowWidth + 4 * outerWindowWidths;
@@ -223,7 +223,15 @@ function SingleProductPage() {
     default:
       totalLengthInCm = 0; // Set default value if window type is not recognized
   }
-  
+
+//   const windowCalculations = {
+//     "Tripple Openings": ((8 * heightInCm) + (widthInCm * 2) + ((2 * width1)/10 + (2 * width3)/10)),
+//     "Tripple Single Opening": 6 * heightInCm + widthInCm * 2 + 2 * middleWindowWidth + 4 * outerWindowWidths,
+//     // Add more window types and their calculations as needed
+// };
+
+//   let totalLengthInCm = windowCalculations[typeOfWindow] || 0;
+
 
   // Assuming selectedColor.color_price is a string, convert it to number
   const colorPrice = selectedColor
@@ -676,85 +684,101 @@ const windowColorInsidePrice = selectedWindowColorInside
    );
   };
 
-  const four = ({ width1, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm }) => {
+  const Four = ({ width1, width2, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm }) => {
     // Calculate width2 for 1:1:1 distribution
     const width2For111 = widthInCm / 3;
+    console.log("Width2 for 1:1:1:", width2For111);
     
     // Calculate width2 for 1:2:1 distribution
     const width2For121 = (widthInCm - width1 - width3) / 2;
+    console.log("Width2 for 1:2:1:", width2For121);
   
     // Calculate width2 for Manual distribution
     const width2ForManual = (parseInt(widthInCm) - (parseInt(width1) + parseInt(width3))) / 10;
+    console.log("Width2 for Manual:", width2ForManual);
   
+    // Function to determine the value for width2 input
+    const getWidth2Value = () => {
+        switch (fixedDistribution) {
+            case "1:1:1":
+                return width2For111;
+            case "1:2:1":
+                return width2For121;
+            case "Manual":
+                return width2ForManual;
+            default:
+                return "";
+        }
+    };
+    console.log("Selected fixed distribution:", fixedDistribution);
+    console.log("Calculated width2 value:", getWidth2Value());
+
     return (
-      <div>
-        <div className={`single-product-page__customize__left__option-holder__option__body ${activeId === "step4" ? "" : "d-none"}`}>
-          {/* Fixed distribution */}
-          <div className="option">
-            <label htmlFor="fixedDistribution">Fixed Distribution:</label>
-            <select
-              id="fixedDistribution"
-              value={fixedDistribution}
-              onChange={handleFixedDistributionChange}
-            >
-              <option value="">Select Fixed Distribution</option>
-              <option value="1:1:1">1:1:1</option>
-              <option value="1:2:1">1:2:1</option>
-              <option value="Manual">Manual</option>
-            </select>
-          </div>
-  
-          {/* Width inputs */}
-          <div className="option">
-            <label htmlFor="width1" className="left-widths">
-              Width of turn/tilt window (inward opening) in section 1 (in mm):
-              <span><br />(Calculated automatically)</span>
-            </label>
-            <input
-              type="number"
-              id="width1"
-              value={width1}
-              onChange={(event) => setWidth1(event.target.value)}
-              disabled={fixedDistribution !== "Manual"}
-            />
-          </div>
-  
-          <div className="option">
-            <label htmlFor="width3" className="left-widths">
-              Width of turn/tilt window (inward opening) in section 3 (in mm):
-              <span><br />(Calculated automatically)</span>
-            </label>
-            <input
-              type="number"
-              id="width3"
-              value={width3}
-              onChange={(event) => setWidth3(event.target.value)}
-              disabled={fixedDistribution !== "Manual"}
-            />
-          </div>
-  
-          <div className="option">
-            <label htmlFor="width2" className="left-widths">
-              Width of fixed glass in section 2 (in mm):
-              <span><br />(Calculated automatically)</span>
-            </label>
-            <input
-              type="number"
-              id="width2"
-              value={
-                fixedDistribution === "1:1:1" ? width2For111 :
-                fixedDistribution === "1:2:1" ? width2For121 :
-                fixedDistribution === "Manual" ? width2ForManual : ""
-              }
-              readOnly
-              disabled={fixedDistribution !== "Manual"}
-            />
-          </div>
+        <div>
+            <div className={`single-product-page__customize__left__option-holder__option__body ${activeId === "step4" ? "" : "d-none"}`}>
+                {/* Fixed distribution */}
+                <div className="option">
+                    <label htmlFor="fixedDistribution">Fixed Distribution:</label>
+                    <select
+                        id="fixedDistribution"
+                        value={fixedDistribution}
+                        onChange={handleFixedDistributionChange}
+                    >
+                        <option value="">Select Fixed Distribution</option>
+                        <option value="1:1:1">1:1:1</option>
+                        <option value="1:2:1">1:2:1</option>
+                        <option value="Manual">Manual</option>
+                    </select>
+                </div>
+    
+                {/* Width inputs */}
+                <div className="option">
+                    <label htmlFor="width1" className="left-widths">
+                        Width of turn/tilt window (inward opening) in section 1 (in mm):
+                        <span><br />(Calculated automatically)</span>
+                    </label>
+                    <input
+                        type="number"
+                        id="width1"
+                        value={width1}
+                        onChange={(event) => setWidth1(event.target.value)}
+                        disabled={fixedDistribution !== "Manual"}
+                    />
+                </div>
+    
+                <div className="option">
+                    <label htmlFor="width3" className="left-widths">
+                        Width of turn/tilt window (inward opening) in section 3 (in mm):
+                        <span><br />(Calculated automatically)</span>
+                    </label>
+                    <input
+                        type="number"
+                        id="width3"
+                        value={width3}
+                        onChange={(event) => setWidth3(event.target.value)}
+                        disabled={fixedDistribution !== "Manual"}
+                    />
+                </div>
+    
+                <div className="option">
+                    <label htmlFor="width2" className="left-widths">
+                        Width of fixed glass in section 2 (in mm):
+                        <span><br />(Calculated automatically)</span>
+                    </label>
+                    <input
+                        type="number"
+                        id="width2"
+                        value={getWidth2Value()} // Assign calculated value here
+                        readOnly
+                        disabled={fixedDistribution !== "Manual"}
+                    />
+                </div>
+            </div>
         </div>
-      </div>
     );
-  };
-  
+};
+
+ 
 //   const five = () => {
    
 //     // Check if product exists and has color data
