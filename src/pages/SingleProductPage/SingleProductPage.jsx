@@ -221,7 +221,7 @@ const handleInputChange = (event, fieldName) => {
       totalLengthInCm = 3 * heightInCm + widthInCm * 2;
       break;
     case "Single Opening":
-      totalLengthInCm = 4 * heightInCm + widthInCm * 4;
+      totalLengthInCm = (4 * heightInCm) + (widthInCm * 4);
       break;
     case "Single Fixed":
       totalLengthInCm = 2 * heightInCm + widthInCm * 2;
