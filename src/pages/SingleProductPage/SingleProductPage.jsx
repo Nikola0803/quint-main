@@ -220,10 +220,10 @@ const handleInputChange = (event, fieldName) => {
     case "Two Part Fixed":
       totalLengthInCm = 3 * heightInCm + widthInCm * 2;
       break;
-    case "Single Fixed":
+    case "Single Opening":
       totalLengthInCm = 4 * heightInCm + widthInCm * 4;
       break;
-    case "Singlet Fixed":
+    case "Single Fixed":
       totalLengthInCm = 2 * heightInCm + widthInCm * 2;
       break;
     case "Vertical Fixed":
