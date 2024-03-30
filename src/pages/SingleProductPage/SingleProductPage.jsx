@@ -648,38 +648,43 @@ const windowColorInsidePrice = selectedWindowColorInside
     );
   };
   
-  function five() {
-
+function five() {
     // Check if product exists and has color data
     if (!product ||
-      !product.acf ||
-      !product.acf.colors ||
-      product.acf.colors.length === 0) {
-      return <p>No color data available</p>;
+        !product.acf ||
+        !product.acf.colors ||
+        product.acf.colors.length === 0) {
+        return <p>No color data available</p>;
     }
+
+    // Function to toggle the visibility of color options
+    const toggleColorOptions = (option) => {
+        const container = document.getElementById(option);
+        container.classList.toggle('expanded');
+    };
 
     // Extract case_color, window_color, case_color_inside, and window_color_inside options from the API response
     const caseColorOptions = product.acf.colors.flatMap(
-      (category) => category.case_color || []
+        (category) => category.case_color || []
     );
     const windowColorOptions = product.acf.colors.flatMap(
-      (category) => category.window_color || []
+        (category) => category.window_color || []
     );
     const caseColorInsideOptions = product.acf.colors.flatMap(
-      (category) => category.case_color_inside || []
+        (category) => category.case_color_inside || []
     );
     const windowColorInsideOptions = product.acf.colors.flatMap(
-      (category) => category.window_color_inside || []
+        (category) => category.window_color_inside || []
     );
 
     // Check if there are no options available for any of the colors
     if (
-      caseColorOptions.length === 0 &&
-      windowColorOptions.length === 0 &&
-      caseColorInsideOptions.length === 0 &&
-      windowColorInsideOptions.length === 0
+        caseColorOptions.length === 0 &&
+        windowColorOptions.length === 0 &&
+        caseColorInsideOptions.length === 0 &&
+        windowColorInsideOptions.length === 0
     ) {
-      return <p>No color data available</p>;
+        return <p>No color data available</p>;
     }
 
     // JSX rendering
@@ -687,7 +692,7 @@ const windowColorInsidePrice = selectedWindowColorInside
         <>
             <div className="color-options-container-main">
                 {/* Case Color Option */}
-                <div className="color-options-container">
+                <div className="color-options-container" onClick={() => toggleColorOptions('caseColor')}>
                     <h5>Case Color</h5>
                     <div className="color-options-inner" id="caseColor">
                         {caseColorOptions.map((colorOption, index) => (
@@ -712,7 +717,7 @@ const windowColorInsidePrice = selectedWindowColorInside
                 </div>
 
                 {/* Window Color Option */}
-                <div className="color-options-container">
+                <div className="color-options-container" onClick={() => toggleColorOptions('windowColor')}>
                     <h5>Window Color</h5>
                     <div className="color-options-inner" id="windowColor">
                         {windowColorOptions.map((colorOption, index) => (
@@ -737,7 +742,7 @@ const windowColorInsidePrice = selectedWindowColorInside
                 </div>
 
                 {/* Case Color Inside Option */}
-                <div className="color-options-container" >
+                <div className="color-options-container" onClick={() => toggleColorOptions('caseColorInside')}>
                     <h5>Case Color Inside</h5>
                     <div className="color-options-inner" id="caseColorInside">
                         {caseColorInsideOptions.map((colorOption, index) => (
@@ -762,7 +767,7 @@ const windowColorInsidePrice = selectedWindowColorInside
                 </div>
 
                 {/* Window Color Inside Option */}
-                <div className="color-options-container">
+                <div className="color-options-container" onClick={() => toggleColorOptions('windowColorInside')}>
                     <h5>Window Color Inside</h5>
                     <div className="color-options-inner" id="windowColorInside">
                         {windowColorInsideOptions.map((colorOption, index) => (

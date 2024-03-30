@@ -5,9 +5,24 @@
   margin-bottom: 10px;
 }
 
-.color-options-container{
-  display:flex;
-  flex-direction:column;
+// .color-options-container{
+//   display:flex;
+//   flex-direction:column;
+// }
+
+.color-options-inner{
+  display:none;
+}
+
+
+// .color-options-inner{
+//   display:flex;
+//   flex-direction:row;
+// }
+
+.expanded{
+  display:flex !important;
+  flex-direction: row;
 }
 
 .single-product-page__customize__left__option-holder__option .selected img {
@@ -23,10 +38,6 @@
   flex-direction:column;
 }
 
-.color-options-inner{
-  display:flex;
-  flex-direction:row;
-}
 
 .left-widths{
   width:40%;
