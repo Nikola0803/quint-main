@@ -308,7 +308,6 @@ const windowColorInsidePrice = selectedWindowColorInside
     original: img.src,
     thumbnail: img.src, // Assuming each image object has a src property
   }));
-  console.log(product);
 
   const fetchBackend = async () => {
     const consumerKey = process.env.REACT_APP_CONSUMER_KEY;
@@ -368,7 +367,6 @@ const windowColorInsidePrice = selectedWindowColorInside
         throw new Error("Failed to prepare payment intent.");
 
       const paymentData = await paymentResponse.json();
-      console.log("Payment intent prepared:", paymentData);
       return paymentData?.clientSecret;
     } catch (error) {
       console.error("Error:", error.message);
@@ -409,7 +407,6 @@ const windowColorInsidePrice = selectedWindowColorInside
       };
 
       addToCart(productConfig);
-      console.log("Product added to cart", productConfig);
     };
     const handleSubmit = async (event) => {
       event.preventDefault();
@@ -535,17 +532,16 @@ const windowColorInsidePrice = selectedWindowColorInside
   };
   
   const Four = ({ width1, width2, width3, fixedDistribution, handleFixedDistributionChange, activeId, widthInCm }) => {
-    const [value, setValue] = useState('');
-  
-    // Function to handle input change
+    const [value, setValue] = useState('')
     const handleInputChange = (event, inputName) => {
       const newValue = event.target.value;
+      // You can handle the input change here, for example, updating state
       switch (inputName) {
         case "width1":
           setWidth1(newValue);
           break;
         case "width2":
-          setWidth2(newValue);
+          // Handle width2 input change if needed
           break;
         case "width3":
           setWidth3(newValue);
@@ -554,87 +550,98 @@ const windowColorInsidePrice = selectedWindowColorInside
           break;
       }
     };
+    
+  <Four
+    width1={width1}
+    width2={width2}
+    width3={width3}
+    fixedDistribution={fixedDistribution}
+    handleFixedDistributionChange={handleFixedDistributionChange}
+    activeId={activeId}
+    widthInCm={widthInCm}
+    handleInputChange={handleInputChange} // Pass the handleInputChange function
+  />
   
     // Function to determine the value for width2 input
     const getWidth2Value = () => {
-      switch (fixedDistribution) {
-        case "1:1:1":
-          return widthInCm / 3; // Set width2 to one-third of widthInCm
-        case "1:2:1":
-          return (widthInCm - width1 - width3) / 2;
-        case "Manual":
-          return width2;
-        default:
-          return "";
-      }
+        switch (fixedDistribution) {
+            case "1:1:1":
+                return widthInCm / 3; // Set width2 to one-third of widthInCm
+            case "1:2:1":
+                return (widthInCm - width1 - width3) / 2;
+            case "Manual":
+                return width2;
+            default:
+                return "";
+        }
     };
   
     useEffect(() => {
       setValue(getWidth2Value())
-    }, [fixedDistribution, width1, width2, width3, widthInCm]);
+    }, [fixedDistribution])
   
     return (
-      <div>
-        <div className={`single-product-page__customize__left__option-holder__option__body ${activeId === "step4" ? "" : "d-none"}`}>
-          {/* Fixed distribution */}
-          <div className="option">
-            <label htmlFor="fixedDistribution">Fixed Distribution:</label>
-            <select
-              id="fixedDistribution"
-              value={fixedDistribution}
-              onChange={handleFixedDistributionChange}
-            >
-              <option value="">Select Fixed Distribution</option>
-              <option value="1:1:1">1:1:1</option>
-              <option value="1:2:1">1:2:1</option>
-              <option value="Manual">Manual</option>
-            </select>
-          </div>
-  
-          {/* Width inputs */}
-          <div className="option">
-            <label htmlFor="width1" className="left-widths">
-              Width of turn/tilt window (inward opening) in section 1 (in mm):
-              <span><br />(Calculated automatically)</span>
-            </label>
-            <input
-              type="number"
-              id="width1"
-              value={fixedDistribution === "1:1:1" ? widthInCm / 3 : width1}
-              onChange={(event) => handleInputChange(event, "width1")}
-              disabled={fixedDistribution !== "Manual"}
-            />
-          </div>
-  
-          <div className="option">
-            <label htmlFor="width3" className="left-widths">
-              Width of turn/tilt window (inward opening) in section 3 (in mm):
-              <span><br />(Calculated automatically)</span>
-            </label>
-            <input
-              type="number"
-              id="width3"
-              value={fixedDistribution === "1:1:1" ? widthInCm / 3 : width3}
-              onChange={(event) => handleInputChange(event, "width3")}
-              disabled={fixedDistribution !== "Manual"}
-            />
-          </div>
-  
-          <div className="option">
-            <label htmlFor="width2" className="left-widths">
-              Width of fixed glass in section 2 (in mm):
-              <span><br />(Calculated automatically)</span>
-            </label>
-            <input
-              type="number"
-              id="width2"
-              value={value}
-              readOnly
-              disabled={fixedDistribution !== "Manual"}
-            />
-          </div>
+        <div>
+            <div className={`single-product-page__customize__left__option-holder__option__body ${activeId === "step4" ? "" : "d-none"}`}>
+                {/ Fixed distribution /}
+                <div className="option">
+                    <label htmlFor="fixedDistribution">Fixed Distribution:</label>
+                    <select
+                        id="fixedDistribution"
+                        value={fixedDistribution}
+                        onChange={handleFixedDistributionChange}
+                    >
+                        <option value="">Select Fixed Distribution</option>
+                        <option value="1:1:1">1:1:1</option>
+                        <option value="1:2:1">1:2:1</option>
+                        <option value="Manual">Manual</option>
+                    </select>
+                </div>
+    
+                {/ Width inputs /}
+                <div className="option">
+                    <label htmlFor="width1" className="left-widths">
+                        Width of turn/tilt window (inward opening) in section 1 (in mm):
+                        <span><br />(Calculated automatically)</span>
+                    </label>
+                    <input
+                        type="number"
+                        id="width1"
+                        value={fixedDistribution === "1:1:1" ? widthInCm / 3 : width1} // Set width1 to one-third of widthInCm if 1:1:1 is selected
+                        onChange={(event) => handleInputChange(event, "width1")}
+                        disabled={fixedDistribution !== "Manual"}
+                    />
+                </div>
+    
+                <div className="option">
+                    <label htmlFor="width3" className="left-widths">
+                        Width of turn/tilt window (inward opening) in section 3 (in mm):
+                        <span><br />(Calculated automatically)</span>
+                    </label>
+                    <input
+                        type="number"
+                        id="width3"
+                        value={fixedDistribution === "1:1:1" ? widthInCm / 3 : width3} // Set width3 to one-third of widthInCm if 1:1:1 is selected
+                        onChange={(event) => handleInputChange(event, "width3")}
+                        disabled={fixedDistribution !== "Manual"}
+                    />
+                </div>
+    
+                <div className="option">
+                    <label htmlFor="width2" className="left-widths">
+                        Width of fixed glass in section 2 (in mm):
+                        <span><br />(Calculated automatically)</span>
+                    </label>
+                    <input
+                        type="number"
+                        id="width2"
+                        value={value} // Assign calculated value here
+                        readOnly
+                        disabled={fixedDistribution !== "Manual"}
+                    />
+                </div>
+            </div>
         </div>
-      </div>
     );
   };
   
@@ -916,6 +923,16 @@ function five() {
       </div>
     );
   };
+
+  const newFn = (e, target) => {
+    if (target === 'width3') {
+      setWidth3(e.target.value)
+      setWidth2((widthInCm * 10 - width1 - Number(e.target.value)))
+    } else {
+      setWidth1(e.target.value)
+      setWidth2((widthInCm * 10 - Number(e.target.value)) - width3)
+    }
+  }
   return (
     <div className="single-product-page">
       <div className="container">
@@ -1214,7 +1231,7 @@ function five() {
               type="number"
               id="width1"
               value={width1}
-              onChange={(event) => setWidth1(event.target.value)}
+              onChange={(event) => newFn(event, 'width1')}
               disabled={fixedDistribution !== "Manual"}
             />
           </div>
@@ -1249,7 +1266,7 @@ function five() {
               type="number"
               id="width3"
               value={width3}
-              onChange={(event) => setWidth3(event.target.value)}
+              onChange={(event) => newFn(event, 'width3')}
               disabled={fixedDistribution !== "Manual"}
             />
           </div>
